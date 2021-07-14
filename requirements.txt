@@ -1,0 +1,2 @@
+igem-wikisync==1.0.0
+requests==2.5.0 # Fixes bug
