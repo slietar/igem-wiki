@@ -26,6 +26,7 @@ wiki:
   script:
     - apt -qq update
     - apt -qq install -y python3 python3-pip
+    - pip3 install --upgrade pip3
     - pip3 install -r requirements.txt
     - python3 wikisync.py
     - cat wikisync.log
