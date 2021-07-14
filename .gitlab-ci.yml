@@ -1,0 +1,41 @@
+image: node:latest
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+
+pages:
+  stage: deploy
+  script:
+    - cp -r dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
+wiki:
+  stage: deploy
+  script:
+    - apt-get -qq install -y python
+    - pip install -r requirements.txt
+    - python wikisync.py
+    - cat wikisync.log
+  artifacts:
+    paths:
+      - wikisync.log
+  only:
+    - live
+
+cache:
+  paths:
+    - node_modules
+    - upload_map.yml
+    - wikisync.cookies

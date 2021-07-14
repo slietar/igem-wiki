@@ -1,0 +1,227 @@
+body:not(.mediawiki), #mw-content-text {
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: initial;
+  }
+
+  a {
+    display: block;
+
+    color: inherit;
+    text-decoration: initial;
+
+    &:focus {
+      outline: initial;
+    }
+  }
+
+  ul {
+    margin: initial;
+    padding: initial;
+  }
+
+  li {
+    display: block;
+    list-style-type: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: initial;
+  }
+
+  h1 {
+    // Overrides user agent stylesheet such as section > h1.
+    font-size: 2em;
+  }
+
+  p {
+    margin: initial;
+
+    a {
+      display: unset;
+    }
+  }
+
+  input, button, select, textarea {
+    display: block;
+    width: 100%;
+
+    margin: initial;
+    padding: initial;
+
+    appearance: none;
+    background: initial;
+    border: initial;
+    outline: initial;
+
+    color: inherit;
+    font: inherit;
+    text-align: initial;
+
+    &:disabled {
+      color: initial;
+      opacity: initial;
+      pointer-events: none;
+    }
+
+    &:active {
+      color: currentColor;
+    }
+  }
+
+  option {
+    padding: initial;
+  }
+
+  input::placeholder {
+    opacity: initial;
+  }
+
+  input[type="submit"], button {
+    cursor: pointer;
+
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+
+  output {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :invalid {
+    box-shadow: initial;
+  }
+
+  dialog {
+    margin: initial;
+    padding: initial;
+
+    border: initial;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  dl, dd {
+    margin: initial;
+  }
+
+  samp {
+    display: block;
+
+    margin: 1em 0;
+  }
+
+  label {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    font-size: 0;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th {
+    font-weight: initial;
+    text-align: initial;
+  }
+
+  video {
+    display: block;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+  }
+
+  strong {
+    font-weight: unset;
+  }
+}
+
+
+// iGEM-specific rules
+
+#top_title {
+  display: none;
+}
+
+#content {
+  width: unset;
+
+  margin: unset;
+  padding: unset;
+
+  line-height: unset;
+}
+
+#globalWrapper {
+  padding-bottom: unset;
+  font-size: unset;
+}
+
+#top_menu_under {
+  height: 0;
+}
+
+#bodyContent a:hover {
+  text-decoration: unset;
+}
+
+#bodyContent a:visited {
+  color: unset;
+}
+
+#bodyContent a[href^="https://"] {
+  background: unset;
+  padding-right: unset;
+}
+
+#bodyContent h1, #bodyContent h2 {
+  margin-bottom: unset;
+}
+
+#bodyContent p {
+  line-height: unset;
+}
+
+#mw-content-text > p {
+  display: none;
+}
+
+#mw-content-text {
+  font-size: 1rem;
+}
+
+#HQ_page p {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#HQ_page h1, h2, h3, h4, h5 {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: unset;
+  overflow: unset;
+}
+
+#top_menu_14 {
+  position: unset;
+}
