@@ -25,9 +25,9 @@ wiki:
   stage: deploy
   script:
     - apt -qq update
-    - apt -qq install -y python python-pip
-    - pip install -r requirements.txt
-    - python wikisync.py
+    - apt -qq install -y python3 python3-pip
+    - pip3 install -r requirements.txt
+    - python3 wikisync.py
     - cat wikisync.log
   artifacts:
     paths:
