@@ -2,8 +2,8 @@
   "name": "wiki",
   "version": "0.0.0",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && sass src/styles/main.scss:dist/styles.css --no-source-map && cpx src/views/* dist && cpx 'src/assets/*' dist/assets",
-    "build:watch": "rm -rf dist && mkdir -p dist && sass src/styles/main.scss:dist/styles.css --watch & cpx src/views/* dist --watch & cpx 'src/assets/*' dist/assets --watch"
+    "build": "mkdir -p dist && sass src/styles/main.scss:dist/styles.css --no-source-map && cpx src/views/* dist && cpx 'src/assets/*' dist/assets",
+    "build:watch": "mkdir -p dist && sass src/styles/main.scss:dist/styles.css --watch & cpx src/views/* dist --watch & cpx 'src/assets/*' dist/assets --watch"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
