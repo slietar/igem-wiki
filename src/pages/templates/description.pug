@@ -1,0 +1,17 @@
+extends ./layout.pug
+
+block head
+  link(href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css", rel="stylesheet")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js")
+
+block contents
+  main.layout-description
+    .sidenav-container
+      .sidenav
+        h3 Contents
+        .sidenav-toc
+
+    .contents
+      block description
+
+  script(src="assets/index.js")

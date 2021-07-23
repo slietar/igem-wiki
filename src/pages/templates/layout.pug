@@ -1,0 +1,35 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    link(href="styles.css", rel="stylesheet")
+
+    block head
+
+  body
+    header
+      a(href="index.html").header-brand
+        include ../../internal-assets/logo.svg
+
+      .header-nav
+        ul
+          li: a(href="biology.html") Biology
+          li: a(href="#") Implementation
+          li: a(href="#") Human Practices
+
+    block contents
+
+    script.
+      document.title = 'CuRe - EPFL iGEM 2021';
+
+      let link = document.querySelector("link[rel~='icon']");
+
+      if (link) {
+        link.href = 'https://2021.igem.org/wiki/images/3/37/T--EPFL--favicon.png';
+      } else {
+        link = document.createElement('link');
+        link.href = 'assets/favicon.png';
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+      }

@@ -1,13 +1,10 @@
 body:not(.mediawiki), #mw-content-text {
-  *, *::before, *::after {
+  &, *, *::before, *::after {
     box-sizing: inherit;
   }
 
-  html {
+  & {
     box-sizing: border-box;
-  }
-
-  body {
     margin: initial;
   }
 
