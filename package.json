@@ -2,8 +2,8 @@
   "name": "wiki",
   "version": "0.0.0",
   "scripts": {
-    "build": "mkdir -p dist && sass src/styles/index.scss:dist/styles.css --no-source-map && pug src/pages --out dist && cpx 'src/assets/*' dist/assets",
-    "build:watch": "mkdir -p dist && sass src/styles/index.scss:dist/styles.css --watch & pug src/pages --out dist --watch & cpx 'src/assets/*' dist/assets --watch"
+    "build": "mkdir -p dist && sass src/styles/index.scss:dist/styles.css --no-source-map && pug src/pages --out dist && cpx 'src/assets/**/*' dist/assets",
+    "build:watch": "mkdir -p dist && sass src/styles/index.scss:dist/styles.css --watch & pug src/pages --out dist --watch & cpx 'src/assets/**/*' dist/assets --watch"
   },
   "devDependencies": {
     "cpx": "^1.5.0",

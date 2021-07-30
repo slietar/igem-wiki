@@ -6,7 +6,7 @@ $apple-blue: #007aff;
 }
 
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
 
@@ -19,8 +19,8 @@ header {
 .header-brand {
   display: flex;
 
-  color: #0045ff;
-  color: color(display-p3 0 0.266 0.983 / 1);
+  color: #ff5400;
+  color: color(display-p3 1 0.39 0 / 1);
 
   user-select: none;
 
@@ -30,15 +30,21 @@ header {
     height: 1.6rem;
     fill: currentColor;
   }
+
+  &--alt:not(:hover) svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 15;
+  }
 }
 
 .header-nav {
-  > ul {
+  ul {
     display: flex;
     justify-content: space-between;
   }
 
-  > ul > li {
+  li {
     position: relative;
 
     &:hover {
@@ -46,30 +52,30 @@ header {
     }
   }
 
-  > ul > li > a {
+  a {
     padding: 1.6rem 2rem;
     font-weight: 500;
-
-    &:not(:hover) ~ ul:not(:hover) {
-      display: none;
-    }
   }
+}
 
-  li ul {
-    min-width: 100%;
+.header--white {
+  & {
+    width: 100%;
 
     position: absolute;
-    left: 0;
+    top: 0;
 
-    background-color: #fff;
-    box-shadow: 3px 3px 3px -3px #0003, -3px 0 3px -3px #0003;
+    z-index: 1;
+    box-shadow: unset;
+  }
+
+  .header-nav {
+    li:hover {
+      background-color: #fff2;
+    }
 
     a {
-      padding: 0.8rem 2rem;
-
-      &:hover {
-        background-color: #fafafa;
-      }
+      color: #fff;
     }
   }
 }
@@ -184,3 +190,6 @@ header {
     }
   }
 }
+
+
+@import "./layout-index.scss";
