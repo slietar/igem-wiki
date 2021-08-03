@@ -9,5 +9,8 @@
     "cpx": "^1.5.0",
     "pug-cli": "*",
     "sass": "^1.34.1"
+  },
+  "dependencies": {
+    "mq-func": "^0.1.0"
   }
 }

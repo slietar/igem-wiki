@@ -13,22 +13,72 @@ block header
 
 block contents
   main.layout-index
-    // video(src="https://www.palantir.com/videos/home.webm" autoplay muted loop)
-
     .hero
-      video(src="https://www.palantir.com/videos/home.webm" muted loop)
+      // video(src="https://www.palantir.com/videos/home.webm" autoplay muted loop)
+      video(src="assets/home.mp4" autoplay muted loop)
 
       .hero-contents
-        h1
-          | Copper&nbsp;
-          .words
-            .list
-              div recuperation
-              div retrieval
-              div recycling
-              div renewal
-              div regeneration
-              div recuperation
+        h1 CuRe
+        p Solving copper pollution with synthetic biology.
+
+        //-
+          h1
+            | Copper&nbsp;
+            .words
+              .list
+                div recuperation
+                div retrieval
+                div recycling
+                div renewal
+                div regeneration
+                div recuperation
+
+    //- section.section4
+      h2
+        | Copper&nbsp;
+        .words
+          .list
+            div recuperation
+            div retrieval
+            div recycling
+            div renewal
+            div regeneration
+            div recuperation
+
+    section.section1
+      .section-left
+        h2 The problem
+        .subtext Mildew and copper fungicides
+
+        p Maecenas velit sem, mollis vel ligula sed, condimentum pretium mi. Nullam odio turpis, consectetur sed aliquam vitae, vulputate vitae lectus.
+        p Integer pretium augue vitae tellus posuere rhoncus. In nec metus cursus, hendrerit massa lobortis, finibus risus. Nunc in orci pulvinar, scelerisque justo at, aliquet sem. Nam imperdiet sagittis erat, non interdum magna dignissim at.
+
+      .section-right
+        div
+
+    section.section3
+      p The concentration of copper in the soil reaches up to the 3x the legal limit in certain vineyards of Switzerland.
+
+    section.section1.animated
+      .section-left
+        h2.animated-text Our solution
+        p.animated-text Maecenas velit sem, mollis vel ligula sed, condimentum pretium mi. Nullam odio turpis, consectetur sed aliquam vitae, vulputate vitae lectus.
+        p.animated-text Integer pretium augue vitae tellus posuere rhoncus. In nec metus cursus, hendrerit massa lobortis, finibus risus. Nunc in orci pulvinar, scelerisque justo at, aliquet sem. Nam imperdiet sagittis erat, non interdum magna dignissim at.
+
+      .section-right
+        div
+
+    section.section2(data-image="0")
+      .backgrounds
+        img(src="assets/background/vineyard.jpg")
+        img(src="assets/background/lab.jpg")
+        img(src="assets/background/lab2.jpg")
+        img(src="assets/background/lab3.jpg")
+
+      .links
+        a(href="#") Biology
+        a(href="#") Implementation
+        a(href="#") Human Practices
 
     .sponsors
       h2 Sponsors
@@ -37,3 +87,29 @@ block contents
         img(src="assets/sponsors/idt.png")
         img(src="assets/sponsors/genscript.png")
         img(src="assets/sponsors/microsynth.png")
+
+    footer.footer
+      .footer-brand
+        include ../internal-assets/logo.svg
+
+      nav.footer-sitemap
+        a(href="#") Home
+        a(href="#") Biology
+        a(href="#") Implementation
+        a(href="#") Human Practices
+
+      nav.footer-social
+        a(href="https://www.instagram.com/igem_epfl/")
+          img(src="assets/social/instagram.png" alt="Instagram logo")
+          div @igem_epfl
+
+        a(href="https://www.facebook.com/igemepfl")
+          img(src="assets/social/facebook.png" alt="Facebook logo")
+          div @igemepfl
+
+        a(href="https://twitter.com/EPFL_iGEM")
+          img(src="assets/social/twitter.png" alt="Twitter logo")
+          div @EPFL_iGEM
+
+
+  script(src="assets/animation.js")
