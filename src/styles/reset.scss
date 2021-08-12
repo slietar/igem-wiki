@@ -19,12 +19,12 @@ body:not(.mediawiki), #mw-content-text {
     }
   }
 
-  ul {
+  ul, ol {
     margin: initial;
     padding: initial;
   }
 
-  li {
+  ul > li {
     display: block;
     list-style-type: none;
   }
