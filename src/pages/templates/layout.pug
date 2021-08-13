@@ -10,16 +10,112 @@ html
   body
     block header
       header.header
-        a(href="index.html").header-brand.header-brand--alt
+        // .header-brand--alt
+        a(href="index.html").header-brand
           include ../../internal-assets/logo.svg
 
         .header-nav
           ul
-            li: a(href="biology.html") Biology
-            li: a(href="#") Implementation
+            li
+              a(href="biology.html") Project
+              .header-preview
+                ul
+                  li: a(href="#").header-item
+                    .header-item-icon
+                      include ../../internal-assets/icons/solid/book.svg
+                    .header-item-title Description
+                    .header-item-desc Description of our project, background, etc.
+
+                  li: a(href="#").header-item
+                    .header-item-icon
+                      include ../../internal-assets/icons/solid/book-open.svg
+                    .header-item-title Protocols
+                    .header-item-desc PCR, Western Blot protocols, etc.
+
+                  li: a(href="#").header-item
+                    .header-item-icon
+                      include ../../internal-assets/icons/solid/server.svg
+                    .header-item-title Modelling
+                    .header-item-desc Yeast growth and hardware fluid mechanics models
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/layer-group.svg
+                    .header-item-title Design
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/hard-hat.svg
+                    .header-item-title Safety
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/book.svg
+                    .header-item-title Lab Book
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/chart-pie.svg
+                    .header-item-title Results
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/building.svg
+                    .header-item-title Demonstration
+
+            li
+              a(href="biology.html") People
+              .header-preview
+                ul
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/user-friends.svg
+                    .header-item-title Team
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/brands/creative-commons-by.svg
+                    .header-item-title Attributions
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/people-carry.svg
+                    .header-item-title Collaborations
+
+            li
+              a(href="biology.html") Parts
+              .header-preview
+                ul
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/boxes.svg
+                    .header-item-title Parts overview
+
+                  li: a(href="#").header-item
+                    .header-item-icon: include ../../internal-assets/icons/solid/box.svg
+                    .header-item-title Basic parts
+
             li: a(href="#") Human Practices
+            li: a(href="#") Medals
 
     block contents
+
+    block footer
+      footer.footer
+        .footer-brand
+          include ../../internal-assets/logo.svg
+
+        nav.footer-sitemap
+          a(href="#") Home
+          a(href="#") Biology
+          a(href="#") Implementation
+          a(href="#") Human Practices
+
+        nav.footer-social
+          a(href="https://www.instagram.com/igem_epfl/")
+            img(src="assets/social/instagram.png" alt="Instagram logo")
+            div @igem_epfl
+
+          a(href="https://www.facebook.com/igemepfl")
+            img(src="assets/social/facebook.png" alt="Facebook logo")
+            div @igemepfl
+
+          a(href="https://twitter.com/EPFL_iGEM")
+            img(src="assets/social/twitter.png" alt="Twitter logo")
+            div @EPFL_iGEM
+
+    .overlay
 
     script.
       document.title = 'CuRe - EPFL iGEM 2021';
@@ -34,3 +130,5 @@ html
         link.rel = 'icon';
         document.getElementsByTagName('head')[0].appendChild(link);
       }
+
+    script(src="assets/scripts/header.js")

@@ -7,15 +7,62 @@ block header
 
     .header-nav
       ul
-        li: a(href="biology.html") Biology
-        li: a(href="#") Implementation
+        li
+          a(href="#") Project
+          .header-preview
+            ul
+              li: a(href="biology.html").header-item
+                .header-item-icon
+                  include ../internal-assets/icons/solid/book.svg
+                .header-item-title Description
+                .header-item-desc Description of our project, background, etc.
+
+              li: a(href="#").header-item
+                .header-item-icon
+                  include ../internal-assets/icons/solid/book-open.svg
+                .header-item-title Protocols
+                .header-item-desc PCR, Western Blot protocols, etc.
+
+              li: a(href="#").header-item
+                .header-item-icon
+                  include ../internal-assets/icons/solid/server.svg
+                .header-item-title Modelling
+                .header-item-desc Yeast growth and hardware fluid mechanics models
+
+              li: a(href="#").header-item
+                .header-item-icon: include ../internal-assets/icons/solid/layer-group.svg
+                .header-item-title Design
+
+              li: a(href="#").header-item
+                .header-item-icon: include ../internal-assets/icons/solid/hard-hat.svg
+                .header-item-title Safety
+
+              li: a(href="#").header-item
+                .header-item-icon: include ../internal-assets/icons/solid/book.svg
+                .header-item-title Lab Book
+
+              li: a(href="#").header-item
+                .header-item-icon: include ../internal-assets/icons/solid/chart-pie.svg
+                .header-item-title Results
+
+              li: a(href="#").header-item
+                .header-item-icon: include ../internal-assets/icons/solid/building.svg
+                .header-item-title Demonstration
+
+        li
+          a(href="biology.html") Implementation
+          // .header-preview
+            ul
+              li: a(href="#") Item 1
+              li: a(href="#") Item 2
+              li: a(href="#") Item 3
         li: a(href="#") Human Practices
 
 block contents
   main.layout-index
     .hero
       // video(src="https://www.palantir.com/videos/home.webm" autoplay muted loop)
-      video(src="assets/home.mp4" autoplay muted loop)
+      video(src="assets/home.mp4" muted loop)
 
       .hero-contents
         h1 CuRe
@@ -87,29 +134,5 @@ block contents
         img(src="assets/sponsors/idt.png")
         img(src="assets/sponsors/genscript.png")
         img(src="assets/sponsors/microsynth.png")
-
-    footer.footer
-      .footer-brand
-        include ../internal-assets/logo.svg
-
-      nav.footer-sitemap
-        a(href="#") Home
-        a(href="#") Biology
-        a(href="#") Implementation
-        a(href="#") Human Practices
-
-      nav.footer-social
-        a(href="https://www.instagram.com/igem_epfl/")
-          img(src="assets/social/instagram.png" alt="Instagram logo")
-          div @igem_epfl
-
-        a(href="https://www.facebook.com/igemepfl")
-          img(src="assets/social/facebook.png" alt="Facebook logo")
-          div @igemepfl
-
-        a(href="https://twitter.com/EPFL_iGEM")
-          img(src="assets/social/twitter.png" alt="Twitter logo")
-          div @EPFL_iGEM
-
 
   script(src="assets/animation.js")

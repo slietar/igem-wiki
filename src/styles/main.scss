@@ -1,260 +1,89 @@
+@import "./breakpoints.scss";
 @import "./constants.scss";
-
-
-$apple-blue: #007aff;
+@import "./view";
 
 
 & {
+  @include view-2();
+
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 
-.header {
-  display: flex;
-  justify-content: space-between;
 
-  padding: 0 10vw;
-  box-shadow: 0 2px 6px #0002;
-
-  position: relative;
-}
-
-.header-brand {
-  display: flex;
-
-  color: #ff5400;
-  color: color(display-p3 1 0.39 0 / 1);
-
-  user-select: none;
-
-  svg {
-    margin: auto 0;
-
-    height: 1.6rem;
-    fill: currentColor;
-  }
-
-  &--alt:not(:hover) svg {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 15;
-  }
-}
-
-.header-nav {
-  ul {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  li {
-    position: relative;
-
-    &:hover {
-      background-color: #fafafa;
-    }
-  }
-
-  a {
-    padding: 1.6rem 2rem;
-    font-weight: 500;
-  }
-}
-
-.header--white {
-  & {
-    width: 100%;
-
-    position: absolute;
-    top: 0;
-
-    z-index: 1;
-    box-shadow: unset;
-  }
-
-  .header-nav {
-    li:hover {
-      background-color: #fff2;
-    }
-
-    a {
-      color: #fff;
-    }
-  }
-}
-
-
-.layout-description {
+.footer {
   display: grid;
-  column-gap: 3rem;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 
-  padding: 0 10vw;
-  padding-top: 3rem;
+  padding: 4rem var(--side-margin) 6rem var(--side-margin);
+  background-color: #000;
 
-  background: #eee;
-  min-height: calc(100vh - 71px);
-}
+  color: #fff;
 
-.sidenav {
-  h3 {
-    padding-top: 2rem;
-    margin-bottom: 0.8rem;
-
-    color: #999;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
   }
 
-  &-toc {
-    &-list {
-      display: flex;
-      flex-direction: column;
-      row-gap: 0.6rem;
-    }
+  &-brand {
+    svg {
+      width: 120px;
 
-    @at-root :not(&) > .sidenav-toc-list {
-      margin-top: 0.6rem;
-      padding-left: 1rem;
+      fill: currentColor;
     }
+  }
 
-    &-link {
-      color: #666;
+  &-sitemap {
+    a {
+      width: max-content;
+
+      color: #ddd;
+      font-size: 0.95rem;
       font-weight: 500;
-      line-height: 1.2;
+      text-transform: uppercase;
+
+      transition: color 150ms;
+
+      &:not(:last-child) {
+        margin-bottom: 0.6rem;
+      }
 
       &:hover {
-        color: #333;
-      }
-
-      &._active {
-        color: #0074d9;
+        color: #fff;
       }
     }
   }
 
-  /* ul {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.6rem;
-  }
+  &-social {
+    a {
+      display: flex;
+      align-items: center;
 
-  a {
-    color: #666;
-    font-weight: 500;
-    line-height: 1.2;
+      width: max-content;
+      font-weight: 500;
 
-    &:hover {
-      color: #333;
-    }
-  }
+      transition: opacity 150ms;
 
-  a._active {
-    color: #0074d9;
-    pointer-events: none;
-  } */
-}
+      &:not(:last-child) {
+        margin-bottom: 0.8rem;
+      }
 
-.contents {
-  h1 {
-    margin-bottom: 1.4rem;
-  }
+      &:not(:hover) {
+        opacity: 0.8;
+      }
 
-  h2 {
-    margin: 1.4rem 0 1rem 0;
-  }
-
-  p {
-    margin: 1em 0;
-
-    line-height: 1.4;
-    text-align: justify;
-  }
-
-  ol {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.3rem;
-
-    margin: 1.6rem 0 1.6rem 3rem;
-
-    > li {
-      padding-left: 0.4rem;
-
-      list-style-position: outside;
-      list-style-type: decimal;
-
-      &::marker {
-        // font-variant-numeric: tabular-nums;
-        font-weight: 600;
+      img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.6rem;
       }
     }
   }
 }
 
 
-.ref {
-  &-list {
-    row-gap: 1.4rem !important;
-  }
-
-  &-item {
-    line-height: 1.5;
-
-    > :not(:last-child) {
-      margin-bottom: 0.4rem;
-    }
-  }
-
-  &-authors {
-    // margin-bottom: 0.4rem;
-  }
-
-  &-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-  }
-
-  &-journal {
-    // margin: 0.4rem 0;
-  }
-
-  &-links {
-    display: flex;
-    column-gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  &-link {
-    font-weight: 500;
-    text-decoration: underline $accent-color 2px;
-
-    position: relative;
-
-    &::before {
-      content: "";
-
-      width: 100%;
-      height: 100%;
-
-      position: absolute;
-      left: 0;
-      top: 0;
-
-      transform: scale(1.1, 1);
-    }
-
-    &:focus-visible::before, &:hover::before {
-      background-color: #0001;
-    }
-
-    &:active::before {
-      background-color: $accent-color;
-    }
-  }
-}
-
-
+@import "./description.scss";
+@import "./header.scss";
 @import "./layout-index.scss";
+// @import "./layout-team.scss";
