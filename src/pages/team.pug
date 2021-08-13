@@ -1,0 +1,18 @@
+extends templates/layout.pug
+
+block contents
+  main.layout-team
+    section.team-hero
+      h1 Team
+
+    section.team-members
+      h2 Team members
+
+      .items
+        each val, index in new Array(10).fill(0)
+          .items-item
+            .items-image
+            .items-text
+              .items-title Foo Bar #{index}
+              .items-desc Curabitur gravida
+          .items-expl Suspendisse pharetra velit at nisi condimentum, sed tincidunt neque ullamcorper.

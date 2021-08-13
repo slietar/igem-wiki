@@ -29,11 +29,11 @@
 
   @keyframes anim {
     @for $i from 0 through ($n - 1) {
-      #{$dur-word * $i / $dur-total * 100%} {
+      #{math.div($dur-word * $i / $dur-total) * 100%} {
         transform: translateY(-$height * $i);
       }
 
-      #{($dur-word * $i + $dur-stay) / $dur-total * 100%} {
+      #{math.div($dur-word * $i + $dur-stay, $dur-total) * 100%} {
         transform: translateY(-$height * $i);
       }
     }
