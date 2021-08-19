@@ -8,11 +8,11 @@ block contents
     section.team-members
       h2 Team members
 
-      .items
+      .members
         each val, index in new Array(10).fill(0)
-          .items-item
-            .items-image
-            .items-text
-              .items-title Foo Bar #{index}
-              .items-desc Curabitur gravida
-          .items-expl Suspendisse pharetra velit at nisi condimentum, sed tincidunt neque ullamcorper.
+          .members-item
+            img.members-image(src="https://thispersondoesnotexist.com/image")
+            .members-text
+              .members-title Foo Bar #{index}
+              .members-desc Curabitur gravida
+              .members-expl Suspendisse pharetra velit at nisi condimentum, sed tincidunt neque ullamcorper.

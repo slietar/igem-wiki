@@ -107,6 +107,10 @@
     font-size: 1.4rem;
   }
 
+  h1, h2, h3, h4, h5, h6 /* .header-nav-ul > li > a, .header-item-title */ {
+    font-family: "Secular One", serif;
+  }
+
   p {
     margin: 1em 0;
 
@@ -154,8 +158,9 @@
   }
 
   &-title {
+    font-family: Merriweather, serif;
     font-size: 1.05rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &-journal {

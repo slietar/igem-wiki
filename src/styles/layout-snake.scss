@@ -1,0 +1,71 @@
+$color: $accent-color;
+$width: 3px;
+$radius: 8px;
+
+.layout-snake {
+  display: flex;
+  flex-direction: column;
+
+  margin: 6rem var(--side-margin);
+
+  section {
+    width: 60%;
+    margin-bottom: -$width;
+    padding: 5rem 4rem;
+
+    position: relative;
+    border: $width solid $color;
+
+    &:nth-child(even) {
+      align-self: flex-end;
+      border-left: none;
+      border-radius: 0 $radius $radius 0;
+    }
+
+    &:nth-child(odd) {
+      border-right: none;
+      border-radius: $radius 0 0 $radius;
+    }
+  }
+
+  p:first-of-type {
+    margin-top: 1rem;
+    line-height: 1.4;
+  }
+
+  h2 {
+    color: $color;
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    top: 50%;
+
+    background-color: #eee;
+    border: $width solid $color;
+    border-radius: 50%;
+
+    svg {
+      width: 50%;
+      aspect-ratio: 1;
+
+      margin: auto;
+      fill: darken($color, 10%);
+    }
+  }
+
+  section:nth-child(even) div {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  section:nth-child(odd) div {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+}

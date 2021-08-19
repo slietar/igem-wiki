@@ -2,95 +2,16 @@ extends templates/layout.pug
 
 block header
   header.header.header--white
-    a(href="index.html").header-brand
-      include ../internal-assets/logo.svg
-
-    .header-nav
-      ul
-        li
-          a(href="#") Project
-          .header-preview(style="--height: 413px;")
-            ul
-              li: a(href="biology.html").header-item
-                .header-item-icon
-                  include ../internal-assets/icons/solid/book.svg
-                .header-item-title Description
-                .header-item-desc Description of our project, background, etc.
-
-              li: a(href="#").header-item
-                .header-item-icon
-                  include ../internal-assets/icons/solid/book-open.svg
-                .header-item-title Protocols
-                .header-item-desc PCR, Western Blot protocols, etc.
-
-              li: a(href="#").header-item
-                .header-item-icon
-                  include ../internal-assets/icons/solid/server.svg
-                .header-item-title Modelling
-                .header-item-desc Yeast growth and hardware fluid mechanics models
-
-              li: a(href="#").header-item
-                .header-item-icon: include ../internal-assets/icons/solid/layer-group.svg
-                .header-item-title Design
-
-              li: a(href="#").header-item
-                .header-item-icon: include ../internal-assets/icons/solid/hard-hat.svg
-                .header-item-title Safety
-
-              li: a(href="#").header-item
-                .header-item-icon: include ../internal-assets/icons/solid/book.svg
-                .header-item-title Lab Book
-
-              li: a(href="#").header-item
-                .header-item-icon: include ../internal-assets/icons/solid/chart-pie.svg
-                .header-item-title Results
-
-              li: a(href="#").header-item
-                .header-item-icon: include ../internal-assets/icons/solid/building.svg
-                .header-item-title Demonstration
-
-        li
-          a(href="biology.html") Implementation
-          // .header-preview
-            ul
-              li: a(href="#") Item 1
-              li: a(href="#") Item 2
-              li: a(href="#") Item 3
-        li: a(href="#") Human Practices
+    include templates/header.pug
 
 block contents
   main.layout-index
     .hero
-      // video(src="https://www.palantir.com/videos/home.webm" autoplay muted loop)
       video(src="assets/home.mp4" muted loop)
 
       .hero-contents
         h1 CuRe
         p Solving copper pollution with synthetic biology.
-
-        //-
-          h1
-            | Copper&nbsp;
-            .words
-              .list
-                div recuperation
-                div retrieval
-                div recycling
-                div renewal
-                div regeneration
-                div recuperation
-
-    //- section.section4
-      h2
-        | Copper&nbsp;
-        .words
-          .list
-            div recuperation
-            div retrieval
-            div recycling
-            div renewal
-            div regeneration
-            div recuperation
 
     section.section1
       .section-left
