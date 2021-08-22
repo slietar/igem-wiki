@@ -1,3 +1,26 @@
+@use "../../node_modules/@fontsource/inter/scss/mixins" as Inter;
+@use "../../node_modules/@fontsource/merriweather/scss/mixins" as Merriweather;
+@use "../../node_modules/@fontsource/secular-one/scss/mixins" as SecularOne;
+
+
+@include Inter.fontFaceCustom(
+  $display: fallback,
+  $woff2Path: "assets/fonts/inter-latin-variable-wghtOnly-normal.woff2",
+);
+
+@include Merriweather.fontFaceCustom(
+  $display: fallback,
+  $weight: 700,
+  $woff2Path: "assets/fonts/merriweather-latin-700-normal.woff2",
+);
+
+@include SecularOne.fontFaceCustom(
+  $display: fallback,
+  $weight: 800,
+  $woff2Path: "assets/fonts/secular-one-latin-400-normal.woff2",
+);
+
+
 @import "./reset";
 
 
