@@ -4,6 +4,7 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
     link(href="styles.css" rel="stylesheet")
+    script(src="scripts.js" defer)
 
     block head
 
@@ -38,19 +39,3 @@ html
             div @EPFL_iGEM
 
     .overlay
-
-    script.
-      document.title = 'CuRe - EPFL iGEM 2021';
-
-      let link = document.querySelector("link[rel~='icon']");
-
-      if (link) {
-        link.href = 'https://2021.igem.org/wiki/images/3/37/T--EPFL--favicon.png';
-      } else {
-        link = document.createElement('link');
-        link.href = 'assets/favicon.png';
-        link.rel = 'icon';
-        document.getElementsByTagName('head')[0].appendChild(link);
-      }
-
-    script(src="assets/scripts/header.js")

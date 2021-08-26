@@ -1,4 +1,4 @@
-body:not(.mediawiki), #mw-content-text {
+:where(body:not(.mediawiki), #mw-content-text) {
   &, *, *::before, *::after {
     box-sizing: inherit;
   }

@@ -1,0 +1,73 @@
+@use "./breakpoints" as *;
+
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  padding: 4rem var(--side-margin) 6rem var(--side-margin);
+  background-color: #000;
+
+  color: #fff;
+
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  &-brand {
+    svg {
+      width: 120px;
+
+      fill: currentColor;
+    }
+  }
+
+  &-sitemap {
+    a {
+      width: max-content;
+
+      color: #ddd;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      transition: color 150ms;
+
+      &:not(:last-child) {
+        margin-bottom: 0.6rem;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &-social {
+    a {
+      display: flex;
+      align-items: center;
+
+      width: max-content;
+      font-weight: 500;
+
+      transition: opacity 150ms;
+
+      &:not(:last-child) {
+        margin-bottom: 0.8rem;
+      }
+
+      &:not(:hover) {
+        opacity: 0.8;
+      }
+
+      img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.6rem;
+      }
+    }
+  }
+}

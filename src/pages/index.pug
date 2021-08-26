@@ -7,7 +7,7 @@ block header
 block contents
   main.layout-index
     .hero
-      video(src="assets/home.mp4" muted loop)
+      video(src="assets/home.mp4" autoplay muted loop)
 
       .hero-contents
         h1 CuRe
@@ -52,8 +52,6 @@ block contents
       h2 Sponsors
 
       .sponsors-list
-        img(src="assets/sponsors/idt.png")
-        img(src="assets/sponsors/genscript.png")
-        img(src="assets/sponsors/microsynth.png")
-
-  script(src="assets/animation.js")
+        img(src="assets/sponsors/idt.png" loading="lazy")
+        img(src="assets/sponsors/genscript.png" loading="lazy")
+        img(src="assets/sponsors/microsynth.png" loading="lazy")
