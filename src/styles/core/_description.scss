@@ -1,7 +1,11 @@
+@use "../breakpoints" as *;
+@import "../constants";
+
+
 .layout-description {
   padding: 3rem var(--side-margin);
 
-  background: #eee;
+  background: #f7f7f7;
   min-height: calc(100vh - 71px);
 }
 
@@ -30,6 +34,11 @@
 }
 
 .sidenav {
+  & {
+    position: sticky;
+    top: 0;
+  }
+
   h3 {
     padding-top: 2rem;
     margin-bottom: 0.8rem;
@@ -116,6 +125,14 @@
 
     line-height: 1.4;
     text-align: justify;
+
+    a:not(.ref) {
+      border-bottom: 1px dotted currentColor;
+
+      &:hover {
+        border-bottom-style: solid;
+      }
+    }
   }
 
   ol {
@@ -140,7 +157,41 @@
 }
 
 
+//- Mobile
+
+@include media-breakpoint-down(lg) {
+  .desc-contents {
+    display: initial;
+  }
+
+  .sidenav-container {
+    display: none;
+  }
+
+  .contents p {
+    text-align: left;
+  }
+}
+
+
+
+//- References
+
 .ref {
+  & {
+    color: $accent-color;
+    font-size: 0.8rem;
+    font-weight: 500;
+    vertical-align: super;
+
+    // &::before { content: "["; }
+    // &::after { content: "]"; }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &-list {
     row-gap: 1.4rem !important;
   }

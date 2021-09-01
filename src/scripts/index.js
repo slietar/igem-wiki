@@ -1,4 +1,5 @@
 import './animation';
+import './date';
 import './header';
 import './toc';
 
@@ -11,7 +12,7 @@ if (link) {
   link.href = 'https://2021.igem.org/wiki/images/3/37/T--EPFL--favicon.png';
 } else {
   link = document.createElement('link');
-  link.href = 'assets/favicon.png';
+  link.href = 'assets/favicon2.png';
   link.rel = 'icon';
   document.getElementsByTagName('head')[0].appendChild(link);
 }

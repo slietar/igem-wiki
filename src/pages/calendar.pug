@@ -1,0 +1,50 @@
+extends templates/layout.pug
+
+block contents
+  main.layout-calendar
+    h1 Calendar
+
+    //- .cal-root
+    //-   .cal-header Cultivation
+    //-   .cal-header Cell lysis
+    //-   .cal-header Lyophilization and upscaling
+    //-   .cal-header Quality control
+    //-   .cal-col: div April
+    //-   //- .cal-cell(style="grid-column: 3; grid-row: 5 / span 2;"): a(href="#") Collaboration with mexico
+    //-   .cal-cell: a(href="#") Screening additional parameters
+    //-   .cal-cell
+    //-   .cal-cell
+    //-   .cal-cell
+    //-   .cal-col: div May
+    //-   .cal-cell
+    //-   .cal-cell: a(href="#") Screening additional parameters
+    //-   .cal-cell
+    //-   .cal-cell
+
+    //- hr
+
+    .cal2-container
+      .cal2-root
+        .cal2-header April
+        .cal2-header May
+        .cal2-header June
+        .cal2-header July
+        .cal2-header August
+        .cal2-header September
+        .cal2-header October
+
+        .cal2-row Project
+        a.cal2-line(href="#" style="grid-column: 2 / span 8;"): div Project selection
+        .cal2-line(style="grid-column: 10 / span 12;"): div Project execution
+        .cal2-line(style="grid-column: 22 / span 8;"): div Wiki completion
+
+        .cal2-row Biology
+        .cal2-line.cal2-line--cat1(style="grid-column: 13 / span 6;"): div Cloning V1
+        .cal2-line.cal2-line--cat1(style="grid-column: 19 / span 4;"): div Cloning V2
+
+        .cal2-row Human Practices
+        .cal2-line.cal2-line--cat2(style="grid-column: 15 / span 3;"): div Meeting with specialists
+        .cal2-line.cal2-line--cat2(style="grid-column: 16 / span 3;"): div Podcast
+
+        //- .cal2-line: div PCR, Gibson assembly
+        //- .cal2-line: div PCR, Gibson assembly

@@ -17,7 +17,7 @@ if (contents) {
     activeLinkClass: '_active',
     linkClass: 'sidenav-toc-link',
     listClass: 'sidenav-toc-list',
-    positionFixedSelector: '.sidenav',
+    // positionFixedSelector: '.sidenav',
     collapseDepth: 3,
     fixedSidebarOffset: document.querySelector('.sidenav').offsetTop,
     headingsOffset: 20,

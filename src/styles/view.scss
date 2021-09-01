@@ -26,8 +26,8 @@
     breakpoint(xs): (--width: 80px),
     breakpoint(sm): (--width: 500px),
     breakpoint(md): (--width: 630px),
-    breakpoint(lg): (--width: 750px),
-    breakpoint(xxl): (--width: 1060px)
+    breakpoint(lg): (--width: 800px),
+    breakpoint(xxl): (--width: 1140px)
   ), $const-upper: true);
 
   --side-margin: calc((100vw - var(--width)) * 0.5);

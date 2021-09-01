@@ -4,7 +4,8 @@
 
 @use "./reset";
 @use "./footer";
-
+@use "./core/description";
+@use "./core/lab";
 
 @include Inter.fontFaceCustom(
   $display: fallback,
@@ -32,3 +33,6 @@ html {
 body:not(.mediawiki), #mw-content-text {
   @import "./main.scss";
 }
+
+
+@import "./layout-calendar.scss";

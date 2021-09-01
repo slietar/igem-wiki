@@ -1,0 +1,187 @@
+.layout-calendar {
+  margin: 6rem var(--side-margin);
+}
+
+.cal {
+  &-root {
+    display: grid;
+    // align-items: center;
+    grid-auto-rows: auto;
+    grid-template-columns: auto repeat(4, 1fr);
+
+    margin: 2rem 0;
+
+    border: 1px solid #ccc;
+    border-left: none;
+    border-top: none;
+  }
+
+  &-header, &-col, &-cell {
+    border: 1px solid #ccc;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &-header {
+    padding: 1rem;
+
+    font-weight: 500;
+    text-align: center;
+
+    &:first-child {
+      grid-column: 2;
+    }
+  }
+
+  &-col {
+    display: flex;
+    padding: 0 1rem;
+
+    font-weight: 500;
+    text-align: center;
+
+    > * {
+      margin: auto 0;
+    }
+  }
+
+  &-cell {
+    padding: 0.2rem;
+
+    a {
+      padding: 1rem;
+
+      background-color: #ff4136;
+      border-radius: 4px;
+
+      color: #fff;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  }
+}
+
+
+.cal2 {
+  $month-count: 7;
+  $month-span: 4;
+
+  &-container {
+    overflow-x: auto;
+  }
+
+  &-root {
+    display: grid;
+    gap: 0.8rem 0.4rem;
+    grid-template-columns: 200px repeat($month-count * $month-span, 40px);
+
+    margin: 2rem 0;
+  }
+
+  &-header {
+    padding: 0.6rem;
+    background-color: #0001;
+    border-radius: 4px;
+
+    font-weight: 500;
+    text-align: center;
+
+    @for $i from 0 to $month-count {
+      &:nth-child(#{$i + 1}) {
+        grid-column: #{$i * $month-span + 2} / span #{$month-span};
+      }
+    }
+  }
+
+  &-row {
+    grid-column: 1;
+    align-self: center;
+    margin-right: 1rem;
+
+    font-weight: 500;
+  }
+
+  &-line {
+    $size: 1.2rem; // 1.1 * 16px * 0.5;
+
+    display: grid;
+    align-items: center;
+    grid-auto-rows: auto;
+    grid-template-columns: auto 1fr auto;
+    height: $size * 2;
+
+    --color: #ff4136;
+    background-color: var(--color);
+
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+
+    > * {
+      transform: translateX($size * 0.5);
+    }
+
+    @at-root a#{&}:hover {
+      --color: #{darken(#ff4136, 13%)};
+      // filter: drop-shadow(2px 2px 6px #0003);
+    }
+
+    // &:nth-child(5) { grid-column: 2 / 8; --color: #0074d9; }
+    // &:nth-child(6) { grid-column: 8 / 10; }
+    // &:nth-child(7) { grid-column: 10 / 14; }
+
+    &::before {
+      content: "";
+
+      border: #{$size} solid transparent;
+      border-right: none;
+      border-left-color: #fff;
+    }
+
+    &::after {
+      content: "";
+      transform: translateX(100%);
+
+      border: #{$size} solid transparent;
+      border-right: none;
+      border-left-color: var(--color);
+    }
+
+
+    &--cat0 { --color: #ff4136; }
+    &--cat1 { --color: #0074d9; }
+    &--cat2 { --color: #f012be; }
+
+
+
+    ._x { position: relative;
+
+    $size: 1.1 * 16px * 0.5;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      border: #{$size} solid transparent;
+      border-right: none;
+      border-left-color: #fff;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      right: -$size;
+      top: 0;
+
+      border: #{$size} solid transparent;
+      border-right: none;
+      border-left-color: #ff4136;
+    } }
+  }
+}
