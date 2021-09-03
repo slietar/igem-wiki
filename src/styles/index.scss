@@ -6,6 +6,9 @@
 @use "./footer";
 @use "./core/description";
 @use "./core/lab";
+@use "./core/words";
+
+@use "./layout-index";
 
 @include Inter.fontFaceCustom(
   $display: fallback,

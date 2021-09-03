@@ -7,38 +7,169 @@ block header
 block contents
   main.layout-index
     .hero
-      video(src="assets/home.mp4" autoplay muted loop)
+      video(src="assets/home/video.mp4" autoplay muted loop poster="assets/home/poster.jpg")
 
       .hero-contents
         h1 CuRe
         p Solving copper pollution with synthetic biology.
 
-    section.section1
-      .section-left
+
+    section.section1.fadein
+      .section-left.fadein-target
         h2 The problem
         .subtext Mildew and copper fungicides
 
-        p Maecenas velit sem, mollis vel ligula sed, condimentum pretium mi. Nullam odio turpis, consectetur sed aliquam vitae, vulputate vitae lectus.
-        p Integer pretium augue vitae tellus posuere rhoncus. In nec metus cursus, hendrerit massa lobortis, finibus risus. Nunc in orci pulvinar, scelerisque justo at, aliquet sem. Nam imperdiet sagittis erat, non interdum magna dignissim at.
+        p Mildew is a parasite that attacks grapes, and greatly reduces yield in affected cultures.
+        p In order to treat plants affected Mildew, copper-based fungicides have been in use for several decades thanks to their high effectiveness. Although copper has little effects on the taste and safety of resulting products, it can dangerously affect biodiversity in the environment of treated cultures.
 
-      .section-right
-        div
+        a(href="#") More on the problem
+
+      .section-right.fadein-target(data-delay="1")
+        figure
+          img(src="assets/home/map.jpg")
+          figcaption Copper concentration in topsoil across Europe<a href="#" class="ref">1</a>. Blue: &lt;&nbsp;9&nbsp;mg/kg, red: &gt;&nbsp;65&nbsp;mg/kg. The maximum recommended concentration is 50&nbsp;mg/kg<a href="#" class="ref">2</a>.
+          // Source: <a href="https://ec.europa.eu/eurostat/web/lucas">LUCAS&nbsp;survey</a>.
+
+
+    section.section5.fadein
+      .fact-list
+        .fact-value.fadein-target 4&nbsp;kg/ha
+        p.fact-text.fact-text-bottom.fadein-target of copper fungicides can be used at most each year in the EU.<a href="#" class="ref">1</a>
+
+        .fact-value.fadein-target(data-delay="1") 24–30%
+        p.fact-text.fact-text-bottom.fadein-target(data-delay="1") of the 2021 French wine production is estimated to be lost due to mildew.<a href="#" class="ref">2</a>
+
+        .fact-value.fadein-target(data-delay="2") 27.4
+        p.fact-text.fact-text-bottom.fadein-target(data-delay="2") copper treatments have been applied on average in 2016 in the Champaign region of France.<a href="#" class="ref">3</a>
+
 
     section.section3
-      p The concentration of copper in the soil reaches up to the 3x the legal limit in certain vineyards of Switzerland.
+      img(src="assets/background/vineyard.webp")
 
-    section.section1.animated
-      .section-left
-        h2.animated-text Our solution
-        p.animated-text Maecenas velit sem, mollis vel ligula sed, condimentum pretium mi. Nullam odio turpis, consectetur sed aliquam vitae, vulputate vitae lectus.
-        p.animated-text Integer pretium augue vitae tellus posuere rhoncus. In nec metus cursus, hendrerit massa lobortis, finibus risus. Nunc in orci pulvinar, scelerisque justo at, aliquet sem. Nam imperdiet sagittis erat, non interdum magna dignissim at.
+      .section3-contents
+        p The concentration of copper in the soil reaches up to the three times the legal limit in certain vineyards of Switzerland.<a href="#" class="ref">8</a>
 
-      .section-right
-        div
+    //- section.section5
+      //- .fact-list
+        .fact
+          p.fact-text Copper fungicides have been in used since
+          .fact-value 1878
+
+        .fact
+          p.fact-text The annual limit of copper has been reduced to
+          .fact-value 4&nbsp;kg/ha
+          p.fact-text but has not been lowered.
+
+        .fact
+          p.fact-text The copper authorization has been reused until
+          .fact-value 2025
+
+      .fact-list
+        //-
+          p.fact-text.fact-text-top Copper fungicides have been in use since
+          .fact-value 1878
+          p.fact-text.fact-text-bottom and was then known as the “Bordeaux mixture”.
+
+        p.fact-text.fact-text-top The annual usage limit of copper fungicides has been reduced to
+        .fact-value 4&nbsp;kg/ha
+        p.fact-text.fact-text-bottom in the EU, but has not been lowered since 2012.
+
+        //-
+          p.fact-text.fact-text-top The use of copper in the EU has been reauthorized until
+          .fact-value 2025
+          p.fact-text.fact-text-bottom but no effective replacement solution has been found yet.
+
+        //-
+          .fact-value 10&nbsp;mm
+          p.fact-text.fact-text-bottom of rain are enough to remove 50% of copper on the leaves.
+
+        p.fact-text.fact-text-top The production loss attributed to mildew is estimated to be
+        .fact-value 24–30%
+        p.fact-text.fact-text-bottom in 2021 in France, when compared to a regular year.
+
+        p.fact-text.fact-text-top On average, in each vineyard,
+        .fact-value 27.4
+        p.fact-text.fact-text-bottom copper treatments have been applied in 2016 in the Champaign region of France.
+
+
+    section.section10.fadein
+      .subtext Our solution
+
+      h2._active
+        strong C
+        span.c
+          span.c1: strong u
+          span.c2 opper&nbsp;
+        .words
+          .words-list
+            div <strong>Re</strong><span class="d">cuperation</span>
+            div <strong>Re</strong>trieval
+            div <strong>Re</strong>cycling
+            div <strong>Re</strong>newal
+            div <strong>Re</strong>generation
+            div <strong>Re</strong>cuperation
+
+
+      p Maecenas velit sem, mollis vel ligula sed, condimentum pretium mi. Nullam odio turpis, consectetur sed aliquam vitae, vulputate vitae lectus.
+      p Integer pretium augue vitae tellus posuere rhoncus. In nec metus cursus, hendrerit massa lobortis, finibus risus. Nunc in orci pulvinar, scelerisque justo at, aliquet sem. Nam imperdiet sagittis erat, non interdum magna dignissim at.
+
+
+    section.section6.fadein
+      figure.fadein-target
+        img(src="assets/proteins/1AOO.png")
+        figcaption 3D structure of CUP1 obtained with NMR.<a href="#" class="ref">9</a>
+
+      .section6-contents.fadein-target(data-delay="1")
+        h2 Meet <strong>CUP1</strong>
+        p CUP1 is a copper methallothionein, that is, a small protein with a high affinity for copper ions. CUP1 is naturally present in <i>Saccharomyces cerevisiae</i>, where it is responsible for various cellular processes and molecular functions.
+        p Thanks to its numerous cysteine residues, a single copy of CUP1 can bind up to <strong>7&nbsp;copper ions</strong>, making it a first choice protein for biology-based copper removal.
+        a(href="#") More on the design
+
+
+    section.section7
+      h2 Using and improving CUP1
+
+      .section7-contents
+        div.section7-item
+          h3 Moving CUP1 to the surface
+          p In order to harness the copper binding ability of CUP1 for bioadsorption, we have fused CUP1 to the surface Aga2 protein.
+
+        div.section7-item
+          h3 Dimerizing CUP1
+          p To improve copper adsorption furthermore, we have successfully modified our protein to feature two copies of CUP1 in its sequence, theoretically doubling its binding capability.
+          p We have designed, expressed and tested seven different dimers, each with a varying linker sequence in between the two CUP1 sequences.
+
+
+    section.section8
+      img(src="assets/proteins/ict.png")
+
+      .section8-contents
+        h2 Explore our <strong>experiments</strong>
+
+        p  Donec egestas lacus convallis eros feugiat consequat. Vestibulum porta augue vel dui vestibulum pellentesque.
+        //- p Ut ut mollis justo, eget tempor sem. Mauris mauris ante, vestibulum quis auctor in, molestie ut sem. Suspendisse placerat vel nibh nec sollicitudin. Proin scelerisque, velit eu malesuada gravida, magna felis aliquam diam, vitae aliquet libero est vitae nunc.
+        p Suspendisse vitae elit consequat, rhoncus purus eu, pulvinar justo. Sed ac feugiat purus, ac tempor elit. Curabitur bibendum tortor ut tortor aliquam, a ornare nunc volutpat.
+
+        .section8-links
+          a(href="#") Lab Book
+          a(href="#") Protocols
+          a(href="#") Results
+          a(href="#") Demonstration
+
+        figcaption Immunostaining of yeast cells expressing our protein. The presence of the protein is reported by the <strong>GFP protein</strong>.
+
+
+    // + Implementation
+    // + HPs
+
+
+    section.section9
+      img(src="assets/background/lab2.jpg")
+
 
     section.section2(data-image="0")
       .backgrounds
-        img(src="assets/background/vineyard.jpg")
+        img(src="assets/background/vineyard.webp")
         img(src="assets/background/lab.jpg")
         img(src="assets/background/lab2.jpg")
         img(src="assets/background/lab3.jpg")
@@ -52,6 +183,8 @@ block contents
       h2 Sponsors
 
       .sponsors-list
-        img(src="assets/sponsors/idt.png" loading="lazy")
-        img(src="assets/sponsors/genscript.png" loading="lazy")
-        img(src="assets/sponsors/microsynth.png" loading="lazy")
+        a(href="https://biomede.fr" target="_blank"): img(src="assets/sponsors/biomede.webp" loading="lazy")
+        a(href="https://www.genscript.com" target="_blank"): img(src="assets/sponsors/genscript.webp" loading="lazy")
+        a(href="https://www.microsynth.com" target="_blank"): img(src="assets/sponsors/microsynth.webp" loading="lazy")
+        a(href="https://promega.com" target="_blank"): img(src="assets/sponsors/promega.webp" loading="lazy")
+        a(href="https://www.snapgene.com" target="_blank"): img(src="assets/sponsors/snapgene.webp" loading="lazy")

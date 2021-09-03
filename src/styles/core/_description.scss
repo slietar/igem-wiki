@@ -154,6 +154,21 @@
       }
     }
   }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+    margin: 1.6rem 0 1.6rem 1.6rem;
+
+    > li {
+      display: list-item;
+      padding-left: 0.4rem;
+
+      list-style-type: disc;
+    }
+  }
 }
 
 
@@ -180,9 +195,8 @@
 .ref {
   & {
     color: $accent-color;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     font-weight: 500;
-    vertical-align: super;
 
     // &::before { content: "["; }
     // &::after { content: "]"; }
@@ -191,6 +205,15 @@
       text-decoration: underline;
     }
   }
+
+  &-group, :not(&-group) > & {
+    margin-left: 0.2em;
+    // vertical-align: top;
+
+    position: relative;
+    top: -0.4em;
+  }
+
 
   &-list {
     row-gap: 1.4rem !important;

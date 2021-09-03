@@ -23,6 +23,7 @@ $overlay-dur: $preview-dur * 0.5;
 
 .header-brand {
   display: flex;
+  height: 2.4rem;
 
   color: $accent-color;
   color: $accent-color-p3;
@@ -30,14 +31,24 @@ $overlay-dur: $preview-dur * 0.5;
   user-select: none;
 
   svg {
-    margin: auto 0;
+    width: auto;
+  }
 
-    height: 1.6rem;
+  svg:first-child {
     fill: currentColor;
+    padding: 0.4rem 0;
+  }
+
+  svg:nth-child(2) {
+    margin-left: 2rem;
+    padding: 0.6rem 0;
+    padding-left: 2rem;
+
+    border-left: 2px solid #ccc9;
   }
 
   path {
-    fill: currentColor;
+    // fill: currentColor;
     stroke: currentColor;
     stroke-width: 0;
 
@@ -52,6 +63,10 @@ $overlay-dur: $preview-dur * 0.5;
 
   &:hover path {
     animation: dash ($dur1 + $dur2) linear forwards;
+  }
+
+  svg:nth-child(2) {
+    display: none;
   }
 
   @keyframes dash {
@@ -85,6 +100,11 @@ $overlay-dur: $preview-dur * 0.5;
 
         margin-left: 1ch;
         transition: transform 300ms;
+      }
+
+      &._disabled {
+        opacity: 0.4;
+        pointer-events: none;
       }
     }
 
@@ -286,6 +306,11 @@ $overlay-dur: $preview-dur * 0.5;
     &:not(:hover) {
       opacity: 0.8;
     }
+
+    &._disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
   }
 
   &-icon {
@@ -364,6 +389,7 @@ $overlay-dur: $preview-dur * 0.5;
 
   background-color: #0003;
   overflow-y: hidden;
+  z-index: 1;
 
   transition: opacity $overlay-dur;
 }

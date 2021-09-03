@@ -1,4 +1,4 @@
-for (let el of document.querySelectorAll('.animated')) {
+for (let el of document.querySelectorAll('.fadein')) {
   let value = false;
 
   let observer = new IntersectionObserver((entries) => {
