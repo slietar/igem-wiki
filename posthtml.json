@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "../posthtml-bibliography/index.js": {}
+  },
+  "options": {
+    "xmlMode": true
+  }
+}

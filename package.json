@@ -5,16 +5,17 @@
     "build": "./scripts/build.sh",
     "build:watch": "./scripts/build-watch.sh"
   },
-  "devDependencies": {
-    "cpx": "^1.5.0",
-    "parcel-bundler": "^1.12.5",
-    "pug-cli": "*",
-    "sass": "^1.34.1"
-  },
   "dependencies": {
     "@fontsource/inter": "^4.5.0",
     "@fontsource/merriweather": "^4.5.1",
     "@fontsource/secular-one": "^4.5.0",
     "mq-func": "^0.1.1"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "parcel-bundler": "^1.12.5",
+    "posthtml-cli": "^0.10.0",
+    "pug-cli": "*",
+    "sass": "^1.34.1"
   }
 }
