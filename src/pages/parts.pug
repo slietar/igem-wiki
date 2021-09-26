@@ -1,0 +1,68 @@
+extends templates/description.pug
+
+block hero
+  h1 Parts
+
+block description
+  h2 Parts
+
+  table.table
+    thead
+      tr
+        th Name
+        th Type
+        th Description
+        th Assembly compatibility
+
+    tbody
+      -
+        let dimers = [
+          { linker: '(GGGGS)<sub>3</sub>',
+            compIIS: true, compRFC: true },
+          { linker: '(GGGGS)<sub>4</sub>',
+            compIIS: false, compRFC: false },
+          { linker: '(AP)<sub>7</sub>',
+            compIIS: false, compRFC: false },
+          { linker: '(EAAAK)<sub>3</sub>',
+            compIIS: false, compRFC: true },
+          { linker: '(EAAAK)<sub>4</sub>',
+            compIIS: true, compRFC: false },
+          { linker: 'GGGGSEAAAKGGGGS',
+            compIIS: true, compRFC: true },
+          { linker: 'GGGGS(EAAAK)<sub>2</sub>GGGGS',
+            compIIS: false, compRFC: true },
+        ];
+
+        let parts = [
+          { id: 'BBa_K4035001',
+            desc: 'Copper metallothionein 1 fused to Aga2 and equipped with a V5 tag',
+            compIIS: true, compRFC: false,
+            composite: false },
+          ...dimers.map((dimer, index) => ({
+            id: `BBa_K403500${index + 2}`,
+            desc: `Dimerized copper metallothionein 1: <code>CUP1–${dimer.linker}–CUP1</code>`,
+            compIIS: dimer.compIIS, compRFC: dimer.compRFC,
+            composite: false
+          })),
+          { id: 'BBa_K4035000',
+            desc: 'Expression of CUP1 at the surface of EBY100',
+            compIIS: true, compRFC: true,
+            composite: true },
+          ...dimers.map((dimer, index) => ({
+            id: `BBa_K403501${index}`,
+            desc: `Expression of the <code>CUP1–${dimer.linker}–CUP1</code> dimer at the outer membrane of S. cerevisae`,
+            compIIS: dimer.compIIS, compRFC: dimer.compRFC,
+            composite: true
+          }))
+        ]
+      each part, index in parts
+        tr
+          td: a(href="http://parts.igem.org/BBa_K4035008" target="_blank")= part.id
+          td= (part.composite ? 'Composite' : 'Coding')
+          td!= part.desc
+          -
+            let comp = [].concat(
+              part.compIIS ? ['<a href="http://parts.igem.org/Help:Standards/Assembly/Type_IIS" target="_blank">Type&nbsp;IIS</a>'] : [],
+              part.compRFC ? ['<a href="http://parts.igem.org/Help:Standards/Assembly/RFC10" target="_blank">RFC[10]</a>'] : []
+            )
+          td!= comp.length > 0 ? `Compatible with ${comp.join(' and ')}` : 'No compatibility'
