@@ -1,6 +1,6 @@
 {
   "plugins": {
-    "../posthtml-bibliography/index.js": {}
+    "posthtml-bibliography/index.js": {}
   },
   "options": {
     "xmlMode": true

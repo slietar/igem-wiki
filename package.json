@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "build": "./scripts/build.sh",
-    "build:watch": "./scripts/build-watch.sh"
+    "build:watch": "./scripts/build-watch.sh",
+    "postinstall": "cd posthtml-bibliography && npm install"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.0",

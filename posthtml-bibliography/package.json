@@ -1,0 +1,7 @@
+{
+  "name": "posthtml-bibliography",
+  "version": "0.0.0",
+  "dependencies": {
+    "citation-js": "^0.5.1"
+  }
+}
