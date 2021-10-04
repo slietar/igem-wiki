@@ -6,6 +6,8 @@ $preview-dur: 300ms;
 $overlay-dur: $preview-dur * 0.5;
 
 
+//- General
+
 .header {
   display: flex;
   align-items: center;
@@ -21,34 +23,63 @@ $overlay-dur: $preview-dur * 0.5;
   z-index: 2;
 }
 
+
+//- Brand
+
+$logo-spacing: 2rem; // Space on each side of the border
+$logo-border: 2px;
+
 .header-brand {
   display: flex;
   height: 2.4rem;
 
   color: $accent-color;
-  color: $accent-color-p3;
 
   user-select: none;
 
+  a:focus-visible {
+    outline: $highlight-outline;
+    outline-offset: 0.2rem;
+  }
+
+  a:first-child {
+    width: 94px;
+
+    margin-right: $logo-spacing;
+    padding: 0.4rem 0;
+
+    fill: currentColor;
+  }
+
+  a:nth-child(2) {
+    width: 66px;
+
+    margin-left: $logo-spacing;
+    padding: 0.6rem 0;
+
+    position: relative;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      left: calc(#{-$logo-spacing} - #{$logo-border * 0.5});
+      top: 0;
+
+      width: $logo-border;
+      height: 100%;
+
+      background-color: #ccc9;
+      pointer-events: none;
+    }
+  }
+
   svg {
     width: auto;
-  }
-
-  svg:first-child {
-    fill: currentColor;
-    padding: 0.4rem 0;
-  }
-
-  svg:nth-child(2) {
-    margin-left: 2rem;
-    padding: 0.6rem 0;
-    padding-left: 2rem;
-
-    border-left: 2px solid #ccc9;
+    height: 100%;
   }
 
   path {
-    // fill: currentColor;
     stroke: currentColor;
     stroke-width: 0;
 
@@ -57,15 +88,25 @@ $overlay-dur: $preview-dur * 0.5;
   }
 }
 
+// On the homepage
+&:not(._navactive) .header--white .header-brand {
+  svg {
+    filter: drop-shadow(1px 1px #0003); // To be improved.
+  }
+}
+
+// On pages other than the homepage
 .header:not(.header--white) .header-brand {
   $dur1: 600ms;
   $dur2: 300ms;
 
-  &:hover path {
+  // Stroke/fill animation on hover
+  a:first-child:hover path {
     animation: dash ($dur1 + $dur2) linear forwards;
   }
 
-  svg:nth-child(2) {
+  // Hide the second logo
+  a:nth-child(2) {
     display: none;
   }
 
@@ -85,6 +126,8 @@ $overlay-dur: $preview-dur * 0.5;
 }
 
 
+//- Primary list
+
 .header-nav-ul {
   display: flex;
 
@@ -95,8 +138,10 @@ $overlay-dur: $preview-dur * 0.5;
       &:not(:only-child)::after {
         display: inline-block;
         content: "›";
-        // content: "❯";
         transform: rotate(90deg);
+        transform-origin: 50% 56%; // Adapts the rotation center for the arrow glyph
+
+        // background-color: #f006; tmp
 
         margin-left: 1ch;
         transition: transform 300ms;
@@ -114,13 +159,13 @@ $overlay-dur: $preview-dur * 0.5;
   }
 }
 
-.header-menu {
+/* .header-menu {
   width: 24px;
 
   &:not(:active):not(:hover) {
     opacity: 0.7;
   }
-}
+} */
 
 
 @include media-breakpoint-up(md) {
@@ -133,16 +178,18 @@ $overlay-dur: $preview-dur * 0.5;
 
       > a {
         padding: 0.6rem 1rem;
-        transition: background-color 150ms;
-      }
-
-      &._active {
-        z-index: 2;
-      }
-
-      &._active > a, > a:hover {
-        background-color: var(--item-background-color, #f6f6f6);
         border-radius: 4px;
+
+        transition: background-color 150ms;
+
+        &:focus-visible {
+          box-shadow: $highlight-shadow;
+        }
+      }
+
+      &._active > a, > a:hover, > a:focus-visible {
+        // --item-background is changed on the homepage.
+        background-color: var(--item-background, #f6f6f6);
       }
     }
   }
@@ -188,14 +235,9 @@ $overlay-dur: $preview-dur * 0.5;
     }
   }
 
-  .header:not(._open) {
-  }
-
   .header:not(._open) .header-nav {
     height: 0;
     opacity: 0.4;
-    // padding-top: 0;
-    // padding-bottom: 0;
 
     > li {
       transform: translateY(-0.0rem);
@@ -204,25 +246,9 @@ $overlay-dur: $preview-dur * 0.5;
 }
 
 
-// ---
+//- Preview
 
 .header-preview {
-  /* & {
-    width: 100%;
-    max-height: var(--height);
-    overflow-y: hidden;
-
-    position: absolute;
-    left: 0;
-    top: 100%;
-
-    padding: 0 var(--side-margin);
-    background-color: #fff;
-    box-shadow: 0 6px 6px -6px #0002;
-
-    transition: box-shadow $preview-dur, max-height $preview-dur;
-  } */
-
   ul {
     display: grid;
     align-items: center;
@@ -258,18 +284,21 @@ $overlay-dur: $preview-dur * 0.5;
       grid-template-columns: 1fr 1fr;
       border-top: 1px solid #ddd;
     }
+  }
 
-    @at-root .header-nav li:not(._active) .header-preview {
-      max-height: 0;
-      box-shadow: none;
+  .header-nav li:not(._active) .header-preview {
+    max-height: 0;
+    box-shadow: none;
 
-      ul {
-        opacity: 0;
-      }
+    visibility: hidden;
+    transition: box-shadow $preview-dur, max-height $preview-dur, visibility 0s $preview-dur;
 
-      li {
-        transform: translateY(-1rem);
-      }
+    ul {
+      opacity: 0;
+    }
+
+    li {
+      transform: translateY(-1rem);
     }
   }
 }
@@ -283,6 +312,8 @@ $overlay-dur: $preview-dur * 0.5;
 }
 
 
+//- Preview item
+
 .header-item {
   & {
     display: grid;
@@ -295,7 +326,7 @@ $overlay-dur: $preview-dur * 0.5;
 
     transition: background-color 150ms, opacity 150ms;
 
-    &:hover {
+    &:hover, &:focus-visible {
       background-color: #fafafa;
 
       .header-item-title {
@@ -304,7 +335,11 @@ $overlay-dur: $preview-dur * 0.5;
     }
 
     &:not(:hover) {
-      opacity: 0.8;
+      // opacity: 0.8;
+    }
+
+    &:focus-visible {
+      box-shadow: $highlight-shadow;
     }
 
     &._disabled {
@@ -335,7 +370,7 @@ $overlay-dur: $preview-dur * 0.5;
     }
   }
 
-  &:not(:hover) .header-item-title::after {
+  &:not(:focus-visible):not(:hover) .header-item-title::after {
     opacity: 0;
     transform: translateX(-0.6ch);
   }
@@ -366,7 +401,8 @@ $overlay-dur: $preview-dur * 0.5;
 
 &:not(._navactive) .header--white {
   background-color: transparent;
-  --item-background-color: #fff1;
+  --item-background: #fff2;
+  // --item-background-focus: #fff3;
 
   color: #fff;
 
@@ -379,15 +415,17 @@ $overlay-dur: $preview-dur * 0.5;
 }
 
 
+//- Overlay
+
 .overlay {
   width: 100%;
-  height: 100%;
+  height: 200%; // 100% margin for when the user starts scrolling down.
 
   position: absolute;
   left: 0;
   top: 0;
 
-  background-color: #0003;
+  background-color: #0006;
   overflow-y: hidden;
   z-index: 1;
 
@@ -401,6 +439,6 @@ $overlay-dur: $preview-dur * 0.5;
   transition: opacity $overlay-dur, visibility 0s $overlay-dur;
 }
 
-&._navactive, &._navopen {
-  overflow-y: hidden;
-}
+// &._navactive, &._navopen {
+  // overflow-y: hidden;
+// }
