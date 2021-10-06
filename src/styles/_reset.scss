@@ -164,17 +164,17 @@
 }
 
 #content {
-  width: unset;
+  width: revert;
 
-  margin: unset;
-  padding: unset;
+  margin: revert;
+  padding: revert;
 
-  line-height: unset;
+  line-height: revert;
 }
 
 #globalWrapper {
-  padding-bottom: unset;
-  font-size: unset;
+  padding-bottom: revert;
+  font-size: revert;
 }
 
 #top_menu_under {
@@ -182,24 +182,24 @@
 }
 
 #bodyContent a:hover {
-  text-decoration: unset;
+  text-decoration: revert;
 }
 
 #bodyContent a:visited {
-  color: unset;
+  color: revert;
 }
 
 #bodyContent a[href^="https://"] {
-  background: unset;
-  padding-right: unset;
+  background: revert;
+  padding-right: revert;
 }
 
 #bodyContent h1, #bodyContent h2 {
-  margin-bottom: unset;
+  margin-bottom: revert;
 }
 
 #bodyContent p {
-  line-height: unset;
+  line-height: revert;
 }
 
 #mw-content-text > p {
@@ -211,19 +211,22 @@
 }
 
 #HQ_page p {
-  font-family: inherit;
-  font-size: inherit;
+  font-family: revert;
+  font-size: revert;
 }
 
 #HQ_page h1, h2, h3, h4, h5 {
-  font-family: inherit;
+  border-bottom: revert;
+
+  font-family: revert;
+  font-weight: revert;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  padding: unset;
-  overflow: unset;
+  padding: revert;
+  overflow: revert;
 }
 
 #top_menu_14 {
-  position: unset;
+  position: revert;
 }

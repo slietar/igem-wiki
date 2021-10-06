@@ -1,31 +1,31 @@
-@use "../../node_modules/@fontsource/inter/scss/mixins" as Inter;
-@use "../../node_modules/@fontsource/merriweather/scss/mixins" as Merriweather;
-@use "../../node_modules/@fontsource/secular-one/scss/mixins" as SecularOne;
-
 @use "./reset";
-@use "./footer";
-@use "./core/description";
-@use "./core/lab";
-@use "./core/words";
 
-@use "./layout-index";
 
-@include Inter.fontFaceCustom(
-  $display: fallback,
-  $woff2Path: "assets/fonts/inter-latin-variable-wghtOnly-normal.woff2",
-);
+@each $weight in (400, 500, 600, 700) {
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-display: fallback;
+    font-weight: $weight;
+    src: url("assets/fonts/inter-latin-#{$weight}-normal.woff") format("woff");
+  }
+}
 
-@include Merriweather.fontFaceCustom(
-  $display: fallback,
-  $weight: 700,
-  $woff2Path: "assets/fonts/merriweather-latin-700-normal.woff2",
-);
+@font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-display: fallback;
+  font-weight: 700;
+  src: url("assets/fonts/merriweather-latin-700-normal.woff") format("woff");
+}
 
-@include SecularOne.fontFaceCustom(
-  $display: fallback,
-  $weight: 800,
-  $woff2Path: "assets/fonts/secular-one-latin-400-normal.woff2",
-);
+@font-face {
+  font-family: "Secular One";
+  font-style: normal;
+  font-display: fallback;
+  font-weight: 800;
+  src: url("assets/fonts/secular-one-latin-400-normal.woff") format("woff");
+}
 
 
 
@@ -37,5 +37,6 @@ body:not(.mediawiki), #mw-content-text {
   @import "./main.scss";
 }
 
-
-@import "./layout-calendar.scss";
+a, button {
+  touch-action: manipulation;
+}

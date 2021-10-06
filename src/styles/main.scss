@@ -1,3 +1,12 @@
+@use "./footer";
+@use "./core/description";
+@use "./core/lab";
+@use "./core/words";
+
+@use "./layout-index";
+@use "./pages/medals";
+
+
 @import "./breakpoints.scss";
 @import "./constants.scss";
 @import "./view";
@@ -6,10 +15,23 @@
 & {
   @include view-2();
 
-  font-family: $font-text;
+  &.fonts-loaded {
+    font-family: $font-text;
+    line-height: 1.2;
+  }
+
+  &:not(.fonts-loaded) {
+    font-family: Helvetica;
+    line-height: 1.45;
+    letter-spacing: 0.0325em;
+
+    letter-spacing: 0.0325em;
+    word-spacing: -0.0275em;
+  }
 }
 
 
 @import "./header.scss";
 @import "./layout-snake.scss";
 @import "./layout-team.scss";
+@import "./layout-calendar.scss";

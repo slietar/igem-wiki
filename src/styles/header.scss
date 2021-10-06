@@ -126,6 +126,31 @@ $logo-border: 2px;
 }
 
 
+//- Menu button on mobile
+
+.header-menu {
+  $padding: 0.4rem;
+
+  width: calc(24px + #{$padding} * 2);
+
+  padding: $padding;
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+
+  color: #999;
+
+  &:not(:active) {
+    transition: background-color 300ms 50ms, border-color 600ms 50ms;
+  }
+
+  &:active {
+    background-color: #eee;
+    border-color: #ccc;
+  }
+}
+
+
 //- Primary list
 
 .header-nav-ul {
@@ -158,14 +183,6 @@ $logo-border: 2px;
     }
   }
 }
-
-/* .header-menu {
-  width: 24px;
-
-  &:not(:active):not(:hover) {
-    opacity: 0.7;
-  }
-} */
 
 
 @include media-breakpoint-up(md) {

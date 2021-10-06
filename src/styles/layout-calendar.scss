@@ -63,7 +63,7 @@
 
 
 .cal2 {
-  $month-count: 7;
+  $month-count: 5;
   $month-span: 4;
 
   &-container {
@@ -73,7 +73,7 @@
   &-root {
     display: grid;
     gap: 0.8rem 0.4rem;
-    grid-template-columns: 200px repeat($month-count * $month-span, 40px);
+    grid-template-columns: 200px repeat($month-count * $month-span, 60px);
 
     margin: 2rem 0;
   }
