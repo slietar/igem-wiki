@@ -39,3 +39,10 @@ html
             div @EPFL_iGEM
 
     .overlay
+
+    script.
+      let root = document.querySelector('#mw-context-text') || document.body;
+
+      Promise.all([
+        document.fonts.load('1em Inter'),
+      ]).then(() => void root.classList.add('fonts-loaded'));

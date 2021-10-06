@@ -13,8 +13,8 @@ block description
 
     p <strong>Aim</strong> Amplify our endogenous CUP1 yeast using PCR
     p <strong>Protocol</strong> <a href="https://www.thermofisher.com/order/catalog/product/12358010">Invitrogen Platinum SuperFi PCR Master Mix</a>
-    p We have 3 genomic variants that we name Y1, Y2 and Y3. They begin at differing DNA concentrations but we PCR the same amount (20ng) each time.
-    p We prepare two sets of tubes, one destined to the gel electrophoresis and one to be cleaned up  as we do not have a UV “table” in our lab.
+    p We have 3 genomic variants Y1, Y2 and Y3. They begin at differing DNA concentrations but we PCR the same amount (20&nbsp;ng) each time.
+    p We prepare two sets of tubes, one intended for gel electrophoresis and one to be cleaned up  as we do not have a UV “table” in our lab.
 
     p We ran a gel electrophoresis to check that the size of our PCRed CUP1 DNA is as expected.
 
@@ -22,8 +22,8 @@ block description
       img(src="assets/pictures/1.png")
       figcaption
         span Figure 1
-        span Labeled result of PCR’s samples agarose  gel.
-        span On the right is the low range ladder, the three lanes correspond to the three genomic variant amplified. All our amplified CUP1s have a size of around 200bp which matches the theoretical size of  CUP1 : 183 bp. (uniprot)
+        span Labeled agarose gel of PCR samples.
+        span On the right is the low range ladder, the three lanes correspond to the three genomic variant amplified. All our amplified CUP1s have a size of around 200&nbsp;bp which matches the theoretical size of CUP1: 183&nbsp;bp.<ref title="Copper metallothionein 1-1 (P0CX80)" authors="UniProt" url="https://www.uniprot.org/uniprot/P0CX80" />
 
     p <strong>Conclusion</strong> We successfully amplified CUP1 yeast using PCR. We can move on and do a PCR clean up on our samples to purify the DNA.
 
@@ -32,41 +32,43 @@ block description
       h3 PCR Clean Up
       .date 2021-07-06
 
-    p <strong>Aim</strong> We aim to purify DNA fragments directly from PCR. PCR products are commonly purified to remove excess nucleotides and primers.
-    p <strong>Protocol</strong> Wizard SV Gel and PCR Clean-up System; DNA Purification by Centrifugation
-    p <strong>Conclusion</strong> We assume that the clean up went right, we keep  our samples on the side for the following Gibson Assembly with our to be digested backbone.
+    p <strong>Aim</strong> Purify DNA fragments directly from PCR. PCR products are commonly purified to remove excess nucleotides and primers.
+    p <strong>Protocol</strong> <a href="https://ch.promega.com/products/nucleic-acid-extraction/clean-up-and-concentration/wizard-sv-gel-and-pcr-clean-up-start-up-kit/?catNum=A6754" target="_blank">Wizard SV Gel and PCR Clean-up System; DNA Purification by Centrifugation (Promega)</a>
+    p <strong>Conclusion</strong> We assume that the clean up was correct, we keep our samples on the side for the following Gibson Assembly with our to be digested backbone.
 
   article.lab-exp
     header
       h3 Plasmid Digestion
       .date 2021-07-07
 
-    p <strong>Aim</strong> We digest our plasmid with BamHI and NheI, linearizing our plasmid, and thus creating a gap where our CUP1 will go during Gibson assembly.
-    p <strong>Protocol</strong> NEB Cloner Double Digestion
-    p <strong>Results</strong> To verify our digestion worked properly, we ran a gel electrophoresis of our plasmid digested with different combinations of our restriction enzymes: BamHI alone, NheI alone, BamHI and NheI and none.
+    p <strong>Aim</strong> Digest our plasmid with BamHI and NheI, linearizing our plasmid, and thus creating a gap where our CUP1 will be inserted during Gibson Assembly.
+    p <strong>Protocol</strong> <a href="https://www.nebiolabs.com.au/protocols/2021/03/24/double-digest-protocol-with-standard-restriction-enzymes" target="_blank">Cloner Double Digestion (NEB)</a>
+    p <strong>Results</strong> To verify that the digestion worked properly, we ran a gel electrophoresis of our plasmid digested with different combinations of the restriction enzymes: none, BamHI alone, NheI alone, and both BamHI &amp; NheI.
 
     figure
       img(src="assets/pictures/2.png")
       figcaption
         span.lab-fig-caption Figure 2
-        span.lab-fig-title Labeled result of digested backbone’s agarose gel obtained.
-        span.lab-fig-desc Lane&nbsp;1: GeneRuler 1kb DNA Ladder. Lane 2: Plasmid digested with BamHI HF. We obtain a band around 6000 bp. Lane 3: Plasmid digested with NheI HF. We obtain a band around 6000 bp. Lane 4: Plasmid digested with both BamHI HF and NheI HF. We obtain a band around 6000 bp. Lane 5: Undigested plasmid. We obtain a band higher than 6000 bp.
+        span.lab-fig-title Labeled agarose gel of the digested backbone.
+        span.lab-fig-desc Lane&nbsp;1: GeneRuler 1kb DNA Ladder. Lane&nbsp;2: Plasmid digested with BamHI HF. We obtain a band around 6000&nbsp;bp. Lane 3: Plasmid digested with NheI HF. We obtain a band around 6000&nbsp;bp. Lane&nbsp;4: Plasmid digested with both BamHI HF and NheI HF. We obtain a band around 6000&nbsp;bp. Lane&nbsp;5: Undigested plasmid. We obtain a band higher than 6000&nbsp;bp.
 
-    p Size of the plasmid: 6468 bp
-    p We should observe bands of this size when cutting the plasmid with either BamHI or NheI.
-    p Linear DNA encounters less friction while running through the gel than circular DNA, that which our plasmid is. Thus, on our gel, we expect to see the plasmid cut with either BamHI or NheI run faster than the undigested plasmid, as the plasmid would have been linearized.
-    p Size of insert between BamHI and NheI: 189 bp
-    p Size of the plasmid without the insert: 6279bp
-    p In our lane where our plasmid was cut with both restriction enzymes, we thus expect a band near 6000 bp. Since the size difference is so small with the plasmid that was cut with only one restriction enzyme, we do not expect a difference on the gel. Furthermore, this agarose gel will not show bands the size of 189 bp. We do not expect to see a fragment of this size on the gel.
-    p <strong>Conclusion</strong> Our digestion worked properly.
+    p We should observe bands of this size when cutting the plasmid with either BamHI or NheI. Linear DNA encounters less friction while running through the gel than circular DNA, that which our plasmid is. Thus, on our gel, we expect to see the plasmid cut with either BamHI or NheI run faster than the undigested plasmid, as the plasmid would have been linearized.
+
+    ul
+      li Size of the plasmid: 6468&nbsp;bp
+      li Size of insert between BamHI and NheI: 189&nbsp;bp
+      li Size of the plasmid without the insert: 6279&nbsp;bp
+
+    p We therefore expect a band near 6000&nbsp;bp in the lane where our plasmid was cut with both restriction enzymes. Since the size difference is so small with the plasmid that was cut with only one restriction enzyme, we do not expect a difference on the gel. Furthermore, this agarose gel will not contain bands with a size of 189&nbsp;bp.
+    p <strong>Conclusion</strong> The digestion worked properly.
 
   article.lab-exp
     header
       h3 Gibson Assembly
       .date 2021-07-08
 
-    p <strong>Aim</strong> Gibson Assembly will allow to anneal our CUP1 gene to the now linearized vector backbone. The recomposed gene-containing plasmid will be ready to be transformed into bacteria.
-    p <strong>Protocol</strong> Gibson Assembly Protocol (E5510)
+    p <strong>Aim</strong> Anneal the CUP1 gene to the now-linearized vector backbone. The recomposed gene-containing plasmid will be ready to be transformed into bacteria.
+    p <strong>Protocol</strong> <a href="https://international.neb.com/protocols/2012/12/11/gibson-assembly-protocol-e5510" target="_blank">Gibson Assembly Protocol (E5510) (NEB)</a>
     p <strong>Conclusion</strong> We move on to transform our bacteria with our new plasmid (CUP1 + vector).
 
   article.lab-exp
@@ -77,38 +79,38 @@ block description
         | &nbsp;→&#32;
         span.date 2021-07-09
 
-    p <strong>Aim</strong> We wish to transform our bacteria with our new plasmid. Once the transformation is done, we can plate them on our Ampicillin plates. These plates allow for positive selection of bacteria which will have taken up our plasmid as they have an encoded ampicillin resistance.
+    p <strong>Aim</strong> Transform bacteria with the new plasmid. Once the transformation is done, we can plate them on Ampicillin plates; these plates allow for positive selection of bacteria which will have taken up our plasmid as they have an encoded ampicillin resistance.
     p <strong>Protocol</strong> <a href="https://international.neb.com/protocols/0001/01/01/5-minute-transformation-protocol-c2987">5 Minute Transformation Protocol (C2987H/C2987I) (NEB)</a>
-    p Plates were put in the inoculator at 30 deg.
-    p <strong>Results</strong> The next morning, we observed at the microscope some colonies on our plates.
+    p Plates were put in the inoculator at 30°C.
+    p <strong>Results</strong> We observed some colonies on our plates under the microscope the next morning.
 
     figure
       img(src="assets/pictures/3.png")
       figcaption
         span Figure 3
         span Ampicillin plates containing transformed bacteria, on night after said transformation.
-        span First three plates have been plated with our 3 genomic variants Y1, Y2 and Y3 respectively. The last  plate (bottom of image) is the control plate containing wildtype bacteria (not transformed)
+        span Three plates have been plated with the 3 genomic variants Y1, Y2 and Y3 respectively (first three from the left). The last plate (right) is the control plate containing wildtype, untransformed bacteria.
 
-    p These are colonies that contain the AmpR gene, that gives resistance to the bacteria against Ampicillin.
-    p <strong>Conclusion</strong> Our bacterias have at least successfully taken up the backbone with the ampicillin resistance. Moreover, as we have asserted that the digestion was successful and as we know that bacteria can only function properly with circular DNA we can conclude that our Gibson Assembly was successful. The new engineered plasmid was taken up by our bacterias.
+    p The visible colonies contain the AmpR gene which provides them with resistance to bacteria against ampicillin.
+    p <strong>Conclusion</strong> The bacteria have at least successfully taken up the backbone with the ampicillin resistance. Moreover, as we have asserted that the digestion was successful and as we know that bacteria can only function properly with circular DNA, we can conclude that the Gibson Assembly was successful. Therefore, the new engineered plasmid was taken up by the bacteria.
 
   article.lab-exp
     header
       h3 Colony Picking and Culture Inoculation
       .date 2021-07-09
 
-    p <strong>Aim</strong> Pick 3 colonies from the plates that have survived Ampicillin treatment, grow in liquid media.
-    p <strong>Protocol</strong> Under the flame, with a sterile pipette, scoop up a colony and release the pipette tip into a 5ml tube. Add liquid media and place in the shaker at 30 deg.
-    p <strong>Conclusion</strong> We have bacterial clones to pick that contain our plasmid. We picked them and let them grow in liquid media. We let them grow and move on to the next step : Miniprep.
+    p <strong>Aim</strong> Pick 3 colonies from the plates that have survived ampicillin treatment and grow them in liquid media.
+    p <strong>Protocol</strong> Under the flame, with a sterile pipette, scoop up a colony and release the pipette tip into a 5&nbsp;ml tube. Add liquid media and place in the shaker at 30°C.
+    p <strong>Conclusion</strong> We have bacterial clones to pick that contain our plasmid. We picked them, let them grow in liquid media, and then move on to the next step: Miniprep.
 
   article.lab-exp
     header
       h3 Miniprep
       .date 2021-07-12
 
-    p <strong>Aim</strong> We aim to purify plasmid DNA from our overnight culture of bacteria transformed with a high number copy of our plasmid.
-    p <strong>Protocol</strong> <a href="https://ch.promega.com/products/nucleic-acid-extraction/plasmid-purification/pureyield-plasmid-miniprep-system/">PureYield Plasmid Miniprep System (Promega)</a>
-    p <strong>Conlusion</strong> Once the Miniprep performed, we measured our DNA concentration as well as purity using Nanodrop.
+    p <strong>Aim</strong> Purify plasmid DNA from our overnight culture of bacteria transformed with a high number copy of our plasmid.
+    p <strong>Protocol</strong> <a href="https://ch.promega.com/products/nucleic-acid-extraction/plasmid-purification/pureyield-plasmid-miniprep-system/" target="_blank">PureYield Plasmid Miniprep System (Promega)</a>
+    p <strong>Conlusion</strong> Once the Miniprep was performed, we measured our DNA concentration as well as purity using a Nanodrop.
 
     table
       caption
@@ -134,15 +136,15 @@ block description
           td 330.0&nbsp;ng/µl
           td 1.98
 
-    p <strong>Conclusion</strong> These samples have a high concentration of DNA and appear to be of good quality (1.8 < A260/A280 < 2).
+    p <strong>Conclusion</strong> These samples have a high concentration of DNA and appear to be of good quality (1.8 &lt; A260/A280 &lt; 2).
 
   article.lab-exp
     header
       h3 Sequencing
       .date 2021-07-13
 
-    p <strong>Aim</strong> Compare our now amplified plasmid with the theoretical sequence to observe potential mutations that may have occurred during amplification in bacteria.
-    p <strong>Protocol</strong> Send samples to Mycrosynth.
+    p <strong>Aim</strong> Compare the now-amplified plasmid with the theoretical sequence to observe potential mutations that may have occurred during amplification in bacteria.
+    p <strong>Protocol</strong> Dilute samples and send them to Mycrosynth.
     p <strong>Results</strong> Y2C1 has a mutation (G to C) in both forward and reverse strands. We thus choose to ignore this one. It also seems like the forward primer of Y2C2 did not anneal, therefore we do not have a full strand. To avoid errors, we decide to only keep Y1 and Y3 variants.
     p <strong>Conclusion</strong> We decide to proceed with only Y1 and Y3 genomic variants. We have two clones for each of them.
 
@@ -151,43 +153,51 @@ block description
       h3 Yeast Growth
       .date 2021-07-14
 
-    p <strong>Aim</strong> Grow our yeast in liquid YPD to establish a growth curve. This will give us information on the different stages of our yeast’s growth. Especially when they are competent. This occurs at a measured OD600 of 0.8 to 1.
-    p <strong>Protocol</strong> Incubate wildtype yeast in shaker at 30 deg and 220 rpm. In a 14ml falcon tube, incubate 12ul of wildtype yeast in 4ml of YPD.
-    p <strong>Results</strong> TBA
-    p We assume growth (from lag to stationary phase) to be around 22 hours. We do measurements every hour, with 3 technical replicates each time. Ideally, one would do 2 biological replicates, but limited by the space on the shaker we can only do one.
-    p <strong>Conclusion</strong> Our yeast takes 10 hours to reach lag phase, and 22 hours to reach stationary phase.  They are competent after 11hours and until 12 hours of growth.
+    p <strong>Aim</strong> Grow the yeast in liquid YPD to establish a growth curve. This will give us information on the different stages of our yeast’s growth, especially when they are competent. This occurs at a measured OD600 of 0.8 to 1.
+    p <strong>Protocol</strong> Incubate wildtype yeast in shaker at 30°C and 220&nbsp;rpm. In a 14&nbsp;ml Falcon tube, incubate 12&nbsp;µl of wildtype yeast in 4&nbsp;ml of YPD.
+    p <strong>Results</strong> TODO
+    p We assume growth (from lag to stationary phase) to be around 22&nbsp;hours. We do measurements every hour, with 3 technical replicates each time. Ideally, one would do 2 biological replicates, but limited by the space on the shaker, we can only do one.
+    p <strong>Conclusion</strong> Our yeast takes 10&nbsp;hours to reach lag phase, and 22&nbsp;hours to reach stationary phase, they are thus competent after 11&nbsp;hours and until 12&nbsp;hours of growth.
 
   article.lab-exp
     header
       h3 Yeast Transformation
 
-    p <strong>Aim</strong> To transform our plasmid into our yeast. We prepare 3 samples: a negative control (no DNA, just water), a positive control (our plasmid backbone with no CUP1) and the plasmid with CUP1. We then plated our transformants.
-    p <strong>Protocol</strong> Yellow and green box in the lab.
-    p <strong>Results</strong> We picked clones from each transformed plate. Each time a new clone is picked, it is amplified in liquid media (SDCAA at first but then SDGAA).
+    p <strong>Aim</strong> Transform the plasmid into the yeast.
+    p <strong>Protocol</strong> TODO: Yellow and green box in the lab.
+    p We pick clones from each transformed plate. Each time a new clone is picked, it is amplified in liquid media (SDCAA at first but then SDGAA).
+    p We prepare 3 samples: a negative control (no DNA, just water), a positive control (the plasmid backbone with no CUP1) and the plasmid with CUP1. We then plate the transformants.
 
   article.lab-exp
     header
       h3 Western Blot
 
-    p <strong>Aim</strong> A western blot will allow us to verify the presence and expression of the membrane display system.
-    p <strong>Results</strong> The V5 tag is part of the membrane display system which itself is under the Gal promoter. Thus expression (and detection) should only occur in the presence of galactose.
-    p We loaded the following bands onto our Western blot: pCTcon2-V5 in SDCAA, pCTcon2-V5 in SDGAA, EBY100 (WT) in YPD, and two clones in SDGAA and SDCAA each.
-    p <strong>Conclusion</strong> The clones were probably picked prematurely, and thus didn’t show anything on the gel.
+    p <strong>Aim</strong> Verify the presence and expression of the membrane display system.
+    p <strong>Protocol</strong> The V5 tag is part of the membrane display system which itself is under the Gal promoter. Thus expression (and detection) should only occur in the presence of galactose.
+    p We load the following bands onto the Western blot:
+    ul
+      li pCTcon2-V5 in SDCAA,
+      li pCTcon2-V5 in SDGAA,
+      li EBY100 (WT) in YPD,
+      li one clone in SDGAA,
+      li one clone in SDCAA.
+    p <strong>Conclusion</strong> The clones were probably picked prematurely as they didn’t show anything on the gel.
 
   article.lab-exp
     header
       h3 Growth curves of different strains
 
-    p <strong>Aim</strong> This test will allow to check for the differences in yeast growth between samples.
+    p <strong>Aim</strong> Check for differences in yeast growth between samples.
     p <strong>Protocol</strong> Overnight shaking in microplate reader, measuring the OD600 every hour. The samples measured are as follows:
-    p <strong>Results</strong> We expect slower growth for our yeasts containing our plasmid, and even slower growth for our yeasts expressing CUP1 or the plasmid without CUP1. We indeed observe this hindered growth. Clone D seems to be growing the best.
+    p TODO
+    p <strong>Results</strong> We expect slower growth for yeast that contain the plasmid, and even slower growth for yeast expressing CUP1 or the plasmid without CUP1. We indeed observe this hindered growth. Clone D seems to be growing the best.
 
   article.lab-exp
     header
       h3 Colony forming assays
 
-    p <strong>Aim</strong> To measure viability of our cells, we do a colony forming assay.
-    p <strong>Protocol</strong> Plate 100ul of each yeast strain on the corresponding plate. Strains were plated at concentrations of 2.5, 0.8, 0.25, 0.08 and 0.025 (3.14 dilution). We record the results of the plates that show distinct colonies (and not a biofilm). Plates were incubated 48 hours at 30 deg.
+    p <strong>Aim</strong> Measure viability of the yeast cells.
+    p <strong>Protocol</strong> Plate 100&nbsp;µl of each yeast strain on the corresponding plate. Strains were plated at concentrations of 2.5, 0.8, 0.25, 0.08 and 0.025 TODO: unit (3.14 dilution). We record the results of the plates that show distinct colonies (and not a biofilm). Plates were incubated 48&nbsp;hours at 30°C.
     p <strong>Results</strong>
 
     table

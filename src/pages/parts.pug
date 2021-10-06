@@ -40,7 +40,7 @@ block description
             composite: false },
           ...dimers.map((dimer, index) => ({
             id: `BBa_K403500${index + 2}`,
-            desc: `Dimerized copper metallothionein 1: <code>CUP1–${dimer.linker}–CUP1</code>`,
+            desc: `Dimerization of the copper metallothionein 1: <code>CUP1–${dimer.linker}–CUP1</code>`,
             compIIS: dimer.compIIS, compRFC: dimer.compRFC,
             composite: false
           })),
@@ -57,7 +57,7 @@ block description
         ]
       each part, index in parts
         tr
-          td: a(href="http://parts.igem.org/BBa_K4035008" target="_blank")= part.id
+          td: a(href="http://parts.igem.org/Part:BBa_K4035008" target="_blank")= part.id
           td= (part.composite ? 'Composite' : 'Coding')
           td!= part.desc
           -
