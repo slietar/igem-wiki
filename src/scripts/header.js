@@ -1,3 +1,6 @@
+let root = document.querySelector('#mw-content-text') || document.body;
+
+
 let li = document.querySelectorAll('.header-nav > ul > li');
 let activeIndex = null;
 
@@ -6,7 +9,7 @@ let update = () => {
     el.classList.toggle('_active', index === activeIndex);
   });
 
-  document.body.classList.toggle('_navactive', activeIndex !== null);
+  root.classList.toggle('_navactive', activeIndex !== null);
 
   if (activeIndex !== null) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,24 +36,24 @@ document.querySelector('.overlay').addEventListener('click', () => {
 
 document.querySelector('.header-menu').addEventListener('click', () => {
   document.querySelector('.header').classList.toggle('_open');
-  document.body.classList.toggle('_navopen');
+  root.classList.toggle('_navopen');
 });
 
 
 // Hide menu if the user is scrolling downwards
 // window.scrollTo() would trigger this if we also accepted upwards scrolling
 
-let lastScrollTop = document.body.scrollTop;
+let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-  let scrollTop = document.body.scrollTop;
+  let scrollY = window.scrollY;
 
   if (activeIndex !== null) {
-    if (scrollTop > lastScrollTop) {
+    if (scrollY > lastScrollY) {
       activeIndex = null;
       update();
     }
   }
 
-  lastScrollTop = Math.max(0, scrollTop);
+  lastScrollY = Math.max(0, scrollY);
 });

@@ -193,6 +193,10 @@ $logo-border: 2px;
     > li {
       flex-shrink: 0;
 
+      &._active {
+        z-index: 2;
+      }
+
       > a {
         padding: 0.6rem 1rem;
         border-radius: 4px;
@@ -451,9 +455,10 @@ $logo-border: 2px;
 
 &:not(._navactive) .overlay {
   opacity: 0;
+  height: 0;
   visibility: hidden;
 
-  transition: opacity $overlay-dur, visibility 0s $overlay-dur;
+  transition: height 0s $overlay-dur, opacity $overlay-dur, visibility 0s $overlay-dur;
 }
 
 // &._navactive, &._navopen {

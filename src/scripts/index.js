@@ -9,7 +9,7 @@ document.title = 'CuRe - EPFL iGEM 2021';
 let link = document.querySelector("link[rel~='icon']");
 
 if (link) {
-  link.href = 'https://2021.igem.org/wiki/images/3/37/T--EPFL--favicon.svg';
+  link.href = 'https://2021.igem.org/wiki/images/7/7a/T--EPFL--favicon.svg';
 } else {
   link = document.createElement('link');
   link.href = 'assets/favicon.svg';
