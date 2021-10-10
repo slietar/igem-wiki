@@ -5,16 +5,19 @@ block head
   script(src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js")
 
 block contents
-  main.layout-description
+  main.desc-root
     .desc-hero
-      block hero
-        h1 Title
+      img(src="assets/background/description.jpg" class="desc-hero-image")
 
-    .desc-contents
-      .sidenav-container
+      .desc-hero-contents
+        block hero
+          h1 Title
+
+    .desc-body
+      aside.sidenav-container
         .sidenav
           h3 Contents
           .sidenav-toc
 
-      .contents
+      .desc-contents
         block description

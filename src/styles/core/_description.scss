@@ -1,37 +1,53 @@
 @use "../breakpoints" as *;
+@use "../mixins" as *;
 @import "../constants";
 
 
-.layout-description {
-  padding: 3rem var(--side-margin);
+//- General
 
-  background: #f7f7f7;
-  min-height: calc(100vh - 71px);
-}
-
-.desc-hero {
-  & {
-    display: flex;
-    height: 400px;
+.desc {
+  &-root {
+    background: #f7f7f7;
+    min-height: calc(100vh - 71px);
   }
 
-  h1 {
-    width: 50%;
-    margin: auto 0;
+  &-hero {
+    & {
+      display: flex;
+      height: 300px;
 
-    padding-bottom: 1rem;
-    border-bottom: 4px solid #ddd;
+      @include superimposed-children();
+    }
 
-    font-size: 3rem;
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-contents {
+      align-self: end;
+      padding: 2rem var(--side-margin);
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      text-shadow: 0 0 2px #000;
+    }
+  }
+
+  &-body {
+    display: grid;
+    column-gap: 3rem;
+    grid-template-columns: 260px 1fr;
+
+    padding: 2rem var(--side-margin);
   }
 }
 
 
-.desc-contents {
-  display: grid;
-  column-gap: 3rem;
-  grid-template-columns: 260px 1fr;
-}
+//- Side navigation
 
 .sidenav {
   & {
@@ -76,38 +92,14 @@
       }
     }
   }
-
-  /* ul {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.6rem;
-  }
-
-  a {
-    color: #666;
-    font-weight: 500;
-    line-height: 1.2;
-
-    &:hover {
-      color: #333;
-    }
-  }
-
-  a._active {
-    color: #0074d9;
-    pointer-events: none;
-  } */
 }
 
-.contents {
-  /* h1 {
-    margin-bottom: 1.4rem;
 
-    font-size: 3rem;
-  } */
+//- Contents
 
+.desc-contents {
   h2 {
-    margin: 1.4rem 0 1rem 0;
+    margin: 1.8rem 0 1rem 0;
     font-size: 2rem;
   }
 
@@ -120,6 +112,54 @@
     font-family: $font-headings;
   }
 
+  h2:target, h3:target {
+    position: relative;
+
+    &::before {
+      content: "›";
+
+      position: absolute;
+      left: -1em;
+
+      color: #666;
+    }
+  }
+
+  a:not(.ref):not(.ref-link) {
+    color: $second-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    // External links
+    &[href^="http"] {
+      & {
+        display: inline-flex;
+        column-gap: 0.2rem;
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+
+        align-self: center;
+
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path xmlns="http://www.w3.org/2000/svg" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.2652 3 20.5196 3.10536 20.7071 3.29289C20.8946 3.48043 21 3.73478 21 4L21 10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10L19 6.41422L9.70711 15.7071C9.31658 16.0976 8.68342 16.0976 8.29289 15.7071C7.90237 15.3166 7.90237 14.6834 8.29289 14.2929L17.5858 5H14ZM3 7C3 5.89543 3.89543 5 5 5H10C10.5523 5 11 5.44772 11 6C11 6.55228 10.5523 7 10 7H5V19H17V14C17 13.4477 17.4477 13 18 13C18.5523 13 19 13.4477 19 14V19C19 20.1046 18.1046 21 17 21H5C3.89543 21 3 20.1046 3 19V7Z" fill="#{encode-color($second-color)}" /></svg>');
+        background-position: center;
+        background-repeat: no-repeat;
+
+        /* display: inline-block;
+        content: "↗︎";
+        margin-left: 0.4ch;
+        font-size: 0.9em;
+        text-decoration: none; */
+      }
+    }
+  }
+
   p {
     margin: 1em 0;
 
@@ -127,10 +167,10 @@
     text-align: justify;
 
     a:not(.ref) {
-      border-bottom: 1px dotted currentColor;
+      // border-bottom: 1px dotted currentColor;
 
       &:hover {
-        border-bottom-style: solid;
+        // border-bottom-style: solid;
       }
     }
   }
@@ -140,7 +180,7 @@
     flex-direction: column;
     row-gap: 0.3rem;
 
-    margin: 1.6rem 0 1.6rem 3rem;
+    margin: 1rem 0 1rem 3rem;
 
     > li {
       padding-left: 0.4rem;
@@ -152,6 +192,10 @@
         // font-variant-numeric: tabular-nums;
         font-weight: 600;
       }
+    }
+
+    ol {
+      margin-left: 1rem;
     }
   }
 
@@ -175,15 +219,15 @@
 //- Mobile
 
 @include media-breakpoint-down(lg) {
-  .desc-contents {
-    display: initial;
+  .desc-body {
+    display: revert;
   }
 
   .sidenav-container {
     display: none;
   }
 
-  .contents p {
+  .desc-contents p {
     text-align: left;
   }
 }
@@ -194,6 +238,8 @@
 
 .ref {
   & {
+    display: inline;
+
     color: $accent-color;
     font-size: 0.8em;
     font-weight: 500;
@@ -287,9 +333,9 @@
     padding-bottom: 0.6rem;
     vertical-align: bottom;
 
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #aaa;
 
-    color: #999;
+    color: #666;
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -300,8 +346,12 @@
   }
 
   td {
-    padding: 1rem 2rem 0 0;
+    padding: 0.8rem 2rem 0.8rem 0;
     vertical-align: top;
+  }
+
+  tr:not(:last-child) td {
+    border-bottom: 1px solid #ddd;
   }
 
   a {
@@ -316,14 +366,41 @@
   code {
     white-space: nowrap;
   }
+
+
+  li & {
+    margin: 1rem 0;
+  }
 }
 
+.compat {
+  &-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+  }
 
-//- Misc
+  &-item {
+    display: flex;
+    align-items: center;
+    column-gap: 1ch;
 
-#plot {
-  padding: 1rem;
+    svg {
+      width: 1em;
+      height: 1em;
+      font-size: 1rem;
+    }
 
-  background-color: #fff;
-  border-radius: 4px;
+    svg {
+      padding: 0.1rem;
+      border-radius: 50%;
+
+      font-size: 0.9rem;
+    }
+
+    path { fill: #fff; }
+
+    &._ok svg { background-color: #2ecc40; }
+    &:not(._ok) svg { background-color: #ff4136; }
+  }
 }

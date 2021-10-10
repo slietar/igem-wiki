@@ -1,16 +1,16 @@
-let contents = document.querySelector('.contents');
+let contents = document.querySelector('.desc-body');
 
 if (contents) {
   let index = 0;
 
   for (let element of contents.querySelectorAll('h1, h2, h3')) {
-    element.id = `heading-${index++}`;
+    element.id ||= `heading-${index++}`;
   }
 
 
   tocbot.init({
     tocSelector: '.sidenav-toc',
-    contentSelector: '.contents',
+    contentSelector: '.desc-contents',
     headingSelector: 'h2, h3',
     hasInnerContainers: true,
     orderedList: false,
