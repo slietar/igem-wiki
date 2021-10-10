@@ -33,10 +33,14 @@ html {
   font-size: 16px;
 }
 
-body:not(.mediawiki), #mw-content-text {
-  @import "./main.scss";
+body.mediawiki {
+  font-size: revert;
 }
 
-a, button {
-  touch-action: manipulation;
+body:not(.mediawiki), #mw-content-text {
+  @import "./main.scss";
+
+  a, button {
+    touch-action: manipulation;
+  }
 }

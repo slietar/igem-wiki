@@ -1,5 +1,6 @@
-:where(body:not(.mediawiki), #mw-content-text) {
+body:not(.mediawiki), #mw-content-text {
   &, *, *::before, *::after {
+    all: revert;
     box-sizing: inherit;
   }
 
@@ -169,7 +170,7 @@
   margin: revert;
   padding: revert;
 
-  line-height: revert;
+  // line-height: revert;
 }
 
 #globalWrapper {
@@ -181,52 +182,22 @@
   height: 0;
 }
 
-#bodyContent a:hover {
-  text-decoration: revert;
-}
+// Override rules that were more specific the global 'all: revert;'
+#HQ_page {
+  h1 {
+    border-bottom: revert;
 
-#bodyContent a:visited {
-  color: revert;
-}
+    font-family: revert;
+    font-weight: revert;
+  }
 
-#bodyContent a[href^="https://"] {
-  background: revert;
-  padding-right: revert;
-}
-
-#bodyContent h1, #bodyContent h2 {
-  margin-bottom: revert;
-}
-
-#bodyContent p {
-  line-height: revert;
-}
-
-#mw-content-text > p {
-  display: none;
+  p {
+    font-family: revert;
+    font-size: revert;
+    text-align: revert;
+  }
 }
 
 #mw-content-text {
-  font-size: 1rem;
-}
-
-#HQ_page p {
-  font-family: revert;
-  font-size: revert;
-}
-
-#HQ_page h1, h2, h3, h4, h5 {
-  border-bottom: revert;
-
-  font-family: revert;
-  font-weight: revert;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  padding: revert;
-  overflow: revert;
-}
-
-#top_menu_14 {
-  position: revert;
+  margin-top: 16px;
 }
