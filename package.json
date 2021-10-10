@@ -7,9 +7,7 @@
     "postinstall": "cd posthtml-bibliography && npm install"
   },
   "dependencies": {
-    "@fontsource/inter": "^4.5.0",
     "@fontsource/merriweather": "^4.5.1",
-    "@fontsource/secular-one": "^4.5.0",
     "mq-func": "^0.1.1"
   },
   "devDependencies": {
