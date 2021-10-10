@@ -1,3 +1,4 @@
+@use "./constants" as *;
 @use "./footer";
 @use "./core/description";
 @use "./core/lab";
@@ -8,26 +9,14 @@
 
 
 @import "./breakpoints.scss";
-@import "./constants.scss";
 @import "./view";
 
 
 & {
   @include view-2();
 
-  &.fonts-loaded {
-    font-family: $font-text;
-    line-height: 1.2;
-  }
-
-  &:not(.fonts-loaded) {
-    font-family: Helvetica;
-    line-height: 1.45;
-    letter-spacing: 0.0325em;
-
-    letter-spacing: 0.0325em;
-    word-spacing: -0.0275em;
-  }
+  font-family: $font-text;
+  line-height: 1.2;
 }
 
 

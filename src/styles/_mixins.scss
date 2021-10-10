@@ -18,3 +18,16 @@
 
   @return $string;
 }
+
+
+%chevron {
+  content: "";
+  display: inline-block;
+  align-self: center;
+
+  width: 0.9em;
+  height: 0.9em;
+
+  background-color: currentColor;
+  clip-path: url(#chevron);
+}

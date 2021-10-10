@@ -1,5 +1,7 @@
 @use "sass:math";
 
+@use "./constants" as *;
+
 
 $menu-dur: 300ms;
 $preview-dur: 300ms;
@@ -160,15 +162,13 @@ $logo-border: 2px;
     > a {
       font-weight: 500;
 
+      &:not(:only-child) {
+        display: flex;
+        column-gap: 1ch;
+      }
+
       &:not(:only-child)::after {
-        display: inline-block;
-        content: "›";
-        transform: rotate(90deg);
-        transform-origin: 50% 56%; // Adapts the rotation center for the arrow glyph
-
-        // background-color: #f006; tmp
-
-        margin-left: 1ch;
+        @extend %chevron;
         transition: transform 300ms;
       }
 
@@ -179,7 +179,7 @@ $logo-border: 2px;
     }
 
     &._active > a::after {
-      transform: rotate(-90deg);
+      transform: rotate(180deg);
     }
   }
 }
@@ -375,6 +375,9 @@ $logo-border: 2px;
   }
 
   &-title {
+    display: flex;
+    column-gap: 0.8ch;
+
     font-weight: 500;
 
     &:last-child {
@@ -382,18 +385,16 @@ $logo-border: 2px;
     }
 
     &::after {
-      display: inline-block;
-      content: "›";
+      @extend %chevron;
+      transform: rotate(-90deg);
 
-      margin-left: 0.8ch;
-      font-size: 1.1em;
       transition: opacity 300ms, transform 300ms;
     }
   }
 
   &:not(:focus-visible):not(:hover) .header-item-title::after {
     opacity: 0;
-    transform: translateX(-0.6ch);
+    transform: translateX(-0.6ch) rotate(-90deg);
   }
 
   &-desc {
