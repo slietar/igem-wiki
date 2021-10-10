@@ -27,21 +27,21 @@ html
 
         nav.footer-social
           a(href="https://www.instagram.com/igem_epfl/")
-            img(src="assets/social/instagram.webp" alt="Instagram logo" loading="lazy")
+            img(src="assets/social/instagram.jpg" alt="Instagram logo" loading="lazy")
             div @igem_epfl
 
           a(href="https://www.facebook.com/igemepfl")
-            img(src="assets/social/facebook.webp" alt="Facebook logo" loading="lazy")
+            img(src="assets/social/facebook.jpg" alt="Facebook logo" loading="lazy")
             div @igemepfl
 
           a(href="https://twitter.com/EPFL_iGEM")
-            img(src="assets/social/twitter.webp" alt="Twitter logo" loading="lazy")
+            img(src="assets/social/twitter.jpg" alt="Twitter logo" loading="lazy")
             div @EPFL_iGEM
 
     .overlay
 
     script.
-      let root = document.querySelector('#mw-context-text') || document.body;
+      let root = document.querySelector('#mw-content-text') || document.body;
 
       Promise.all([
         document.fonts.load('1em Inter'),

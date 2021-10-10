@@ -7,7 +7,7 @@ block header
 block contents
   main.layout-index
     .hero
-      video(src="assets/home/video.mp4" utoplay muted loop poster="assets/home/poster.jpg")
+      video(src="assets/home/video.mp4" autoplay muted loop poster="assets/home/poster.jpg")
 
       .hero-contents
         h1 CuRe
@@ -163,8 +163,18 @@ block contents
     // + HPs
 
 
-    section.section9
-      img(src="assets/background/lab2.jpg")
+    //- section.section9
+    //-   img(src="assets/background/lab2.jpg")
+
+    section.section11
+      video(src="assets/hardware/disassembly.mp4" utoplay muted poster="assets/hardware/poster.jpg" class="fadein")
+
+      .section11-contents
+        h2 Hardware
+
+        // Thanks to our disciplinary team, (...)
+        p Donec egestas lacus convallis eros feugiat consequat. Vestibulum porta augue vel dui vestibulum pellentesque.
+        p Suspendisse vitae elit consequat, rhoncus purus eu, pulvinar justo. Sed ac feugiat purus, ac tempor elit. Curabitur bibendum tortor ut tortor aliquam, a ornare nunc volutpat.
 
 
     section.section2(data-image="0")
@@ -183,8 +193,8 @@ block contents
       h2 Sponsors
 
       .sponsors-list
-        a(href="https://biomede.fr" target="_blank"): img(src="assets/sponsors/biomede.webp" loading="lazy")
-        a(href="https://www.genscript.com" target="_blank"): img(src="assets/sponsors/genscript.webp" loading="lazy")
-        a(href="https://www.microsynth.com" target="_blank"): img(src="assets/sponsors/microsynth.webp" loading="lazy")
-        a(href="https://promega.com" target="_blank"): img(src="assets/sponsors/promega.webp" loading="lazy")
-        a(href="https://www.snapgene.com" target="_blank"): img(src="assets/sponsors/snapgene.webp" loading="lazy")
+        a(href="https://biomede.fr" target="_blank"): img(src="assets/sponsors/biomede.jpg" loading="lazy")
+        a(href="https://www.genscript.com" target="_blank"): img(src="assets/sponsors/genscript.jpg" loading="lazy")
+        a(href="https://www.microsynth.com" target="_blank"): img(src="assets/sponsors/microsynth.jpg" loading="lazy")
+        a(href="https://promega.com" target="_blank"): img(src="assets/sponsors/promega.jpg" loading="lazy")
+        a(href="https://www.snapgene.com" target="_blank"): img(src="assets/sponsors/snapgene.jpg" loading="lazy")
