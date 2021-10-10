@@ -15,7 +15,16 @@ for (let el of document.querySelectorAll('.fadein')) {
 
     // value = (value || ratio > 0.4) && (ratio > 0.1 || past);
     value = (value && (ratio > 0.1 || past)) || ratio > 0.4;
-    el.classList.toggle('_visible', value);
+
+    if (el.tagName === 'VIDEO') {
+      if (value && el.currentTime === 0) {
+        el.play();
+      } else if (!value) {
+        el.currentTime = 0;
+      }
+    } else {
+      el.classList.toggle('_visible', value);
+    }
   }, { threshold: [0.1, 0.4] });
 
   observer.observe(el);

@@ -59,7 +59,7 @@
 }
 
 
-.section1, .section6-contents, .section8-contents {
+.section1, .section6-contents, .section8-contents, .section11-contents {
   h2 {
     margin: 0.2rem 0 0.4rem 0;
 
@@ -613,6 +613,20 @@
   &:not(._visible) .d {
     max-width: 0;
     opacity: 0;
+  }
+}
+
+
+.section11 {
+  @include superimposed-children();
+
+  video {
+    width: 100%;
+  }
+
+  &-contents {
+    align-self: end;
+    padding: 4rem var(--side-margin);
   }
 }
 
