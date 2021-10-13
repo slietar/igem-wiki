@@ -1,8 +1,8 @@
 .header-brand
   a(href="index.html"): include ../../internal-assets/logo.svg
-  a(href="https://epfl.ch" target="_blank"): include ../../assets/epfl.svg
+  a(href="https://epfl.ch" target="_blank"): svg: use(href="assets/icons.svg#epfl")
 
-button(type="button").header-menu: include ../../internal-assets/icons/menu.svg
+button(type="button").header-menu: svg: use(href="assets/icons.svg#menu")
 
 nav.header-nav
   ul.header-nav-ul
@@ -11,56 +11,56 @@ nav.header-nav
       .header-preview(style="--height: 500px;")
         ul
           li: a(href="Description.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/description.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#description")
             .header-item-title Description
             .header-item-desc Project background, inspiration, etc.
 
           li: a(href="Protocols.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/microscope.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#protocols")
             .header-item-title Protocols
             .header-item-desc PCR, Western Blot, transformation, etc.
 
           li: a(href="Model.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/modeling.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#model")
             .header-item-title Model
             .header-item-desc Bioreactor fluid mechanics models
 
           li: a(href="Design.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/design.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#design")
             .header-item-title Design
             .header-item-desc Monomer and dimer design
 
           li: a(href="Safety.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/safety.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#design")
             .header-item-title Safety
 
           li: a(href="Notebook.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/lab_book.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#notebook")
             .header-item-title Notebook
             .header-item-desc Detailed records of all experiments
 
           li: a(href="Results.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/results.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#results")
             .header-item-title Results
 
           li: a(href="Proof_Of_Concept.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/demonstration.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#demonstration")
             .header-item-title Proof of Concept
 
     li
-      a(href="biology.html") People
+      a(href="#") People
       .header-preview(style="--height: 250px;")
         ul
           li: a(href="team.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/team.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#team")
             .header-item-title Team
 
           li: a._disabled.header-item
-            .header-item-icon: include ../../internal-assets/icons/attributions.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#team")
             .header-item-title Attributions
 
           li: a(href="Collaborations.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/share.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#collaborations")
             .header-item-title Collaborations
 
     li
@@ -68,11 +68,11 @@ nav.header-nav
       .header-preview(style="--height: 150px;")
         ul
           li: a(href="Parts.html").header-item
-            .header-item-icon: include ../../internal-assets/icons/parts_overview.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#parts2")
             .header-item-title Parts overview
 
           li: a._disabled.header-item
-            .header-item-icon: include ../../internal-assets/icons/basic_parts.svg
+            .header-item-icon: svg: use(href="assets/icons.svg#parts")
             .header-item-title Basic parts
 
     li: a._disabled Human Practices

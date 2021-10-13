@@ -16,8 +16,7 @@ html
 
     block footer
       footer.footer
-        .footer-brand
-          include ../../internal-assets/logo.svg
+        .footer-brand: svg: use(href="assets/icons.svg#logo")
 
         nav.footer-sitemap
           a(href="#") Home
