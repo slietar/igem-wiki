@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "cpx": "^1.5.0",
+    "js-beautify": "^1.14.0",
     "parcel-bundler": "^1.12.5",
     "posthtml-cli": "^0.10.0",
     "pug-cli": "*",
