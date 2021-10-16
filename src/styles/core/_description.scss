@@ -147,24 +147,26 @@
     &:hover {
       text-decoration: underline;
     }
+  }
 
-    // External links
-    &[href^="http"] {
-      & {
-        display: inline-flex;
-        column-gap: 0.2rem;
-      }
+  // External links
+  a[target="_blank"] {
+    & {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 0.6ch;
+    }
 
-      &::after {
-        content: "";
-        display: inline-block;
+    &::after {
+      content: "";
+      display: inline-block;
 
-        width: 1em;
-        height: 1em;
+      width: 1em;
+      height: 1em;
 
-        background-color: currentColor;
-        clip-path: url(#link);
-      }
+      background-color: currentColor;
+      clip-path: url(#link);
+      transform: translateY(-0.1em);
     }
   }
 
@@ -230,15 +232,14 @@
 //- References
 
 .ref {
+  // Citations
+
   & {
     display: inline;
 
     color: $accent-color;
     font-size: 0.8em;
     font-weight: 600;
-
-    // &::before { content: "["; }
-    // &::after { content: "]"; }
 
     &:hover {
       text-decoration: underline;
@@ -247,12 +248,13 @@
 
   &-group, :not(&-group) > & {
     margin-left: 0.2em;
-    // vertical-align: top;
 
     position: relative;
     top: -0.4em;
   }
 
+
+  // Bibliography
 
   &-list {
     row-gap: 1.4rem !important;
@@ -289,29 +291,6 @@
   &-link {
     font-weight: 500;
     text-decoration: underline $accent-color 2px;
-
-    position: relative;
-
-    &::before {
-      content: "";
-
-      width: 100%;
-      height: 100%;
-
-      position: absolute;
-      left: 0;
-      top: 0;
-
-      transform: scale(1.1, 1);
-    }
-
-    &:focus-visible::before, &:hover::before {
-      background-color: #0001;
-    }
-
-    &:active::before {
-      background-color: $accent-color;
-    }
   }
 }
 
