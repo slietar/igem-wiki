@@ -7,9 +7,10 @@ function transform(node) {
       }
 
       return child
-        .replaceAll(/((?: |^)[,\.\d]+) ([a-zA-Zµ]{1,3}[^a-z])/g, '$1&#8239;$2')
-        .replaceAll(/( [,\.\d]+) ([a-zA-Z]{4,})/g, '$1&nbsp;$2')
-        .replaceAll(/([a-zA-Z])(\d{1,3})([^a-zA-Z\d]|$)/g, '$1<sub>$2</sub>$3');
+        .replaceAll(/((?:^|[(| ])\d(?:[,\.\d]*\d)?) (?!and )([a-zA-Zµ]{1,3}[^a-z])/g, '$1&#8239;$2')
+        .replaceAll(/((?:^|[(| ])\d(?:[,\.\d]*\d)?) ([a-zA-Z]{4,})/g, '$1&nbsp;$2')
+        .replaceAll('OD600', 'OD<sub>600</sub>')
+        .replaceAll('--', '&#8239;&ndash;&thinsp;')
     }) })
   };
 }
