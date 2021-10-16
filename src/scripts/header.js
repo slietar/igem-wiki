@@ -35,8 +35,11 @@ document.querySelector('.overlay').addEventListener('click', () => {
 });
 
 document.querySelector('.header-menu').addEventListener('click', () => {
-  document.querySelector('.header').classList.toggle('_open');
   root.classList.toggle('_navopen');
+
+  if (root.classList.contains('_navopen')) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 });
 
 

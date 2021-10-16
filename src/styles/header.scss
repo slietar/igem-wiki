@@ -1,11 +1,13 @@
 @use "sass:math";
 
 @use "./constants" as *;
+@use "./mixins" as *;
 
 
-$menu-dur: 300ms;
-$preview-dur: 300ms;
+$menu-dur: 400ms;
+$preview-dur: 400ms;
 $overlay-dur: $preview-dur * 0.5;
+$header-height: 4rem;
 
 
 //- General
@@ -15,7 +17,7 @@ $overlay-dur: $preview-dur * 0.5;
   align-items: center;
   justify-content: space-between;
 
-  height: 4rem;
+  height: $header-height;
   padding: 0 var(--side-margin);
 
   background-color: #fff;
@@ -23,6 +25,29 @@ $overlay-dur: $preview-dur * 0.5;
 
   position: relative;
   z-index: 2;
+
+  @include media-breakpoint-up(lg) { --duration: #{$preview-dur}; }
+  @include media-breakpoint-down(lg) { --duration: #{$menu-dur}; }
+}
+
+.header--white {
+  & {
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+
+    box-shadow: unset;
+  }
+}
+
+&:not(._navactive, ._navopen) .header--white {
+  background-color: transparent;
+  --item-background: #fff2;
+
+  color: #fff;
+
+  transition: background-color var(--duration), color var(--duration);
 }
 
 
@@ -35,9 +60,11 @@ $logo-border: 2px;
   display: flex;
   height: 2.4rem;
 
-  color: $accent-color;
-
   user-select: none;
+
+  a {
+    fill: currentColor;
+  }
 
   a:focus-visible {
     outline: $highlight-outline;
@@ -50,7 +77,7 @@ $logo-border: 2px;
     margin-right: $logo-spacing;
     padding: 0.4rem 0;
 
-    fill: currentColor;
+    color: $accent-color;
   }
 
   a:nth-child(2) {
@@ -60,6 +87,7 @@ $logo-border: 2px;
     padding: 0.6rem 0;
 
     position: relative;
+    color: red;
 
     &::before {
       content: "";
@@ -79,6 +107,8 @@ $logo-border: 2px;
   svg {
     width: 100%;
     height: 100%;
+
+    transition: filter $preview-dur;
   }
 
   path {
@@ -91,9 +121,14 @@ $logo-border: 2px;
 }
 
 // On the homepage
-&:not(._navactive) .header--white .header-brand {
+&:not(._navactive, ._navopen) .header--white .header-brand {
   svg {
-    filter: drop-shadow(1px 1px #0003); // To be improved.
+    filter: drop-shadow(1px 1px #0003);
+  }
+
+  a:nth-child(2) {
+    color: #fff;
+    transition: color var(--duration);
   }
 }
 
@@ -130,26 +165,51 @@ $logo-border: 2px;
 
 //- Menu button on mobile
 
+// @keyframes header-menu {
+//   0% {
+//     background-color: #fff2;
+//     border-color: #fff3;
+//   }
+
+//   50% {
+//     background-color: transparent;
+//   }
+
+//   100% {
+//     border-color: transparent;
+//   }
+// }
+
 .header-menu {
   $padding: 0.4rem;
 
-  width: calc(24px + #{$padding} * 2);
+  width: calc(24px + #{$padding * 2});
+  height: calc(24px + #{$padding * 2});
 
   padding: $padding;
 
   border: 1px solid transparent;
   border-radius: 50%;
 
-  color: #999;
+  color: #333;
+  fill: currentColor;
 
   &:not(:active) {
     transition: background-color 300ms 50ms, border-color 600ms 50ms;
   }
 
   &:active {
-    background-color: #eee;
-    border-color: #ccc;
+    background-color: to-alpha(#eee);
+    border-color: to-alpha(#ccc);
   }
+
+  svg {
+    height: 100%;
+  }
+}
+
+&:not(._navopen) .header--white .header-menu {
+  color: inherit;
 }
 
 
@@ -185,7 +245,7 @@ $logo-border: 2px;
 }
 
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   .header-nav-ul {
     column-gap: 0.8rem;
     justify-content: space-between;
@@ -221,48 +281,76 @@ $logo-border: 2px;
 }
 
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
+  @keyframes header-delay-overflow {
+    from { overflow-y: hidden; }
+  }
+
   .header-nav {
     width: 100%;
-    height: calc(100vh - 4rem);
+    height: calc(100vh - #{$header-height});
 
-    overflow-y: auto;
+    overflow-y: hidden;
 
     position: absolute;
     left: 0;
     top: 100%;
 
     background-color: #fff;
-
-    transition: height $menu-dur, opacity $menu-dur;
+    transition: height $menu-dur;
   }
 
   .header-nav-ul {
     flex-direction: column;
     justify-content: start;
-    row-gap: 0.6rem;
 
     margin: 0 var(--side-margin);
-    padding: 2rem 0;
+    padding: 2rem 1rem;
 
     border-top: 1px solid #ddd;
+    transition: transform $menu-dur;
 
     > li {
-      transition: transform $menu-dur;
+      max-width: 600px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+      }
 
       > a {
+        padding: 0.8rem 0.6rem;
+        justify-content: space-between;
+
         font-size: 1.05rem;
       }
     }
   }
 
-  .header:not(._open) .header-nav {
-    height: 0;
-    opacity: 0.4;
+  &._navopen .header-nav {
+    overflow-y: auto;
+    animation: header-delay-overflow linear ($menu-dur * 2);
+  }
 
-    > li {
-      transform: translateY(-0.0rem);
-    }
+  &:not(._navopen) .header-nav {
+    height: 0;
+  }
+
+  &:not(._navopen) .header--white .header-nav {
+    opacity: 0;
+    transition: height $menu-dur, opacity $menu-dur;
+  }
+
+  &:not(._navopen) .header-nav-ul {
+    transform: translateY(-1rem);
+    transition: transform 0s $menu-dur;
+  }
+
+  &._navopen {
+    overflow-y: hidden;
+  }
+
+  &:not(._navopen) {
+    animation: header-delay-overflow linear ($menu-dur * 2);
   }
 }
 
@@ -285,7 +373,7 @@ $logo-border: 2px;
   }
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   .header-preview {
     width: 100%;
     max-height: var(--height);
@@ -307,7 +395,7 @@ $logo-border: 2px;
     }
   }
 
-  .header-nav li:not(._active) .header-preview {
+  .header-nav-ul li:not(._active) .header-preview {
     max-height: 0;
     box-shadow: none;
 
@@ -322,12 +410,21 @@ $logo-border: 2px;
       transform: translateY(-1rem);
     }
   }
+
+  .header--white li:not(._active) .header-preview {
+    opacity: 0;
+    transition: color 0s $preview-dur, box-shadow $preview-dur, max-height $preview-dur, opacity $preview-dur, visibility 0s $preview-dur;
+  }
 }
 
-@include media-breakpoint-down(md) {
-  .header-nav {
+@include media-breakpoint-down(lg) {
+  .header-nav-ul {
     li:not(._active) .header-preview {
       display: none;
+    }
+
+    .header-preview a:not(._disabled) {
+      background-color: #fafafa;
     }
   }
 }
@@ -407,36 +504,9 @@ $logo-border: 2px;
   }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .header-item {
     padding: 1.2rem 1.6rem;
-  }
-}
-
-
-.header--white {
-  & {
-    width: 100%;
-
-    position: absolute;
-    top: 0;
-
-    box-shadow: unset;
-  }
-}
-
-&:not(._navactive) .header--white {
-  background-color: transparent;
-  --item-background: #fff2;
-  // --item-background-focus: #fff3;
-
-  color: #fff;
-
-  transition: background-color $preview-dur, color $preview-dur;
-
-  .header-preview {
-    opacity: 0;
-    transition: color 0s $preview-dur, max-height $preview-dur, opacity $preview-dur;
   }
 }
 
