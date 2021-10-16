@@ -376,3 +376,47 @@
     &:not(._ok) svg { background-color: #ff4136; }
   }
 }
+
+
+//- Figures
+
+.desc-contents {
+  figure {
+    margin: 1.4rem 0;
+  }
+
+  figure img {
+    max-width: 100%; // 500px;
+    max-height: 400px;
+  }
+
+  caption, figcaption {
+    margin-top: 1rem;
+    line-height: 1.3;
+
+    @include media-breakpoint-up(md) {
+      max-width: 80%;
+    }
+
+    > :first-child {
+      margin-right: 1rem;
+
+      color: $accent-color;
+      // font-variant: small-caps;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    > :nth-child(2) {
+      // font-family: $font-refs;
+      font-weight: 600;
+    }
+
+    > :nth-child(3) {
+      &::before {
+        content: " ";
+      }
+    }
+  }
+}
