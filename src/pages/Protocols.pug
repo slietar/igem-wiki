@@ -1,7 +1,8 @@
 extends templates/description.pug
 
 block hero
-  h1 Protocols
+  img.desc-hero-image(src="assets/background/lake2.jpg" loading="lazy" style="--color: #9ccacd;")
+  .desc-hero-contents: h1 Protocols
 
 block description
   h2 Alginate beads production
@@ -106,7 +107,7 @@ block description
 
 
 
-  h2 Bacteria transformation and plating<ref authors="New England Biolabs" title="5 Minute Transformation Protocol (C2987H/C2987I)" url="https://international.neb.com/protocols/0001/01/01/5-minute-transformation-protocol-c2987" />
+  h2(id="protocol-bacteria-transformation") Bacteria transformation and plating<ref authors="New England Biolabs" title="5 Minute Transformation Protocol (C2987H/C2987I)" url="https://international.neb.com/protocols/0001/01/01/5-minute-transformation-protocol-c2987" />
 
   ol
     li For C2987H: Remove cells from -80°C freezer and thaw in your hand.
@@ -170,7 +171,7 @@ block description
 
   h4 Setup and protocol
   ol
-    li Mix sample, cuprizone and as much NaOH base as needed to obtain a pH of around 8 (minimum 7 and optimal between 7 and 9 ref: DOI: 10.5740/jaoacint.17-0154). (For more precision: it would be to mix 100ul of NaOH 0.2M into the solution. one drop is about 30ul).
+    li Mix sample, cuprizone and as much NaOH base as needed to obtain a pH of around 8 (minimum 7 and optimal between 7 and 9 ref: DOI: 10.5740/jaoacint.17-0154). (For more precision: it would be to mix 100 µl of NaOH 0.2 M into the solution. one drop is about 30 µl).
     li wait until the values obtained are stable: 12-18minutes for 2mg and between 17 and 25minutes for 10mg.
     li To determine the concentration from the sample, multiply by the multiplicative factor K<sub>f</sub> determined using the protocol below.
 
@@ -192,12 +193,12 @@ block description
   h4 Setup and protocol
   ol
     li Mix sample, cuprizone and as much NaOH base as needed to obtain a pH of around 8 (minimum 7 and optimal between 7 and 9<ref doi="10.5740/jaoacint.17-0154" />).
-    li Wait until the values obtained are stable: 16 minutes for 2 mg/L and between 22 for 10 mg/L.
+    li Wait until the values obtained are stable: 16 minutes for 2 mg/l and between 22 for 10 mg/l.
     li The multiplicative factor is equal to the concentration/absorbance ratio.
 
 
 
-  h2 Gene PCR<ref authors="ThermoFischer Scientific" title="Invitrogen Platinum&trade; SuperFi&trade; PCR Master Mix" url="https://www.thermofisher.com/order/catalog/product/12358010" />
+  h2(id="protocol-gene-pcr") Gene PCR<ref authors="ThermoFischer Scientific" title="Invitrogen Platinum&trade; SuperFi&trade; PCR Master Mix" url="https://www.thermofisher.com/order/catalog/product/12358010" />
 
   ol
     li Thaw, mix and briefly centrifuge each component before use. Avoid generating bubbles when mixing the Master Mix.
@@ -277,7 +278,7 @@ block description
 
 
 
-  h2 Gibson Assembly<ref authors="New England Biolabs" title="Gibson Assembly&reg; Protocol (E5510)" url="https://international.neb.com/protocols/2012/12/11/gibson-assembly-protocol-e5510" />
+  h2(id="protocol-gibson-assembly") Gibson assembly<ref authors="New England Biolabs" title="Gibson Assembly&reg; Protocol (E5510)" url="https://international.neb.com/protocols/2012/12/11/gibson-assembly-protocol-e5510" />
 
   ol
     li
@@ -337,7 +338,7 @@ block description
 
 
 
-  h2 Plasmid digestion<ref authors="New England Biolabs" title="NEB Cloner Double Digestion" url="https://international.neb.com/tools-and-resources/usage-guidelines/double-digests" />
+  h2(id="protocol-plasmid-digestion") Plasmid digestion<ref authors="New England Biolabs" title="NEB Cloner Double Digestion" url="https://international.neb.com/tools-and-resources/usage-guidelines/double-digests" />
 
   ol
     li

@@ -1,23 +1,18 @@
 extends ./layout.pug
 
-block head
-  link(href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css", rel="stylesheet")
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js")
-
 block contents
   main.desc-root
     .desc-hero
-      img(src="assets/background/description.jpg" class="desc-hero-image")
-
-      .desc-hero-contents
-        block hero
-          h1 Title
+      block hero
+        img.desc-hero-image(src="assets/background/description.jpg")
+        .desc-hero-contents: h1 Title
 
     .desc-body
       aside.sidenav-container
         .sidenav
           h3 Contents
           .sidenav-toc
+            toc
 
-      .desc-contents
+      .desc-contents(toc-contents)
         block description

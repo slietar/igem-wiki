@@ -1,7 +1,8 @@
 extends templates/description.pug
 
 block hero
-  h1 Lab notebook
+  img.desc-hero-image(src="assets/background/vineyard1.jpg" style="--color: #c0c0af;")
+  .desc-hero-contents: h1 Lab notebook
 
 block description
   h2 Cloning version 1
@@ -12,7 +13,7 @@ block description
       .date 2021-07-05
 
     p <strong>Aim</strong> Amplify our endogenous CUP1 yeast using PCR
-    p <strong>Protocol</strong> <a href="https://www.thermofisher.com/order/catalog/product/12358010">Invitrogen Platinum SuperFi PCR Master Mix</a>
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-gene-pcr">Gene PCR</a>
     p We have 3 genomic variants Y1, Y2 and Y3. They begin at differing DNA concentrations but we PCR the same amount (20&nbsp;ng) each time.
     p We prepare two sets of tubes, one intended for gel electrophoresis and one to be cleaned up  as we do not have a UV “table” in our lab.
 
@@ -42,7 +43,7 @@ block description
       .date 2021-07-07
 
     p <strong>Aim</strong> Digest our plasmid with BamHI and NheI, linearizing our plasmid, and thus creating a gap where our CUP1 will be inserted during Gibson Assembly.
-    p <strong>Protocol</strong> <a href="https://www.nebiolabs.com.au/protocols/2021/03/24/double-digest-protocol-with-standard-restriction-enzymes" target="_blank">Cloner Double Digestion (NEB)</a>
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-plasmid-digestion">Plasmid digestion</a>
     p <strong>Results</strong> To verify that the digestion worked properly, we ran a gel electrophoresis of our plasmid digested with different combinations of the restriction enzymes: none, BamHI alone, NheI alone, and both BamHI &amp; NheI.
 
     figure
@@ -68,7 +69,7 @@ block description
       .date 2021-07-08
 
     p <strong>Aim</strong> Anneal the CUP1 gene to the now-linearized vector backbone. The recomposed gene-containing plasmid will be ready to be transformed into bacteria.
-    p <strong>Protocol</strong> <a href="https://international.neb.com/protocols/2012/12/11/gibson-assembly-protocol-e5510" target="_blank">Gibson Assembly Protocol (E5510) (NEB)</a>
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-gibson-assembly">Gibson assembly</a>
     p <strong>Conclusion</strong> We move on to transform our bacteria with our new plasmid (CUP1 + vector).
 
   article.lab-exp
@@ -80,7 +81,7 @@ block description
         span.date 2021-07-09
 
     p <strong>Aim</strong> Transform bacteria with the new plasmid. Once the transformation is done, we can plate them on Ampicillin plates; these plates allow for positive selection of bacteria which will have taken up our plasmid as they have an encoded ampicillin resistance.
-    p <strong>Protocol</strong> <a href="https://international.neb.com/protocols/0001/01/01/5-minute-transformation-protocol-c2987">5 Minute Transformation Protocol (C2987H/C2987I) (NEB)</a>
+    p <strong>Protocol</strong> <a href="Protocols#protocol-bacteria-transformation">Protocol bacteria transformation and plating</a>
     p Plates were put in the inoculator at 30°C.
     p <strong>Results</strong> We observed some colonies on our plates under the microscope the next morning.
 
