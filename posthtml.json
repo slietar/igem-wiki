@@ -1,7 +1,8 @@
 {
   "plugins": {
     "posthtml-bibliography/index.js": {},
-    "posthtml-format/index.js": {}
+    "posthtml-format/index.js": {},
+    "posthtml-toc/index.js": {}
   },
   "options": {
     "xmlMode": true
