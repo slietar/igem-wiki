@@ -1,18 +1,84 @@
 extends templates/layout.pug
 
 block contents
-  main.layout-team
-    section.team-hero
-      h1 Team
+  main.page
+    .hero
+      img.hero-image(src="assets/background/description.jpg")
+      .hero-contents: h1 Team
 
-    section.team-members
+    .team
+      -
+        let groups = [
+          [
+            { name: 'Danaé Terrien-Ferey',
+              desc: '21, Bachelor student in Life Sciences Engineering',
+              role: 'Dimer cloner and French teacher for Davide',
+              memory: 'Meeting Davide and the night we spent all together stargazing at shooting stars on the top of a mountain' },
+            { name: 'Lou Kohler Voinov',
+              desc: '21, Bachelor student in Life Sciences Engineering',
+              role: 'Team coordinator, funniest and most humble member of the team',
+              memory: 'When we got caught using the personal autoclave machine of the lab with smelling (like vomit apparently) yeast medium. A strange guy wouldn’t let us leave and kept yelling at us. We couldn’t stop laughing about it for weeks.' },
+            { name: 'Anissa Hammi',
+              desc: '23, Master student in Life Sciences Engineering',
+              role: 'Immunostaining and Western Blot expert as well as official team building\'s parties organizer',
+              memory: 'When I brought the team to a swing party and we all ended up dancing together and even initiated a lindy hop jam (a social dance on swing music that appeared in the afro-american community in the 20s).' },
+            { name: 'Emma Vernizeau',
+              desc: '22, Master student in Chemistry',
+              role: 'Chemistry expert and soil collector',
+              memory: 'When a winemaker shared one of his bottles with us in his vineyard.' },
+            { name: 'Eric Richter',
+              desc: '22, Bachelor student in Microengineering',
+              role: 'Chemistry lab second-in-command, hardware designer and bead maker',
+              memory: 'Chilling around a fire, a feast in our stomachs, bonding in the sound of our laughs, and determination in our eyes at the beginning of the project!' },
+            { name: 'Julian Bär',
+              desc: '21, Bachelor student in Microengineering',
+              role: 'Hardware nerd, human practicer and vlogger',
+              memory: 'When Anissa dragged us to a small festival in the vineyards called JVAL. It turned out to be great fun and surprisingly big for something I thought would just be in someone\'s backyard!' },
+            { name: 'Davide Torre',
+              desc: '22, Master student in Physics',
+              role: 'Proteins and linkers designer, keen on cloning, growth curves and copper assays (but please, just the bio part) as well as beautiful italian boy and french student.',
+              memory: 'Meeting Danaé and all the times I started laughing randomly after the others joked in French, aware that I had understood absolutely nothing.' },
+            { name: 'David Toledano',
+              desc: '25, Master student in Life Sciences Engineering',
+              role: 'Bio nerd, potion master and free electron in the lab',
+              memory: 'Guitar, drums, fire, halloumi, stars in the sky, and discussions about the meaning of life in Eric\'s garden.' },
+            { name: 'Simon Liétar',
+              desc: '21, Bachelor student in Life Sciences Engineering',
+              role: 'Cloning and wiki guy',
+              memory: '' },
+            { name: 'Romain Birling',
+              desc: '20, Bachelor student in Computer Science',
+              role: 'Hardware and software developer as well as chemistry lab assistant',
+              memory: 'The night we spent looking at shooting stars on the top of a mountain. A fox almost stole my pistachios.' },
+          ],
+          [
+            { name: 'Brian McCabe' },
+            { name: 'Marine Van Campenhoudt' },
+            { name: 'Blandine Vergier' },
+            { name: 'Amir Shahein' }
+          ]
+        ].map((group) => group.sort((a, b) => a.name.split(' ')[1].localeCompare(b.name.split(' ')[1])));
+
+      mixin memberList(groupIndex)
+        .member-list
+          each member, memberIndex in groups[groupIndex]
+            .member-item
+              img-embedded.member-image(src=`internal-assets/members/${groupIndex}-${memberIndex}.jpg`)
+              .member-text
+                .member-title= member.name
+                .member-desc= member.desc
+                if member.role || member.memory
+                  dl.member-dl
+                    if member.role
+                      dt Role
+                      dd #{member.role}
+                    if member.memory
+                      dt Best memory of the summer
+                      dd #{member.memory}
+
+
       h2 Team members
+      +memberList(0)
 
-      .members
-        each val, index in new Array(10).fill(0)
-          .members-item
-            img.members-image(src="https://thispersondoesnotexist.com/image")
-            .members-text
-              .members-title Foo Bar #{index}
-              .members-desc Curabitur gravida
-              .members-expl Suspendisse pharetra velit at nisi condimentum, sed tincidunt neque ullamcorper.
+      h2 Professor and assistants
+      +memberList(1)

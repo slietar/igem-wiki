@@ -1,7 +1,9 @@
 @use "./constants" as *;
 @use "./footer";
 @use "./core/description";
+@use "./core/hero";
 @use "./core/lab";
+@use "./core/team";
 @use "./core/words";
 
 @use "./layout-index";
@@ -22,5 +24,4 @@
 
 @import "./header.scss";
 @import "./layout-snake.scss";
-@import "./layout-team.scss";
 @import "./layout-calendar.scss";

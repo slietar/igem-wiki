@@ -1,0 +1,84 @@
+@use "sass:math";
+
+@use "../breakpoints" as *;
+@use "../constants" as *;
+
+
+.team {
+  h2 {
+    margin: 2rem 0;
+
+    font-size: 2rem;
+
+    &:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+}
+
+
+.member {
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+
+    @include media-breakpoint-down(xl) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-item {
+    display: flex;
+    column-gap: 1.6rem;
+  }
+
+  &-image {
+    width: 190px;
+    align-self: start;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1.5;
+
+    background-color: #0001;
+
+    @include media-breakpoint-down(md) {
+      width: 150px;
+    }
+  }
+
+  &-text {
+    padding: 0.6rem 0;
+  }
+
+  &-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &-desc {
+    margin-top: 0.2rem;
+
+    color: #999;
+  }
+
+  &-expl {
+    margin-top: 0.6rem;
+  }
+
+  &-dl {
+    dt {
+      margin: 0.6rem 0;
+      text-decoration: underline $accent-color 2px;
+    }
+
+    dt {
+      &:not(:first-child) {
+        margin-top: 0.6rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "../breakpoints" as *;
+@use "../mixins" as *;
+
+
+.page {
+  background: #f7f7f7;
+  min-height: calc(100vh - 71px);
+}
+
+
+.hero {
+  & {
+    display: flex;
+    height: 300px;
+
+    @include superimposed-children();
+
+    @include media-breakpoint-down(md) {
+      height: 200px;
+    }
+
+    + * {
+      padding: 2rem var(--side-margin);
+    }
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    background-color: var(--color);
+  }
+
+  &-contents {
+    align-self: end;
+    padding: 2rem var(--side-margin);
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 0 0 2px #000;
+  }
+}
