@@ -1,6 +1,81 @@
 extends templates/description.pug
 
 block hero
-  h1 Collaborations
+  img.hero-image(src="assets/background/description.jpg")
+  .hero-contents: h1 Collaborations
 
 block description
+  h2 Collaborations with other iGEM teams
+
+  p We had the privilege of collaborating with multiple other teams during our iGEM experience. We value these opportunities very highly as it allowed our team to discover other projects, learn new skills and meet people from around the world in the spirit of collaboration. We are proud to have completed two human practices collaborations and two technical collaborations.
+
+
+  h2 Human Practices collaborations
+
+  p At the beginning of our project, we reached out to the other Swiss iGEM teams to discuss potential collaborations. We quickly realised that our projects were technically vastly different, but that our area of application was the same : agriculture. All three of our projects used synthetic biology to genetically modify organisms to remedy a problem in Swiss agriculture. Switzerland's relationship with genetically modified organisms is a complicated one and we had the impression that the debate around this new and exciting technology fell flat. Our human practices collaborations with the University of Zurich and the University of Lausanne teams aimed to better understand the public opinion of GMOs and create educational content to give people the necessary information to form their own opinions, respectively.
+
+
+  h3 University of Lausanne: Podcast about GMOs in Switzerland
+
+  p Together with the <a href="https://2021.igem.org/Team:UNILausanne" target="_blank">iGEM UNIL team</a>, we created an educational podcast on genetically modified organisms in Switzerland. We are very proud of the production quality of the podcast as we also collaborated with the radio station “Frequence Banane'' who helped us to write the questions and allowed us to record the episodes in their studio. You can find more information about this collaboration on <a href="#">our Education and Outreach page</a>.
+
+  h3 University of Zurich: Analysis of the opinion around GMOs in Switzerland
+
+  p As mentioned above, we collaborated with the <a href="https://2021.igem.org/Team:UZurich" target="_blank">UZH iGEM team</a>, as both our projects aimed to use synthetic biology to help Swiss agriculture. The use of GMOs in agriculture has been made illegal in Switzerland since 2005 and will continue to be until at least 2025. Because of this, the debate around GMOs in Switzerland is almost non-existent. Thus, we decided that a human practices collaboration on the Swiss people's view on GMOs would be interesting and beneficial to both teams. The recorded data could then be integrated back into our project, as we learn more about the social context in which our projects are based. Find out how we incorporated our findings on <a href="#">our Integrated Human Practices page</a>.
+  p For practical and personal interest reasons, the UZH team used a qualitative approach aimed at farmers while the EPFL team focused on quantifying the public's opinion of GMOs. While both tasks were split, they were imagined and designed during weekly video calls to ensure satisfaction for both parties, as well as a comprehensive project. We believe both qualitative and quantitative research is fundamental to any social science research.
+
+  h4 UZH's contribution
+  p The UZH team went to interview different stakeholders in agriculture and collected their views about GMOs by asking various questions on the subject. The full document summarizing their answers can <a href="assets/documents/0.pdf">be found here</a>.
+
+  h4 EPFL's Contribution
+  p We created a survey with questions about GMOs and sent it to various people in our circles. This survey aimed to quantify the public perception of GMOs and we received 129 answers. When looking at the data, one must keep in mind that the survey was not randomly distributed. Most participants were young (from 18 to 24 years old) and had received higher education. We are thus still unable to comment on the validity of our survey and to generalise the results to a wider population.
+  p The questions and answers we collected with the survey can <a href="assets/documents/1.pdf">be found here</a>.
+  p: em Note: The survey was originally created in French, therefore, the questions and some answers have been translated as accurately as possible to English for each figure.
+  p The analysis of the data can <a href="assets/documents/2.pdf">be found here</a>.
+
+  h4 Discussion
+  p The statements seem to indicate that the respondents are more wary of pesticides than of GMOs and that the environment is what they are the most concerned for when it comes to genetically modified organisms.
+  p The analysis of the data unfortunately did not yield significant results. Even though Figure 2 and Figure 4 seem to show promising trend lines, the error bars are too large to be able to comment on the data. Figure 1 shows that men and women are similarly wary about GMOs and that the standard deviation is approximately the same.
+  p Another very interesting point to develop would be the public's opinion on GMOs based on age. Unfortunately we lacked data in the 35-44 and 65+ age groups. We unfortunately did not find sufficient time to repeat this survey and distribute it appropriately to a broader demographic.
+
+
+  h2 Technical collaborations
+
+  p Team EPFL has the chance to represent a school that has a multitude of students specialized in engineering and technical fields. iGEM being a synthetic biology competition, half of our team are in Life Sciences Engineering. However, the other half consists of a Chemist, a Physicist, a Computer Scientist and two Microtechnical-Engineers. We thus offered our help to other iGEM teams that needed assistance with their hardware endeavours. This allowed us to have technical collaborations and to meet new iGEMers outside of Switzerland.
+
+  h3 KU Leuven : Directed Evolution Cell Selection Device
+
+  p The <a href="https://2021.igem.org/Team:KU_Leuven" target="_blank">iGEM Team from KU Leuven</a> contacted us after we offered our help on the iGEM Global Slack platform. We were mainly in contact with Anthony, one the team's members. He explained to us that they were working on directed evolution and that they wanted to conceptualise a device in which cells undergo a repeated cycle of a growth phase followed by a selection phase.
+  p Cell growth would be achieved in a rather classic bioreactor. Cell samples would then periodically be extracted from the bioreactor, analysed and sorted according to a defined parameter. The end product would be a cell optimised for a certain task or environment by directed evolution.
+  p The difficulty of this task was lying in the cell selection device. This project proposal has us hooked instantly. During this collaboration, we participated in weekly calls with Anthony during which we explored many options for his project.
+
+  p The proposed ideas were as follows :
+  ol
+    li Groups of cells physically isolated on a wafer. Elimination after selection achieved by a robotic arm boasting a laser.
+    li Groups of cells physically isolated on a wafer. Elimination after selection achieved with micro-tubes and suction.
+    li Individual cells isolated with electrodes and hydrophobicity on a wafer. Elimination after selection achieved by inverting the voltage on the electrodes and flushing the cells out.
+    li Individual cells isolated in droplets in a microfluidics circuit. Elimination after selection achieved by directing the cells into the appropriate exit with an electric field.
+
+  p Discussing all of these ideas and their respective problems and advantages was extremely interesting, making this collaboration with KU Leuven very enjoyable. In addition to our weekly brainstorming sessions, we were asked to propose a detailed description of the third idea that can <a href="assets/documents/3.pdf">be found here</a>.
+
+  p We later agreed this idea was not the best choice for the following reasons:
+  ol
+    li The system is slow when compared to idea #4.
+    li The system does not allow the cells to be lysed at any time during the process. This limits the criteria that cells can be evaluated on as one must keep them alive. Idea #4 allows the cells to undergo mitosis within their respective bubbles, thereby creating a clone that can be lysed, thus offering more options for analysis and selection.
+
+  p The final design for the cell selection device of the fourth idea can be found on <a href="https://2021.igem.org/Team:KU_Leuven/Collaboration" target="_blank">the wiki of KU Leuven 2021 iGEM</a>.
+
+  h3 University of Moscow: Fluorimeter
+
+  p <a href="https://2021.igem.org/Team:Moscow" target="_blank">Team iGEM Moscow</a> needed some help in engineering a fluorimeter. They knew how the device would work as well as how they wanted to use it. They needed our help for the following:
+  ul
+    li A CAD design of the casing for the fluorimeter which they could then 3D print
+    li Help with programming and extracting data from their Camera module
+    li Help with wiring all of this together
+
+  p We accepted the challenge and were very happy to bring our expertise, as students from an engineering school, to teams in need.
+  p As the Moscow team's goal was to build a fluorimeter, the principles behind this device should be casually explained: A Fluorimeter uses a light source which is filtered to a certain wavelength. This filtered light illuminates cells which contain a fluorescent gene: the protein coded by this gene emits light at a certain wavelength when it is illuminated. The wavelength emitted by the cells is not the same as the incoming beam. A second optical filter between the sample and the camera removes the original light while letting the cell emitted light through. Such a device gives an indication about how well the fluorescence gene is expressed and thus, also informs the experimentator that the desired sequence, which contains the fluorescent tag, is expressed.
+
+  p The <a href="https://ibsen.com" target="_blank">Ibsen.com website</a> explains clearly how one can build a fluorimeter.
+  p Our detailed work for this collaboration can <a href="#">be found here</a>.
+  p We would like to thank team Moscow for sharing their project with us! We hope our help has been satisfactory for them and we hope that with these CAD files, we have helped a future generation of iGEMers to complete their own DIY extra-cheap fluorimeter.
