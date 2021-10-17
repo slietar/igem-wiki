@@ -35,10 +35,12 @@
 
   &-image {
     width: 190px;
+    height: 285px;
+
     align-self: start;
     flex-shrink: 0;
-    aspect-ratio: 1 / 1.5;
 
+    object-fit: cover;
     background-color: #0001;
 
     @include media-breakpoint-down(md) {
