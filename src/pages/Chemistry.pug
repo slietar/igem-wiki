@@ -1,0 +1,80 @@
+extends templates/description.pug
+
+block hero
+  img.hero-image(src="assets/background/description.jpg")
+  .hero-contents: h1 Chemistry
+
+block description
+  h2 Introduction
+
+  p In order to design our project and build our experiments to the best of our ability, we needed data. In particular, we needed to know how much copper was being sprayed onto the leaves of the vines, how much ended up in the soil as a consequence, as well as the concentration of copper in the rainwater. These concentrations would give us the framework for building our synthetic biology experiments and testing our yeast. Indeed, we are looking to design a solution that works in the context of the issue we are attempting to solve.
+
+
+  h2 State of the field
+
+  p To understand the magnitude of the problem and showcase the use of a solution like ours, an important step was to get an idea of the concentrations of copper we needed to work with and how they are distributed in the soil over the field.
+  p The product used by winegrowers is a mix of copper sulfate (CuSO4) and lime (CaO) in water, not simply free copper ions in solution.
+  p.
+    The very first step was thus to look for official federal measurements of these concentrations.  Looking at the values of copper in the soil for Swiss
+    fields<ref authors="Federal Office for the Environment FOEN" title="Map of Heavy Metal Soil Contamination" url="https://www.bafu.admin.ch/bafu/en/home/topics/soil/state/visualisierung-der-schwermetallbelastung-des-bodens.html" year="2021" />, numbers as high as 311 mg/kg can be found in some vineyards. As the intervention threshold (the concentration at which copper has to be removed from soil, decided by authorities) is placed at 150
+    mg/kg<ref authors="Federal Office for the Environment, Forests and Landscape SAEFL" title="Sols pollués, Évaluation de la menace et mesures de protection" url="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj0j7WYzM_zAhUQzoUKHai8B84QFnoECAQQAQ&url=https%3A%2F%2Fwww.bafu.admin.ch%2Fdam%2Fbafu%2Ffr%2Fdokumente%2Fboden%2Fuv-umwelt-vollzug%2Fgefaehrdungsabschaetzungundmassnahmenbeischadstoffbelastetenboed.pdf.download.pdf%2Fsols_pollues_evaluationdelamenaceetmesuresdeprotection.pdf&usg=AOvVaw1jZpEgxRWuapR82aNNHAYq" year="2005" />, these values clearly demonstrate the problem's amplitude.
+  p However, when speaking to winegrowers, we learned that these measurements are made at a given time in the year, at a particular place in the field and width in the soil. The obtained values can vary from one year to another, and if the person measuring was different each time. Thus, it is difficult for us to know which concentrations we are working with when using these official measurements.
+  p To resolve this issue, we decided to measure these copper concentrations ourselves in the nearby fields. The idea was to visualize how copper is spread over the field, and at what concentrations we are dealing with when working with rain water.
+
+
+  h2 Measuring copper
+
+  p Generally, copper measurements are made in aqueous solutions using spectroscopic technique or atomic absorption technique. Atomic absorption is usually very precise, and would have been the most suitable option, but we did not have access to a machine capable of performing these kinds of measurements. Since we did, however, have a UV/Vis spectrometer available for our iGEM project at EPFL, we decided to use spectroscopic technique.
+  p In our case, the challenge was that copper sulfate is not in a sufficient concentration for its natural blue color to be detected, without any additional compound. Different options can be used to remedy this issue:
+
+  ol
+    li Find a compound that reacts with copper stoichiometrically producing a color that can be measured using the spectrometer
+    li Add a known quantity of copper sulfate and measure the difference between before and after the compound was added with the spectrometer
+
+  p In both cases, the Beer-Lambert law (A = e&thinsp;&middot;&thinsp;l&thinsp;&middot;&thinsp;c) is used, using the linear correlation between absorption (A) and concentration (c). Considering these two options, it seems that the second option is difficult to undertake because the starting absorption is really low, almost undetectable by the machine we were planning to use.
+  p We also realised that kits for these copper concentration measurements exist. Merck proposes one of these kits that contains everything necessary: reactives, tools for quantity measure (spoon) and most importantly, a clear and simple protocol that we could follow.
+  p We were a bit curious about the compounds that were in this kit. We found on the notice that the reactive agent was curprizone, a nicer sounding name for [Bis(Cyclohexylidenehydrazide)]. This is a compound that is usually used in the lab as a copper binder (3) and especially used for demyelination (definition : ) in mouse models.
+
+  p Looking at the mechanism that follows:
+
+  figure
+    img(src="assets/chemistry/reaction.jpg")
+    figcaption
+      span Figure 1
+      span Formation of the Cu2+-cuprizone complex
+
+  p It is easy to rationalize why cuprizone is a great dye marker for the presence of copper. In this molecule, there is a good electron donating group formed by the oxygen atoms on the extremities of the molecule. A great accepting group is also present, composed of nitrogen atoms linked to the cyclohexane group. Between these groups, a clear conjugation pathway exists. A color that can be seen only when linked to copper is that cuprizone loses its energy by vibrational movement and rotation on its single bond. On the contrary, when cuprizone binds to copper, the molecule is much more stable: rotational and vibrational movements happen less frequently and the energy is then propagated by electron transfer across the conjugation pathway, producing a blue light.
+  p However, stabilisation of the molecule need not be specifically caused by copper. In fact, another ion may also stabilize cuprizone : it needs, however, to be a metal or non metal atom with 2 charges, creating an ionic bond with the 4 nitrogen atoms on 2 molecules of cuprizone (see complex mechanism above). Naturally, Cu2+ is not the only element with these desired characteristics. In our case of the Bordeaux Mixture, Ca2+ is also present, and generally present in water is Mg2+. Thus, these elements may have an effect on our detection, especially on measurement accuracy. This shows that a particular attention must be accorded to matrix effect and should be taken into account as a potential error in all results including the use of cuprizone.
+  p To verify the reliability and the matrix effect of the reactives provided by copper, we began by measuring substances of known concentration with different components. Using pure CuSO4, an error in the concentration measure of 10% was found and using Bordeaux Mixture, results show the same reliability. This error is much more important than all the errors that appear due to manipulation, which is why it will be considered going forward as the global error on every measurement.
+  p The Merck protocol advised between adding the reactives to our solution and measuring the copper concentration with the spectrometer. This time is supposed to be 5 min and should not exceed 30 min. However, we rapidly observed that when measurements are done in neutral water, absorption was stable between 5 and 30 min but was absolutely not the case when we have to adjust for pH. Reactions and measurement should be at a pH between 4 to 10, according to Merck. To be on the safe side, we always adjusted the pH to be around 7 or 8. We thus tested absorption according to time in the case of pH adjustment.
+  p This curve was obtained, where we have a rapidly increasing phase, a stabilisation and finally a plummeting phase. The right values are obtained in the stabilisation phase. We thus decided to wait around 7 min instead of 5 between adding our reactives and measuring the concentrations and to verify this stabilisation for each measurement.
+  p At this step, we knew what product and procedure to use for our copper measurements in aqueous solution. The full protocol for these experiments can be found here. However, we also wanted to check the concentrations of copper in the soil and leaves in addition to in the rain water. We needed to extract copper from these organic materials which is not an easy task. After studying the literature, we developed a few procedures based on the Swiss government's usual procedures for copper extraction in soils (4). Once again, these protocols can be found here. These methods use a strong acid in high concentrations and heat it : nitric acid 65% at 50°C. To compensate for pH adjustment, a very concentrated Sodium Hydroxide solution (around 2 M) must be added. Throughout these experiments, the safety of our team was the priority. You can find more about our safety precautions on <a href="Safety.html">our Safety page</a>.
+  p At this point, we had a clear procedure using this Merck kit and used it with many of our measurements. Unfortunately, we did not have enough reactives for all of our experiments and when we asked Merck for one more kit, it had sold out. We needed to find a quick solution and by looking in the litterature, we decided to buy only cuprizone solid (that needed to be diluted for use).
+  p We had important work on cuprizone dilution because it needed to have a certain percentage of ethyl or methyl alcohol. We tested different solvent and volumic percentages of them in water. We also did different concentrations to have the right balance between complex concentration and the total volume of the solution to respect the limit of detection of the spectrometer. Finally, the dissolution itself was not easy:  hours of heating and stirring were needed.
+  p After all was set, we also tried a procedure that we could follow for every measurement. For this, we made calibration curves, testing different times of reaction and concentrations of cuprizone.
+  p Here, the calibration curve is forced to the intercept because of the linearity of Beer-Lambert law. However, we found out that calibration was quite different from one experiment from another with the same apparent conditions (cuprizone concentration and time).
+
+
+  h2 State of fields and soils
+
+  p We measured the concentration of copper at different areas of the field to see if there was any difference.
+  p Even though intervals are large due to the retrained quantity of measurement, it is clear that copper is not equally distributed in the soil across the field. To obtain more precise values, it would have been very interesting to do a statistical study on different fields having different farming habits (organic, using synthetic pesticides...). It would have also been very interesting to have information concerning how the field and the neighbouring ones were previously used and the quantity and quality (concentration, purity…) of the fungicide they usually put.  Indeed, we found relatively high concentrations of copper in the soil of the field across the street from the vines, and were curious to know whether or not this field had previously been a vineyard.
+
+
+  h2 Water and leaves
+
+  p Next, we tested the copper concentrations in rain water as well as vine leaves treated with the Bordeaux Mixture.  For control measurements, we chose vine leaves untreated by fungicide and found that the amount of copper there was under the detection limit. In comparison, ivy leaves hold a great amount of copper naturally. We found this to be extremely  interesting because it shows that the quantity of copper naturally present in plants, and this may possibly be linked to their level of vulnerability against certain risks such as fungi,  depends on the species and may clearly vary from one vine variety to another.  This must clearly be studied more by comparing a large panel of species, which has not been tried yet. However, various mildew resistance of different vine varieties has already been observed but no rationalization was actually made on this. However,  it already led to variety selection for hybridization of plants. (6)
+  p In treated leaves, we found 0.1 mg to 0.4 mg of copper per gramme of leaves but there was no significant difference between young and old leaves. This emphasizes the fact that the sprayed copper remains on the surface of the leaves and does not enter the plant system much, as that would have resulted in a higher amount of collected copper in the old leaves. Moreover, we also tested leaves at different heights to see if there was any difference. We hypothesized that the highest variability depends on the method of spraying the copper fungicide(by hand, using a tractor...). Additional tests would be needed to corroborate this theory. In the case of the studied field, we did not see a recurring pattern of copper concentration on leaves in terms of height.
+  p We then focused more closely on rainwater. Testing controls, we noticed no significant presence of copper in regular rainwater, that is, rain that had been collected falling from the sky. We then collected rain water under vines and tested it. As collecting these samples proved to be difficult, we performed our own experiment in the lab, where we simulated rainfall over leaves we had sprayed with fungicide. To simulate rainwater, we sprayed distilled water on the leaves in the laboratory and collected the water that falled of. We then measured copper concentrations at different quantities of rainfall (measured in height of fallen water).
+  p Maximum copper concentration was found around 4 mm of rain. Minimum concentrations were found below 0.5 mm of rain and above 8 mm. This suggests that the copper stays on the leaves, creating a protective sheath until a certain amount of water washes the copper off the leaves, removing this protective layer. This supports the use of copper as a fungicide. Winemakers whom we spoke to considered that this absence of protection happens around 20 mm of rainfall. Our data suggests this happens even earlier. However, we also need to consider that in the real situation, leaves are one on top of another and rain is not equally distributed on the vine. Thus, it is plausible that the copper layer stays longer than the 3 mm that we found during our experiments. We considered here that 7 ml of water that was put on the leaves corresponds to 1 mm of rain height over the surface of an individual leaf. This calculation was made considering the surface of a leaf using a programme that calculates this surface by taking a photo of the leaf on a white paper and searching for green pixels.
+  p By doing this experiment we found copper concentrations in the laboratory coherent with what we found in the fields, that is to say from 0,9 to 4,0 mg of copper per litre of rainwater. The highest values found were around 2.0 mg/l. We considered this value as a reference for the remainder of our project.
+
+
+  h2 Conclusion
+
+  p These experiments served a variety of purposes. They allowed us to verify the validity of our project - as seen by our measurements, there is indeed an excess of copper in the soils of vineyards, and these same numbers decrease dramatically in soil outside of vineyards. Most importantly, by measuring the copper concentrations of the rainwater after it passes through the leaves, we are able to determine how much copper we are actually dealing with. We find an initial concentration of copper of 2 mg/l. We use this value as our starting concentration from now on.
+
+
+  h2 References
+
+  bibliography
