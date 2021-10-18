@@ -1,4 +1,4 @@
-extends templates/description.pug
+extends templates/_description
 
 block hero
   img.hero-image(src="assets/background/description.jpg")
@@ -10,12 +10,12 @@ block description
   p Inspired by the struggles of local winemakers as well as the preservation of agricultural land's ecosystems, we set out to develop a system designed to deal with copper pollution in water. Through an engineering approach, we researched, designed, created and tested a potential solution to this problem, and now present a proof of concept. On this page we discuss the problem at hand, our proposed solution as well as goals for the future.
 
 
-  h2 The problem
+  h2(id="problem") The problem
 
   p.
     Winemaking holds significant cultural importance not only in Switzerland, but in all of Europe, with Italy, France and Spain accounting for 49% of the world wine
     production<ref authors="International Organisation of Vine and Wine" title="2020 wine product report, First Estimates" url="https://www.oiv.int/public/medias/7541/en-oiv-2020-world-wine-production-first-estimates.pdf" year="2020" />. Switzerland is home to
-    150 km<sup>2</sup> of vineyards, 11% of which are organic cultures<ref id="ofag" authors="Office fédéral de l'agriculture OFAG" title="L'année viticole 2020, Statistiques vitivinicoles" url="https://www.blw.admin.ch/dam/blw/fr/dokumente/Nachhaltige%20Produktion/Pflanzliche%20Produktion/Weine%20und%20Spirituosen/Weinwirtschaftliche%20Statistik/weinjahr_2020.pdf.download.pdf/f_weinjahr_2020.pdf" year="2020" />. In 2007, the Lavaux vineyards in Switzerland became a UNESCO world heritage
+    150 km<sup>2</sup> of vineyards, 11% of which are organic cultures<ref id="ofag" authors="Federal Office for Agriculture FOAG" title="L'année viticole 2020, Statistiques vitivinicoles" url="https://www.blw.admin.ch/dam/blw/fr/dokumente/Nachhaltige%20Produktion/Pflanzliche%20Produktion/Weine%20und%20Spirituosen/Weinwirtschaftliche%20Statistik/weinjahr_2020.pdf.download.pdf/f_weinjahr_2020.pdf" year="2020" />. In 2007, the Lavaux vineyards in Switzerland became a UNESCO world heritage
     site<ref authors="UNESCO" title="Lavaux, Vineyard Terraces" url="https://whc.unesco.org/en/list/1243/" year="2020" />
     due to their beauty and testimony to the longstanding cultural importance of high value winemaking in the local area. The winemaking industry is crucial to Switzerland both culturally and economically, sustaining around 1500 producers, and producing over 100 million liters of wine per
     year<ref id="ofag" />.

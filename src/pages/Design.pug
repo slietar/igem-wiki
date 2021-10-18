@@ -1,4 +1,4 @@
-extends templates/description.pug
+extends templates/_description
 
 block hero
   img.hero-image(src="assets/background/lake1.jpg" style="--color: #9ccacd;")
@@ -33,6 +33,12 @@ block description
       span Figure 1
       span Yeast surface display.
       span The CUP1 (cyan) is displayed as an Aga2 (pink) fusion protein on the surface of yeast. The expression can be detected by using fluorescent antibodies binding to the epitope tags (beige), and binding of the CUP1 to a biotinylated antigen (orange) can be detected using fluorescent avidin (violet). HA, hemagglutinin.
+
+  figure
+    div(id="plot-plasmid")
+    figcaption
+      span Figure 2
+      span Plasmid with a dimer inserted.
 
 
   h2 Dimers

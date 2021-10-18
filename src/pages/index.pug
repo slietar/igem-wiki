@@ -1,8 +1,8 @@
-extends templates/layout.pug
+extends templates/_layout
 
 block header
   header.header.header--white
-    include templates/header.pug
+    include templates/_header
 
 block contents
   main.layout-index
@@ -10,86 +10,36 @@ block contents
       video(src="assets/home/video.mp4" autoplay muted loop poster="assets/home/poster.jpg")
 
       .home-hero-contents
-        h1 CuRe
+        h1: include ../internal-assets/logo-text.svg
         p Solving copper pollution with synthetic biology.
 
 
-    section.section1.fadein
-      .section-left.fadein-target
+    section.section1-root.fadein
+      .section1-left.fadein-target
         h2 The problem
         .subtext Mildew and copper fungicides
 
         p Mildew is a parasite that attacks grapes, and greatly reduces yield in affected cultures.
         p In order to treat plants affected Mildew, copper-based fungicides have been in use for several decades thanks to their high effectiveness. Although copper has little effects on the taste and safety of resulting products, it can dangerously affect biodiversity in the environment of treated cultures.
 
-        a(href="#") More on the problem
+        a(href="Description.html#problem") More on the problem
 
-      .section-right.fadein-target(data-delay="1")
+      .section1-right.fadein-target(data-delay="1")
         figure
           img(src="assets/home/map.jpg")
-          figcaption Copper concentration in topsoil across Europe<a href="#" class="ref">1</a>. Blue: &lt;&nbsp;9&nbsp;mg/kg, red: &gt;&nbsp;65&nbsp;mg/kg. The maximum recommended concentration is 50&nbsp;mg/kg<a href="#" class="ref">2</a>.
-          // Source: <a href="https://ec.europa.eu/eurostat/web/lucas">LUCAS&nbsp;survey</a>.
+          figcaption Copper concentration in topsoil across Europe.<ref doi="10.1016/j.scitotenv.2018.04.268" /> White: &lt;&nbsp;9&#8239;mg/kg, dark blue: &gt;&nbsp;65&#8239;mg/kg. The legal “investigation threshold” for topsoil copper is 40&nbsp;mg/kg in Switzerland.<ref authors="Confédération suisse" journal="Fedlex" title="814.12 Ordonnance sur les atteintes portées aux sols" url="https://www.fedlex.admin.ch/eli/cc/1998/1854_1854_1854/fr" year="2016" />
 
 
     section.section5.fadein
       .fact-list
-        .fact-value.fadein-target 4&nbsp;kg/ha
-        p.fact-text.fact-text-bottom.fadein-target of copper fungicides can be used at most each year in the EU.<a href="#" class="ref">1</a>
+        .fact-value.fadein-target(data-delay="0") 24–30%
+        p.fact-text.fact-text-bottom.fadein-target(data-delay="0") of the 2021 French wine production is expected to be lost due to mildew.<ref authors="Ministère de l'Agriculture et de l'Alimentation" journal="Agreste : la statistique agricole" title="Viticulture n°2021-103, Infos rapides" url="https://agreste.agriculture.gouv.fr/agreste-web/download/publication/publie/IraVit21103/2021_103inforapviticulture.pdf" year="2021" />
 
-        .fact-value.fadein-target(data-delay="1") 24–30%
-        p.fact-text.fact-text-bottom.fadein-target(data-delay="1") of the 2021 French wine production is estimated to be lost due to mildew.<a href="#" class="ref">2</a>
+        .fact-value.fadein-target(data-delay="1") 4&nbsp;kg/ha
+        p.fact-text.fact-text-bottom.fadein-target(data-delay="1") of copper fungicides can be used at most each year in the EU.<ref authors="European Commission" title="Regulation (EU) 2018/1981" journal="EUR-Lex" year="2018" url="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R1981" />
 
-        .fact-value.fadein-target(data-delay="2") 27.4
-        p.fact-text.fact-text-bottom.fadein-target(data-delay="2") copper treatments have been applied on average in 2016 in the Champaign region of France.<a href="#" class="ref">3</a>
-
-
-    section.section3
-      //- img(src="assets/background/vineyard.webp")
-
-      .section3-contents
-        p The concentration of copper in the soil reaches up to the three times the legal limit in certain vineyards of Switzerland.<a href="#" class="ref">8</a>
-
-    //- section.section5
-      //- .fact-list
-        .fact
-          p.fact-text Copper fungicides have been in used since
-          .fact-value 1878
-
-        .fact
-          p.fact-text The annual limit of copper has been reduced to
-          .fact-value 4&nbsp;kg/ha
-          p.fact-text but has not been lowered.
-
-        .fact
-          p.fact-text The copper authorization has been reused until
-          .fact-value 2025
-
-      .fact-list
-        //-
-          p.fact-text.fact-text-top Copper fungicides have been in use since
-          .fact-value 1878
-          p.fact-text.fact-text-bottom and was then known as the “Bordeaux mixture”.
-
-        p.fact-text.fact-text-top The annual usage limit of copper fungicides has been reduced to
-        .fact-value 4&nbsp;kg/ha
-        p.fact-text.fact-text-bottom in the EU, but has not been lowered since 2012.
-
-        //-
-          p.fact-text.fact-text-top The use of copper in the EU has been reauthorized until
-          .fact-value 2025
-          p.fact-text.fact-text-bottom but no effective replacement solution has been found yet.
-
-        //-
-          .fact-value 10&nbsp;mm
-          p.fact-text.fact-text-bottom of rain are enough to remove 50% of copper on the leaves.
-
-        p.fact-text.fact-text-top The production loss attributed to mildew is estimated to be
-        .fact-value 24–30%
-        p.fact-text.fact-text-bottom in 2021 in France, when compared to a regular year.
-
-        p.fact-text.fact-text-top On average, in each vineyard,
-        .fact-value 27.4
-        p.fact-text.fact-text-bottom copper treatments have been applied in 2016 in the Champaign region of France.
+        .fact-value.fadein-target(data-delay="2") 355&nbsp;mg/kg
+        p.fact-text.fact-text-bottom.fadein-target(data-delay="2") of copper can be found in certain regions of Switzerland, more than 8&nbsp;times the investigation threshold.<ref authors="Federal Office for the Environment FOEN" title="Map of Heavy Metal Soil Contamination" url="https://www.bafu.admin.ch/bafu/en/home/topics/soil/state/visualisierung-der-schwermetallbelastung-des-bodens.html" year="2021" />
 
 
     section.section10.fadein
@@ -177,19 +127,23 @@ block contents
         p Suspendisse vitae elit consequat, rhoncus purus eu, pulvinar justo. Sed ac feugiat purus, ac tempor elit. Curabitur bibendum tortor ut tortor aliquam, a ornare nunc volutpat.
 
 
-    section.section2(data-image="0")
-      .backgrounds
-        //- img(src="assets/background/vineyard.webp")
-        img(src="assets/background/lab.jpg")
-        img(src="assets/background/lab2.jpg")
-        img(src="assets/background/lab3.jpg")
+    section.section2-root(data-image="0")
+      img(src="assets/background/vineyard2.jpg")
 
-      .links
-        a(href="#") Biology
-        a(href="#") Implementation
-        a(href="#") Human Practices
+      .section2-contents
+        .section2-left
+          h2 Human Practices
 
-    .sponsors
+          p Donec egestas lacus convallis eros feugiat consequat. Vestibulum porta augue vel dui vestibulum pellentesque.
+          a(href="#") More on Human Practices
+
+        .section2-right
+          blockquote
+            p “Le théâtre est un point d'optique. Tout ce qui existe dans le monde, dans l'histoire, dans la vie, dans l'homme, tout doit et peut s'y réfléchir, mais sous la baguette magique de l'art.”
+            cite John Doe, winemaker
+
+
+    .sponsors-root
       h2 Sponsors
 
       .sponsors-list
@@ -198,3 +152,7 @@ block contents
         a(href="https://www.microsynth.com" target="_blank"): img(src="assets/sponsors/microsynth.jpg" loading="lazy")
         a(href="https://promega.com" target="_blank"): img(src="assets/sponsors/promega.jpg" loading="lazy")
         a(href="https://www.snapgene.com" target="_blank"): img(src="assets/sponsors/snapgene.jpg" loading="lazy")
+        a(href="https://epfl.ch" target="_blank"): svg: use(href="assets/icons.svg#epfl")
+
+    section
+      bibliography
