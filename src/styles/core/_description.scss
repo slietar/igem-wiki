@@ -88,6 +88,11 @@
     font-size: 1.4rem;
   }
 
+  h4 {
+    margin: 1.2rem 0 1rem 0;
+    font-size: 1.2rem;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: $font-headings;
   }
@@ -388,5 +393,55 @@
         content: " ";
       }
     }
+  }
+}
+
+.desc-contents {
+  video {
+    margin: 1rem 0;
+    max-width: 100%;
+  }
+}
+
+
+//- Details
+
+.desc-contents {
+  details {
+    padding: 1.4rem 2rem;
+
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    h4 {
+      margin: 1.2rem 0 1rem 0;
+      font-size: 1.2rem;
+    }
+
+    h5 {
+      font-size: 1rem;
+    }
+  }
+
+  summary {
+    display: flex;
+    column-gap: 1rem;
+
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    &::before {
+      @extend %chevron;
+    }
+  }
+
+  details[open] summary {
+    margin-bottom: 1rem;
+  }
+
+  details:not([open]) summary::before {
+    transform: rotate(-90deg);
   }
 }
