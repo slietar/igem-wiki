@@ -5,3 +5,436 @@ block hero
   .hero-contents: h1 Implementation
 
 block description
+  h2 Introduction
+
+  p EPFL being an engineering school, we had the privilege of being able to create a system in which our genetically modified yeast could act. With our knowhow in computed assisted design, flow simulations and electronics, we were able to design and build a physical prototype. Here, we lay out the design process flow before describing the final prototype in detail.
+
+
+
+  h2 Design Process Flow
+
+  p The design of our reactor was a long set of complicated cycles which finally led towards a very simple product. This process, as any good engineering process would be, is an iterative process, with not only the design being changed, but also the problem itself.
+
+
+  h3 Wood Chip Implementation
+
+  .imp-group(data-default="design")
+    .imp-header
+      .imp-selector: include ../internal-assets/implementation/cycle1.svg
+      img(src="https://via.placeholder.com/550x300")
+
+    .imp-contents
+      .imp-section(data-name="design")
+        h4 Design
+        p Distributing wood chips under the plants to limit erosion is a common winemaking practice in the Lavaux area as the slopes on which the vines sit are very steep. Based on this, we wondered if we could create chips out of a bio-friendly material in which we could isolate (and contain) our genetically modified yeast cells. Winemakers would simply have to distribute these chips under the vine ranks and recuperate them after a certain amount of rainfalls as of which the yeast cells would be saturated in copper they would have bound.
+
+      .imp-section(data-name="feedback")
+        h4 Feedback
+        p We put this idea to the test by visiting vine plantations and by pitching it to two winemakers. They did not approve of the wood chip solution as it would require additional labour, which is the most expensive aspect of winemaking. However, another winemaker said that it also could indirectly decrease labour as it could help them fight weeds under the vine ranks.
+        p We also identified another problem, isolating the genetically modified yeast in these chips would not be safe enough. The risk of the encapsulation failing or simply of losing chips was too great. The encapsulation aspect of the project was very important since Swiss laws around GMOs are extremely strict.
+
+      .imp-section(data-name="learn")
+        h4 Learn
+        p We learned that we would have to ensure that the genetically modified yeast could perform in a truly isolated environment. Additionally, by creating a system that would block off weeds, we could make our product more commercially viable in the long term as the necessary amount of labour would decrease.
+
+
+  h3 Carpet Implementation
+
+  .imp-group(data-default="design")
+    .imp-header
+      .imp-selector: include ../internal-assets/implementation/cycle1.svg
+      img(src="https://via.placeholder.com/550x300")
+
+    .imp-contents
+      .imp-section(data-name="design")
+        h4 Design
+        p Following our discussions with the winemakers, we decided that a simple carpet design would be best adapted in the context of vineyards. A rank of vine plants would have a carpet running underneath it. The design would be rounded on the edges to trap water inside it, acting like a water slide. It would of course also have holes in it for the plants themselves. This way, water could be brought to a bioreactor in which we could control that the modified yeast strains do not leak into the environment better.
+
+      .imp-section(data-name="feedback")
+        h4 Feedback
+        p Thanks to a winemaker's insight, we calculated the amount of water to be treated per plant per rainfall and we found 6.4 liters. Take a look at <a href="Model.html">the modelling page</a> for details.
+
+        p To put this number into context, a reasonable estimation for the plantation density in the Lavaux area is around 8000 plants per hectare. Thus, each hectare of land would demand over 6.4 litres x 8000 = 51'200 litres of water to be treated for each major rainfall. This means each hectare would necessitate a reservoir of over 51 cubic meters in volume.
+
+      .imp-section(data-name="learn")
+        h4 Learn
+        p Following the values we obtained through our approximations, we realised that treating all of the water at the same time in a static manner would demand large infrastructure and quantities of yeast, should they work correctly, to be able to treat the water efficiently. To avoid this problem, we decided to begin developing a continuous flow bioreactor.
+
+
+  h3 Eternal Cycle Bioreactor
+
+  .imp-group(data-default="design")
+    .imp-header
+      .imp-selector: include ../internal-assets/implementation/cycle2.svg
+      img(src="https://via.placeholder.com/550x300")
+
+    .imp-contents
+      .imp-section(data-name="design")
+        h4 Design
+        p A continuous flow through device would allow us to treat large quantities of water without relying on an overly voluminous recipient for the rainwater. The simplest design would be a straight pipe with a filter in which our yeast would treat the contaminated water. However, this poses issues such as filter clogging and a gradient in copper concentration resulting in yeast closest to the entrance getting saturated in copper more quickly than the cells closest to the filter.
+        p We thus imagined the following concept: trapping the yeast in an eternal circular cycle with water exiting at particular angles so as to not clog the filter.
+
+      .imp-section(data-name="build")
+        h4 Build
+        p We were given access to a 3D Printer for us to prototype our designs. We used polylactic acid (PLA) filament for part printing and polyvinyl chloride (PVC) tubes to bring the design together.
+
+      .imp-section(data-name="test")
+        h4 Test
+        p The system was tested by simply connecting a water tap to our device. We increased the water flow until leaking appeared at the interface between the printed parts and the PVC tubes. Unfortunately, the water in one of the tubes was static. This would mean that the yeast would not rejoin the circuit and they would end up clogging up the filter. We tested the system with and without adding a filter.
+
+      .imp-section(data-name="learn")
+        h4 Learn
+        p If water is static, it means that the water pressure at both ends of the tube is equal. We concluded that modifying the geometry of the inside of the parts would be necessary to create a pocket of lower pressure that should result in the desired flow.
+
+
+  h3 Eternal Cycle Bioreactor with a Low Pressure Pocket
+
+  .imp-group(data-default="design")
+    .imp-header
+      .imp-selector: include ../internal-assets/implementation/cycle2.svg
+      img(src="https://via.placeholder.com/550x300")
+
+    .imp-contents
+      .imp-section(data-name="design")
+        h4 Design
+        p This design is similar to the previous design, but the 3-D printed parts are fused into one to eliminate the tube in which the water was static. Additionally, special geometry creates a pocket of low pressure to optimise water flow.
+
+      .imp-section(data-name="build")
+        h4 Build
+        p Flow simulations helped us design a geometry that would create a pocket of low pressure allow the water coming from two different tubes to merge and add up, completing the cycle. . We achieved this thanks to the pinch off of the main input channel. Additionally, a slight angle as to not have a perpendicular connection was favourable. However, the simulations only gave us satisfactory results at high flow and porous filters designed for cell filtration do not allow said flow.
+
+      .imp-section(data-name="test")
+        h4 Test
+        p The system was tested by again simply connecting a water tap to our device. We increased the water flow until it started to leak. Unfortunately, the printed system did not behave like the simulation did. All of the water entering the circuit would exit after only one revolution, thus not rejoining the circuit as we had hoped even with the pocket of low pressure.
+
+      .imp-section(data-name="learn")
+        h4 Learn
+        p The system was not functioning as the simulations predicted. This could be because our testing setup was not ideal (unable to create precise pressure and flow), but it most likely is simply the result of real-world physics being more complicated than simulations done at laminar flow.
+        p We seeked out expertise on this issue and found it with Professor Giovanni Boero at EPFL who was very sceptical of our design and urged us to change to a simpler fluidics design.
+        p Our flow simulations only functioned at high flow, which is not possible with porous filters. We needed to find a way to have higher flow but at the same time to keep the cells inside of the reactor.
+
+
+  h3 Disk Reactor
+
+  .imp-group(data-default="design")
+    .imp-header
+      .imp-selector: include ../internal-assets/implementation/cycle2.svg
+      img(src="https://via.placeholder.com/550x300")
+
+    .imp-contents
+      .imp-section(data-name="design")
+        h4 Design
+        p To simplify the fluidics system, Prof. Giovanni Boero suggested a disk design where water enters tangentially and exits at the center. This way, each molecule of water stays inside the disk for a long period of time as it spins around. We also decided that we would incorporate beads into our design as a substrate for the yeast. By fixing the yeast cells onto beads much larger than themselves, we could replace the porous filter with a simple grid filter.
+
+      .imp-section(data-name="build")
+        h4 Build
+        p Flow simulations helped us design a geometry that would create a pocket of low pressure allow the water coming from two different tubes to merge and add up, completing the cycle. . We achieved this thanks to the pinch off of the main input channel. Additionally, a slight angle as to not have a perpendicular connection was favourable. However, the simulations only gave us satisfactory results at high flow and porous filters designed for cell filtration do not allow said flow.
+        p We wanted homogeneous distribution of beads inside our disk bioreactor. Our worry was that the beads would either be ejected to the outside of the disk because of centrifugal forces or clump in the center because of the lack thereof. This would depend on the speed of the water entering the disk. We had the idea of studying making the flow just slow enough for the beads to clump at the center and then to add grids tangent to the flow lines to guide the bead away from the center.
+
+      .imp-section(data-name="test")
+        h4 Test
+        p Tests showed that the water spiraled around inside the disk as expected. At high flow, the beads were indeed ejected towards the exterior wall of the disk and at low flow they accumulated around the center. We found a sweet spot in flow speed at which the beads came to the center, but also amassed on the grids. Unfortunately, they were not ejected back out as we had hoped. We believe it to be due to the grids being vertical and thus creating a lot of resistance.
+
+      .imp-section(data-name="learn")
+        h4 Learn
+        p This design demands high flow through, otherwise the beads clump together in the center. Unfortunately, since yeast uptakes copper very slowly, we could not hope to make this design work for our biological solution. We needed to abandon the continuous flow concept and bring our focus back to statically treating the copper concentrated water. Nevertheless, we believe that our work here could serve as an interesting beginning for future iGEM teams whose biological systems are much faster.
+
+
+
+  h2 Final design: Semi-static reactor with beads
+
+  p The final design is a simple container capable of making water evacuation automatic. It contains the beads encapsulating the yeast. Copper concentrated water enters the device until a pressure sensor detects that the desired volume of water has been captured. Inside the reactor, yeast filters the water. To achieve a homogenous distribution of yeast, we fix them onto beads. These beads are blocked inside the reactor thanks to a simple grid filter.
+  p After treatment, water is evacuated by opening a solenoid valve. A solenoid is an electromagnetic system in which a copper wire is coiled in a cylindrical shape. By injecting electric current into the wire one creates a magnetic field that in turn applies a force onto certain metallic materials and thus sets them in motion. This is how we can open and close the valve.
+
+  h3 Parts
+  p For this project, we used products from local suppliers as much as possible: our main providers for the implementation were Distrelec and Galaxus. In the following paragraphs, each part bought or printed will be referenced so as to be able to replicate our design.
+
+  .imp-part-item
+    .imp-part-image: img(src="assets/implementation/0.jpg")
+    .imp-part-contents
+      h4 Pressure sensor
+      p Product name: <a href="https://www.adafruit.com/product/4258" target="_blank">Adafruit LPS35HW Water Resistant Pressure Sensor - STEMMA QT</a>, Adafruit, product no. 4258.
+      p The pressure sensor was specifically chosen for the following characteristics:
+      ul
+        li Water resistance
+        li pressure measurement range between 260 hPa and 1260 hPa. (1 bar ~ 1000 hPa)
+        li I2C serial connection (easy to use and compatible with Raspberry Pi)
+      p We coated the pressure sensor with a 2 component epoxy glue to completely isolate the electronics from the water.
+
+  .imp-part-item
+    .imp-part-contents
+      h4 Solenoid valve
+      p Solenoid Valve ø 6 mm 24 VDC 133 Pa &ndash; 1.0 MPa 2/2 Opener (normally closed), SMC, product no. VDW22JA.
+      p This solenoid valve was specifically chosen for the following characteristics:
+      ul
+        li One-touch fitting (perfect for the plastic tubing we use)
+        li 12V driving tension (supplied by most phone chargers)
+        li Closed at rest (using no energy most of the time)
+
+      p We 3D-printed an adapting part to connect the tubing to the valve.
+    .imp-part-image: img(src="assets/implementation/1.jpg")
+
+  details
+    summary Driving the solenoid valve
+    img(src="assets/implementation/5.jpg")
+    p In electronics, driving a component means controlling it. In our case, we wish to drive the solenoid valve to turn it on or off. Solenoid driving requires additional components to protect the electronics in the controlling unit (in our case, a Raspberry Pi 3). This is because a solenoid stores magnetic energy that, when released, can induce a high current spike. We thus need an electric circuit to protect the Raspberry Pi.
+    p The easiest way to protect a raspberry pi from a solenoid or from a motor is to use a commutation transistor (a transistor that can resist a high electrical current). Such transistors are usually manufactured with an internal diode for additional protection.
+    p Another important component is a flyback diode which will dissipate the energy coming from the current spike, thus protecting the rest of the circuit.
+
+  .imp-part-item
+    .imp-part-image: img(src="assets/implementation/2.jpg")
+    .imp-part-contents
+      h4 Commutation transistor
+      p MOSFET, Single - N-Channel, 100V, 5.6A, 43W, TO-220AB, Vishay, product no. IRL510PBF.
+      p The commutation transistor is manufactured with an integrated commutation diode.
+      p The transistor resists the 12V required by the solenoid and is able to withstand the current spikes. Additionally, the raspberry pi's 5V is sufficient to activate the transistor's gate.
+      p The diode and transistor were chosen to at least withstand 36 V and 1.5 A of current.
+
+  .imp-part-item
+    .imp-part-contents
+      h4 Flyback diode
+      p Schottky Diode, 1A, 40V, DO-41, Taiwan Semiconductors, product no. 1N5819.
+      p The flyback diode in parallel to the solenoid can withstand the necessary 12 V and fast enough to react to the current spikes.
+      p The diode and transistor were chosen to at least withstand 36 V and 1.5 A of current.
+    .imp-part-image: img(src="assets/implementation/3.jpg")
+
+  .imp-part-item
+    .imp-part-image: img(src="assets/implementation/4.jpg")
+    .imp-part-contents
+      h4 Controlling unit
+      p Raspberry Pi 3 model B+ with Raspberry Pi 7" touch screen, product no. 2473872.
+
+  details
+    summary Raspberry Pi 3 pinouts and wiring
+
+    figure
+      img(src="assets/implementation/6.jpg")
+      figcaption
+        span Figure (X)
+        span Raspberry Pi 3 pinouts.<ref id="rpi" authors="Raspberry Pi Foundation" title="Raspberry Pi Documentation, GPIO pinout" url="https://www.raspberrypi.com/documentation/computers/os.html#gpio-pinout" />
+
+    p The pressure sensor uses I2C communication Protocol. The Raspberry Pi 3 pins we will be using are one of the 3v3 pins and one of the ground pins, the GPIO 2 which is the Data signal for the I2C pressure device and the GPIO 3 which is the clock signal for the I2C pressure device.
+
+    p As can be seen on <a href="https://learn.adafruit.com/lps35hw-water-resistant-pressure-sensor/pinouts" target="_blank">the pinouts page</a> for the pressure sensor on their website, there are only 4 pins we will be using for communicating with the Raspberry pi with I2C serial communication protocol. These are:
+    ul
+      li <strong>V<sub>in</sub></strong> (the V+ voltage) which will be wired to the 3v3 on the RPi
+      li <strong>Gnd</strong> which will be wired to the Gnd on the RPi
+      li <strong>SCK</strong> (the clock signal) which will be wired to the GPIO 3 (SCL) on the RPi
+      li <strong>SDI</strong> (the data signal) which will e wired to the GPIO 2 (SDA) on the RPi
+
+    figure
+      img(src="assets/implementation/7.jpg")
+      figcaption
+        span Figure (X)
+        span Pressure sensor <ref authors="Bryan Siepert" journal="Adafruit learning system" title="Adafruit LPS35HW Water Resistant Pressure Sensor" url="https://www.distrelec.ch/Web/Downloads/_m/an/4258_eng_man.pdf" /> connected to the Raspberry Pi<ref id="rpi" />.
+
+      p For driving the solenoid, the GPIO 23 has been set in software to be high when the solenoid should be open. For driving a pump (if needed), the GPIO 24 has been set in software to be high when the pump should be pumping.
+      p: em Warning: The GPIO of the Raspberry Pi are not to drive the solenoid or the pump directly. The commutation diode is a protection for the Raspberry Pi as it would not stand the currents which are flowing through the solenoid or pump. The GPIO pin must be connected to the gate of the transistor (see transistor datasheet).
+
+
+  h3 Software
+
+  h4 Installation
+  p The software designed for this project uses Python on a Raspberry Pi 3 model B+. There is <a href="#" target="_blank">a Git repository TODO</a> where you will find a README.md file which explains how to install the necessary libraries to run our code and how to use it. A small summary of what the code does can be found on this page.
+  p In our project, we used the Raspberry Pi 3 libraries which we found on Raspberry Pi Foundation. We also used the following libraries which can be installed with the python package installer pip:
+  ul
+    li: a(href="https://www.selenium.dev/documentation/webdriver") Selenium WebDriver
+    li: a(href="https://github.com/adafruit/Adafruit_CircuitPython_LPS35HW") Adafruit CircuitPython LPS35HW
+  p Look at the README.md file in the Git repo for more info about how to install them.
+
+  h4 Graphical interface
+  p The GUI was written in Python for Selenium WebDriver. Selenium WebDriver allows for a website to be opened and controlled directly by python. The GUI itself looks like this:
+
+  figure
+    img(src="assets/implementation/8.jpg")
+    figcaption
+      span Figure (X)
+      span Graphical user interface.
+      span Drawn using <a href="https://www.chartjs.org" target="_blank">Chart.js</a>. References for icons can be found on <a href="Attributions.html">the attributions page</a>.
+
+  p There are four buttons that can be used:
+  ul
+    li The top right button represents the valve and is used simply to open it and close it manually
+    li The middle right button represents a pump. It was not used during the final implementation but can be useful for future projects.
+    li The bottom left button shows the pressure reading
+    li The bottom center button is the script we use for the automation of the project
+    li The bottom right button can be customized. For the moment, it writes the data measured by the pressure sensor to a file named data.txt in csv format.
+
+  figure
+    img(src="assets/implementation/9.jpg")
+    figcaption
+      span Figure (X)
+      span Pressure measurement mock values.
+      span The X axis is the measurement index (config.py lets you choose the time between measurements).
+
+  p The GUI is not complicated to use. The only part where one must do more than press on a button is for setting up the experiment: one must choose the pressure thresholds for the control of the valve. Remember that Bernoulli's fluids law states that pressure in an incompressible fluid is proportional to the height of the fluid in a static system:
+  img(src="assets/implementation/10.jpg")
+  p However, this same law states that a higher fluid velocity lowers pressure for a same height. In other words, the threshold for opening and for closing the valve must be chosen as to have a sufficient gap. We suppose the change will not be significant for our reactor. We shall test that.
+
+  figure
+    img(src="assets/implementation/11.jpg")
+    figcaption
+      span Figure (X)
+      span GUI setup of the bioreactor thresholds.
+
+  p To use the bioreactor program, one has to choose only three thresholds: the threshold at which the valve will open (threshold high) the threshold at which the valve will close (threshold low) ad the threshold at which the valve will stop emptying the reactor after the maximum incubation time has been waited. The incubation time can be chosen in the config.py file.
+
+  h4 Structure of the code
+  p The code is structured into a few main modules:
+  ul
+    li <strong>Main.py</strong> periodically uses the other modules in an update() function.
+    li <strong>Managers.py</strong> defines a set of functions to be called once an application if started by pressing on one of the buttons. These managers manage the devices and manage the data acquired by these devices.
+    li <strong>Tools.py</strong> defines a few shortcuts to make the code more readable.
+    li <strong>Devices.py</strong> defines the device class and chooses the pins for output
+    li <strong>Config.py</strong> defines a set of configurations for the code itself. By changing the DEBUG_MODE from False to True, one can use mock values and mock libraries to simulate the behaviour of the code.
+    li The <strong>GUI</strong> directory contains the set of html, css, js scripts needed for the web page to be decoded by a browser (Chrome in our case).
+
+
+
+  h2 Hardware setup
+
+
+  h3 Setup description
+
+  p For the electronics, we used a Hirschman board which made prototyping much simpler. This type of board has lines of connected pins, 4 by 4 which replace soldering.
+  ul
+    li The Transistor's Source (bottom transistor pin) is wired to the ground set by the negative electrode of the battery.
+    li The Transistor's Drain (center transistor pin) is wired to the solenoid and the diode, which in turn are wired to the positive electrode of the 12V battery.
+    li The Transistors Gate (top right) is wired to the Raspberry Pi.
+  p This is the real life electronics representation of the previously explained schematics. The Raspberry pi has an additional four cables going off towards the pressure sensor to the left.
+
+  figure
+    img(src="assets/implementation/12.jpg")
+    figcaption
+      span Figure (X)
+      span Cables on the Hirschman board.
+
+  p The pressure sensor is glued using epoxy to the 3D-printed bottom part of the reactor. The bottom part is specially designed to leave an opening for the sensor's sensing pad. The pressure sensor was coated in epoxy before being glued as only the pad is water resistant.
+  p The valve has two cables: the red cable, as usual, represents the positive voltage. The direction of wiring is important, as the force generated depends on the direction of the current. The solenoid will probably not break if wired incorrectly, but it will certainly not work. For our own test, we had to 3D print an adapter because the solenoid's one touch fitting diameter and the plastic tube's diameter were incompatible.
+
+  figure
+    img(src="assets/implementation/13.jpg")
+    figcaption
+      span Figure (X)
+      span Pressure sensor mounted on the reactor.
+
+  p The pressure sensor is glued using epoxy to the 3D printed bottom part of the reactor. The bottom part is specially designed to leave an opening for the sensor's sensing pad. The pressure sensor was coated in epoxy before being glued as only the pad is water resistant.
+  p The valve has two cables: the red cable, as usual, represents the positive voltage. The direction of wiring is important, as the force generated depends on the direction of the current. The solenoid will probably not break if wired incorrectly, but it will certainly not work. For our own test, we had to 3D print an adapter because the solenoid's one touch fitting diameter and the plastic tube's diameter were incompatible.
+
+  figure
+    img(src="assets/implementation/14.jpg")
+    figcaption
+      span Figure (X)
+      span Full setup view.
+
+  p For a constant flow to be used, we had to use a water tap. To get the water from the tap to the reactor, we had to make a tubing circuit made up of a 3D printed adapter for the tap, a metal rod found in the meeting room, some tubing we had bought and a lot of scotch tape.
+
+
+  h3 Tests
+
+  p The goal of this setup was to test the code on the reactor. For that we did the three following tests.
+
+  h4 Calibration curve
+  p What we achieved here is to test that we could have a reading of the volume thanks to the values returned by the pressure sensor. This was done by adding 20 ml at a time from 0 to 500 ml. The obtained curve only works for static water.
+
+  figure
+    img(src="assets/implementation/15.jpg")
+    figcaption
+      span Figure (X)
+      span Pressure over time with a regular increase of pressure followed by a release of the water.
+
+  figure
+    img(src="assets/implementation/16.jpg")
+    figcaption
+      span Figure (X)
+      span Calibration curve of the reactor. Actual pressure to actual volume reading.
+
+  p The calibration curve shows that volume as a function of pressure can be approximated using a linear curve with bias for the volumes we are treating.
+  p The calibration curve would not be sufficient if we did not determine the bias due to the velocity of the water. For this, we completely emptied the reactor and filled it with a known volume. We then opened the valve and looked at the pressure reading at various pressures.
+
+  figure
+    img(src="assets/implementation/17.jpg")
+    figcaption
+      span Figure (X)
+      span Evaluation of the pressure difference induced by the flow velocity.
+
+  p There is no noticeable bias which would affect the thresholds more than noise would. Hence, in our specific design, we can ignore the effect of the flow velocity changing because of the valve being opened or closed. The time bias is due to this experiment being done after a while of waiting with the program opened.
+  p Another final test was done: does the bioreactor code work? For this last test, we set the inflow to be as continuous as the faucet allowed and looked at the reactor's reaction.
+
+  figure
+    img(src="assets/implementation/18.jpg")
+    figcaption
+      span Figure (X)
+      span Continuous mode over multiple cycles with threshold chosen between for the mid threshold and 984 for the high threshold.
+
+  p The uneven spikes are due to trapped water in the tubing being released at once. Otherwise, the code seems to react as it was designed to. This shows that the program works well in its automated mode. Water is constantly being poured into the reactor and the reactor empties whatever it cannot treat by opening the valve once the volume is too high.
+
+
+
+  h2 Beads
+
+  figure
+    img(src="assets/implementation/19.jpg")
+    figcaption
+      span Figure (X)
+      span Beads inside the reactor.
+
+  p During the design process flow, we came to the conclusion that beads on which we could fix the yeast strains could facilitate the problems with water flow as it allows one to use simple grid filters instead of porous filters for free-floating yeast cells.
+  p The idea is that the grid should be easily removable and look a bit like a frying basket.
+  p There are many options when it comes to fixing cells to substrates. Here we explore three good candidates and justify our final decision.
+
+
+  h3 Alginate beads
+
+  h4 Introduction
+  p A widely spread way of containing live organisms for analysis is Alginate beads: these have previously been used in iGEM<span class="ref-group"><ref id="tu-eindhoven" authors="iGEM TU Eindhoven 2015" title="Alginate beads" url="http://2015.igem.org/wiki/images/4/4c/TU_Eindhoven_Protocols_Alginate_beads.pdf" year="2015" />, <ref authors="iGEM Paris Bettencourt 2012" title="Encapsulation" url="http://2012.igem.org/Team:Paris_Bettencourt/Encapsulation" year="2012" /></span>, and many protocols can easily be found from other sources<ref authors="AMSBIO" title="Alginate 3D Cell Culture Kit" url="https://resources.amsbio.com/Datasheets/AMS.CSR-ABC-KIT.pdf" />. We will be containing yeast for a whole other purpose: bio-adsorption.
+
+  h4 Manufacturing
+  p Since analysis is not our goal, contamination is less of a problem when manufacturing the beads. However, for the <strong>Re</strong>cycling part of <strong>CuRe</strong>, we want to maximize yeast content and minimize other organisms. When fabricating beads for later use, making sure the products used are sterile will be important. To produce these beads, we use a very similar protocol to the one found by TU Eindhoven's 2015 igem team<ref id="tu-eindhoven" />.
+
+  h4 Yeast survival
+  p When it comes to storage inside of the beads, under the right conditions, yeast stays viable at around 80% after 5 years<ref doi="10.1016/0168-1656(94)90120-1" />. For our purposes, we shall consider the yeast cells should still function after a period of about 6 months.
+
+  h4 Dissolution
+  p To recuperate cells, the beads need to be dissolved. For quick and cell-conserving dissolution, sodium citrate seems to be our best choice<ref doi="10.1080/09593330.2019.1673827" />. As it enables total dissolution of beads up to 4 mm in diameter under 20 minutes. Sodium citrate has been shown to provoke cell death in <em>Cryptococcus laurentii</em><ref doi="10.1111/j.1365-2672.2012.05312.x" />, but the mechanisms responsible for cell death are slow enough: It takes about a day for viability of the yeast to reach about 50%.
+  p If treatment of yeast is done within the first hour after dissolution, our estimations (which are based on the sodium-citrate curve above) show there should be about 95% survival (curve is roughly estimated to be represented by an exponential: y=3^(-x (days)).
+
+  h4 Reuse
+  p Since our goal is to eventually upscale the process and we are taking a sustainable approach, we need to be able to retrieve the cells, but also the material for the beads. For this we used this protocol<ref doi="10.1080/09593330.2019.1673827" />. It basically is a dissolution of the beads followed by centrifugation of the solution. The beads formed using reclaimed alginate are less rigid and are of lower quality. Alginate can probably only be reused once though, and a more sustainable solution for encapsulation should be investigated for large scale.
+
+  h4 Biocontainment
+  p Biocontainment was one of the largest issues in the project. Biocontainment of large quantities of GMO cells for continuous possibly high debit of water over a long period of time is bound to be a bit unrealistic. Nonetheless, our bead implementation proposes a theoretically safe solution: (TODO)
+  p Alginate beads are normally nanoporous (~ 5 nm)<ref doi="10.1016/j.progpolymsci.2011.06.003" />, while yeast cells are several microns large at all temperatures considered for our application (between 15 and 35°C)<ref doi="10.1093/femsyr/foy052" />. However, this does not prevent cells from escaping: cell encapsulation weakens the Ca-Alginate structure (Structural changes of Ca-alginate beads caused by immobilized yeast cell growth - ScienceDirect) while cell growth forms new passageways through the Ca-Alginate matrix. Simple alginate beads are not sufficient to ensure biocontainment. Thus, we imagine a double layered bead: the core would contain cells which have colonized the bead during ……. and the second, harder layer (made with 3.5% to 4% alginic acid sodium salt) would then be added after growth has stopped, to avoid leaks. Cells should not escape if there is a clear hard complete layer on the outside.
+
+  h4 Protocol
+  p See <a href="Protocols.html">the Protocols page</a>.
+
+
+  h3 Agarose beads
+
+  h4 Introduction
+  p Agarose is widely used in the laboratory as a gelant for gel electrophoresis. After heating, agarose forms a polymeric matrix at temperatures depending on agarose concentration and fabrication method. “The gel formed is noncharged, porous, resistant toward bacterial degradation, and does not require counterions for stability”<ref doi="10.1016/0076-6879(87)35080-3" />. For this project, we made a few beads in water with varying concentrations before realising that we would need a few more resources than our own intuition. The next paragraphs are a quick summary of what we have found and how we could possibly apply the agarose bead technology to a future encapsulation task.
+
+  h4 Manufacturing
+  p Agarose bead fabrication for cell encapsulation would be done using one of two methods: the interphase technique<ref doi="10.1016/S0167-7012(97)00071-7" />, or the two-phase bead polymer bead technique.
+  h5 The interphase technique
+  p In the interphase technique, interfacial tension between two liquids of different polarity is used to isolate spherical beads. A polymer-cell mixture is made (such polymers include agarose, agar-agar, phytagel etc…) by concentrating the cells in the solid warm gel. The beads are then formed by using vegetable oil as a liquid with different polarity: the polymer mixture is premixed with the oil at a ratio of 10:1 before dropping the mixture in a bath of oil with a funnel.
+  h5 The two-phase polymer bead technique
+  p This method uses the same interfacial tension but the bead formation method differs. Here, polymer-cell solutions are kept above gelling temperatures in warm oil while stirring to form adequate sized droplets in the oil. When the droplets are adequate, the mixture is left to cool while constant stirring occurs, keeping the beads in their droplet shapes when taking gel form. The resulting beads are then sieved to remove the smallest beads so as to not have beads clogging or escaping the reactor.
+
+
+  h3 Ceramic beads
+
+  h4 Introduction
+  p Ceramic beads are more and more widely used in modern water treatment plants as surfaces for microorganism fixation. In Switzerland, bacterial populations, which constitute the bulk of the biological cleansing of wastewaters, have been constantly reused throughout the last half century. The bacterial mud is constantly being recycled into the bioreactors, but as clumps of bacteria form, the bacteria lose efficiency. Ceramic bead technologies are used as porous materials which bacteria can colonize, which gives the reactor more reactive surface area as they are no longer clumped together.
+
+  h4 Biocontainment
+  p With agarose, alginate or phytagel beads, we can ensure yeast does not survive and reproduce outside of its controlled gel. However, we cannot fill ceramic beads with tryptophane, nor can we ensure a constant influx of ypd with the water. The basic mechanism keeping the GMO yeast from being released would have to be removed in order for the yeast to survive. Ceramic beads are not made to contain cells, but merely to serve as a attachement surface on which bacteria can feed and breed. Hence, yeast would detach and end up in nature unless it is filtered. But the clogging of filters due to yeast is the main reason we chose beads in the first place.
+  p On the other hand, ceramic beads seem to offer a more realistic large-scale implementation, as it is already used in water treatment facilities. Instead of adapting the beads to the yeast, the synthetic yeast strain would have to be further developed. An example of further amelioration would be the addition of a flocculation process at CUP1 saturation so that yeast cells can sink or float in easily collectible clumps<ref doi="10.1128/JB.00344-19" />. For better containment, the yeast could be modified to need a certain wavelength of light to transcribe proteins<ref doi="10.1021/cb9002305" />. If these proteins are necessary to the survival of the cell and the light used is unusual in natural environments, the cells would not survive outside of the water treatment facilities. This would solve the problem of clogged filters and GMO release to the natural environment.
+  p Out take on the idea: Ceramic beads for water treatment are not adapted to our current biocontainment problem, but they would be the most adapted one if our solution were to be implemented large-scale in water treatment facilities.
+
+
+
+  h2 References
+
+  bibliography

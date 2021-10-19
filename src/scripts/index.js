@@ -4,6 +4,8 @@ import './plot';
 import './header';
 import './toc';
 
+import './pages/implementation';
+
 
 document.title = 'CuRe - EPFL iGEM 2021';
 

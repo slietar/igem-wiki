@@ -1,0 +1,62 @@
+@use "../constants" as *;
+@use "../mixins" as *;
+
+
+.imp {
+  &-group {
+    display: contents;
+  }
+
+  &-header {
+    display: grid;
+    align-items: center;
+    column-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-selector {
+    [data-name] {
+      cursor: pointer;
+
+      &._active path {
+        fill: $accent-color;
+      }
+    }
+
+    text[data-name]._active {
+      @include underline($color: $accent-color, $thickness: 2px);
+    }
+  }
+
+  &-contents {
+    @include superimposed-children();
+  }
+
+  &-section {
+    &:not(._active) {
+      visibility: hidden;
+    }
+  }
+
+
+  &-part {
+    &-item {
+      display: flex;
+      column-gap: 2rem;
+
+      margin: 1rem 0;
+
+      + details {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-image {
+
+    }
+
+    &-item {
+
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="247 37 466 466">
+  <g data-name="design">
+    <path fill="#AE5A21" d="M411.72 125.06a68.28 68.28 0 0 1 136.56 0 68.28 68.28 0 0 1-136.56 0z"/>
+    <text font-family="Helvetica" font-size="20" font-weight="600" fill="#FFF" x=".71" y="53.77" transform="translate(434.62 79.68) translate(45 0)" text-anchor="middle"><tspan x=".71" y="53.77">DESIGN</tspan></text>
+  </g>
+
+  <path fill="#E2772E" d="m548.7 174.2 12.82 12.83 6.52-6.52-3.48 29.12-29.11 3.47 6.52-6.52-12.82-12.82z"/>
+
+  <g data-name="build">
+    <path fill="#E58C61" d="M556.66 270a68.28 68.28 0 0 1 136.56 0 68.28 68.28 0 0 1-136.56 0z"/>
+    <text font-family="Helvetica" font-size="20" font-weight="600" fill="#FFF" x="9.51" y="53.77" transform="translate(579.56 224.62) translate(37 0)" text-anchor="middle"><tspan x="9.51" y="53.77">BUILD</tspan></text>
+  </g>
+
+  <path fill="#EC9C76" d="m575.79 338.7-12.82 12.81 6.52 6.52-29.1-3.47-3.49-29.12 6.52 6.52 12.81-12.8z"/>
+
+  <g data-name="test">
+    <path fill="#F7D2C6" d="M411.72 414.94a68.28 68.28 0 0 1 136.56 0 68.28 68.28 0 0 1-136.56 0z"/>
+    <text font-family="Helvetica" font-size="20" font-weight="600" fill="#FFF" x="17.75" y="53.77" transform="translate(434.62 369.56) translate(27 0)" text-anchor="middle"><tspan x="17.75" y="53.77">TEST</tspan></text>
+  </g>
+
+  <path fill="#F6CCBE" d="m411.3 365.79-12.82-12.82-6.52 6.52 3.47-29.11 29.12-3.48-6.52 6.52 12.82 12.82z"/>
+
+  <g data-name="learn">
+    <path fill="#E58C61" d="M266.78 270a68.28 68.28 0 0 1 136.56 0 68.28 68.28 0 0 1-136.56 0z"/>
+    <text font-family="Helvetica" font-size="20" font-weight="600" fill="#FFF" x="6.73" y="53.77" transform="translate(289.68 224.62) translate(37 0)" text-anchor="middle"><tspan x="6.73" y="53.77">LEARN</tspan></text>
+  </g>
+
+  <path fill="#EC9C76" d="m384.21 201.3 12.82-12.82-6.52-6.52 29.11 3.48 3.48 29.1-6.52-6.51-12.82 12.82z"/>
+</svg>

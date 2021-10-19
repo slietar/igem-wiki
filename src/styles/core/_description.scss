@@ -183,6 +183,12 @@
     display: list-item;
     list-style-type: disc;
   }
+
+  p, li {
+    strong {
+      font-weight: 600;
+    }
+  }
 }
 
 
@@ -393,6 +399,10 @@
         content: " ";
       }
     }
+
+    a {
+      display: inline;
+    }
   }
 }
 
@@ -408,6 +418,7 @@
 
 .desc-contents {
   details {
+    margin: 1rem 0;
     padding: 1.4rem 2rem;
 
     background-color: #fff;
