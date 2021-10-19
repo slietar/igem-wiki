@@ -10,6 +10,33 @@
   }
 }
 
+@mixin flex-column($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  @include flex-row-gap($gap);
+}
+
+@mixin flex-column-gap($gap) {
+  --flex-column-gap: 0px;
+
+  > :not(:last-child) {
+    --flex-column-gap: #{$gap};
+    margin-right: $gap;
+  }
+}
+
+@mixin flex-row-gap($gap) {
+  > :not(:last-child) {
+    margin-bottom: $gap;
+  }
+}
+
+@mixin underline($color: currentColor, $thickness: 1px) {
+  text-decoration-line: underline;
+  text-decoration-color: $color;
+  text-decoration-thickness: $thickness;
+}
+
 
 @function encode-color($string) {
   @if type-of($string) == 'color' and str-index(#{$string}, '#') == 1 {

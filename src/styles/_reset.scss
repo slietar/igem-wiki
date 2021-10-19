@@ -1,5 +1,5 @@
 body:not(.mediawiki), #mw-content-text {
-  &, *:not(circle, ellipse, path, rect), *::before, *::after {
+  &, *:not(circle, ellipse, path, rect, text), *::before, *::after {
     all: revert;
     box-sizing: inherit;
   }
@@ -49,6 +49,15 @@ body:not(.mediawiki), #mw-content-text {
 
   figure {
     margin: initial;
+  }
+
+  blockquote {
+    margin: initial;
+  }
+
+  cite {
+    display: block;
+    font-style: initial;
   }
 
   input, button, select, textarea {

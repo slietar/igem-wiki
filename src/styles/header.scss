@@ -224,11 +224,12 @@ $logo-border: 2px;
 
       &:not(:only-child) {
         display: flex;
-        column-gap: 1ch;
       }
 
       &:not(:only-child)::after {
         @extend %chevron;
+
+        margin-left: 1ch;
         transition: transform 300ms;
       }
 
@@ -247,7 +248,7 @@ $logo-border: 2px;
 
 @include media-breakpoint-up(lg) {
   .header-nav-ul {
-    column-gap: 0.8rem;
+    @include flex-column-gap(0.8rem);
     justify-content: space-between;
 
     > li {
@@ -268,8 +269,12 @@ $logo-border: 2px;
         }
       }
 
-      &._active > a, > a:hover, > a:focus-visible {
+      &._active > a, > a:hover {
         // --item-background is changed on the homepage.
+        background-color: var(--item-background, #f6f6f6);
+      }
+
+      > a:focus-visible {
         background-color: var(--item-background, #f6f6f6);
       }
     }
@@ -361,7 +366,7 @@ $logo-border: 2px;
   ul {
     display: grid;
     align-items: center;
-    gap: 0.4rem 1.6rem;
+    column-gap: 1.6rem;
 
     padding: 1rem 0;
 
@@ -433,18 +438,20 @@ $logo-border: 2px;
 //- Preview item
 
 .header-item {
+  $icon-size: 40px;
+
   & {
     display: grid;
     align-items: center;
     gap: 0.2rem 1.2rem;
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: $icon-size 1fr;
 
     padding: 1.6rem 2rem;
     border-radius: 4px;
 
     transition: background-color 150ms, opacity 150ms;
 
-    &:hover, &:focus-visible {
+    &:hover {
       background-color: #fafafa;
 
       .header-item-title {
@@ -452,8 +459,12 @@ $logo-border: 2px;
       }
     }
 
-    &:not(:hover) {
-      // opacity: 0.8;
+    &:focus-visible {
+      background-color: #fafafa;
+
+      .header-item-title {
+        text-decoration: underline;
+      }
     }
 
     &:focus-visible {
@@ -467,17 +478,18 @@ $logo-border: 2px;
   }
 
   &-icon {
-    fill: $accent-color;
+    color: $accent-color;
+    fill: currentColor;
     grid-row-end: span 2;
 
     > svg {
-      aspect-ratio: 1;
+      height: $icon-size;
+      overflow: visible;
     }
   }
 
   &-title {
     display: flex;
-    column-gap: 0.8ch;
 
     font-weight: 500;
 
@@ -487,13 +499,15 @@ $logo-border: 2px;
 
     &::after {
       @extend %chevron;
+
+      margin-left: 0.8ch;
       transform: rotate(-90deg);
 
       transition: opacity 300ms, transform 300ms;
     }
   }
 
-  &:not(:focus-visible):not(:hover) .header-item-title::after {
+  &:not(:hover) .header-item-title::after {
     opacity: 0;
     transform: translateX(-0.6ch) rotate(-90deg);
   }
@@ -535,7 +549,3 @@ $logo-border: 2px;
 
   transition: height 0s $overlay-dur, opacity $overlay-dur, visibility 0s $overlay-dur;
 }
-
-// &._navactive, &._navopen {
-  // overflow-y: hidden;
-// }
