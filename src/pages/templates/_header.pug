@@ -95,5 +95,20 @@ nav.header-nav
             .header-item-icon: svg: use(href="assets/icons.svg#parts")
             .header-item-title Parts Collection
 
-    li: a(href="Human_Practices.html") Human Practices
+    li
+      a(href="#") Human Practices
+      .header-preview(style="--height: 250px;")
+        ul
+          li: a(href="Human_Practices.html#hp-silver" data-hp-target="silver").header-item
+            .header-item-icon: svg: use(href="assets/icons.svg#parts-overview")
+            .header-item-title Human Practices
+
+          li: a(href="Human_Practices.html#hp-gold" data-hp-target="gold").header-item
+            .header-item-icon: svg: use(href="assets/icons.svg#parts-overview")
+            .header-item-title Integrated Human Practices
+
+          li: a(href="Communication.html").header-item
+            .header-item-icon: svg: use(href="assets/icons.svg#parts")
+            .header-item-title Education &amp; Communication
+
     li: a(href="Medals_and_Awards.html") Medals
