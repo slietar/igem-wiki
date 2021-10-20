@@ -4,6 +4,7 @@ import './plot';
 import './header';
 import './toc';
 
+import './pages/communication';
 import './pages/hp';
 import './pages/implementation';
 

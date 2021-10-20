@@ -2,6 +2,125 @@ extends templates/_description
 
 block hero
   img.hero-image(src="assets/background/description.jpg")
-  .hero-contents: h1 Education &amp; communication
+  .hero-contents: h1 Education &amp; Communication
+
+mixin slideshow(prefix, count)
+  .splide
+    .splide__track
+      .splide__list
+        for zero, index in new Array(count).fill(0)
+          .splide__slide: img(src=`${prefix}/${index}.jpg`)
+
 
 block description
+  h2 Introduction
+
+  p For CuRe, both education and public outreach are of the utmost importance. One of our primary goals is to deliver education and information through a variety of means, and to people from differing age groups, social backgrounds and economic statuses. In doing so, we were mindful of the need to be gender and socially inclusive. Towards this aim, we created the following projects.
+
+
+  h2 Children's book
+
+  p As previously stated, part of CuRe's educational goals was to reach a variety of different age groups. Thus, when looking at a younger demographic and the different ways to help them to discover and understand the issue, our solution and the world of synthetic biology, we decided to write a children's book.
+  p This storybook set out to accomplish two goals: first, bring awareness to the issue of copper contamination for winemakers, and second, introduce science to children in a way they may not be used to.
+  p The book, curated and tailored towards children 6 to 9 years old, follows a village's journey to combat mildew, a parasite destroying their beloved grapevines. With the help of a scientist, the villagers manage to find innovative solutions to solve their issue. The book reflects CuRe's process during iGEM. Telling how science could bring tools and solutions to society once confronted with stakeholders and people really affected by the problem, we especially wanted to highlight the importance of tight collaboration of science with the local community.
+
+  h3 Science
+  p Although our story book is not centered on science, we found it very important to introduce characters with a scientific background. Furthermore, we included in the book notions of basic scientific etiquette, such as proper safety equipment to be worn in the lab.
+  p The reasoning behind this choice was to include and diversify representation of scientists in children's media. The character of the scientist is eager to help, crafty, and can easily adapt to several situations. With these traits, we hope to convey a positive representation of scientists, easy to connect with, and hopefully inspire young children to pursue studies in the STEM world.
+  p In essence, we believe children should not have to pick up a book about science to be taught about it, but find inspiration in understanding the power that science can give to solve problems that scale from the easiest daily issue to the most interesting unsolved theory. Scientific themes mentioned in the book include finding a concrete solution to a problem, thinking about the impact of a product, collaborating to bring new ideas, and using science and synthetic biology (although not mentioned explicitly).
+
+  h3 Awareness of an environmental issue
+  p This book was also a wonderful opportunity to bring awareness to the issue of copper contamination in vineyard soils, particularly in Lavaux – the beautiful region surrounding our campus. While this issue can seem local, we believe it is a good point for starting to deal with the issue of environmental pollution, heavy metals contamination and sustainability. What better way to get children interested in these issues than to sensitize them to a real-world problem affecting their own community?
+  p Moreover, this book was made in a way that younger children will tend to read the book with the help of their parents or teachers. This allows for older generations to become aware of the issue as well as they are reading along with the children. In particular, the book includes a final page dedicated to explaining further the problem to adults, as well as presenting CuRe. Finally, the book engages in themes such as being responsible for our actions, the contaminants we daily dump in the soil and the awareness regarding the impacts of certain pesticides.
+
+  p Our team wrote the story and we collaborated with two aspiring illustrators to produce a final product, available in both English and French. We printed 46 copies of the book in French and donated them to several schools across the region.
+
+  +slideshow('assets/communication/book', 10)
+
+  h3 Meet the illustrators
+
+  h4 Juan Ignacio Sandrino Otero
+  blockquote: p “I consider myself a flourishing artist in the cinema industry currently pursuing my studies at ARTFX School of digital Arts. After 2 years spent at Max the Mutt College of 2D and 3D animation, I decided to put all of my time into 3D animation. I always had a strong passion for drawing and illustration, which is one of my most developed skills attracting job opportunities to my person, today. This year, I had the chance to work for different kinds of companies such as Eighty 4, a Spanish Studio based in Barcelona. I am able to get these kinds of opportunities thanks to a careful presentation of my work as an artist portfolio in social media such as Instagram, mostly recognized under the name of <a href="https://www.instagram.com/jiso.art/" target="_blank">@Jiso.art</a>. Therefore, working on this small project with Emma Vermizeau from the EPFL iGEM team has been a pleasure since I got to focus only on illustration, a passion of mine.”
+
+  h4 Louise Mellet
+  blockquote: p “I started my student career as a 2D artist for 3 consecutive and contrasting years, studying fine Arts during my first years at Paris 8, followed by one year in the Beaux-Arts school in Tours and a final year of "illustrator" formation. Later on, I got into "ARTFX School of digital Arts" to perfect my art skills in animation and art directory since my main goal is to become an artistic director. Within this time period, I had the wonderful opportunity to meet and discuss with various artists in order to understand what defines their passion and retain the best out of each one of them. I love to spend my free time working on rap artist music video clips, to perfect my animation and illustration skills. My presence in social media such as Instagram under the name of <a href="https://www.instagram.com/labonnegrosselooz/" target="_blank">@labonnegrosselooz</a> gives me the opportunity to get in contact with such artists. It has been interesting to work with Emma Vermizeau from the EPFL iGEM team on this illustration project since it is something that brings more knowledge to my artistique experience.”
+
+
+  h2 Presentation to high schoolers
+
+  p We also felt it was crucial to speak to students who were in their final few years of high school. These students would soon be choosing their universities and programs, or their high school specialization, thus we decided to go speak to them about studies in STEM, deepening in particular the world of synthetic biology. We also took this opportunity to teach them about projects such as iGEM, and sensibilized them to the issue of copper contamination in vineyards.
+  p A few members of our team had the opportunity to visit high school classes. We visited two schools in our surrounding area. Since the students we visited in each school were not the same age, we had to adapt our presentation to different levels of education.
+  p In the first school we visited, the Institut International de Lancy school,  the students were 15 years old, an age at which, in Switzerland, they are expected to choose the specialization path they want to pursue in their life. In each of the 2 classes we saw, there were around 16 students. This limited number of students allowed us to have one-on-one interactions with them. Our presentation covered the basics as well as the relevant current applications of synthetic biology applied in different fields. We also discussed ethical dilemmas that typically tend to come with this new field of science. This was a wonderful opportunity to have the students ponder and weigh in on questions such as “What is natural? Should we limit research, and if so, who can decide how to limit it?”. Different opinions emerged, and discussion within the class flourished. We then presented the issue of copper soil contamination. Before revealing CuRe's solution, we encouraged them to try to come up with a possible solution of their own, trying to stimulate their creativity and invention towards a real problem.Then, through more specific questions, we guided them through the decision-making process a scientist goes through when undertaking such a project. Finally, we revealed the work we did over the summer and answered questions.
+  p The second presentation was to an auditorium of 18 year-old students, in a high school in Nyon. During this presentation, we also introduced the concept of synthetic biology, albeit in a more specific and detailed manner than in the previous presentation. We introduced the students to the job of being an engineer and a scientist. Since EPFL is an engineering school, we showcased how a passion for any type of science, whether it be physics, biology, robotics or computer science can be channeled into becoming an engineer. There was less room for interaction in this presentation, due to the high number of students attending, but we made sure to answer questions at the end. The students, who were starting their last year of high school before attending university, had many questions on synthetic biology, iGEM, our solution but also on university life, academia as well as the engineer's job.
+
+  +slideshow('assets/communication/hs', 7)
+
+
+  h2 Spreading awareness via social media
+  p Through various posts, we taught our followers some tasting about synthetic biology as well as our project and iGEM in general. This was a challenging task as we had to explain complicated and elaborated concepts in a way everyone could understand, and in a very concise format. We made these posts short, concise and visually pleasing. All posts were independent, meaning they could be shared with little to no context needed, allowing to reach an even larger audience.
+
+  .comm-social
+    a(href="https://www.instagram.com/igem_epfl/" class="discrete" target="_blank")
+      img(src="assets/social/source/instagram.png" alt="Instagram logo")
+      div @igem_epfl
+
+    a(href="https://www.facebook.com/igemepfl" class="discrete")
+      img(src="assets/social/source/facebook.png" alt="Facebook logo")
+      div @igemepfl
+
+    a(href="https://twitter.com/EPFL_iGEM" class="discrete")
+      img(src="assets/social/source/twitter.png" alt="Twitter logo")
+      div @EPFL_iGEM
+
+
+  h2 iGEM recruitment
+  p As iGEM was such a wonderful experience for the whole team, we wanted to share our experience with students from our school to incentivize them to apply for the EPFL iGEM 2022 team. During this presentation, which attracted students from a variety of different faculties, we touched on the nature of iGEM, the rise of synthetic biology as well as its current applications, how they could get involved and our personal experiences.
+  p This presentation was oriented towards students of all sections. The interdisciplinarity that iGEM looks for is also one of EPFL's greatest strengths. Indeed, this year, only half of our team came from a life sciences background. Through this presentation, we encouraged students from every faculty to apply, firmly believing that diversity is a key strength. Furthermore, we were very fortunate to be able to have the EPFL 2019 team leader attend, as their team had won the Grand Prize. She gave an account of her experience as an iGEM team member.
+  p Our supervisor, Prof. Brian McCabe, also gave a speech motivating the students to consider joining iGEM. He spoke about who iGEM might be a good fit for, and the importance of commitment to the project.
+  p After the presentation, we offered snacks and refreshments and answered questions the students had in a more relaxed, one to one setting.
+
+  +slideshow('assets/communication/recruitment', 3)
+
+
+  h2 High School Lab Immersion
+  p Every year, EPFL organizes an immersion week for high school students from Bern who have taken an optional STEM course. During the week, the students had the opportunity to follow presentations as well as workshops and hands-on activities in all sections of the school. We had the opportunity to represent the Life Sciences Engineering department and introduce them to synthetic biology.
+  p During this event, first we gave an introduction on synthetic biology, we explained to them what iGEM is and presented our project. We then proceeded to explain the details and protocol of an experiment in order to stimulate their interest and curiosity. The students were the ones who performed the experiment, while we supervised, helped and went more and more in the theoretical detail during the various steps of the experiment.
+  p The experiment was related to our personal project for iGEM and consisted of culturing transformed yeast cells in order to see fluorescent cells through a fluorescence microscope. The yeast strain contained two new genes, one coding for the green fluorescent protein (GFP) and the other coding for mScarlet, a red fluorescent protein. Both were under the control of a promoter that got activated when a small molecule, β-estradiol, was present. The students put yeast in culture from a glycerol stock, one containing the inducer and one without the control. They then plated an already grown culture onto YPD plates. Finally they could observe the colonies under the microscope and were able to see them fluoresce in green when excited with a wavelength of 470 nm and in red with a wavelength of 590 nm. They compared the induced ones with the control, which did not express any fluorescent protein.
+  p The students seemed extremely interested in the concept of synthetic biology and showed enthusiasm when performing the experiments and looking at the results!
+  p To be honest, this was our first experience in the lab for iGEM and we really enjoyed it! Having the opportunity to transmit our knowledge to younger people and see that they show interest was a great experience.
+
+  +slideshow('assets/communication/lab', 5)
+
+
+  h2 Podcast
+  p Our most ambitious project had the goal of reaching the largest audience possible. To do so, we needed an easily accessible communication media that was simple to understand and readily available. Collaborating with the Unil team and a local radio station, we created a four-part podcast series.
+  p This podcast, now available on <a href="#" target="_blank">Spotify</a> and <a href="#" target="_blank">Apple Podcasts</a>, explores the current view and usage of GMOs in Switzerland, and raises several questions on their impact on different communities. Through our work in Human Practices, we had the opportunity to speak to various stakeholders about the use of GMOs in their fields and, as expected, we noticed quite contrasting opinions on the use of GMOs. Pursuing this idea, we also distributed a survey hoping to collect the opinions of the general population on GMOs. The views we collected confirmed our initial suppositions: there was a general unease with the use of GMOs among those who answered, and we found many had a hard time explaining why.
+  p As we observed, this discomfort seemed to stem primarily from a lack of unbiased communication on the topic of GMOs in the public sphere.
+  p While we do concede that communication of scientific principles to the general population is a challenging and arduous task, the lack of such efforts often leaves space for spreading of false information, or a general mistrust of the public health services provided. This has been exemplified by the Covid-19 crisis.
+  p The podcast hopes to remediate these issues. It mentions why it is important to communicate widely on these topics and why it concerns the average listener. In this way, we hope to aid bridge a gap between laymen and scientists. Although our episodes tackle some scientific topics, they do not go into particular scientific detail. Rather, we took an interdisciplinary approach, analyzing the social, political and economic impacts of GMOs in Switzerland.
+
+  p In Switzerland, many laws are voted on by the general population, which is why it is even more important to educate on topics such as these.
+  p Our podcast aims to provide information in an unbiased, fact-based, and enjoyable manner. Hopefully, this will contribute to correcting some misconceptions.
+
+  p After listening to the 4 episodes of the podcast, the listener should have a clear understanding of the current state of GMO production and use in Switzerland, and hopefully the answer to many questions that touch on different points on which GMOs can impact and stimulate doubts.
+
+  p In particular, we articulated our podcast in the following episodes:
+  ul
+    li: p <strong>Episode 1:</strong> In the first episode, we interviewed Denis Duboule, a professor working on developmental genomics at EPFL and the University of Geneva. We discussed with him the state of public opinion on GMOs in Switzerland, the origins of the debates we now hear about GMOs and why it is important to have these debates. You can find the transcript of the episode in English and in French here.
+    li: p <strong>Episode 2:</strong> The agricultural sector is rife with debate about the use of GMOs in their practices. With Boulos Chalhoub, a representative of the Agroscope Changins-Wädenswil Research Station, we discussed the use of GMOs in agriculture, in Switzerland and in the rest of the world. The transcripts for the episode in English and in French are here.
+    li: p <strong>Episode 3:</strong> In the third episode, we spoke to Anne Gabrielle Wust Saucy about the legislation in Switzerland and around the world concerning GMOs. Anne Gabrielle is a Senior Policy Officer Risk Assessment and Head of the Biotechnology section at the Federal Office for the Environment and helped us understand the legal frameworks that govern the use of GMOs.
+    li: p <strong>Episode 4:</strong> In the final episode of the podcast, we explored, with the help of Christian Frankhauser, the impact of GMOs on our health as well as addressed common misconceptions people had about GMOs, as evidenced from our survey. Christian Frankhauser is a professor at the University of Lausanne, his research is mainly focused on molecular genetics. You may find the transcript for this podcast in English and in French here.
+
+  +slideshow('assets/communication/podcast', 4)
+
+
+  h2 Presentation at the faculty for life sciences
+
+  p For the EPFL team, iGEM doesn't end with the Wiki freeze. We plan on continuing to spread awareness about the issue of copper contamination in vineyard soils. We were invited to present our project for the Life Sciences faculty here at EPFL. We plan to detail our design, the experiments we performed, our outcomes as well as other possible implementations and solutions. We will also spend time discussing the issue of copper contamination, as well as future prospects for our project.
+
+
+  h2 Dimensions appearance
+
+  p It was a huge honor to be able to appear in a piece by <a href="https://www.epfl.ch/about/news-and-media/dimensions-en/" target="_blank">EPFL's magazine Dimensions</a>. The article described the project, our approach, what it hoped to accomplish and brought awareness to the issue of copper contamination in vineyards. The magazine is distributed for free on campus, but you can find the article here.
+
+  +slideshow('assets/communication/dimensions', 3)

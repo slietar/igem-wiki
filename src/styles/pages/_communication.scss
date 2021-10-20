@@ -1,0 +1,37 @@
+@use "../breakpoints" as *;
+
+
+.comm {
+  &-social {
+    display: flex;
+    column-gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 1rem;
+    background-color: #0001;
+    border-radius: 4px;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      transition: opacity 150ms;
+
+      &:not(:hover) {
+        opacity: 0.8;
+      }
+    }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.6rem;
+    }
+  }
+}

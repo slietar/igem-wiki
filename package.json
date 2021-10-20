@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@fontsource/merriweather": "^4.5.1",
+    "@splidejs/splide": "^3.1.7",
     "mq-func": "^0.1.1"
   },
   "devDependencies": {
