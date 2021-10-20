@@ -5,15 +5,15 @@ block hero
   .hero-contents: h1 Protocols
 
 block description
-  h2 Alginate beads production
+  h2(id="protocol-beads") Alginate beads production<span class="ref-group"><ref id="tu-eindhoven" authors="iGEM TU Eindhoven" title="Alginate beads" url="http://2015.igem.org/wiki/images/4/4c/TU_Eindhoven_Protocols_Alginate_beads.pdf" year="2015" />, <ref authors="AMSBIO" title="Alginate 3D Cell Culture Kit" url="https://resources.amsbio.com/Datasheets/AMS.CSR-ABC-KIT.pdf" /></span>
 
   p The protocol below is solely for making beads that contain cells which are to be used capturing devices: it does not respect sterility rules.
 
 
-  h3 Sodium-alginate cell solution 2% preparation
+  h3 Sodium-alginate cell solution preparation
 
   p Estimated bench time: 5 minutes. Estimated total time: 55 minutes.
-  p Purpose: This solution is the basis for the yeast beads.
+  p Purpose: This 2% solution is the basis for the yeast beads.
 
   h4 Materials
   ul
@@ -34,10 +34,10 @@ block description
     li Mix in yeast at OD600 of 12. This step might require concentrating the yeast by centrifugation and removal of a part of the supernatant.
 
 
-  h3 Calcium chloride solution 100 mM preparation
+  h3 Calcium chloride solution preparation
 
   p Estimated bench time: 5 minutes. Estimated total time: 5 minutes.
-  p Purpose: This solution crosslinks the alginate to form a gel like structure.
+  p Purpose: This 100 mM solution crosslinks the alginate to form a gel like structure.
 
   h4 Materials
   ul
@@ -90,7 +90,7 @@ block description
     li Pour the media or water into the bead bottle and keep at 4°C.
 
 
-  h3 Bead dissolution
+  h3 Bead dissolution<ref doi="10.1080/09593330.2019.1673827" />
 
   h4 Protocol
   ol
@@ -98,7 +98,7 @@ block description
     li Wait for an approximate 20 minutes for bead dissolution.
 
 
-  h3 Alginate and cell recuperation
+  h3 Alginate and cell recuperation<ref doi="10.1080/09593330.2019.1673827" />
 
   h4 Protocol
   ol
@@ -110,13 +110,12 @@ block description
   h2(id="protocol-bacteria-transformation") Bacteria transformation and plating<ref authors="New England Biolabs" title="5 Minute Transformation Protocol (C2987H/C2987I)" url="https://international.neb.com/protocols/0001/01/01/5-minute-transformation-protocol-c2987" />
 
   ol
-    li For C2987H: Remove cells from -80°C freezer and thaw in your hand.
-    li For C2987I: Thaw a tube of NEB 5-alpha Competent E. coli cells on ice until the last ice crystals disappear. Mix gently and carefully pipette 50 µl of cells into a transformation tube on ice.
+    li Thaw a tube of NEB 5-alpha Competent E. coli cells on ice until the last ice crystals disappear. Mix gently and carefully pipette 50 µl of cells into a transformation tube on ice.
     li Add 1-5 µl containing 1 pg-100 ng of plasmid DNA to the cell mixture. Carefully flick the tube 4-5 times to mix cells and DNA. Do not vortex.
     li Place the mixture on ice for 2 minutes. Do not mix.
     li Heat shock at exactly 42°C for exactly 30 seconds. Do not mix.
     li Place on ice for 2 minutes. Do not mix.
-    li Pipette 950 µl of room temperature SOC into the mixture. Immediately spread 50-100 µl onto a selection plate and incubate overnight at 37-42°C. NOTE: Selection using antibiotics other than ampicillin may require some outgrowth before plating on selective media. Colonies develop faster at temperatures above 37°C, however some constructs may be unstable at elevated temperatures.
+    li Pipette 950 µl of room temperature SOC into the mixture. Immediately spread 50-100 µl onto a selection plate and incubate overnight at 37-42°C. Note: Selection using antibiotics other than ampicillin may require some outgrowth before plating on selective media. Colonies develop faster at temperatures above 37°C, however some constructs may be unstable at elevated temperatures.
 
 
 
@@ -124,14 +123,12 @@ block description
 
   ol
     li Work under the flame.
-    li With a sterile pipette, scoop up a colony and release the pipette tip into a 5 ml tube.
-    li Add liquid media.
+    li With a sterile pipette, scoop up a colony and release the pipette tip into a 5 ml tube containing liquid medium.
     li Place the solution in the shaker at 30°C.
 
 
 
-
-  h2 Copper concentration measurement
+  h2 Copper concentration measurement<span class="ref-group"><ref doi="10.1039/b701896g" />, <ref doi="10.5740/jaoacint.17-0154" /></span>
 
 
   h3 Cuprizone Preparation
@@ -155,28 +152,30 @@ block description
   p Tip: The cuprizone solution won't be at the temperature indicated on the stirring plate's screen before a while. Keep the temperature at 200°C during the first 8 minutes for quickly bringing the temperature of the solution to its desired value.
 
 
-  h3 Copper concentration measurement
+  h3 Copper absorbance measurement
 
   p Estimated bench time: 30 minutes. Estimated total time: 30 minutes.
   p Purpose: This protocol is meant to avoid loss of time when measuring copper concentrations. This protocol can be followed for several samples in parallel, as the time at the bench is periodical.
 
   h4 Materials
   ul
+    li 750 µl negative sample
     li 750 µl sample to measure
-    li 4.25 ml cuprizone solution
-    li 5 drops of NaOH at about 10%
+    li 4.25 ml cuprizone solution per sample
+    li 150 µl NaOH 0.2 M
     li pH paper
-    li 1 photospectrophotometer set at 600 nm
+    li 1 spectrophotometer set at 600 nm
     li 1 4 ml cuvette
 
   h4 Setup and protocol
   ol
-    li Mix sample, cuprizone and as much NaOH base as needed to obtain a pH of around 8 (minimum 7 and optimal between 7 and 9 ref: DOI: 10.5740/jaoacint.17-0154). (For more precision: it would be to mix 100 µl of NaOH 0.2 M into the solution. one drop is about 30 µl).
-    li wait until the values obtained are stable: 12-18minutes for 2mg and between 17 and 25minutes for 10mg.
-    li To determine the concentration from the sample, multiply by the multiplicative factor K<sub>f</sub> determined using the protocol below.
+    li Mix 750 µl of negative sample, 4.25 ml of cuprizone and 150 µl of NaOH 0.2 M base. Check pH using pH paper. Add NaOH as needed to obtain a pH of around 8 (minimum 7 and optimal between 7 and 9<ref doi="10.5740/jaoacint.17-0154" />).
+    li Mix 750 µl of sample, 4.25ml of cuprizone and previously determined quantity of NaOH (150 µl + what you added). Check pH using pH paper.
+    li Wait until the values obtained are stable: 16 minutes for 0-5 mg/L and 20 minutes for more than 5 mg/L.
+    li To determine the concentration from the sample, you can use one of two methods: make a complete calibration curve for the concentrations involved, or multiply by the factor k<sub>f</sub> determined using the protocol below.
 
 
-  h3 K<sub>f</sub> measurement
+  h3 k<sub>f</sub> measurement
 
   p Estimated bench time: 30 minutes. Estimated total time: 30 minutes.
   p Purpose: This measurement is needed for calculating the relationship between copper concentration and absorbance. This part can be done simultaneously with the samples, as concentration is not needed for measurements of absorbance.
@@ -185,9 +184,9 @@ block description
   ul
     li 750 µl sample with known concentration of copper
     li 4.25 ml cuprizone solution
-    li 5 drops of NaOH at about 10%
+    li 150 µl NaOH 0.2 M
     li pH paper
-    li 1 photospectrophotometer
+    li 1 spectrophotometer set at 600 nm
     li 1 4 ml cuvette
 
   h4 Setup and protocol
@@ -195,6 +194,57 @@ block description
     li Mix sample, cuprizone and as much NaOH base as needed to obtain a pH of around 8 (minimum 7 and optimal between 7 and 9<ref doi="10.5740/jaoacint.17-0154" />).
     li Wait until the values obtained are stable: 16 minutes for 2 mg/l and between 22 for 10 mg/l.
     li The multiplicative factor is equal to the concentration/absorbance ratio.
+
+
+  h3 Making a calibration curve
+
+  p Estimated bench time: 30 minutes. Estimated total time: 30 minutes.
+  p Purpose: This measurement is needed for calculating the relationship between copper concentration and absorbance. This part can be done simultaneously with the samples, as concentration is not needed for measurements of absorbance.
+  p Warning: Make sure that you use the same blank for the calibration and for the samples and that you use the same media as for the samples.
+
+  h4 Materials
+  ul
+    li 8 samples (750 µl) of known concentrations of copper ranging between the minimum expected value to the maximum expected value
+    li 8x 4.25 ml cuprizone solution
+    li 150 µl NaOH 0.2 M
+    li pH paper
+    li 1 spectrophotometer set at 600 nm
+    li 1 4 ml cuvette
+
+  h4 Setup and protocol
+  ol
+    li Conduct absorbance measurements as in the Copper absorbance measurements section above.
+    li Plot absorbance as a function of concentration.
+    li Use the plotted curve to determine copper concentration of samples.
+
+
+  h3 Conducting a large experiment
+
+  h4 Materials
+  ul
+    li Media for blanks (450 µl per blank)
+    li Samples (450 µl per sample)
+    li Cuprizone (2.55 ml per sample)
+    li NaOH 0.2 M (100 µl per sample)
+    li pH paper
+    li 1 spectrophotometer set at 600 nm
+    li 4 ml cuvettes (1 per sample)
+
+  h4 Setup and protocol
+  ol
+    li Make the appropriate blanks using the same media as for the samples.
+    li Align samples and cuvettes in their respective boxes so as for each cuvette, the position of the corresponding sample is known.
+    li Put 450 µl of each sample into its corresponding cuvette.
+    li Set up a timer.
+    li Every 40 seconds, Add 3 drops of NaOH 0.2 M each into 3 cuvettes and 2.55 ml of cuprizon per cuvette.
+    li At the 16 minutes time point (if the original samples are expected to have lower copper concentration than 5 mg) or at the 20 minutes time point (if the original samples are expected to have higher copper concentration than 5 mg/l), measure the first samples. Proceed by measuring 3 samples at a time every 40 seconds. <em>Warning: 30 seconds is a short time, this is difficult to achieve alone.</em>
+
+
+  h3 General comments
+
+  ul
+    li: p As the copper measurements are very long to conduct individually, it is recommended to conduct at least 4 tests at a time. When a great number of tests must be conducted use the “Large Experiment” protocol.
+    li: p For samples in a same series, do not switch between 16 or 20 minutes wait time, as the results will be incorrect. The reason for indicating different timings is because cuprizon stabilizes around those times. The error due to reaction kinetics and timing are smaller if the reaction time is chosen correctly. For higher concentrations, times for stabilization can be more than 25 minutes. However, around 25 minutes, the amount of cuprizone unbinding from the copper is significant and thus adds variability to the results.
 
 
 
@@ -316,6 +366,54 @@ block description
 
 
 
+  h2 Indirect Immunofluorescence Labeling<span class="ref-group"><ref doi="10.1101/pdb.prot5317" />, <ref authors="Corbett Laboratory" title="Immunofluorescence" url="http://www.biology.emory.edu/research/Corbett/immuno.html" />, <ref doi="10.1007/978-1-4939-1363-3_6" /></span>
+
+  h3 Materials
+  ul
+    li
+      | Potassium phosphate (0.1 M, pH 6.5)
+      ol
+        li Prepare 800 ml of dH2O in a suitable container.
+        li Add 5.874 g of K2HPO4 to the solution.
+        li Add 9.019 g of KH2PO4 to the solution.
+        li Add dH2O until volume is 1 l
+    li
+      | P solution
+      ol
+        li 0.1 M potassium phosphate (pH 6.5)
+        li 1.2 M sorbitol
+      | This solution is easily contaminated. It is best to prepare a 50 ml aliquot from a 1 l stock.
+    li
+      | Zymolyase in P solution (10 mg/ml)
+      ol
+        li Combine 10 mg of dry zymolyase with 1 ml of P solution and vortex.
+        li Centrifuge the mixture in a microcentrifuge at 13,000 rpm.
+        li Allow the precipitate to settle and use the supernatant.
+        li Store this solution at -20°C. It can be used more than once.
+    li PBS-BSA: Phosphate-Buffered Saline containing 5 mg/ml Bovine Serum Albumin.
+
+  h3 Protocol
+  ol
+    li Grow yeast cells in 5 ml of rich or defined media to a concentration of 1 × 107 to 5 × 107 cells/ml (OD600 = 1 in a volume of V = 5 ml)
+    li Fix the cells in 4% formaldehyde by adding 0.6 ml of 37% (w/v) formaldehyde directly to the 5 ml culture. Incubate with gentle shaking for 30 min.
+    li Transfer the cells to a 15 ml conical tube and collect them by centrifugation at 800g for 3 min at room temperature.
+    li Aspirate the supernatant and wash the cells with 1 ml of 0.1 M potassium phosphate, pH 6.5.
+    li Collect the cells again by centrifugation at 800g for 3 min at room temperature. Aspirate the supernatant and wash the cells with 1 ml of P solution.
+    li Collect the cells by centrifugation at 800g for 3 min at room temperature. Aspirate the supernatant and resuspend the cells in 1 ml of P solution. Transfer the suspended cells to a microcentrifuge tube.
+    li To digest the cell wall, add 15 µl of 10 mg/ml zymolyase in P solution and 5 µl of β-mercaptoethanol. Incubate the cells with shaking at 30°C until digestion is sufficient.
+    li While the cells are digesting, coat the wells of a multiwell slide with 0.3% poly-L-lysine (this step can be done the day before)
+    li Centrifuge the cells in a microcentrifuge at 800g for 3 min at room temperature. Aspirate and discard the supernatant, and resuspend the pellet in ~ 1 ml of P solution (depending on the desired cell concentration).
+    li Place 25 µl of cell suspension onto each well of a prepared slide. Aspirate the excess cells after several minutes.
+    li Immediately immerse the slide in ice-cold methanol for 6 min. Remove the slide and immerse in ice-cold acetone for 30 sec. Allow the slides to air-dry.
+    li Dilute the primary antibody to an appropriate concentration in PBS-BSA.
+    li Wash the slides once with PBS-BSA (blocking). Aspirate the PBS-BSA and add diluted primary antibody. Incubate the cells in a humidified chamber for at least 2 h.
+    li Dilute the secondary antibody to an appropriate concentration in PBS-BSA.
+    li Aspirate the primary antibody, and wash the wells four times with PBS-BSA. Add diluted secondary antibody to the wells. Incubate in a humidified chamber covered with aluminum foil for at least 2 h.
+    li Aspirate the secondary antibody, and wash the wells three times with PBS-BSA. Wash once with PBS.
+    li Aspirate the PBS and place a drop of anti-fade mounting medium in each well. Place a coverslip on the slide and wipe up the excess mounting medium. Seal the edges with clear nail polish.
+
+
+
   h2 Miniprep<ref authors="Promega" title="PureYield&trade; Plasmid Miniprep System" url="https://ch.promega.com/products/nucleic-acid-extraction/plasmid-purification/pureyield-plasmid-miniprep-system" />
 
   p Perform the following procedure at room temperature:
@@ -398,7 +496,125 @@ block description
   ol
     li Carefully transfer Minicolumn to a clean 1.5 ml microcentrifuge tube.
     li Add 50 µl of Nuclease-Free Water to the Minicolumn. Incubate at room temperature for 1 minute. Centrifuge at 16,000 g for 1 minute.
-    li Discard Minicolumn and store DNA at 4°C or &ndash; 20°C.
+    li Discard Minicolumn and store DNA at 4°C or -20°C.
+
+
+
+  h2 Western Blot
+
+  h3 Materials
+  ul
+    li Lysis Buffer: 0.1 M NaOH, 0.05M EDTA, 2% SDS, 2% Beta-mercapto-EtOH (ex: for V = 10 ml, 100 µl of NaOH 10M, 146 mg of EDTA, 1 ml of 20% SDS and 200 µl beta-mercapto, complete with dH2O)
+    li Loading buffer: 0.25 M Tris-HCl, 50% glycerol, 0.05% Bromophenol Blue (ex: for V = 10 ml, 2.5 ml of 1 M Tri-HCl, 5 ml glycerol and 5 mg bromophenol blue, complete with dH2O)
+
+  h3 Tissue lysis and buffer extraction
+  ol
+    li Collect 10<sup>8</sup> yeast cells for each sample (e.g. prepare a solution 1.5 ml of OD600 = 1.6 and pellet using centrifuge).
+    li Resuspend in 200 µl lysis buffer.
+    li Boil 10 minutes at 90°C.
+    li Add 5 µl of 4 M acetic acid and vortex.
+    li Boil 10 minutes at 90°C.
+    li Add 50 µl of loading buffer.
+
+  h3 Gel run
+  ol
+    li Preparing the gels: remove plastic, rinse away salts in dH<sub>2</sub>O, fill chambers with 2X running buffer.
+    li Load in wells (30 &ndash; 40 µl/well for 10 wells/gel). Load four times less 4X loading buffer in empty wells (e.g. 10 µl), same for the ladder.
+    li Run gel 120 V until protein size is low on the gel.
+    li Bend gel using a metal tool to remove the gel from plastic, cut away unnecessary gel.
+
+  h3 Blotting
+  ol
+    li Put the gel in water on the shaker for one minute, then use iBlot for the transfer.
+
+  h3 Staining
+  ol
+    li Wash the membrane with PBS-TX and stain with Ponceau S solution for 10 &ndash; 15 minutes.
+    li Cut around where the protein is stained.
+    li Wash with PBS-TX (3x 5 min) and block with fresh PBS-TX 0.1% Milk 5% (e.g. 2.5 g in 50 ml PBS-TX) for 30 min &ndash; 1 hour.
+    li Incubate the primary antibody(ies) O/N at 4°C or 1h30-2h at RT.
+    li Wash 3x 5 min with PBS-TX.
+    li Incubate the secondary antibody(ies) for 1 hour at RT.
+    li Wash 3x 5 min with PBS-TX.
+
+  h3 Imaging
+  ol
+    li Prepare the chemiluminescent substrate by mixing each WesternBright Sirius<a href="#" class="ref">3</a> solution (2X) together (1 ml each).
+    li Put membrane on the table after drying a little bit on Kleenex.
+    li Dispense the solution homogeneously on the membrane for 5 min.
+    li Dry a little on Kleenex and put in plastic. Turn on Imager and expose.
+
+  h3 Stripping (removal of primary and secondary antibodies from the membrane)
+  p If you are planning to keep the membrane for further analyses:
+  ol
+    li Place the blot in Restore Western Blot Stripping Buffer and incubate for 5 to 15 minutes at 37°C.
+    li Remove the blot from the Restore Western Blot Stripping Buffer and wash with PBS-TX.
+
+
+
+  h2 Yeast media and plates preparation<ref doi="10.1038/nprot.2006.94" />
+
+  h3 SDCAA
+
+  p For 1 liter of medium:
+
+  table.table
+    thead
+      tr
+        th Component
+        th Amount
+    tbody
+      tr
+        td Dextrose
+        td 20 g
+      tr
+        td Difco yeast nitrogen base
+        td 6.7 g
+      tr
+        td Bacto casamino acids
+        td 5 g
+      tr
+        td Na2HPO4
+        td 5.4 g
+      tr
+        td NaH2PO4
+        td 8.56 g
+
+  p Dissolve all the above ingredients in deionized H2O to a volume of 1 l and sterilize by filtration. This medium can be stored for up to 6 months at 4°C.
+
+
+  h3 SGCAA
+
+  p For 1 liter of medium:
+
+  table.table
+    thead
+      tr
+        th Component
+        th Amount
+    tbody
+      tr
+        td Galactose
+        td 20 g
+      tr
+        td Difco yeast nitrogen base
+        td 6.7 g
+      tr
+        td Bacto casamino acids
+        td 5 g
+      tr
+        td Na2HPO4
+        td 5.4 g
+      tr
+        td NaH2PO4
+        td 8.56 g
+
+  p Dissolve all the above ingredients in deionized H2O to a volume of 1 l and sterilize by filtration. This medium can be stored for up to 6 months at 4°C.
+
+
+  h3 Agar plates
+
+  p Dissolve 5.4 g Na2HPO4, 8.56 g NaH2PO4·H2O, 182 g sorbitol and 15 g agar in deionized H2O to a volume of 900 ml and autoclave. Dissolve 20 g dextrose for SDCAA or galactose for SGCAA, 6.7 g Difco yeast nitrogen base and 5 g bacto casamino acids in deionized H2O to a volume of 100 ml and sterilize by filtration. Cool autoclaved mixture with stirring until below 50°C, add filter-sterilized solution, mix and pour plates. Plates can be stored for up to 6 months at 4°C.
 
 
 
@@ -417,53 +633,6 @@ block description
     li Incubate at 30°C for 45 minutes. Mix vigorously by flicking with finger or vortexing (if appropriate for your DNA) 2&hairsp;&ndash;&hairsp;3 times during this incubation.
     li Spread 50 &ndash; 150 µl of the above transformation mixture on an appropriate plate. It is unnecessary to pellet and wash the cells before spreading.
     li Incubate the plates at 30°C for 2&hairsp;&ndash;&hairsp;4 days to allow for growth of transformants.
-
-
-
-  h2 Western Blot
-
-  h3 Tissue lysis and buffer extraction
-  ol
-    li Prepare fresh PBS-TX 0.1% Milk 5% (e.g. 2.5 g in 50 ml PBS-TX).
-    li Collect 108 yeast cells for each sample (e.g. prepare a solution 1.5 ml of OD<sub>600</sub> 1.6 and pellet using centrifuge).
-    li Resuspend in 200 µl lysis buffer.
-    li Boil 10 minutes at 90°C.
-    li Add 5 µl of 4 M acetic acid and vortex.
-    li Boil 10 minutes at 90°C.
-    li Add 50 µL of loading buffer.
-
-  h3 Gel run
-  ol
-    li Preparing the gels: remove plastic, rinse away salts in dH<sub>2</sub>O, fill chambers with 2X running buffer.
-    li Load in wells (30 &ndash; 40 µL/well for 10 wells/gel). Load four times less 4X loading buffer in empty wells (e.g. 10 µL).
-    li Run gel 120 V until protein size is low on the gel.
-    li Bend gel using a metal tool to remove the gel from plastic, cut away unnecessary gel.
-
-  h3 Blotting
-  ol
-    li Put the gel in water on the shaker for a minute, then use iBlot for the transfer.
-
-  h3 Staining
-  ol
-    li Wash the membrane with PBS-TX and stain with Ponceau S solution for 10 &ndash; 15 minutes.
-    li Cut around where the protein is stained.
-    li Wash with PBS-TX (3x 5 min) and block 30 min - 1 hour.
-    li Incubate the primary antibody(ies) O/N at 4°C or 1h30-2h at RT.
-    li Wash 3x 5 min with PBS-TX.
-    li Incubate the secondary antibody(ies) for 1 hour at RT.
-    li Wash 3x 5 min with PBS-TX.
-
-  h3 Imaging
-  ol
-    li Prepare the chemiluminescent substrate by mixing each WesternBright Sirius<a href="#" class="ref">3</a> solution (2X) together (1 ml each).
-    li Put membrane on the table after drying a little bit on Kleenex.
-    li Dispense the solution homogenously on the membrane for 5 min.
-    li Dry a little on Kleenex and put in plastic. Turn on Imager and expose.
-
-  h3 Stripping
-  ol
-    li Place the blot in Restore Western Blot Stripping Buffer and incubate for 5 to 15 minutes at 37°C.
-    li Remove the blot from the Restore Western Blot Stripping Buffer and wash with PBS-TX.
 
 
 
