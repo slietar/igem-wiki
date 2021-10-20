@@ -10,7 +10,7 @@
     justify-content: space-between;
   }
 
-  header :nth-child(2) {
+  header > :nth-child(2) {
     color: #666;
     font-size: 1.05rem;
     font-weight: 500;

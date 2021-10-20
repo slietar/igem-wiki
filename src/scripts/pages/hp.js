@@ -10,8 +10,12 @@ if (document.querySelector('.hp-contents')) {
   };
 
   let updateHash = () => {
-    if (location.hash.startsWith('#hp-')) {
-      update(location.hash.substring('#hp-'.length));
+    let popup = location.hash.startsWith('#popup-');
+    document.body.classList.toggle('_popup', popup);
+
+    if (popup || location.hash.startsWith('#hp-')) {
+      let value = popup ? 'gold' : location.hash.substring('#hp-'.length);
+      update(value);
       // history.replaceState('', document.title, window.location.pathname + window.location.search);
 
       return true;

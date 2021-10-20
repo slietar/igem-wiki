@@ -20,6 +20,14 @@ body.mediawiki {
   font-size: revert;
 }
 
+body._popup {
+  overflow-y: hidden;
+}
+
+body:not(._popup) .hp-popup-root {
+  display: none !important;
+}
+
 body:not(.mediawiki), #mw-content-text {
   @import "./main.scss";
 
