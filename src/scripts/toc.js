@@ -61,7 +61,7 @@ if (contents) {
     }
   });
 
-  let headings = Array.from(contents.querySelectorAll(':scope > h2, :scope > h3'))
+  let headings = Array.from(contents.querySelectorAll('h2, h3'))
     .map((element) => {
       return { element, visible: false, y: element.offsetTop };
     });

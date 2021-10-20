@@ -415,6 +415,20 @@
   }
 }
 
+.figure-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, var(--size));
+
+  img {
+    width: var(--size);
+    height: var(--size);
+
+    background-color: #eee;
+    object-fit: contain;
+  }
+}
+
 .desc-contents {
   video {
     margin: 1rem 0;
