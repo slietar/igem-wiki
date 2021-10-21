@@ -335,38 +335,6 @@
   }
 }
 
-.compat {
-  &-list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.4rem;
-  }
-
-  &-item {
-    display: flex;
-    align-items: center;
-    column-gap: 1ch;
-
-    svg {
-      width: 1em;
-      height: 1em;
-      font-size: 1rem;
-    }
-
-    svg {
-      padding: 0.1rem;
-      border-radius: 50%;
-
-      font-size: 0.9rem;
-    }
-
-    path { fill: #fff; }
-
-    &._ok svg { background-color: #2ecc40; }
-    &:not(._ok) svg { background-color: #ff4136; }
-  }
-}
-
 
 //- Figures
 
