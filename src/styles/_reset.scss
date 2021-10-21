@@ -1,5 +1,5 @@
 body:not(.mediawiki), #mw-content-text {
-  &, *:not(circle, ellipse, path, rect, text), *::before, *::after {
+  &, *:not(circle, ellipse, image, path, rect, text), *::before, *::after {
     all: revert;
     box-sizing: inherit;
   }
