@@ -5,7 +5,14 @@
 @use "../mixins" as *;
 
 
-.layout-index {
+.home-root {
+  --vert-margin: 4rem;
+
+  @include media-breakpoint-down(md) {
+    --vert-margin: 2rem;
+  }
+
+
   .fadein:not(._visible) .fadein-target {
     opacity: 0;
     transform: translateY(14px);
@@ -38,20 +45,10 @@
 
     color: #999;
     font-size: 0.9rem;
-    // text-align: center;
 
     a {
       display: inline;
     }
-
-    /* a {
-      display: inline;
-      text-decoration: underline dotted;
-
-      &:hover {
-        text-decoration-style: solid;
-      }
-    } */
   }
 
   .ref {
@@ -61,7 +58,7 @@
 }
 
 
-.section1, .section6-contents, .section8-contents, .section11-contents, %home-section {
+%home-section {
   h2 {
     margin: 0.2rem 0 0.4rem 0;
 
@@ -113,33 +110,6 @@
     &:hover::after {
       transform: translateX(0.6ch) rotate(-90deg);
     }
-  }
-}
-
-%link {
-  width: max-content;
-  padding: 0.3rem 0;
-
-  font-size: 1.1rem;
-  font-weight: 500;
-  @include underline($thickness: 2px);
-
-  transition: color 300ms;
-
-  &::after {
-    display: inline-block;
-    content: "›";
-
-    margin-left: 0.2ch;
-    transition: color 300ms, opacity 300ms, transform 300ms;
-  }
-
-  &:not(:hover)::after {
-    opacity: 0;
-  }
-
-  &:hover::after {
-    transform: translateX(0.6ch);
   }
 }
 
@@ -199,19 +169,7 @@
 }
 
 
-.section4 {
-  display: flex;
-  height: 100px;
-
-  h2 {
-    margin: auto;
-  }
-
-  .words {
-    width: 200px;
-  }
-}
-
+// Section 1 - The problem
 
 .section1 {
   &-root {
@@ -225,7 +183,7 @@
     height: 100vh;
     max-height: 600px;
     min-height: 500px;
-    padding: 3rem var(--side-margin);
+    padding: var(--vert-margin) var(--side-margin);
   }
 
   &-right img {
@@ -261,6 +219,9 @@
   text-shadow: $text-shadow;
 }
 
+
+// Section 2 - Human Practices
+
 .section2 {
   &-root {
     @include superimposed-children();
@@ -274,96 +235,53 @@
   }
 
   &-contents {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: end;
-    column-gap: 2rem;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 
-  &-contents {
-    margin: 4rem var(--side-margin);
-  }
-
-  &-left {
-    @extend %home-section;
-  }
-
-  &-right {
-    @extend %white-text;
-
-    line-height: 1.4;
-    text-align: right;
+    @extend %home-section, %white-text;
+    padding: var(--vert-margin) var(--side-margin);
 
     p {
-      font-size: 1.2rem;
+      max-width: 700px;
     }
 
-    cite {
-      margin-top: 0.4rem;
-
-      &::before {
-        content: "–";
-        margin-right: 1ch;
-      }
-    }
-  }
-
-  a {
-    width: max-content;
-    padding: 0.3rem 0;
-
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 600;
-    text-shadow: 0 0 2px #555;
-
-    transition: color 300ms;
-
-    &::after {
-      display: inline-block;
-      content: "›";
-
-      margin-left: 0.2ch;
-      transition: all 300ms; // TODO: change
-    }
-
-    &:not(:hover)::after {
-      opacity: 0;
-    }
-
-    &:hover::after {
-      transform: translateX(0.6ch);
-    }
-  }
-
-  .links:hover a:not(:hover) {
-    color: #fffa;
-  }
-
-
-  position: relative;
-
-  .backgrounds img {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    filter: brightness(80%);
-    z-index: -1;
-
-    object-fit: cover;
-
-    transition: opacity 600ms 150ms;
-  }
-
-  @for $i from 0 through 3 {
-    &:not([data-image="#{$i}"]) .backgrounds img:nth-child(#{$i + 1}) {
-      opacity: 0;
+    @include media-breakpoint-down(md) {
+      justify-content: start;
     }
   }
 }
 
+
+// Section 3 - Citation
+
+.section3 {
+  padding: 3rem var(--side-margin);
+  background-color: #eee;
+
+  p {
+    max-width: 700px;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  cite {
+    margin-top: 0.8rem;
+    color: #666;
+
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+
+// Section 4 - Free
+
+
+// Section 5 - Facts
 
 .section5 {
   padding: 4rem var(--side-margin);
@@ -379,6 +297,11 @@
       row-gap: 0.4rem;
 
       width: 100%;
+
+      @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     &-text {
@@ -388,11 +311,6 @@
       font-size: 0.95rem;
       font-weight: 500;
       line-height: 1.3;
-
-      /* &-top {
-        align-self: end;
-        grid-row: 1;
-      } */
 
       &-bottom {
         grid-row: 3;
@@ -404,81 +322,65 @@
 
       font-size: 2rem;
       font-weight: 600;
+
+      @include media-breakpoint-down(md) {
+        &:not(:first-child) {
+          margin-top: 1rem;
+        }
+      }
     }
   }
 }
 
 
-.section6 {
-  $ion-color: #3863ff;
-  $protein-color: #c60065;
+// Section 6 - Meet CUP1
 
+.section6 {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
 
-  padding: 4rem var(--side-margin);
+  padding: var(--vert-margin) var(--side-margin);
   background-color: #000;
 
   color: #fff;
 
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 2rem;
+  }
+
+  &-contents {
+    @extend %home-section;
+  }
+
   h2 strong {
-    color: $protein-color;
+    color: $accent-color;
   }
 
   p strong {
-    text-decoration: 3px underline $ion-color;
+    @include underline($color: $second-color, $thickness: 3px);
 
     &::before {
       content: "";
       display: inline-block;
       width: 1ch;
       height: 1ch;
-      background-color: $ion-color;
+      background-color: $second-color;
       border: 1px solid #fff3;
       border-radius: 50%;
 
       margin: 0 0.8ch 0 0.6ch;
     }
   }
-
-  /* h2 {
-    margin-bottom: 1rem;
-
-    font-size: 2rem;
-
-    strong {
-      color: #c60065;
-    }
-  }
-
-  p {
-    margin: 1rem 0;
-
-    font-size: 1.05rem;
-    font-weight: 500;
-
-    strong {
-      text-decoration: 3px underline $ion-color;
-
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 1ch;
-        height: 1ch;
-        background-color: $ion-color;
-        border: 1px solid #fff3;
-        border-radius: 50%;
-
-        margin: 0 0.8ch 0 0.6ch;
-      }
-    }
-  } */
 }
 
 
+// Section 7 - Using and improving CUP1
+
 .section7 {
-  padding: 4rem var(--side-margin);
+  padding: var(--vert-margin) var(--side-margin);
   background-color: #eee;
 
   h2 {
@@ -494,6 +396,10 @@
   &-contents {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-item {
@@ -509,22 +415,27 @@
 }
 
 
+// Section 8 - Explore our experiments
+
 .section8 {
   @include superimposed-children();
 
   background-color: #000;
 
   img {
-    margin: 0 auto;
+    @extend %image-cover;
   }
 
   &-contents {
+    @extend %home-section;
+
     display: flex;
     flex-direction: column;
 
-    max-width: 500px;
-    margin: 6rem var(--side-margin);
+    max-width: calc(500px + var(--side-margin) * 2);
+    padding: var(--vert-margin) var(--side-margin);
 
+    background-image: linear-gradient(to right, #000, #0001);
     color: #fff;
 
     h2 strong {
@@ -534,39 +445,20 @@
     }
 
     figcaption {
-      margin-top: auto;
-      padding: 0;
-
-      strong {
-        $gfp-color: #62cd17;
-        // text-decoration: 2px underline #62cd17;
-        color: $gfp-color;
-        font-weight: 500;
-      }
-    }
-  }
-
-  &-links {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-
-    a {
-      // text-decoration: underline;
-      @extend %link;
+      margin: auto 0 0 0;
+      padding: 1rem 0 0 0;
     }
   }
 }
 
 
-.section9 {
-  padding: 2rem;
-  background-color: #eee;
+// Section 9 - Free
 
-  // img {}
-}
+
+// Section 10 - CuRe
 
 .section10 {
-  padding: 4rem var(--side-margin);
+  padding: var(--vert-margin) var(--side-margin);
 
   .subtext {
     color: #333;
@@ -581,6 +473,10 @@
 
     strong {
       color: $accent-color;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 1.4rem;
     }
   }
 
@@ -629,22 +525,15 @@
   }
 
 
+  .words {
+    transition: opacity $duration $delay;
+  }
+
   .words-list {
     animation-delay: $delay;
   }
 
-
-  .d {
-    display: inline-block;
-
-    max-width: 5.3em;
-    overflow-x: hidden;
-    vertical-align: bottom;
-    transition: max-width $duration $delay, opacity $duration $delay;
-  }
-
-  &:not(._visible) .d {
-    max-width: 0;
+  &:not(._visible) .words {
     opacity: 0;
   }
 }

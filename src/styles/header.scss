@@ -428,6 +428,10 @@ $logo-border: 2px;
       display: none;
     }
 
+    .header-preview ul {
+      row-gap: 0.4rem;
+    }
+
     .header-preview a:not(._disabled) {
       background-color: #fafafa;
     }
