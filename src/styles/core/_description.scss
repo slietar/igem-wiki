@@ -126,22 +126,15 @@
 
   // External links
   a[target="_blank"]:not(.discrete) {
-    & {
-      display: inline-flex;
-      align-items: center;
-      column-gap: 0.6ch;
-    }
-
     &::after {
       content: "";
-      display: inline-block;
 
-      width: 1em;
-      height: 1em;
+      margin-left: 0.3rem;
+      padding-right: 1.85ch;
+      vertical-align: 0.1em;
 
       background-color: currentColor;
       clip-path: url(#link);
-      transform: translateY(-0.1em);
     }
   }
 
@@ -208,7 +201,7 @@
 
 //- Mobile
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .desc-body {
     display: revert;
   }

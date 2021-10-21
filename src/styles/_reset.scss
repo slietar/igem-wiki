@@ -210,3 +210,8 @@ body:not(.mediawiki), #mw-content-text {
 #mw-content-text {
   margin-top: 16px;
 }
+
+#bodyContent a[href^="https://"] {
+  background: revert;
+  padding-right: revert;;
+}
