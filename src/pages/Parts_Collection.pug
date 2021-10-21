@@ -5,80 +5,75 @@ block hero
   .hero-contents: h1 Parts Collection
 
 block description
-  h2 Parts
+  h2 Introduction
 
-  table.table
-    thead
-      tr
-        th Name
-        th Type
-        th Description
-        th Assembly compatibility
+  p We have made different constructs to modify the yeast EBY100 to make it express the copper metallothionein CUP1 protein at its external surface. Here is the complete list of all the parts we have created to transform the yeast. We have one basic part that is the CUP1 alone fused with the Aga2 protein and the V5 tag and seven dimers of CUP1 as basic parts. We also have 8 composite parts that are the expression system of our proteins, namely Gal1&ndash;Aga2&ndash;protein&ndash;V5.
+  p Our favorite basic parts are <a href="https://parts.igem.org/Part:BBa_K4035001" target="_blank">BBa_K4035001</a> and <a href="https://parts.igem.org/Part:BBa_K4035007" target="_blank">BBa_K4035007</a> and our favorite composite parts are their corresponding expression system <a href="https://parts.igem.org/Part:BBa_K4035000" target="_blank">BBa_K4035000</a> and <a href="https://parts.igem.org/Part:BBa_K4035014" target="_blank">BBa_K403501</a>.
 
-    tbody
-      -
-        let dimers = [
-          { linker: '(GGGGS)<sub>3</sub>',
-            compIIS: true, compRFC: true },
-          { linker: '(GGGGS)<sub>4</sub>',
-            compIIS: false, compRFC: false },
-          { linker: '(AP)<sub>7</sub>',
-            compIIS: false, compRFC: false },
-          { linker: '(EAAAK)<sub>3</sub>',
-            compIIS: false, compRFC: true },
-          { linker: '(EAAAK)<sub>4</sub>',
-            compIIS: true, compRFC: false },
-          { linker: 'GGGGSEAAAKGGGGS',
-            compIIS: true, compRFC: true },
-          { linker: 'GGGGS(EAAAK)<sub>2</sub>GGGGS',
-            compIIS: false, compRFC: true },
-        ];
 
-        let parts = [
-          { id: 'BBa_K4035001',
-            desc: 'Copper metallothionein 1 fused to Aga2 and equipped with a V5 tag',
-            compIIS: true, compRFC: false,
-            composite: false },
-          ...dimers.map((dimer, index) => ({
-            id: `BBa_K403500${index + 2}`,
-            desc: `Dimerization of the copper metallothionein 1: <code>CUP1–${dimer.linker}–CUP1</code>`,
-            compIIS: dimer.compIIS, compRFC: dimer.compRFC,
-            composite: false
-          })),
-          { id: 'BBa_K4035000',
-            desc: 'Expression of CUP1 at the surface of EBY100',
-            compIIS: true, compRFC: true,
-            composite: true },
-          ...dimers.map((dimer, index) => ({
-            id: `BBa_K403501${index}`,
-            desc: `Expression of the <code>CUP1–${dimer.linker}–CUP1</code> dimer at the outer membrane of S. cerevisae`,
-            compIIS: dimer.compIIS, compRFC: dimer.compRFC,
-            composite: true
-          }))
-        ]
-      each part, index in parts
+  h2 List of parts
+
+  .parts-container
+    table.table.parts-table
+      thead
         tr
-          td: a(href=`http://parts.igem.org/Part:${part.id}` target="_blank")= part.id
-          td= (part.composite ? 'Composite' : 'Coding')
-          td!= part.desc
-          //- -
-            let comp = [].concat(
-              part.compIIS ? ['<a href="http://parts.igem.org/Help:Standards/Assembly/Type_IIS" target="_blank">Type&nbsp;IIS</a>'] : [],
-              part.compRFC ? ['<a href="http://parts.igem.org/Help:Standards/Assembly/RFC10" target="_blank">RFC[10]</a>'] : []
-            );
-          //- td!= comp.length > 0 ? `Compatible with ${comp.join(' and ')}` : 'No compatibility'
-          -
-            let comp = [
-              //- { ok: part.compIIS, name: '<a href="http://parts.igem.org/Help:Standards/Assembly/Type_IIS" target="_blank">Type&nbsp;IIS</a>' },
-              //- { ok: part.compRFC, name: '<a href="http://parts.igem.org/Help:Standards/Assembly/RFC10" target="_blank">RFC[10]</a>' }
-              { ok: part.compIIS, name: 'Type&nbsp;IIS' },
-              { ok: part.compRFC, name: 'RFC[10]' }
-            ]
-          td: .compat-list: for item in comp
-            .compat-item(class=(item.ok ? '_ok' : ''))
+          th Name
+          th Type
+          th Description
+          th Assembly compatibility
+
+      tbody
+        -
+          let dimers = [
+            { linker: '(GGGGS)<sub>3</sub>',
+              compIIS: true, compRFC: true },
+            { linker: '(GGGGS)<sub>4</sub>',
+              compIIS: false, compRFC: false },
+            { linker: '(AP)<sub>7</sub>',
+              compIIS: false, compRFC: false },
+            { linker: '(EAAAK)<sub>3</sub>',
+              compIIS: false, compRFC: true },
+            { linker: '(EAAAK)<sub>4</sub>',
+              compIIS: true, compRFC: false },
+            { linker: 'GGGGSEAAAKGGGGS',
+              compIIS: true, compRFC: true },
+            { linker: 'GGGGS(EAAAK)<sub>2</sub>GGGGS',
+              compIIS: false, compRFC: true },
+          ];
+
+          let parts = [
+            { id: 'BBa_K4035001',
+              desc: 'CUP1 fused to Aga2 and tagged with a V5 epitope',
+              compIIS: true, compRFC: false,
+              composite: false },
+            ...dimers.map((dimer, index) => ({
+              id: `BBa_K403500${index + 2}`,
+              desc: `Dimerization of the copper metallothionein 1: <code>CUP1–${dimer.linker}–CUP1</code>`,
+              compIIS: dimer.compIIS, compRFC: dimer.compRFC,
+              composite: false
+            })),
+            { id: 'BBa_K4035000',
+              desc: 'Expression of CUP1 at the surface of EBY100',
+              compIIS: true, compRFC: true,
+              composite: true },
+            ...dimers.map((dimer, index) => ({
+              id: `BBa_K403501${index}`,
+              desc: `Expression of the <code>CUP1–${dimer.linker}–CUP1</code> dimer on the extracellular membrane of EBY100`,
+              compIIS: dimer.compIIS, compRFC: dimer.compRFC,
+              composite: true
+            }))
+          ]
+        each part, index in parts
+          tr
+            td: a(href=`http://parts.igem.org/Part:${part.id}` target="_blank")= part.id
+            td= (part.composite ? 'Composite' : 'Coding')
+            td!= part.desc
+            -
+              let comp = [
+                { ok: part.compIIS, name: 'Type&nbsp;IIS' },
+                { ok: part.compRFC, name: 'RFC[10]' }
+              ]
+            td: .parts-compat: for item in comp
               if item.ok
-                | <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path xmlns="http://www.w3.org/2000/svg" d="M20.6644 5.2526C21.0772 5.61952 21.1143 6.25159 20.7474 6.66437L10.0808 18.6644C9.89099 18.8779 9.61898 19 9.33334 19C9.04771 19 8.7757 18.8779 8.58593 18.6644L3.2526 12.6644C2.88568 12.2516 2.92286 11.6195 3.33565 11.2526C3.74843 10.8857 4.3805 10.9229 4.74742 11.3356L9.33334 16.4948L19.2526 5.33565C19.6195 4.92286 20.2516 4.88568 20.6644 5.2526Z" fill="currentColor" /></svg>
-              else
-                //- | <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path xmlns="http://www.w3.org/2000/svg" d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM7.79289 7.79289C8.18342 7.40237 8.81658 7.40237 9.20711 7.79289L12 10.5858L14.7929 7.79289C15.1834 7.40237 15.8166 7.40237 16.2071 7.79289C16.5976 8.18342 16.5976 8.81658 16.2071 9.20711L13.4142 12L16.2071 14.7929C16.5976 15.1834 16.5976 15.8166 16.2071 16.2071C15.8166 16.5976 15.1834 16.5976 14.7929 16.2071L12 13.4142L9.20711 16.2071C8.81658 16.5976 8.18342 16.5976 7.79289 16.2071C7.40237 15.8166 7.40237 15.1834 7.79289 14.7929L10.5858 12L7.79289 9.20711C7.40237 8.81658 7.40237 8.18342 7.79289 7.79289Z" fill="#0D0D0D"></path></svg>
-                | <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path xmlns="http://www.w3.org/2000/svg" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="currentColor" /></svg>
+                svg: use(href="assets/icons.svg#check")
               span !{item.name}
