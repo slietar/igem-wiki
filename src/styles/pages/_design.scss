@@ -1,0 +1,9 @@
+.linkers {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  img {
+    max-width: 600px;
+  }
+}
