@@ -125,7 +125,7 @@ block description
       span Surface expression of CUP1 does not improve yeast Cu-bioremediation ability.
 
 
-  h2 Copper recovery
+  h2(id="recovery") Copper recovery
 
   p Since the wild type yeast could remove copper in solution and seemed to be the best option to do it compared to the engineered strains we made a last experiment to test whether we could retrieve the captured copper from the yeast in order to eventually further re-use it. Our literature research led us to consider EDTA as a candidate for copper retrieval<ref doi="10.1016/j.sajb.2005.10.010" />. We thus tested this chemical on loaded (1 g/l) wild type yeast with different times of reaction as a function of EDTA concentration. The results are shown in the following figure:
 
@@ -144,3 +144,39 @@ block description
 
   p To sum, we were able to express different CUP1 configurations on the extracellular membrane of the yeast S.cerevisiae. However we did not succeed in improving the endogenous ability for bio-accumulation of the yeast with our engineered strain. Instead we found out that the medium in which the yeast is growing is a major factor to take into account when performing bioremediation experiments. Indeed, our engineered yeast were not able to retrieve copper when growing in SGCAA, a reduced medium used for transformants selection, but was acting like the wild type when put in YPD, a rich medium used to grow wild type yeast.
   p In conclusion, WT yeast already performs well in removing copper by bioaccumulation from a solution in a 4 mg/l range, relevant to the fungicide contaminated water copper concentration. Surface expression of CUP1 does not improve yeast ability to remove copper from a solution. Nonetheless, since autogenous bioaccumulation seems to be an effective process on its own, we suspect that increasing it further by rising endogenous intracellular CUP1 expression would make the yeast a very efficient genetically modified engineered machine for copper removal.
+
+
+  h2 Discussion
+
+  p In this project we identified an underappreciated problem related to organic or ‘bio’ based horticulture in particular of wine grape vines and tea plants. Treatment with copper based fungicides, while not detrimental to the food produced (e.g. wine), is deleterious to the soil these plants are cultivated in as copper accumulates to toxic levels from rain runoff. These copper fungicide treatments have a long history, they are approved for organic use and their use is unlikely to decline in the near future given the additional environmental issues with alternate fungicides, and public sentiment against novel compounds (see <a href="Collaborations.html#survey">our survey</a>). Copper ground contamination inhibits cultivation of new plants in the polluted soil.  Given the already limited soil types and regions suitable for wine and tea production, which are becoming even further limited due to global warming, finding a solution to stop this problem becomes even more pressing.
+  p Our solution, CuRe, aimed to employ bioremediation to remove copper from fungicide contaminated rainwater.  Our strategy was to express the endogenous yeast copper-binding protein CUP1 on the surface of yeast to bind to and allow the removal of copper from water.  We generated constructs which allow the expression of single and multiple copies of CUP1 on the surface of yeast separated by linker protein regions of varying flexibility. We confirmed that these proteins are produced and present on the surface of yeast using both western blotting and immunofluorescence.
+
+  figure
+    img(src="assets/design/9.jpg")
+    figcaption
+      span Figure (X)
+      span Yeast surface display for linkers.
+
+  p To couple with these novel yeast strains, we designed a bioreactor to allow yeast suspended in beads to interact with rainwater and remove pollutants such as copper. We designed, manufactured and built a device easy to use in the field by implementing a graphical user interface on an associated tablet that allows control of the bioreactor activities.
+
+  figure
+    img(src="assets/implementation/8.jpg")
+    figcaption
+      span Figure (X)
+      span Graphical user interface used to control the bioreactor.
+
+  p Evaluation of the efficiency of CUP1 expressing strains was more circumspect. We established a copper removal chemical assay and growth conditions for our yeast strains suitable for introduction to copper containing solutions.  A key unexpected variable however was the potent ability of our background yeast carrier strain to bioaccumulate copper from solution. Comparison of our CUP1 surface expressing strains to our chassis strain revealed little additional removal of copper from solution compared to the control background yeast strain.  From these experiments we can conclude:
+
+  ol
+    li Control yeast strains have a potent ability to absorb copper from solution.
+    li CUP1 monomers or multimers could be expressed on the surface of yeast though retention of their copper binding activity could not be verified.
+    li Addition of single or multiple copies of CUP1 provided no significant additional removal of copper from solution.
+
+  p In sum, we discovered yeast can remove copper efficiently from solution, though our efforts to further enhance this process were not fruitful.  We also provide <a href="Results.html#recovery">a strategy whereby copper can be released from yeast</a>, for return back into fungicides for example, forming a closed loop for the recycling of this metal.
+
+  p Our central goal of depleting copper from solution has been achieved, albeit not enhanced by our synthetic biology approach. <b>Ironically, this finding could make real-world application of our technology easier to achieve.</b>  The release of genetically modified organisms is highly restricted in Europe and other countries. The finding that wild type yeast strains allow efficient removal of copper removes an important stumbling block to exploitation of our bioremediation strategy.  <b>As it stands, wildtype yeast strains in our bioreactor prototype could be quickly made ready for field testing, with little or no regulatory impedance.</b>
+
+  p From our data and experiments, we can envision the next steps upon which to iterate and improve.
+  p Firstly, we would suggest other ‘wild type’ yeast strains used in laboratory experiments or even food or beer production be tested for their ability to bioaccumulate copper.  Existing strains may have an even higher ability to absorb copper from solution and bring the advantages for direct application described above.
+  p Second, in a synthetic biology strategy, our data suggests that bioaccumulation rather than biosorption should be the cellular process upon which to aim to enhance. Yeast's natural ability to bioaccumulate copper was far more potent than our attempt to promote biosorption.  One can envision strategies to further enhance copper accumulation through the modification of the copper import and detoxification machinery, such as increasing intracellular CUP1 levels or activity, increasing the copper ions influx by enhancing transporters activity or raising intracellular copper metabolism.  A combination of these approaches could further enhance the existing effective ability of yeast to deplete copper in solution.
+  p Through <a href="Communication.html">our outreach activities</a>, we have sought to encourage the next generation of bioengineers to rise to this challenge by both promoting synthetic biology in schools through <a href="Communication.html#book">a children's book</a>, by <a href="Communication.html#event">encouraging EPFL students to get involved in iGEM</a> and by outreach the public through <a href="Communication.html#survey">surveys</a>, <a href="Communication.html#podcast">podcasts</a> and <a href="Communication.html#dimensions">lay public articles</a>. We believe our results have laid the first foundations upon which a solution can be generated by future investigators to prevent copper pollution in wine and tea growing areas and preserve both the productivity and beauty of these regions including in <a href="https://whc.unesco.org/en/list/1243/" target="_blank">the world heritage Lavaux wine growing site</a> immediately adjacent to our institute.
