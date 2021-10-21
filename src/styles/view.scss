@@ -3,27 +3,9 @@
 @import "./breakpoints";
 
 
-@mixin view-1() {
-  @include mq-func((
-    /* breakpoint(xs): (--width: 80px),
-    breakpoint(sm): (--width: 500px),
-    breakpoint(md): (--width: 630px),
-    breakpoint(lg): (--width: 750px),
-    breakpoint(xl): (--width: 860px) */
-    breakpoint(xs): (--width: 80px),
-    breakpoint(sm): (--width: 500px),
-    breakpoint(md): (--width: 630px),
-    breakpoint(lg): (--width: 750px),
-    breakpoint(xxl): (--width: 1160px)
-  ), $const-upper: true);
-
-  --side-margin: calc((100vw - var(--width)) * 0.5);
-}
-
-
 @mixin view-2() {
   @include mq-func((
-    breakpoint(xs): (--width: 80px),
+    breakpoint(xs): (--width: 30px),
     breakpoint(sm): (--width: 500px),
     breakpoint(md): (--width: 630px),
     breakpoint(lg): (--width: 800px),
