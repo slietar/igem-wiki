@@ -1,7 +1,7 @@
 extends templates/_description
 
 block hero
-  img.hero-image(src="assets/background/description.jpg")
+  img.hero-image(src="assets/background/implementation.jpg" loading="lazy")
   .hero-contents: h1 Implementation
 
 block description
@@ -185,7 +185,7 @@ block description
     .imp-part-image: img(src="assets/implementation/2.jpg")
     .imp-part-contents
       h4 Commutation transistor
-      p MOSFET, Single - N-Channel, 100V, 5.6A, 43W, TO-220AB, Vishay, product no. IRL510PBF.
+      p MOSFET, Single - N-Channel, 100 V, 5.6 A, 43 W, TO-220AB, Vishay, product no. IRL510PBF.
       p The commutation transistor is manufactured with an integrated commutation diode.
       p The transistor resists the 12V required by the solenoid and is able to withstand the current spikes. Additionally, the raspberry pi's 5V is sufficient to activate the transistor's gate.
       p The diode and transistor were chosen to at least withstand 36 V and 1.5 A of current.
@@ -193,7 +193,7 @@ block description
   .imp-part-item
     .imp-part-contents
       h4 Flyback diode
-      p Schottky Diode, 1A, 40V, DO-41, Taiwan Semiconductors, product no. 1N5819.
+      p Schottky Diode, 1 A, 40 V, DO-41, Taiwan Semiconductors, product no. 1N5819.
       p The flyback diode in parallel to the solenoid can withstand the necessary 12 V and fast enough to react to the current spikes.
       p The diode and transistor were chosen to at least withstand 36 V and 1.5 A of current.
     .imp-part-image: img(src="assets/implementation/3.jpg")
@@ -215,7 +215,7 @@ block description
 
     p The pressure sensor uses I2C communication Protocol. The Raspberry Pi 3 pins we will be using are one of the 3v3 pins and one of the ground pins, the GPIO 2 which is the Data signal for the I2C pressure device and the GPIO 3 which is the clock signal for the I2C pressure device.
 
-    p As can be seen on <a href="https://learn.adafruit.com/lps35hw-water-resistant-pressure-sensor/pinouts" target="_blank">the pinouts page</a> for the pressure sensor on their website, there are only 4 pins we will be using for communicating with the Raspberry pi with I2C serial communication protocol. These are:
+    p As can be seen on <a href="https://learn.adafruit.com/lps35hw-water-resistant-pressure-sensor/pinouts" target="_blank">the pinouts page</a> for the pressure sensor on their website, there are only 4 pins we will be using for communicating with the Raspberry Pi with I2C serial communication protocol. These are:
     ul
       li <strong>V<sub>in</sub></strong> (the V+ voltage) which will be wired to the 3v3 on the RPi
       li <strong>Gnd</strong> which will be wired to the Gnd on the RPi
@@ -226,7 +226,7 @@ block description
       img(src="assets/implementation/7.jpg")
       figcaption
         span Figure (X)
-        span Pressure sensor <ref authors="Bryan Siepert" journal="Adafruit learning system" title="Adafruit LPS35HW Water Resistant Pressure Sensor" url="https://www.distrelec.ch/Web/Downloads/_m/an/4258_eng_man.pdf" /> connected to the Raspberry Pi<ref id="rpi" />.
+        span Pressure sensor<ref authors="Bryan Siepert" journal="Adafruit learning system" title="Adafruit LPS35HW Water Resistant Pressure Sensor" url="https://www.distrelec.ch/Web/Downloads/_m/an/4258_eng_man.pdf" /> connected to the Raspberry Pi<ref id="rpi" />.
 
       p For driving the solenoid, the GPIO 23 has been set in software to be high when the solenoid should be open. For driving a pump (if needed), the GPIO 24 has been set in software to be high when the pump should be pumping.
       p: em Warning: The GPIO of the Raspberry Pi are not to drive the solenoid or the pump directly. The commutation diode is a protection for the Raspberry Pi as it would not stand the currents which are flowing through the solenoid or pump. The GPIO pin must be connected to the gate of the transistor (see transistor datasheet).
@@ -282,12 +282,12 @@ block description
   h4 Structure of the code
   p The code is structured into a few main modules:
   ul
-    li <strong>Main.py</strong> periodically uses the other modules in an update() function.
+    li <strong>Main.py</strong> periodically uses the other modules in an <code>update()</code> function.
     li <strong>Managers.py</strong> defines a set of functions to be called once an application if started by pressing on one of the buttons. These managers manage the devices and manage the data acquired by these devices.
     li <strong>Tools.py</strong> defines a few shortcuts to make the code more readable.
-    li <strong>Devices.py</strong> defines the device class and chooses the pins for output
-    li <strong>Config.py</strong> defines a set of configurations for the code itself. By changing the DEBUG_MODE from False to True, one can use mock values and mock libraries to simulate the behaviour of the code.
-    li The <strong>GUI</strong> directory contains the set of html, css, js scripts needed for the web page to be decoded by a browser (Chrome in our case).
+    li <strong>Devices.py</strong> defines the device class and chooses the pins for output.
+    li <strong>Config.py</strong> defines a set of configurations for the code itself. By changing the <code>DEBUG_MODE</code> from <code>False</code> to <code>True</code>, one can use mock values and mock libraries to simulate the behaviour of the code.
+    li The <strong>GUI</strong> directory contains the set of HTML, CSS, and JS scripts needed for the web page to be decoded by a browser (Chrome in our case).
 
 
 
@@ -296,21 +296,18 @@ block description
 
   h3 Setup description
 
-  p For the electronics, we used a Hirschman board which made prototyping much simpler. This type of board has lines of connected pins, 4 by 4 which replace soldering.
-  ul
-    li The Transistor's Source (bottom transistor pin) is wired to the ground set by the negative electrode of the battery.
-    li The Transistor's Drain (center transistor pin) is wired to the solenoid and the diode, which in turn are wired to the positive electrode of the 12V battery.
-    li The Transistors Gate (top right) is wired to the Raspberry Pi.
-  p This is the real life electronics representation of the previously explained schematics. The Raspberry pi has an additional four cables going off towards the pressure sensor to the left.
-
   figure
     img(src="assets/implementation/12.jpg")
     figcaption
       span Figure (X)
       span Cables on the Hirschman board.
 
-  p The pressure sensor is glued using epoxy to the 3D-printed bottom part of the reactor. The bottom part is specially designed to leave an opening for the sensor's sensing pad. The pressure sensor was coated in epoxy before being glued as only the pad is water resistant.
-  p The valve has two cables: the red cable, as usual, represents the positive voltage. The direction of wiring is important, as the force generated depends on the direction of the current. The solenoid will probably not break if wired incorrectly, but it will certainly not work. For our own test, we had to 3D print an adapter because the solenoid's one touch fitting diameter and the plastic tube's diameter were incompatible.
+  p For the electronics, we used a Hirschman board which made prototyping much simpler. This type of board has lines of connected pins, 4 by 4 which replace soldering.
+  ul
+    li The transistor's <strong>source</strong> (bottom transistor pin) is wired to the ground set by the negative electrode of the battery.
+    li The transistor's <strong>drain</strong> (center transistor pin) is wired to the solenoid and the diode, which in turn are wired to the positive electrode of the 12 V battery.
+    li The transistors <strong>gate</strong> (top right) is wired to the Raspberry Pi.
+  p This is the real life electronics representation of the previously explained schematics. The Raspberry Pi has an additional four cables going off towards the pressure sensor to the left.
 
   figure
     img(src="assets/implementation/13.jpg")
@@ -318,8 +315,8 @@ block description
       span Figure (X)
       span Pressure sensor mounted on the reactor.
 
-  p The pressure sensor is glued using epoxy to the 3D printed bottom part of the reactor. The bottom part is specially designed to leave an opening for the sensor's sensing pad. The pressure sensor was coated in epoxy before being glued as only the pad is water resistant.
-  p The valve has two cables: the red cable, as usual, represents the positive voltage. The direction of wiring is important, as the force generated depends on the direction of the current. The solenoid will probably not break if wired incorrectly, but it will certainly not work. For our own test, we had to 3D print an adapter because the solenoid's one touch fitting diameter and the plastic tube's diameter were incompatible.
+  p The pressure sensor is glued using epoxy to the 3D-printed bottom part of the reactor. The bottom part is specially designed to leave an opening for the sensor's sensing pad. The pressure sensor was coated in epoxy before being glued as only the pad is water resistant.
+  p The valve has two cables: the red cable, as usual, represents the positive voltage. The direction of wiring is important, as the force generated depends on the direction of the current. The solenoid will probably not break if wired incorrectly, but it will certainly not work. For our own test, we had to 3D-print an adapter because the solenoid's one touch fitting diameter and the plastic tube's diameter were incompatible.
 
   figure
     img(src="assets/implementation/14.jpg")
@@ -327,7 +324,7 @@ block description
       span Figure (X)
       span Full setup view.
 
-  p For a constant flow to be used, we had to use a water tap. To get the water from the tap to the reactor, we had to make a tubing circuit made up of a 3D printed adapter for the tap, a metal rod found in the meeting room, some tubing we had bought and a lot of scotch tape.
+  p For a constant flow to be used, we had to use a water tap. To get the water from the tap to the reactor, we had to make a tubing circuit made up of a 3D-printed adapter for the tap, a metal rod found in the meeting room, some tubing we had bought and a lot of scotch tape.
 
 
   h3 Tests
@@ -347,7 +344,8 @@ block description
     img(src="assets/implementation/16.jpg")
     figcaption
       span Figure (X)
-      span Calibration curve of the reactor. Actual pressure to actual volume reading.
+      span Calibration curve of the reactor.
+      span Actual pressure to actual volume reading.
 
   p The calibration curve shows that volume as a function of pressure can be approximated using a linear curve with bias for the volumes we are treating.
   p The calibration curve would not be sufficient if we did not determine the bias due to the velocity of the water. For this, we completely emptied the reactor and filled it with a known volume. We then opened the valve and looked at the pressure reading at various pressures.
@@ -365,7 +363,7 @@ block description
     img(src="assets/implementation/18.jpg")
     figcaption
       span Figure (X)
-      span Continuous mode over multiple cycles with threshold chosen between for the mid threshold and 984 for the high threshold.
+      span Continuous mode over multiple cycles with threshold chosen between 981 hPa for the mid threshold and 984 hPa for the high threshold.
 
   p The uneven spikes are due to trapped water in the tubing being released at once. Otherwise, the code seems to react as it was designed to. This shows that the program works well in its automated mode. Water is constantly being poured into the reactor and the reactor empties whatever it cannot treat by opening the valve once the volume is too high.
 
@@ -387,17 +385,17 @@ block description
   h3 Alginate beads
 
   h4 Introduction
-  p A widely spread way of containing live organisms for analysis is Alginate beads: these have previously been used in iGEM<span class="ref-group"><ref id="tu-eindhoven" authors="iGEM TU Eindhoven 2015" title="Alginate beads" url="http://2015.igem.org/wiki/images/4/4c/TU_Eindhoven_Protocols_Alginate_beads.pdf" year="2015" />, <ref authors="iGEM Paris Bettencourt 2012" title="Encapsulation" url="http://2012.igem.org/Team:Paris_Bettencourt/Encapsulation" year="2012" /></span>, and many protocols can easily be found from other sources<ref authors="AMSBIO" title="Alginate 3D Cell Culture Kit" url="https://resources.amsbio.com/Datasheets/AMS.CSR-ABC-KIT.pdf" />. We will be containing yeast for a whole other purpose: bio-adsorption.
+  p A widely spread way of containing live organisms for analysis is Alginate beads: these have previously been used in iGEM<span class="ref-group"><ref id="tu-eindhoven" authors="iGEM TU Eindhoven" title="Alginate beads" url="http://2015.igem.org/wiki/images/4/4c/TU_Eindhoven_Protocols_Alginate_beads.pdf" year="2015" />, <ref authors="iGEM Paris Bettencourt" title="Encapsulation" url="http://2012.igem.org/Team:Paris_Bettencourt/Encapsulation" year="2012" /></span>, and many protocols can easily be found from other sources<ref authors="AMSBIO" title="Alginate 3D Cell Culture Kit" url="https://resources.amsbio.com/Datasheets/AMS.CSR-ABC-KIT.pdf" />. We will be containing yeast for a whole other purpose: bio-adsorption.
 
   h4 Manufacturing
-  p Since analysis is not our goal, contamination is less of a problem when manufacturing the beads. However, for the <strong>Re</strong>cycling part of <strong>CuRe</strong>, we want to maximize yeast content and minimize other organisms. When fabricating beads for later use, making sure the products used are sterile will be important. To produce these beads, we use a very similar protocol to the one found by TU Eindhoven's 2015 igem team<ref id="tu-eindhoven" />.
+  p Since analysis is not our goal, contamination is less of a problem when manufacturing the beads. However, for the <strong>Re</strong>cycling part of <strong>CuRe</strong>, we want to maximize yeast content and minimize other organisms. When fabricating beads for later use, making sure the products used are sterile will be important. To produce these beads, we use a very similar protocol to the one found by TU Eindhoven's 2015 iGEM team<ref id="tu-eindhoven" />.
 
   h4 Yeast survival
   p When it comes to storage inside of the beads, under the right conditions, yeast stays viable at around 80% after 5 years<ref doi="10.1016/0168-1656(94)90120-1" />. For our purposes, we shall consider the yeast cells should still function after a period of about 6 months.
 
   h4 Dissolution
   p To recuperate cells, the beads need to be dissolved. For quick and cell-conserving dissolution, sodium citrate seems to be our best choice<ref doi="10.1080/09593330.2019.1673827" />. As it enables total dissolution of beads up to 4 mm in diameter under 20 minutes. Sodium citrate has been shown to provoke cell death in <em>Cryptococcus laurentii</em><ref doi="10.1111/j.1365-2672.2012.05312.x" />, but the mechanisms responsible for cell death are slow enough: It takes about a day for viability of the yeast to reach about 50%.
-  p If treatment of yeast is done within the first hour after dissolution, our estimations (which are based on the sodium-citrate curve above) show there should be about 95% survival (curve is roughly estimated to be represented by an exponential: y=3^(-x (days)).
+  p If treatment of yeast is done within the first hour after dissolution, our estimations (which are based on the sodium-citrate curve above) show there should be about 95% survival (curve is roughly estimated to be represented by an exponential: y = 3<sup>(-x (days))</sup>.
 
   h4 Reuse
   p Since our goal is to eventually upscale the process and we are taking a sustainable approach, we need to be able to retrieve the cells, but also the material for the beads. For this we used this protocol<ref doi="10.1080/09593330.2019.1673827" />. It basically is a dissolution of the beads followed by centrifugation of the solution. The beads formed using reclaimed alginate are less rigid and are of lower quality. Alginate can probably only be reused once though, and a more sustainable solution for encapsulation should be investigated for large scale.
@@ -407,7 +405,7 @@ block description
   p Alginate beads are normally nanoporous (~ 5 nm)<ref doi="10.1016/j.progpolymsci.2011.06.003" />, while yeast cells are several microns large at all temperatures considered for our application (between 15 and 35°C)<ref doi="10.1093/femsyr/foy052" />. However, this does not prevent cells from escaping: cell encapsulation weakens the Ca-Alginate structure (Structural changes of Ca-alginate beads caused by immobilized yeast cell growth - ScienceDirect) while cell growth forms new passageways through the Ca-Alginate matrix. Simple alginate beads are not sufficient to ensure biocontainment. Thus, we imagine a double layered bead: the core would contain cells which have colonized the bead during ……. and the second, harder layer (made with 3.5% to 4% alginic acid sodium salt) would then be added after growth has stopped, to avoid leaks. Cells should not escape if there is a clear hard complete layer on the outside.
 
   h4 Protocol
-  p See <a href="Protocols.html">the Protocols page</a>.
+  p See <a href="Protocols.html#protocol-beads">the Protocols page</a>.
 
 
   h3 Agarose beads
