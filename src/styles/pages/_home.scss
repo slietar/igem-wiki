@@ -62,11 +62,12 @@
   h2 {
     margin: 0.2rem 0 0.4rem 0;
 
+    color: $accent-color;
     font-size: 2.0rem;
   }
 
   .subtext {
-    color: $accent-color;
+    color: #333;
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -241,6 +242,10 @@
     @extend %home-section, %white-text;
     padding: var(--vert-margin) var(--side-margin);
 
+    h2 {
+      color: #fff;
+    }
+
     p {
       max-width: 700px;
     }
@@ -301,6 +306,10 @@
 
     @extend %home-section, %white-text;
     padding: var(--vert-margin) var(--side-margin);
+
+    h2 {
+      color: #fff;
+    }
 
     p {
       max-width: 700px;
@@ -412,12 +421,18 @@
 // Section 7 - Using and improving CUP1
 
 .section7 {
-  padding: var(--vert-margin) var(--side-margin);
-  background-color: #eee;
+  @include superimposed-children();
 
-  h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
+  height: 100vh;
+  max-height: 600px;
+
+  &-contents {
+    @extend %home-section;
+    padding: var(--vert-margin) var(--side-margin);
+  }
+
+  video {
+    @extend %image-cover;
   }
 
   h3 {
@@ -425,20 +440,19 @@
     font-size: 1.4rem;
   }
 
-  &-contents {
+  &-items {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    margin-top: 2rem;
 
     @include media-breakpoint-down(md) {
       grid-template-columns: 1fr;
     }
   }
 
-  &-item {
-    max-width: 500px;
-  }
-
   p {
+    max-width: 500px;
     margin: 1rem 0;
 
     font-size: 1.05rem;
@@ -473,11 +487,11 @@
     background-image: linear-gradient(to right, #000, #0001);
     color: #fff;
 
-    h2 strong {
-      background: -webkit-linear-gradient(45deg, rgb(0, 102, 255), rgb(0, 83, 160));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    // h2 strong {
+    //   background: -webkit-linear-gradient(45deg, rgb(0, 102, 255), rgb(0, 83, 160));
+    //   -webkit-background-clip: text;
+    //   -webkit-text-fill-color: transparent;
+    // }
 
     figcaption {
       margin: auto 0 0 0;
@@ -547,8 +561,7 @@
   }
 
   h2 {
-    font-size: 2.4rem;
-    line-height: 1.2;
+    font-size: 2rem;
 
     strong {
       color: $accent-color;
