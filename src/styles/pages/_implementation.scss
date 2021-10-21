@@ -1,3 +1,4 @@
+@use "../breakpoints" as *;
 @use "../constants" as *;
 @use "../mixins" as *;
 
@@ -12,9 +13,20 @@
     align-items: center;
     column-gap: 1rem;
     grid-template-columns: 1fr 1fr;
+
+    img {
+      max-height: 400px;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   &-selector {
+    max-height: 350px;
+
     [data-name] {
       cursor: pointer;
 
