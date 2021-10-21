@@ -14,8 +14,8 @@ block description
 
     p <strong>Aim</strong> Extract and amplify our genomic CUP1 sequence from yeast DNA by Polymerase Chain Reaction (PCR).
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-gene-pcr">Gene PCR</a>
-    p We had 3 genomic variants that we named Y1, Y2 and Y3. The samples had differing DNA concentrations but we put the same amount (20 ng) in each PCR tube.
-    p We ran a 2% agarose gel electrophoresis to check that the size of our PCRed CUP1 DNA is as expected. We prepared two sets of tubes, one destined to the gel electrophoresis and one to be cleaned up as we do not have a UV “table” in our lab.
+    p We had 3 genomic variants that we named Y1, Y2 and Y3. The samples were normalized to similar concentrations and the PCR was run with 20ng of DNA material.
+    p We ran a 2% agarose gel electrophoresis to check our PCR product size. We prepared two sets of tubes, one destined to the gel electrophoresis and one to be cleaned up as we do not have a UV “table” in our lab.
 
     p: strong Results
 
@@ -23,37 +23,37 @@ block description
       img(src="assets/notebook/monomer/0.jpg")
       figcaption
         span Figure (X)
-        span Gel picture of the genomic DNA from three different yeast strains.
-        span The DNA has been amplified through PCR. On the right is the low range ladder, the three lanes correspond to the three genomic variants amplified. All our amplified CUP1s have a size of around 200 base pairs (bp) which matches the theoretical size of  CUP1: 183 bp.<ref title="Copper metallothionein 1-1 (P0CX80)" authors="UniProt" url="https://www.uniprot.org/uniprot/P0CX80" />
+        span Genomic CUP1 PCR amplification.
+        span On the right is the low range ladder, the three lanes correspond to the three genomic variants amplified. All our amplified CUP1s have a size of around 200 base pairs (bp) which matches the theoretical size of CUP1: 183 bp.<ref title="Copper metallothionein 1-1 (P0CX80)" authors="UniProt" url="https://www.uniprot.org/uniprot/P0CX80" />
 
-    p <strong>Conclusion</strong> We successfully amplified CUP1 yeast using PCR. We can move on and do a PCR clean up on our samples to purify the DNA.
+    p <strong>Conclusion</strong> We successfully amplified the CUP1 gene using PCR. We could move on and do a PCR clean up on our samples to purify the DNA.
 
   article.lab-exp
     header
       h3 PCR clean-up
       .date 2021-07-12
 
-    p <strong>Aim</strong> Purify DNA fragments directly from PCR. PCR products are commonly purified to remove excess nucleotides and primers.
+    p <strong>Aim</strong> Purify DNA fragments from the PCR mix to remove excess nucleotides and primers.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-pcr-cleanup">PCR clean-up</a>
-    p <strong>Conclusion</strong> We assume that the clean-up was correct, we keep our samples on the side for the following Gibson assembly with our to be digested backbone.
+    p <strong>Conclusion</strong> Samples are ready for the following Gibson assembly with our to be digested plasmid backbone.
 
   article.lab-exp
     header
       h3 Plasmid digestion
       .date 2021-07-13
 
-    p <strong>Aim</strong> Digest the plasmid with restriction enzymes to linearize it for the following Gibson assembly.
+    p <strong>Aim</strong> Linearization of the pCT-con2-V5 plasmid by restriction enzyme digestion for subsequent Gibson assembly.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-plasmid-digestion">Plasmid digestion</a>
-    p <strong>Results</strong> To verify our digestion worked properly, we ran a 1% agarose gel electrophoresis of our plasmid digested with different combinations of our restriction enzymes: BamHI alone, NheI alone, BamHI and NheI and none.
+    p <strong>Results</strong> To verify our digestion worked properly, we ran a 1% agarose gel electrophoresis of our plasmid digested with different combinations of our restriction enzymes: BamHI alone, NheI alone, BamHI and NheI together or no enzymes.
 
     figure
       img(src="assets/notebook/monomer/1.jpg")
       figcaption
         span Figure (X)
-        span Labeled agarose gel of the digested vector backbone.
-        span Lane 1: GeneRuler 1kb DNA Ladder. Lane 2: Plasmid digested with BamHI HF. Lane 3: Plasmid digested with NheI HF. Lane 4: Plasmid digested with both BamHI HF and NheI HF. Lane 5: Undigested plasmid. The bands in lane 2, 3 and 4 are slightly bigger than 6000 bp while the band in lane 5 is above the 10’000 band of the ladder.
+        span Gel picture of the digested vector backbone.
+        span Lane 1: GeneRuler 1 kb DNA Ladder. Lane 2: Plasmid digested with BamHI HF. Lane 3: Plasmid digested with NheI HF. Lane 4: Plasmid digested with both BamHI HF and NheI HF. Lane 5: Undigested plasmid. The bands in lane 2, 3 and 4 are slightly bigger than 6000 bp while the band in lane 5 is above the 10,000 band of the ladder. pCTcon2-V5 is 6468 bp.
 
-    p The size of our plasmid, pCTcon2V5<ref doi="10.1038/nprot.2006.94" />, is 6468 bp. We should observe bands of this size when cutting the plasmid with either BamHI or NheI.
+    p The size of our plasmid, pCTcon2-V5<ref doi="10.1038/nprot.2006.94" />, is 6468 bp. We should observe bands of this size when cutting the plasmid with either BamHI or NheI.
     p Linear DNA encounters less friction while running through the gel than circular DNA. Thus, on our gel, we expect to see the plasmid cut with either BamHI or NheI run faster than the undigested plasmid, as the plasmid would have been linearized.
     p The size of the insert between BamHI and NheI is 189 bp while the size of the plasmid without the insert is 6279 bp. In lane 4 where our plasmid was cut with both restriction enzymes, we thus expect a band near 6000 bp. Since the size difference is so small with the plasmid that was cut with only one restriction enzyme, we do not expect a difference on the gel. Furthermore, the insert band of 189 bp is too small to be seen on this gel thus we do not expect to see it.
 
@@ -64,8 +64,9 @@ block description
       h3 Gibson assembly
       .date 2021-07-13
 
-    p <strong>Aim</strong> Gibson Assembly will allow to anneal our CUP1 gene to the now linearized vector backbone. The recomposed gene-containing plasmid will be ready to be transformed into bacteria.
+    p <strong>Aim</strong> Gibson assembly will allow to anneal our CUP1 gene to the now linearized vector backbone. The recomposed gene-containing plasmid will be ready to be transformed into bacteria.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-gibson-assembly">Gibson assembly</a>
+    p <strong>Results</strong> No figure.
     p <strong>Conclusion</strong> We moved on to bacteria transformation and this would confirm that the Gibson Assembly worked well.
 
   article.lab-exp
@@ -73,9 +74,9 @@ block description
       h3 Bacteria transformation and plating
       .date 2021-07-14
 
-    p <strong>Aim</strong> Transform bacteria with the new plasmid. Once the transformation is done, we can plate them on Ampicillin plates; these plates allow for positive selection of bacteria which will have taken up our plasmid as they have an encoded ampicillin resistance.
+    p <strong>Aim</strong> Bacteria transformation with the newly assembled plasmid and selection on ampicillin plates. These plates allow for positive selection of the transformed bacteria as the plasmid contains an ampicillin resistance gene.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-bacteria-transformation">Protocol bacteria transformation and plating</a>
-    p Plates were put in the inoculator at 30°C overnight. The next morning, we observed some colonies on our plates.
+    p Plates were put in the inoculator at 37°C overnight. The next morning, we observed some colonies on our plates.
 
     p: strong Results
 
@@ -88,19 +89,19 @@ block description
       figcaption
         span Figure (X)
         span Picture of ampicillin plates A, B, C and D.
-        span A: genomic variant Y1, colonies observed. B: genomic variant Y2, colonies observed. C: genomic variant Y3, colonies observed. D: negative control, wild-type E. coli, no colony observed.
+        span A: pCTcon2-CUP1_Y1-V5 transformed bacteria. B: variant Y2. C: variant Y3. D: negative control, linearized pCTcon2-V5 transformed bacteria.
 
-    p The colonies observed have the AmpR gene, that gives resistance to the bacteria against Ampicillin.
-    p <strong>Conclusion</strong> Our bacteria had successfully taken up the plasmid containing the ampicillin resistance gene. Moreover, as we had asserted that the digestion was successful and as we know that bacteria can only function properly with circular DNA we could conclude that our Gibson Assembly was successful. The newly assembled plasmid was taken up by our bacteria.
+    p The colonies observed have the AmpR gene, that gives resistance to the bacteria against ampicillin.
+    p <strong>Conclusion</strong> Our transformed bacteria had successfully taken up the plasmid containing the ampicillin resistance gene. Moreover, as we had asserted that the digestion was successful and as we know that bacteria can only function properly with circular DNA we could conclude that our Gibson assembly was successful.
 
   article.lab-exp
     header
       h3 Colony picking and culture inoculation
       .date 2021-07-15
 
-    p <strong>Aim</strong> Pick 1 colony per plate that has survived Ampicillin treatment and grow it in liquid medium in order to amplify our plasmid DNA.
-    p <strong>Protocol</strong> Under the flame, with a sterile pipette, scoop up a colony and release the pipette tip into a 5ml tube. Add 4ml of sterile LB medium and place it in the shaker at 30°C.
-    p <strong>Results</strong> We had bacterial clones to pick that contain our plasmid. We picked them and let them grow in liquid media overnight.
+    p <strong>Aim</strong> pCTcon2-CUP1-V5 amplification
+    p <strong>Protocol</strong> Under the flame, with a sterile pipette, scoop up a colony and release the pipette tip into a 5 ml tube. Add 4 ml of sterile LB medium and place it in the shaker at 37°C.
+    p <strong>Results</strong> No figure.
     p <strong>Conclusion</strong> We could move on to the next step: Miniprep.
 
   article.lab-exp
@@ -110,9 +111,11 @@ block description
 
     p <strong>Aim</strong> Purify the plasmid DNA from our overnight culture of bacteria transformed with the pCTcon2-CUP1-V5 plasmid.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-miniprep">Miniprep</a>
-    p <strong>Conlusion</strong> Once the Miniprep performed, we measured our DNA concentration as well as purity using Nanodrop.
+    p Once the Miniprep performed, we measured our DNA concentration as well as purity using Nanodrop.
 
-    table
+    p: strong Results
+
+    table.table
       caption
         span Table 1
         span Quantification of digested samples
@@ -146,30 +149,21 @@ block description
 
     p <strong>Aim</strong> Compare our now amplified plasmid with the theoretical sequence to observe potential mutations that may have occurred during amplification in bacteria.
     p <strong>Protocol</strong> Send samples to a DNA sequencing company (Mycrosynth in our case).
-    p We sent 2 clones for each transformant variant : YXCX where X stands for the number of the variant and clone respectively.
-    p <strong>Results</strong>  Y2C1 has a mutation (G to C) in both forward and reverse strands. We thus choose to ignore this one. It also seems like the forward primer of Y2C2 did not anneal, therefore we do not have a full strand. To avoid errors, we decide to only keep Y1 and Y3 variants.
+    p We sent 2 clones for each transformant variant: YXCX where X stands for the number of the variant and clone respectively.
+    p <strong>Results</strong> The alignment of the sequencing results are on <a href="assets/notebook/monomer/13.jpg">this document</a>, where the sequences number 1 to 12 correspond to, respectively Y1C1 forward, Y1C1 reverse and so on until Y3C2 reverse.
+    p Y2C1 has a mutation (G to C) in both forward and reverse strands. We thus choose to ignore this one. It also seems like the forward primer of Y2C2 did not anneal, therefore we do not have a full strand. To avoid errors, we decide to only keep Y1 and Y3 variants.
     p <strong>Conclusion</strong> We decided to proceed with only Y1 and Y3 genomic variants and had two clones for each of them.
 
   article.lab-exp
     header
-      h3 Yeast growth curve
+      h3 Yeast growth
       .date 2021-07-19
 
-    p <strong>Aim</strong> Establish a yeast growth curve. This will give us information on the different stages of our yeast’s growth. Yeast cells are competent for transformation at a measured OD600 of 0.8 to 1.
-    p <strong>Protocol</strong> In a 15ml falcon tube, incubate 12μl of wildtype yeast in 4ml of YPD in a shaker at 30°C and 220 rpm.  Measure the absorbance at 600 nm (OD600) every hour using a spectrophotometer. A calibration curve may be needed before the actual measurements.
-    p We made 3 technical replicates each time. Ideally, one would do 2 biological replicates, but limited by the space on the shaker we could only do one.
+    p <strong>Aim</strong> Monitor the growth of yeast culture to identify the time window by which they are competent for transformation, that is a measured OD600 of 0.8 to 1.
+    p <strong>Protocol</strong> In a 15 ml falcon tube, incubate 12 µl of wildtype yeast in 4 ml of YPD in a shaker at 30°C and 220 rpm.  Measure the absorbance at 600 nm (OD600) every hour using a spectrophotometer. A calibration curve may be needed before the actual measurements.
+    p We made 3 technical replicates and 2 biological replicates, but limited by the space on the shaker we could only do one.
 
-    p: strong Results
-
-    figure
-      img(src="assets/pictures/3.jpg")
-      figcaption
-        span Figure (X)
-        span Wild  type yeast growth curve at 30°C shaking at 220 rpm.
-        span Negative control: wild-type E. coli. No colony observed.
-
-    p We assume growth (from lag to stationary phase) to be around 22 hours.
-    p <strong>Conclusion</strong> Our yeast takes 10 hours to reach the lag phase, and 22 hours to reach the stationary phase. They are competent after between 11 and 12 hours of growth.
+    p <strong>Results</strong> On average between 2 experiments, OD600 of 1 was reached within approximately 12 hours.
 
   article.lab-exp
     header
@@ -179,23 +173,20 @@ block description
     p <strong>Aim</strong> Transform the yeast with our pCTcon2-CUP1-V5 plasmid and plate our transformants on a selective medium.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-yeast-transformation">Yeast transformation</a>
     p We prepared 3 samples: a negative control (no plasmid), a positive control (our plasmid backbone without the CUP1 insert) and the plasmid containing the CUP1 gene.
-    p Our yeast strain, EBY100, is incapable of metabolizing tryptophan, thus when plated onto no containing tryptophan medium plates, they cannot grow. Our plasmid backbone encodes a Trp+ gene allowing the yeast to grow without tryptophan in its medium, allowing for positive selection of our yeast transformants.
-    p We picked clones from each plate. Each time a new clone is picked, it is amplified in liquid SDCAA medium. In total we picked 6 clones from the yeast transformed with the recombinant plasmid : A, B, C, D, E and F.
+    p Our yeast strain, EBY100, is incapable of synthesizing tryptophan on its own and needs it from an external source, thus when plated onto tryptophan-less medium plates, they cannot grow. Our plasmid backbone encodes a Trp+ gene allowing the yeast to grow without tryptophan in its medium, allowing for positive selection of our yeast transformants.
+    p We picked clones from each plate and amplified them in liquid SDCAA medium. In total we picked 6 clones from the yeast transformed with the recombinant plasmid : A, B, C, D, E and F.
 
     figure
-      img(src="assets/pictures/4.jpg")
+      .figure-grid(style="--size: 300px;")
+        img(src="assets/notebook/monomer/14.jpg")
+        img(src="assets/notebook/monomer/15.jpg")
+        img(src="assets/notebook/monomer/16.jpg")
       figcaption
         span Figure (X)
-        span Picture of plate A: Yeast transformed with pCTcon2-CUP1-V5 plasmid.
-        span Colonies observed.
+        span Plates A, B and C with transformed yeast.
+        span (a) Plate A: yeast transformed with pCTcon2-CUP1-V5 plasmid, colonies observed. (b) Plate B: positive control, yeast transformed with pCTcon2-V5 plasmid, colonies observed. (c) Plate C: negative control, wild type yeast (transformation with only water and no DNA). One colony was observed, probably a mutant. Small white dots are yeast colonies.
 
-    figure
-      img(src="assets/pictures/5.jpg")
-      figcaption
-        span Figure (X)
-        span First transformed yeast colony observed under the microscope.
-
-    p <strong>Conclusion</strong> We could conclude that the yeasts had been transformed successfully. We moved on to the next step : checking protein expression.
+    p <strong>Conclusion</strong> We could conclude that the yeasts had been transformed successfully. We moved on to the next step: checking protein expression.
 
   article.lab-exp
     header
@@ -205,22 +196,23 @@ block description
     p <strong>Aim</strong> Verify the expression of our protein of interest in yeast.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-western-blot">Western blot</a>
     p We used two mouse anti-V5 and anti-Tubulin as primary antibodies and a goat anti-mouse as a secondary.
-    p The first Western blot was performed on clone A and B and had for negative controls, the wild type yeast as well as the yeast transformed with the plasmid backbone cultured in SDCAA (without galactose). For positive controls, the yeast transformed with the plasmid backbone cultured in SGCAA (with galactose) as well as a fly tubulin were runned onto the gel. The V5 tag is part of the membrane display system which itself is under the Gal promoter. Thus expression (and detection) should only occur in the presence of galactose.
+    p The first Western blot was performed on clone A and B and had for negative controls, the wild type yeast as well as the yeast transformed with the plasmid backbone cultured in SDCAA (without galactose). For positive controls, the yeast transformed with the plasmid backbone cultured in SGCAA (with galactose) as well as a fly tubulin were runned onto the gel.
 
     figure
-      img(src="assets/pictures/2.jpg")
+      img(src="assets/notebook/monomer/11.jpg")
       figcaption
         span Figure (X)
         span Western blot 1.
 
     figure
-      img(src="assets/pictures/2.jpg")
+      img(src="assets/notebook/monomer/12.jpg")
       figcaption
         span Figure (X)
         span Analysis of western blot 1.
+        span Aga2-V5 has a molecular weight of 21.3 kDa.
 
-    p We loaded the following samples onto our gel: pCTcon2-V5 in SDCAA, pCTcon2-V5 in SGCAA, EBY100 (WT) in YPD, and two pCTcon2-CUP1-V5 clones (A and B) in SGCAA and SDCAA each. We obtained a band of ~50kDa in the WT and plasmids with and without galactose, showing the presence of ⍺-tubulin in our samples. We also have a band of ~20 kDa in plasmid + galactose showing that our Aga2-V5 protein was expressed (figure 7a). Figure 7b is showing the fly control expressing tubulin as well as Relish-V5, a protein harboring the V5 tag. Figure 7c shows the ratio of V5 signal versus tubulin.
-    p However we didn’t obtain any signal, neither for the tubulin nor the protein of interest in the clone A and B lines (figure 12).
+    p We loaded the following samples onto our gel: pCTcon2-V5 in SDCAA, pCTcon2-V5 in SGCAA, EBY100 (WT) in YPD, and two pCTcon2-CUP1-V5 clones (A and B) in SGCAA and SDCAA each. We obtained a band of ~ 50 kDa in the WT and plasmids with and without galactose, showing the presence of ⍺-tubulin (49.8 kDa<ref title="Tubulin alpha-1 chain (P09733)" authors="UniProt" url="https://www.uniprot.org/uniprot/P09733" />) in our samples. We also have a band of ~ 20 kDa in plasmid + galactose showing that our Aga2-V5 protein was expressed (figure 7a). Figure 7b is showing the fly control expressing tubulin as well as Relish-V5, a protein harboring the V5 tag. Figure 7c shows the ratio of V5 signal versus tubulin.
+    p However we didn’t obtain any signal, neither for the tubulin nor the protein of interest in the clone A and B lines (figure 6).
 
     p <strong>Conclusion</strong> The clones were probably picked prematurely, and thus didn’t show anything on the gel. That’s why a second Western Blot was performed in order to check protein expression in our 4 other clones that were picked later: C, D, E and F.
 
@@ -229,23 +221,137 @@ block description
       h3 Immunostaining 1
       .date 2021-08-09
 
-    p <strong>Aim</strong> Check the expression of our CUP1 protein on the surface of our yeast transformants, clone C, D, E and F.
+    p <strong>Aim</strong> Check the expression of our CUP1 protein on the surface of our yeast transformants, clones C, D, E and F.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-immunofluorescence">Indirect immunofluorescence labeling</a>
-    p We used a mouse anti-V5 primary antibody and a goat anti-mouse coupled with a green fluorophore as a secondary antibody.
+    p We used a mouse anti-V5 primary antibody and a goat AlexaFluor488 conjugated anti-mouse as a secondary antibody.
     p The results were observed under a confocal microscope. For each clone, two samples were analyzed, one where the cells’ membrane were permeabilized in order to see if the protein was expressed intracellularly and one where the cells’ membrane were not permeabilized.
 
     figure
-      img(src="assets/pictures/2.jpg")
+      img(src="assets/notebook/monomer/17.jpg")
       figcaption
         span Figure (X)
-        span Picture of ampicillin plate D
-        span Negative control: wild-type <em>E. coli</em>. No colony observed.
+        span Clone C.
+        span Nuclei are stained with DAPI in blue and the V5 tag is stained with a green fluorophore.
 
-    p All 4 clones showed expression of CUP1 on their surface. We assumed the expression is at the surface because: first, the antibody does not enter the cell, second, we can see a darker circle around the cell on figure 8j (higher magnification) representing the membrane and third, we did some controls with membrane permeabilized samples (figure 8g). The membrane permalized samples show little signal that corresponds to the signal in negative controls WT (figure 8f), backbone without antibody 1 (figure 8h) and backbone without antibody 2 (figure 8i), which we can assume is noise or unspecific binding of antibodies.
+    figure
+      img(src="assets/notebook/monomer/18.jpg")
+      figcaption
+        span Figure (X)
+        span Clone D.
+
+    figure
+      img(src="assets/notebook/monomer/19.jpg")
+      figcaption
+        span Figure (X)
+        span Clone E.
+
+    figure
+      img(src="assets/notebook/monomer/20.jpg")
+      figcaption
+        span Figure (X)
+        span Clone F.
+
+    figure
+      .figure-grid(style="--width: 300px; --height: 190px;")
+        img(src="assets/notebook/monomer/21.jpg")
+        img(src="assets/notebook/monomer/22.jpg")
+        img(src="assets/notebook/monomer/23.jpg")
+      figcaption
+        span Figure (X)
+        span Positive control: yeast transformed with the plasmid backbone (no insert).
+        span (a) DAPI channel (b) green fluorescence (c) merged channel.
+
+    figure
+      .figure-grid(style="--width: 300px; --height: 190px;")
+        img(src="assets/notebook/monomer/24.jpg")
+        img(src="assets/notebook/monomer/25.jpg")
+        img(src="assets/notebook/monomer/26.jpg")
+      figcaption
+        span Figure (X)
+        span Negative control: wild type yeast.
+        span (a) DAPI channel (b) green fluorescence (c) merged channel.
+
+    figure
+      .figure-grid(style="--width: 300px; --height: 190px;")
+        img(src="assets/notebook/monomer/27.jpg")
+        img(src="assets/notebook/monomer/28.jpg")
+        img(src="assets/notebook/monomer/29.jpg")
+      figcaption
+        span Figure (X)
+        span Negative control: yeast transformed with the plasmid backbone (no insert), membrane permeabilized.
+        span (a) DAPI channel (b) green fluorescence (c) merged channel.
+
+    figure
+      .figure-grid(style="--width: 300px; --height: 190px;")
+        img(src="assets/notebook/monomer/30.jpg")
+        img(src="assets/notebook/monomer/31.jpg")
+        img(src="assets/notebook/monomer/32.jpg")
+      figcaption
+        span Figure (X)
+        span Negative control: yeast transformed with the plasmid backbone (no insert), without antibody 2.
+        span (a) DAPI channel (b) green fluorescence (c) merged channel.
+
+    figure
+      .figure-grid(style="--width: 300px; --height: 190px;")
+        img(src="assets/notebook/monomer/33.jpg")
+        img(src="assets/notebook/monomer/34.jpg")
+        img(src="assets/notebook/monomer/35.jpg")
+      figcaption
+        span Figure (X)
+        span Negative control: yeast transformed with the plasmid backbone (no insert), without antibody 1.
+        span (a) DAPI channel (b) green fluorescence (c) merged channel.
+
+    figure
+      img(src="assets/notebook/monomer/36.jpg")
+      figcaption
+        span Figure (X)
+        span Clone F, higher magnification.
+
+    p All 4 clones showed expression of CUP1 on their surface. We assumed the expression is at the surface because : first, the antibody does not enter the cell, second, we can see a darker circle around the cell on figure 8j (higher magnification) representing the membrane and third, we did some controls with membrane permeabilized samples (figure 8g). The membrane permalized samples show little signal that corresponds to the signal in negative controls WT (figure 8f), backbone without antibody 1 (figure 8h) and backbone without antibody 2 (figure 8i), which we can assume is noise or unspecific binding of antibodies.
     p Unfortunately, not all cells were positive in one sample, which means that either our subsets of cells were not monoclonal and that not all the cells had the plasmid or that they all had the plasmid but weren't all expressing it.
     p <strong>Conclusion</strong> In order to see if the expression level differences were due to polyclonality of the yeast population we streaked the cells on a plate and picked a single colony in order to perform an immunostaining on a monoclonal population of cells. This resulted in no different results than before, we still had an heterogeneous population with cells displaying signal and cells with no signal. We concluded that the induction process was not 100% efficient and this was supported by the results of the paper from Chao et al.<ref doi="10.1038/nprot.2006.94" />
 
-  <hr />
+  article.lab-exp
+    header
+      h3 Western blot 2
+      .date 2021-08-11
+
+    p <strong>Aim</strong> Check the overall expression of our protein of interest in our yeast transformant clones C, D, E and F.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-western-blot">Western blot</a>
+
+    figure
+      img(src="assets/notebook/monomer/37.jpg")
+      figcaption
+        span Figure (X)
+        span Analysis of Western blot 2.
+
+    p We obtained bands of approximatively 25 kDa in positive control as well as in clones C, E and F, showing that our protein of interest was present in these samples. Unfortunately we didn’t have any signal for the ⍺-tubulin so we couldn’t normalize the signal and compare the expression level of the protein. As expected, in the negative control pCTcon2-V5 backbone plasmid uninduced, no band is visible.
+    p We also noticed two bands on the gel, and verified the DNA sequence and saw that a second methionine, a start codon, is present downstream of the first one and in frame with the promoter, resulting in a second expressed protein, probably truncated. Unfortunately this shorter protein is the most expressed one, corresponding to the signal intensity.
+
+    p <strong>Conclusion</strong> We’ve decided to continue the experiments with our 3 clones C, E and F, since D didn’t show any expression.
+
+  article.lab-exp
+    header
+      h3 Western blot 3
+      .date 2021-10-14
+
+    p <strong>Aim</strong> Check the overall expression of our protein of interest in our yeast transformant clone F and normalize its signal relatively to α-tubulin.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-western-blot">Western blot</a>
+    p Since we did not get any signal for tubulin in Western Blot 2, we decided to re-do the western with clone F to have a nice protein quantification plot.
+
+    figure
+      .figure-grid(style="--width: 300px;")
+        img(src="assets/notebook/monomer/38.jpg")
+        img(src="assets/notebook/monomer/39.jpg")
+        img(src="assets/notebook/monomer/40.jpg")
+      figcaption
+        span Figure (X)
+        span Western blot 3.
+        span (a) Image of the nitrocellulose membrane with yeast transformed with plasmid backbone pCTcon2-V5 without insert, Clone F, i.e. yeast transformed with pCTcon2-CUP1-V5, both cultured with galactose in their media and wild type yeast (cultured in YPD). (b) Protein quantification plot, the black bars represent the signal for the backbone plasmid and the grey ones are for the Clone F. On the left is represented the signal of V5 tag and on the right, the tubulin signal. (c) is the normalized V5 signal for tubulin (V5 in % of tubulin).
+
+    p We obtained a tubulin signal in both plasmid backbone pCTcon2-V5 and clone F (pCTcon2-CUP1-V5) but not in wild type yeast. This was probably due to the fact that a smaller quantity of cells were loaded on the gel, since the pellet was smaller in the WT sample. We could normalize the V5 signal relatively to tubulin and the result is shown on figure 10c. We can see that clone F expresses the protein a bit more than the backbone, which is consistent with what we observed in immunostaining.
+
+    p <strong>Conclusion</strong> We were able to show that our membrane protein fusion was expressed in our engineered yeast and could quantify its relative expression in our clone F as well as in the positive control, the backbone plasmid transformed yeast.
 
   article.lab-exp
     header

@@ -383,11 +383,11 @@
 .figure-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, var(--size));
+  grid-template-columns: repeat(2, var(--size, var(--width)));
 
   img {
-    width: var(--size);
-    height: var(--size);
+    width: var(--size, var(--width));
+    height: var(--size, var(--height));
 
     background-color: #eee;
     object-fit: contain;
