@@ -5,3 +5,142 @@ block hero
   .hero-contents: h1 Results
 
 block description
+  h2 Introduction
+
+  p Once our copper retrieval system was designed, lab experiments were performed with the aim of expressing one or two copies of our protein of interest, CUP1, at the outer membrane of the yeast. First, we performed a series of experiments to check our protein expression level and localisation. Next, we tested our transformed organisms by conducting copper removal tests that consist of monitoring medium copper levels over time in presence of the engineered yeast.
+
+
+  h2 Overview
+  p In order to solve the problem of copper pollution in the field, we came up with the idea of using a microorganism capable of absorbing copper in water, by expressing the copper intracellular yeast metallothionein CUP1<ref title="Copper metallothionein 1-1 (P0CX80)" authors="UniProt" url="https://www.uniprot.org/uniprot/P0CX80" /> at its surface and improving the capacity of the cell to retrieve copper, a phenomenon called bio-adsorption<ref doi="10.1016/j.btre.2019.e00315" />.
+  p To express the protein extracellularly, we cloned its coding sequence into the pCTcon2-V5 plasmid<ref doi="10.1038/nprot.2006.94" /> in frame with Aga2<ref title="A-agglutinin-binding subunit (P32781)" authors="UniProt" url="https://www.uniprot.org/uniprot/P32781" />, a protein that links by disulfide bonds to Aga1, a yeast membrane protein. In order to check its extracellular expression, we first performed a Western Blot with a primary antibody targeting the V5 tag and then performed immunocytochemistry in order to visually check the presence of CUP1 on the outer membrane of our cells.
+  p Once CUP1 extracellular expression was validated in our transformed yeast cells, we performed tests monitoring yeast's ability to remove copper in different conditions in comparison with non-transformed yeast. We then completed the same workflow with the CUP1 dimers, namely, DNA cloning, yeast transformation, Western Blot, Immunocytochemistry assay, yeast growth curves and finally, copper absorption assays.
+
+
+  h2 DNA cloning
+  p CUP1 coding DNA fragment was obtained by PCR-amplification of yeast genomic DNA since CUP1 genomic and coding sequence are the same.  Amplicon size was checked by gel electrophoresis before proceeding to a PCR clean-up. We then digested the plasmid with two restriction enzymes, NheI and BamHI, and also checked the result by gel electrophoresis. Next, we cloned our sequence into the plasmid by Gibson Assembly, transformed E.coli with the assembled product and amplified the recombinant plasmid. The <a href="Parts_Overview.html#plasmid">pCTcon2-V5 plasmid</a> containing an ampicillin resistance gene, transformants were selected by plating the bacteria on ampicillin LB plates and amplifying clones in liquid medium supplemented with ampicillin. Plasmid purification was performed by Miniprep. Next DNA integrity and sequence were checked by absorbance measurements and Sanger sequencing respectively. Eventually, we transformed yeast competent cells with the right plasmids and selected them on trp- plates. As our plasmid contains a trp+ gene and the transformed yeast strain EBY100 is trp-, it allowed the auxotrophic selection of transformants.
+
+
+  h2 Protein expression characterization
+  p Aga2-CUP1-V5 protein expression quantification by <a href="Notebook.html#web2">immunoblot</a> allowed the selection of the best clones. Protein extraction was achieved by cell lysis and expression levels quantified by Western Blot. Chemiluminescence-based protein detection was based on the binding of a mouse antibody to the C-terminal V5-epitope or a mouse monoclonal antibody to a tubulin-specific epitope, both subsequently recognized by an HRP-conjugated goat secondary antibody, binding the constant region of the primary antibodies. As expected, non-transformed yeast strains (EBY100) or transformed strains (pCTcon2-V5) cultured in medium without induction (galactose -) do not show any protein expression, while transformed strains (pCTcon2-V5/plasmid backbone, pCTcon2-CUP1-V5/CUP1 monomer and pCTcon2-CUP1-linker-CUP1/CUP1 dimer) cultured in medium with induction (galactose +) show elevated protein levels, Figure 1.
+
+  figure
+    img(src="assets/results/0.jpg")
+    figcaption
+      span Figure 1
+      span V5 tagged CUP1 expression in <i>S. cerevisiae</i>.
+      span pCTcon2-V5: surface display backbone plasmid. pCTcon2-CUP1-V5: V5-tagged CUP1 monomer expression system. pCTcon2-CUP1-V5: V5-tagged CUP1 dimer expression system. Loaded protein lysates come from representative clones, see lab notebook for detailed expression levels of each construction.
+
+  p System membrane expression was tested by immunocytochemistry. Yeasts membranes were stained  with a mouse primary antibody binding the V5 tag and recognized by a second antibody harboring a fluorophore, the Alexa Fluor 488<ref authors="ThermoFischer Scientific" title="Alexa Fluor 488 Dye" url="https://www.thermofisher.com/fr/fr/home/life-science/cell-analysis/fluorophores/alexa-fluor-488.html" />, while nuclei were marked by DAPI staining. Results validated that CUP1 surface expression, CUP1 monomer in Figure 2a and CUP1 dimer in Figure 2b, has similar expression to a CUP1-less system (plasmid backbone positive control), Figure 2d, and that is specific to the cell membranes. As these are non permeabilized cells, the antibodies bind only the extracellular proteins. In order to check whether the protein was not also present intracellularly, we permeabilized the cells before <a href="Notebook.html#immuno1">staining them</a> and confirmed that our protein was only expressed at the membrane. Background ectopic staining was checked by non-transformed yeast cells (EBY100) staining which displayed poor signal, validating our results.
+
+
+  figure
+    .figure-grid(style="--width: 474px; --height: 300px;")
+      img(src="assets/results/1.jpg")
+      img(src="assets/results/2.jpg")
+    figcaption
+      span Figure 2a
+      span V5 tagged CUP1 extracellular membrane expression in <i>S. cerevisiae</i> (yeast transformed with pCTcon2-CUP1-V5).
+      span (1) picture taken with a 20x microscope objective, (2) with 40x (only green channel)
+
+  figure
+    .figure-grid(style="--width: 474px; --height: 300px;")
+      img(src="assets/results/3.jpg")
+      img(src="assets/results/4.jpg")
+      img(src="assets/results/5.jpg")
+    figcaption
+      span Figure 2b-d
+      span V5 tagged CUP1 extracellular membrane expression in <i>S. cerevisiae</i>.
+      span (b) yeast transformed with pCTcon2-CUP1-linker-CUP1-V5 (c) negative control: wild type EBY100 (d) positive control: yeast transformed with the backbone plasmid pCTcon2V5.
+
+
+  h2 Growth assay
+
+  p We also wanted to check whether our expression system would affect the growth of the yeast in any way. The wild type EBY100 yeast could normally only grow in a complete yeast medium, such as YPD which is yeast extract peptone dextrose. Whereas the yeasts transformed with pCTcon2V5 vector were selected in SGCAA, which is a reduced medium containing galactose but lacking tryptophan that was used for auxotrophic selection of yeast transformants.
+  p For that purpose, we monitored the growth over time of the transformed yeasts in both rich media (YPD) and selection media (SGCAA), as well as the growth of wild type EBY100 yeast in rich media, Figure 3 by measuring the cultures OD600 every 15 minutes. With no surprise, the transformed yeasts with the backbone vector grew faster in rich media, similarly to wild type yeasts. It took longer for the engineered yeasts (transformed with backbone vector or CUP1 construct) to grow in selection media, but the growth curves still reached a plateau. Moreover, we also performed some growth assay with the wildtype EBY100 yeast in YPD media supplemented with various concentrations of copper, Figure 4. Our yeast strain demonstrated good resistance to growing concentration of copper (up to 1000 mg/l), validating our choice to use it as a chassis for copper remediation.
+
+  figure
+    img(src="assets/results/6.jpg")
+    figcaption
+      span Figure 3
+      span Growth curves of wild type EBY100 yeasts and transformed EBY100 yeasts in rich (YPD) and selection media (SGCAA).
+
+  figure
+    img(src="assets/results/7.jpg")
+    figcaption
+      span Figure 4
+      span Growth curves of wild type EBY100 yeasts and transformed EBY100 yeasts in YPD media supplemented with various concentrations of copper.
+
+
+  h2 Copper absorption assay
+
+  p The ability of the engineered microorganism to remove copper from a solution was assessed by monitoring the copper concentration of medium in contact with yeast over time. To have a complete understanding of the assay technicalities, see the Copper assay design. Different yeast cultures were prepared, each one harboring a different condition. The conditions varied between yeast strain and yeast concentration. We then collected samples from the cultures at different time points, spinned the cells down by centrifugation and measured the copper concentration in the supernatant using a colorimetry test with Cuprizone and spectrophotometer.
+  p The first strain we tested was the non-transformed EBY100, referred to as “wild-type” (WT) thereafter. We tested three different concentrations of yeast in media supplemented with 4 mg/L copper, a concentration in the same order of magnitude as the pollution found in vineyards and the results are summarized on Figure 5.
+
+  figure
+    img(src="assets/results/8.jpg")
+    figcaption
+      span Figure 5
+      span Measuring copper concentration over time with varying WT (EBY100) yeast concentration in the media. The yeast density was determined as a function of OD600 (OD600 of 1 corresponds to approximately 3 x 10<sup>7</sup> cells/ml).
+
+  p First we could conclude that the wild type strain absorbs copper, as expected because they express endogenous intracellular CUP1. Also, the denser the yeast population, the greater the ability to absorb and remove copper, Figure 5. To illustrate, the sample with the highest yeast density absorbed three times more copper than the culture with the lowest yeast concentration after 120 minutes of incubation (p value < 0.0001).
+  p We next tested our engineered yeasts that are: (1) one single CUP1 protein expressed at its surface and (2) CUP1 dimers. We tested 7 different dimers constructions as described in <a href="Design.html">the Design page</a>. These differences essentially rely on linker properties used for the two CUP1 proteins fusion. In a first batch of experiments, we compared CUP1 monomer surface expression and three different CUP1 dimers (dimer-1, dimer-3 and dimer-7) surface expression ability to remove copper  compared with the wild type strain. The results are depicted in Figure 6.
+
+  figure
+    img(src="assets/results/9.jpg")
+    img(src="assets/results/10.jpg")
+    figcaption
+      span Figure 6
+      span CUP1 surface expression in SDGAA-cultured yeast interferes with endogenous bio-accumulation The (YPD) and (SGCAA) in brackets depict the medium in which the yeast grew and are staying in during the experiment.
+
+  p Unfortunately, we observed that our newly engineered yeasts, CUP1 monomer or CUP1 dimer were not only not performing better than wild type but did not even absorb copper in solution. Disappointed by this finding but not less determined to find out why, we continued digging. We had three hypotheses to explain this results as there were three variables changing from wild type to engineered yeast, the membrane expression of CUP1, the medium and the fact that the yeast is genetically modified or not:
+
+  ul
+    li: p The extracellular membrane expression of CUP1 interferes with the endogenous bio-accumulation property of yeast by, for example, blocking the entry of copper into the cell
+    li: p Transformation of yeast with pCTcon2V5 vector (with or without CUP1 insert) interferes with the endogenous bio-accumulation property of yeast
+    li: p The reduced medium is the problem and prevents the yeast from bio-accumulate copper.
+
+  p To test if the problem was coming from the extracellular CUP1 expression we tested our transformed yeast with backbone plasmid in SGCAA medium (+ galactose, induced expression) and in SDCAA (- galactose, no expression induction) and compared the results with the wild type strain EBY100 in YPD:
+
+  figure
+    img(src="assets/results/11.jpg")
+    figcaption
+      span Figure 7
+      span Interference with endogenous bio-accumulation is not related to CUP1 expression nor the surface system itself
+
+  p We can clearly see on this figure that neither the backbone system in SGCAA nor in SDCAA was retrieving copper from the solution. As the system backbone in SDCAA was not expressing the surface display, we could eliminate the first hypothesis. Indeed, the only differences between the wild type and backbone system strains were in the medium and in the fact that the backbone system had been genetically modified. Therefore, we decided to check if the problem was coming from the medium by testing our engineered yeast in YPD + galactose (to induce the system) as well as the WT strain in SGCAA + tryptophan (because it would not survive without tryptophan). The results are shown below in Figure 7.
+
+  figure
+    img(src="assets/results/12.jpg")
+    figcaption
+      span Figure 8
+      span Rich medium is needed for bio-accumulation to occur.
+
+  p Seeing that wild type yeast in SGCAA supplemented with tryptophan was behaving like the engineered version in SDCAA and that engineered yeast in YPD supplemented with galactose was behaving like WT in YPD made us eventually conclude that the problem was in fact coming from the medium.
+  p Unfortunately we ultimately found that our engineered yeast, even when cultured in  YPD, was not better than the wild type strain in absorbing and removing copper, Figure 8. To conclude, our strategy based on CUP1 surface expression did not improve the endogenous bio-accumulation ability of yeast.
+
+  figure
+    img(src="assets/results/13.jpg")
+    figcaption
+      span Figure 9
+      span Surface expression of CUP1 does not improve yeast Cu-bioremediation ability.
+
+
+  h2 Copper recovery
+
+  p Since the wild type yeast could remove copper in solution and seemed to be the best option to do it compared to the engineered strains we made a last experiment to test whether we could retrieve the captured copper from the yeast in order to eventually further re-use it. Our literature research led us to consider EDTA as a candidate for copper retrieval<ref doi="10.1016/j.sajb.2005.10.010" />. We thus tested this chemical on loaded (1 g/l) wild type yeast with different times of reaction as a function of EDTA concentration. The results are shown in the following figure:
+
+  figure
+    img(src="assets/results/14.jpg")
+    figcaption
+      span Figure 10
+      span Copper release in function of EDTA concentration.
+
+  p From this, we found that the use of EDTA for copper retrieval to be effective with the best profitability using a 20 min reaction time with 20 mM. During our second meeting with Ludovic Vincent, the CEO of Biomede, we shared these results with him. It seemed that EDTA was indeed a great option for what we were trying to do. However, it is difficult to subsequently remove EDTA from the copper containing water. We must take this into account when thinking about the future uses of this copper.
+  p Thus a rather complicated chemical question arises : we would need to find an effective chelating ligand (a compound that triggers complexe formation), which is not too expensive and not too harmful to the environment.
+  p In our case, if we consider this copper solution to be reusable by wine growers, EDTA at a low concentration is not in itself a major problem as it is already used as a fertilizer. However, other options should be considered, such as separating EDTA from the copper-filled water to avoid further contamination of plants and soils.
+
+
+  h2 In brief
+
+  p To sum, we were able to express different CUP1 configurations on the extracellular membrane of the yeast S.cerevisiae. However we did not succeed in improving the endogenous ability for bio-accumulation of the yeast with our engineered strain. Instead we found out that the medium in which the yeast is growing is a major factor to take into account when performing bioremediation experiments. Indeed, our engineered yeast were not able to retrieve copper when growing in SGCAA, a reduced medium used for transformants selection, but was acting like the wild type when put in YPD, a rich medium used to grow wild type yeast.
+  p In conclusion, WT yeast already performs well in removing copper by bioaccumulation from a solution in a 4 mg/l range, relevant to the fungicide contaminated water copper concentration. Surface expression of CUP1 does not improve yeast ability to remove copper from a solution. Nonetheless, since autogenous bioaccumulation seems to be an effective process on its own, we suspect that increasing it further by rising endogenous intracellular CUP1 expression would make the yeast a very efficient genetically modified engineered machine for copper removal.

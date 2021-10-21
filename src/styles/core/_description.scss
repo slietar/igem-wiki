@@ -378,19 +378,29 @@
       display: inline;
     }
   }
+
+  figcaption {
+    margin-bottom: 1.8rem;
+  }
 }
 
 .figure-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, var(--size, var(--width)));
+  grid-template-columns: 1fr 1fr;
 
   img {
-    width: var(--size, var(--width));
-    height: var(--size, var(--height));
-
     background-color: #eee;
     object-fit: contain;
+  }
+
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    img {
+      max-width: 300px !important;
+    }
   }
 }
 
