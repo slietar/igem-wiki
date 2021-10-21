@@ -5,27 +5,27 @@ block hero
   .hero-contents: h1 Parts Overview
 
 block description
-  p On this page is an overview of all the parts that we have created for this project.
+  //- p On this page is an overview of all the parts that we have created for this project.
 
 
   h2 Plasmid
-  p We have use the plasmid backbone pCTcon2V5 to clone our DNA sequences. We obtained it from Bruno Correia’s lab. This plasmid contains:
+  p We have used the plasmid backbone pCTcon2-V5<ref doi="10.1038/nprot.2006.94" /> to clone our DNA sequences. It was kindly given to us by the Laboratory of Protein Design and Immunoengineering of Professor Bruno Correia. This plasmid contains:
 
   ul
     li
       | Two selection markers
       ul
-        li An ampicillin resistance gene: in order to select the transformed bacteria when amplifying the plasmid in <i>E.coli</i>.
-        li A Trp&#8239;+ gene: in order to select the transformed yeasts, because the EBY100 wild type strain cannot survive without tryptophan in its milieu due to a Trp&#8239;&ndash; deletion that enables it to metabolize tryptophan.
+        li an ampicillin (Amp+) resistance gene for genetic selection of transformed <i>E. coli</i>. Selection is achieved in a medium supplemented with ampicillin antibiotic
+        li a TRP gene as an auxotrophic marker for genetic selection of transformed trp- yeasts, unable to synthesize tryptophan. Selection is achieved in a medium lacking tryptophan
     li
-      | The inducible expression system composed of:
-      li A Gal1 promoter: allowing the transcription of our gene of interest only in the presence of galactose
+      | An inducible expression system composed of:
+      li a Gal1 promoter allowing the transcription of our gene of interest only in the presence of galactose
       li
-        | The yeast surface display:
+        | the yeast surface display:
         ul
-          li The Aga2 coding sequence: The A-agglutinin-binding subunit Aga2 attaches to the yeast cell wall through disulfide bonds to Aga1p, a yeast endogenous protein.
-          li A multiple cloning site: where we inserted our gene sequence by digesting the plasmid with the restriction enzymes NheI and BamHI.
-          li The V5 tag: This tag allowed us to target it with an antibody to check the expression either by western blot or immunostaining.
+          li the Aga2 coding sequence: The A-agglutinin-binding subunit Aga2 attaches to the yeast cell wall through disulfide bonds to Aga1p, a yeast endogenous protein.
+          li a multiple cloning site: where we inserted our gene sequence by digesting the plasmid with the restriction enzymes NheI and BamHI.
+          li the V5 tag: to check its expression either by immunoblot or immunocytochemistry
 
   figure
     div(id="plot-plasmid")
@@ -35,19 +35,20 @@ block description
 
 
   h2 CUP1
-  p In order to make the yeast express CUP1 on its outer membrane, we cloned the genomic CUP1 sequence into the plasmid pCTcon2V5 so that it would be linked to the Aga2 protein. The part BBa_K4035001 is the DNA sequence composed of Aga2, CUP1 and V5 tag.
-  p We wanted an inducible system, which could be activated only under a certain condition. In the plasmid, a Gal1 promoter is present upstream of the coding sequence. Our yeast surface display could thus be expressed only in the presence of galactose. This system is represented by the part BBa_K4035000.
+  p In order to make the yeast express CUP1 on its outer membrane, we cloned the genomic CUP1 sequence into the plasmid pCTcon2V5 so that it would be linked to the Aga2 protein C-terminal. The part <a href="http://parts.igem.org/Part:BBa_K4035001" target="_blank">BBa_K4035001</a> is the DNA sequence composed of Aga2, CUP1 and V5 tag.
+  p We wanted an inducible system, which could be activated only under a certain condition. In the plasmid, a Gal1 promoter is present upstream of the coding sequence. Our yeast surface display could thus be expressed only in the presence of galactose. This system is represented by the part <a href="http://parts.igem.org/Part:BBa_K4035000" target="_blank">BBa_K4035000</a>.
 
 
   h2 CUP1 dimers
-  p In order to improve our first version of the CUP1 extracellular expression in yeast, we have designed multiple dimers, namely two CUP1 proteins joined together with a linker. We have seven different dimers, each of them using a particular linker.
-  ul
-    li: p Part <a href="https://parts.igem.org/Part:BBa_K4035002" target="_blank">K4035002</a> has a flexible linker made of 3 times the GGGGS amino acid sequence.
-    li: p Part <a href="https://parts.igem.org/Part:BBa_K4035003" target="_blank">K4035003</a> has a flexible linker made of 4 times the GGGGS amino acid sequence.
-    li: p Part <a href="https://parts.igem.org/Part:BBa_K4035004" target="_blank">K4035004</a> has a rigid linker made of 7 times the AP amino acid sequence.
-    li: p Part <a href="https://parts.igem.org/Part:BBa_K4035005" target="_blank">K4035005</a> has a rigid linker made of 3 times the EAAAK amino acid sequence.
-    li: p Part <a href="https://parts.igem.org/Part:BBa_K4035006" target="_blank">K4035006</a> has a rigid linker made of 4 times the EAAAK amino acid sequence.
-    li: p Part <a href="https://parts.igem.org/Part:BBa_K4035007" target="_blank">K4035007</a> has a semi-rigid linker made of the flexible GGGGS amino acid sequence followed by the EAAAK followed by a second GGGGS sequence.
-    li: p Part <a href="https://parts.igem.org/Part:BBa_K4035008" target="_blank">K4035008</a> has a semi-rigid linker made of the flexible GGGGS amino acid sequence followed by two times the EAAAK followed by a second GGGGS sequence.
+  p In order to improve our first version of the CUP1 extracellular expression in yeast, we have designed multiple dimers, namely two CUP1 proteins joined together with a linker. We have seven different dimers, each of them using a particular linker. For further information about the design of these dimers, see <a href="Design.html">the Design page</a>.
 
-  p The parts numbers <a href="https://parts.igem.org/Part:BBa_K4035009" target="_blank">BBa_K4035009</a> to <a href="https://parts.igem.org/Part:BBa_K4035015" target="_blank">BBa_K4035015</a> depict the extracellular expression system of these dimers, namely, the Gal1 promoter, the Aga2 protein, the dimer sequence followed by the V5 tag.
+  ul
+    li: p Part <a href="http://parts.igem.org/Part:BBa_K4035002" target="_blank">K4035002</a> has a flexible linker made of 3 times the GGGGS amino acid sequence.
+    li: p Part <a href="http://parts.igem.org/Part:BBa_K4035003" target="_blank">K4035003</a> has a flexible linker made of 4 times the GGGGS amino acid sequence.
+    li: p Part <a href="http://parts.igem.org/Part:BBa_K4035004" target="_blank">K4035004</a> has a rigid linker made of 7 times the AP amino acid sequence.
+    li: p Part <a href="http://parts.igem.org/Part:BBa_K4035005" target="_blank">K4035005</a> has a rigid linker made of 3 times the EAAAK amino acid sequence.
+    li: p Part <a href="http://parts.igem.org/Part:BBa_K4035006" target="_blank">K4035006</a> has a rigid linker made of 4 times the EAAAK amino acid sequence.
+    li: p Part <a href="http://parts.igem.org/Part:BBa_K4035007" target="_blank">K4035007</a> has a semi-rigid linker made of the flexible GGGGS amino acid sequence followed by the EAAAK followed by a second GGGGS sequence.
+    li: p Part <a href="http://parts.igem.org/Part:BBa_K4035008" target="_blank">K4035008</a> has a semi-rigid linker made of the flexible GGGGS amino acid sequence followed by two times the EAAAK followed by a second GGGGS sequence.
+
+  p The parts numbers <a href="http://parts.igem.org/Part:BBa_K4035009" target="_blank">BBa_K4035009</a> to <a href="http://parts.igem.org/Part:BBa_K4035015" target="_blank">BBa_K4035015</a> depict the extracellular expression system of these dimers, namely, the Gal1 promoter, the Aga2 protein and the dimer sequence followed by the V5 tag.

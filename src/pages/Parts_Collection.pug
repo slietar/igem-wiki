@@ -7,11 +7,54 @@ block hero
 block description
   h2 Introduction
 
-  p We have made different constructs to modify the yeast EBY100 to make it express the copper metallothionein CUP1 protein at its external surface. Here is the complete list of all the parts we have created to transform the yeast. We have one basic part that is the CUP1 alone fused with the Aga2 protein and the V5 tag and seven dimers of CUP1 as basic parts. We also have 8 composite parts that are the expression system of our proteins, namely Gal1&ndash;Aga2&ndash;protein&ndash;V5.
-  p Our favorite basic parts are <a href="https://parts.igem.org/Part:BBa_K4035001" target="_blank">BBa_K4035001</a> and <a href="https://parts.igem.org/Part:BBa_K4035007" target="_blank">BBa_K4035007</a> and our favorite composite parts are their corresponding expression system <a href="https://parts.igem.org/Part:BBa_K4035000" target="_blank">BBa_K4035000</a> and <a href="https://parts.igem.org/Part:BBa_K4035014" target="_blank">BBa_K403501</a>.
+  p We have made different constructs to modify the yeast EBY100 to make it express the copper metallothionein CUP1 protein at its external surface. Here is the complete list of all the parts we have created to transform the yeast. As basic parts, we have the CUP1 alone fused with Aga2 and V5 as well as seven dimers. We also have 8 composite parts that are their corresponding expression systems, namely Gal1--Aga2--protein--V5.
+  p Our favorite basic parts are <a href="http://parts.igem.org/Part:BBa_K4035001" target="_blank">BBa_K4035001</a> and <a href="http://parts.igem.org/Part:BBa_K4035007" target="_blank">BBa_K4035007</a> and our favorite composite parts are their corresponding expression system <a href="http://parts.igem.org/Part:BBa_K4035000" target="_blank">BBa_K4035000</a> and <a href="http://parts.igem.org/Part:BBa_K4035014" target="_blank">BBa_K4035014</a>.
 
 
   h2 List of parts
+
+  -
+    let dimers = [
+      { linker: '(GGGGS)<sub>3</sub>',
+        compIIS: true, compRFC: true },
+      { linker: '(GGGGS)<sub>4</sub>',
+        compIIS: false, compRFC: false },
+      { linker: '(AP)<sub>7</sub>',
+        compIIS: false, compRFC: false },
+      { linker: '(EAAAK)<sub>3</sub>',
+        compIIS: false, compRFC: true },
+      { linker: '(EAAAK)<sub>4</sub>',
+        compIIS: true, compRFC: false },
+      { linker: 'GGGGSEAAAKGGGGS',
+        compIIS: true, compRFC: true },
+      { linker: 'GGGGS(EAAAK)<sub>2</sub>GGGGS',
+        compIIS: false, compRFC: true },
+    ];
+
+    let parts = [
+      { id: 'BBa_K4035001',
+        desc: 'CUP1 fused to Aga2 and tagged with a V5 epitope',
+        compIIS: true, compRFC: false,
+        composite: false },
+      ...dimers.map((dimer, index) => ({
+        id: `BBa_K403500${index + 2}`,
+        desc: `Dimerization of the copper metallothionein 1: <code>CUP1–${dimer.linker}–CUP1</code>`,
+        compIIS: dimer.compIIS, compRFC: dimer.compRFC,
+        composite: false
+      })),
+      { id: 'BBa_K4035000',
+        desc: 'Expression of CUP1 at the surface of EBY100',
+        compIIS: true, compRFC: true,
+        composite: true },
+      ...dimers.map((dimer, index) => ({
+        id: `BBa_K403501${index}`,
+        desc: `Expression of the <code>CUP1–${dimer.linker}–CUP1</code> dimer on the extracellular membrane of <i>S. cerevisiae</i>`,
+        compIIS: dimer.compIIS, compRFC: dimer.compRFC,
+        composite: true
+      }))
+    ]
+
+  h3 Basic parts
 
   .parts-container
     table.table.parts-table
@@ -23,47 +66,34 @@ block description
           th Assembly compatibility
 
       tbody
-        -
-          let dimers = [
-            { linker: '(GGGGS)<sub>3</sub>',
-              compIIS: true, compRFC: true },
-            { linker: '(GGGGS)<sub>4</sub>',
-              compIIS: false, compRFC: false },
-            { linker: '(AP)<sub>7</sub>',
-              compIIS: false, compRFC: false },
-            { linker: '(EAAAK)<sub>3</sub>',
-              compIIS: false, compRFC: true },
-            { linker: '(EAAAK)<sub>4</sub>',
-              compIIS: true, compRFC: false },
-            { linker: 'GGGGSEAAAKGGGGS',
-              compIIS: true, compRFC: true },
-            { linker: 'GGGGS(EAAAK)<sub>2</sub>GGGGS',
-              compIIS: false, compRFC: true },
-          ];
+        each part, index in parts.filter((p) => !p.composite)
+          tr
+            td: a(href=`http://parts.igem.org/Part:${part.id}` target="_blank")= part.id
+            td= (part.composite ? 'Composite' : 'Coding')
+            td!= part.desc
+            -
+              let comp = [
+                { ok: part.compIIS, name: 'Type&nbsp;IIS' },
+                { ok: part.compRFC, name: 'RFC[10]' }
+              ]
+            td: .parts-compat: for item in comp
+              if item.ok
+                svg: use(href="assets/icons.svg#check")
+              span !{item.name}
 
-          let parts = [
-            { id: 'BBa_K4035001',
-              desc: 'CUP1 fused to Aga2 and tagged with a V5 epitope',
-              compIIS: true, compRFC: false,
-              composite: false },
-            ...dimers.map((dimer, index) => ({
-              id: `BBa_K403500${index + 2}`,
-              desc: `Dimerization of the copper metallothionein 1: <code>CUP1–${dimer.linker}–CUP1</code>`,
-              compIIS: dimer.compIIS, compRFC: dimer.compRFC,
-              composite: false
-            })),
-            { id: 'BBa_K4035000',
-              desc: 'Expression of CUP1 at the surface of EBY100',
-              compIIS: true, compRFC: true,
-              composite: true },
-            ...dimers.map((dimer, index) => ({
-              id: `BBa_K403501${index}`,
-              desc: `Expression of the <code>CUP1–${dimer.linker}–CUP1</code> dimer on the extracellular membrane of EBY100`,
-              compIIS: dimer.compIIS, compRFC: dimer.compRFC,
-              composite: true
-            }))
-          ]
-        each part, index in parts
+  h3 Composite parts
+
+  .parts-container
+    table.table.parts-table
+      thead
+        tr
+          th Name
+          th Type
+          th Description
+          th Assembly compatibility
+
+      tbody
+        each part, index in parts.filter((p) => p.composite)
           tr
             td: a(href=`http://parts.igem.org/Part:${part.id}` target="_blank")= part.id
             td= (part.composite ? 'Composite' : 'Coding')
