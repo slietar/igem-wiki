@@ -204,10 +204,6 @@
 }
 
 
-// .header, main > * { display: none !important; }
-// .section2-root, .section2-root ~ * { display: initial !important; }
-// .section2-root { display: grid !important; }
-
 %image-cover {
   width: 100%;
   height: 100%;
@@ -231,6 +227,7 @@
 
     img {
       @extend %image-cover;
+      filter: brightness(80%);
     }
   }
 
@@ -238,6 +235,8 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+
+    z-index: 2;
 
     @extend %home-section, %white-text;
     padding: var(--vert-margin) var(--side-margin);
@@ -278,7 +277,40 @@
 }
 
 
-// Section 4 - Free
+// Section 4 - Communication
+
+.section4 {
+  & {
+    @include superimposed-children();
+
+    height: 100vh;
+    max-height: 600px;
+
+    img {
+      @extend %image-cover;
+      filter: brightness(80%);
+    }
+  }
+
+  &-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    z-index: 2;
+
+    @extend %home-section, %white-text;
+    padding: var(--vert-margin) var(--side-margin);
+
+    p {
+      max-width: 700px;
+    }
+
+    @include media-breakpoint-down(md) {
+      justify-content: start;
+    }
+  }
+}
 
 
 // Section 5 - Facts
@@ -420,6 +452,9 @@
 .section8 {
   @include superimposed-children();
 
+  height: 100vh;
+  max-height: 600px;
+
   background-color: #000;
 
   img {
@@ -432,7 +467,7 @@
     display: flex;
     flex-direction: column;
 
-    max-width: calc(500px + var(--side-margin) * 2);
+    max-width: calc(600px + var(--side-margin) * 2);
     padding: var(--vert-margin) var(--side-margin);
 
     background-image: linear-gradient(to right, #000, #0001);
@@ -452,7 +487,51 @@
 }
 
 
-// Section 9 - Free
+// Section 9 - References
+
+.section9 {
+  padding: var(--vert-margin) var(--side-margin);
+  background-color: #fafafa;
+
+  h2 {
+    display: flex;
+    column-gap: 1rem;
+
+    margin-bottom: 1rem;
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    &::before {
+      @extend %chevron;
+      transform: translateY(-2px);
+    }
+  }
+
+  &:not([open]) summary h2::before {
+    transform: translateY(-2px) rotate(-90deg);
+  }
+
+  .ref-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: .4rem;
+    margin: 1rem 0 1rem 3.6rem;
+
+    a[target="_blank"]:not(.discrete) {
+      &::after {
+        content: "";
+
+        margin-left: 0.3rem;
+        padding-right: 1.85ch;
+        vertical-align: 0.1em;
+
+        background-color: currentColor;
+        clip-path: url(#link);
+      }
+    }
+  }
+}
 
 
 // Section 10 - CuRe
@@ -542,13 +621,23 @@
 .section11 {
   @include superimposed-children();
 
+  height: 100vh;
+  min-height: 500px;
+  max-height: 700px;
+
   video {
-    width: 100%;
+    @extend %image-cover;
   }
 
   &-contents {
+    @extend %home-section;
+
     align-self: end;
     padding: 4rem var(--side-margin);
+
+    p {
+      max-width: 700px;
+    }
   }
 }
 

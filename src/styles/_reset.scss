@@ -164,6 +164,11 @@ body:not(.mediawiki), #mw-content-text {
   strong {
     font-weight: unset;
   }
+
+  summary::marker {
+    display: none;
+    content: "";
+  }
 }
 
 
