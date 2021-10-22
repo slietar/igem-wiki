@@ -10,7 +10,21 @@ p: strong In summary, preliminary research highlighted encapsulated bioremediati
 
 p To follow along with our project design, click on the relevant stakeholders to see how they aided us. For each stakeholder, we describe them, their contribution as well as the adjustments we made to our project following the interview.
 
-div: include ../../internal-assets/hp/tree.svg
+div(style="position: relative;")
+  img(src="assets/hp/1.jpg" usemap="#image-map")
+  <a href="#popup-11"><div style="position: absolute; left: 5.74%; top: 66.27%; width: 5.42%; height: 14.46%; background-color: transparent;"></div></a>
+  <a href="#popup-6"><div style="position: absolute; left: 12.48%; top: 23.82%; width: 5.01%; height: 13.35%; background-color: transparent;"></div></a>
+  <a href="#popup-7"><div style="position: absolute; left: 20.90%; top: 71.55%; width: 4.03%; height: 10.75%; background-color: transparent;"></div></a>
+  <a href="#popup-3"><div style="position: absolute; left: 24.24%; top: 27.90%; width: 5.35%; height: 14.27%; background-color: transparent;"></div></a>
+  <a href="#popup-8"><div style="position: absolute; left: 36.65%; top: 54.40%; width: 6.95%; height: 18.54%; background-color: transparent;"></div></a>
+  <a href="#popup-10"><div style="position: absolute; left: 38.18%; top: 16.96%; width: 5.91%; height: 15.76%; background-color: transparent;"></div></a>
+  <a href="#popup-4"><div style="position: absolute; left: 58.83%; top: 70.71%; width: 6.95%; height: 18.54%; background-color: transparent;"></div></a>
+  <a href="#popup-3"><div style="position: absolute; left: 63.07%; top: 10.38%; width: 5.56%; height: 14.83%; background-color: transparent;"></div></a>
+  <a href="#popup-1"><div style="position: absolute; left: 71.07%; top: 24.37%; width: 7.58%; height: 20.20%; background-color: transparent;"></div></a>
+  <a href="#popup-2"><div style="position: absolute; left: 74.34%; top: 72.01%; width: 5.63%; height: 15.01%; background-color: transparent;"></div></a>
+  <a href="#popup-3"><div style="position: absolute; left: 85.01%; top: 30.40%; width: 6.05%; height: 16.13%; background-color: transparent;"></div></a>
+  <a href="#popup-4"><div style="position: absolute; left: 91.59%; top: 57.46%; width: 5.98%; height: 15.94%; background-color: transparent;"></div></a>
+
 
 .hp-popup-root: .hp-popup-container
   .hp-popup-item(id="popup-1")
@@ -77,8 +91,8 @@ div: include ../../internal-assets/hp/tree.svg
       dt Adjustments
       dd: p Given the opinions of these 3 winemakers, we decided to start thinking of the project as a water treatment project rather than limiting our application to vineyards. We now needed to build a scalable reactor which could be used not only in vineyards, but anywhere else copper needed to be retrieved from water. We chose to concentrate less on managing the capture of the water from the fields themselves, and more on the containment of our genetically modified yeast.
 
-      dt Next steps:
-      dd We decided to develop a flow-through reactor to treat the water. The details of this reactor can be found on the Hardware page.
+      dt Next steps
+      dd: p We decided to develop a flow-through reactor to treat the water. The details of this reactor can be found on the Hardware page.
 
 
   .hp-popup-item(id="popup-3")
@@ -237,7 +251,7 @@ ul
   li Safety and security considerations
   li Legal considerations
   li Circular economy approach
-  li Making use of the infrastructures already at hand- the water treatment facilities
+  li Making use of the infrastructures already at hand &ndash; the water treatment facilities
 
 p For each, we describe below how relevant stakeholders impacted this aspect of our project, and ensured we were doing what was best for each.
 
@@ -255,7 +269,7 @@ p As we learnt from our interview with Olivier Viret, it is currently illegal in
 h3 Circular economy approach
 p It was always a goal of CuRe to have a circular economy approach. We knew preventing copper contamination from worsening was our main goal, but we also found it of the utmost importance to think about what to do with the copper once the yeast had extracted it. Thus, by recycling the copper, we would close a loop between its use by winegrowers and its recuperation from the water treatment facility. In fact, as we found out, copper is one of a few materials that can be fully recyclable repeatedly without any loss of performance. Thanks to Christof Holliger and Ludovic Vincent, who both brought this up during our interviews with them, we were able to truly think about our project in an all-encompassing manner.
 
-h3 Making use of the infrastructures already at hand- the water treatment facilities
+h3 Making use of the infrastructures already at hand &ndash; the water treatment facilities
 p Towards the middle of our project, it became evident we needed to tailor our implementation towards water treatment facilities rather than having bioreactors working adjacent to the vineyards it was treating. We realised we needed to make use of the knowledge these facilities had when it came to water treatment, as well as the infrastructure that was already built in place to treat wastewater. We thus met with people from the Vidy water treatment facility as well as Mr Anicet from the Allaman water treatment facility. Both made us realise which aspects of our implementation resembled the systems already in place, and which ones required further thought so as to properly incorporate the final product in such a facility. For example, we realised we would fix our yeast to substrates, as they are currently doing with the bacteria they are using. However, once we heard they were treating 2 to 4 m<sup>3</sup> of water per second, we realised our bioreactor needed to sit aside the usual flow of these facilities.
 
 

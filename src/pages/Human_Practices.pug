@@ -11,22 +11,8 @@ block contents
         a(href="#hp-silver" data-hp-target="silver") Human Practices
         a(href="#hp-gold" data-hp-target="gold") Integrated Human Practices
 
-      .desc-body(data-hp-contents="silver")
-        aside.sidenav-container
-          .sidenav
-            h3 Contents
-            .sidenav-toc
-              toc
+      .desc-contents(data-hp-contents="silver")
+        include components/_hp-silver
 
-        .desc-contents(toc-contents)
-          include components/_hp-silver
-
-      .desc-body(data-hp-contents="gold")
-        aside.sidenav-container
-          .sidenav
-            h3 Contents
-            .sidenav-toc
-              toc
-
-        .desc-contents(toc-contents)
-          include components/_hp-gold
+      .desc-contents(data-hp-contents="gold")
+        include components/_hp-gold
