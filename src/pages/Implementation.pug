@@ -7,13 +7,12 @@ block hero
 block description
   h2 Introduction
 
-  p EPFL being an engineering school, we had the privilege of being able to create a system in which our genetically modified yeast could act. With our knowhow in computed assisted design, flow simulations and electronics, we were able to design and build a physical prototype. Here, we lay out the design process flow before describing the final prototype in detail.
+  p EPFL being an engineering school, we took advantage of our resources to create a hardware system for implementing our genetically modified yeast. With our knowhow in computer-aided design, flow simulations and electronics, we were able to design and build a physical prototype. Here, we lay out the design process flow before describing the final prototype in detail.
 
 
+  h2 Design cycles
 
-  h2 Design Process Flow
-
-  p The design of our reactor was a long set of complicated cycles which finally led towards a very simple product. This process, as any good engineering process would be, is an iterative process, with not only the design being changed, but also the problem itself.
+  p The reactor we developed and built was the product of a number of design cycles, which ultimately led to a simple but effective solution. This was an iterative process, where not only the design changed, but also the problem we set out to solve.
 
 
   h3 Wood Chip Implementation
@@ -26,16 +25,16 @@ block description
     .imp-contents
       .imp-section(data-name="design")
         h4 Design
-        p Distributing wood chips under the plants to limit erosion is a common winemaking practice in the Lavaux area as the slopes on which the vines sit are very steep. Based on this, we wondered if we could create chips out of a bio-friendly material in which we could isolate (and contain) our genetically modified yeast cells. Winemakers would simply have to distribute these chips under the vine ranks and recuperate them after a certain amount of rainfalls as of which the yeast cells would be saturated in copper they would have bound.
+        p Distributing wood chips under the plants to limit erosion is a common winemaking practice in the Lavaux area as the slopes on which the vines sit are very steep. Based on this, we wondered if we could create chips out of a bio-friendly material in which we could isolate our genetically modified yeast cells. Winemakers would simply have to distribute these chips under the vine ranks and recuperate them after a certain amount of rainfall.
 
       .imp-section(data-name="feedback")
         h4 Feedback
-        p We put this idea to the test by visiting vine plantations and by pitching it to two winemakers. They did not approve of the wood chip solution as it would require additional labour, which is the most expensive aspect of winemaking. However, another winemaker said that it also could indirectly decrease labour as it could help them fight weeds under the vine ranks.
+        p We collected user feedback by visiting vine plantations and by pitching it to two winemakers. They did not approve of the wood chip solution as it would require additional labour, which is the most expensive aspect of winemaking.
         p We also identified another problem, isolating the genetically modified yeast in these chips would not be safe enough. The risk of the encapsulation failing or simply of losing chips was too great. The encapsulation aspect of the project was very important since Swiss laws around GMOs are extremely strict.
 
       .imp-section(data-name="learn")
         h4 Learn
-        p We learned that we would have to ensure that the genetically modified yeast could perform in a truly isolated environment. Additionally, by creating a system that would block off weeds, we could make our product more commercially viable in the long term as the necessary amount of labour would decrease.
+        p We learned that an important design consideration would be ensuring our genetically modified yeast are isolated from the  environment. Additionally, by creating a system that would block off weeds, we could make our product more commercially viable in the long term as the necessary amount of labour would decrease.
 
 
   h3 Carpet Implementation
@@ -48,17 +47,16 @@ block description
     .imp-contents
       .imp-section(data-name="design")
         h4 Design
-        p Following our discussions with the winemakers, we decided that a simple carpet design would be best adapted in the context of vineyards. A rank of vine plants would have a carpet running underneath it. The design would be rounded on the edges to trap water inside it, acting like a water slide. It would of course also have holes in it for the plants themselves. This way, water could be brought to a bioreactor in which we could control that the modified yeast strains do not leak into the environment better.
+        p Following our discussions with the winemakers, we decided that a simple carpet design would be best adapted in the context of vineyards. A rank of vine plants would have a carpet running underneath it. It would be made in a flexible material to be able to adapt to the irregular terrain often present in vineyards. Ridges ensure that all of the rainwater enters the drain and is guided towards the treatment facility. It would of course also have holes in it for the plants themselves. This way, water could be brought to a bioreactor for contained processing, minimizing environmental yeast contamination. Additionally, this design would block the growth of weeds, decreasing labour for the winemakers and  increasing our solution’s economic viability.
 
       .imp-section(data-name="feedback")
         h4 Feedback
-        p Thanks to a winemaker's insight, we calculated the amount of water to be treated per plant per rainfall and we found 6.4 liters. Take a look at <a href="Model.html">the modelling page</a> for details.
-
-        p To put this number into context, a reasonable estimation for the plantation density in the Lavaux area is around 8000 plants per hectare. Thus, each hectare of land would demand over 6.4 litres x 8000 = 51'200 litres of water to be treated for each major rainfall. This means each hectare would necessitate a reservoir of over 51 cubic meters in volume.
+        p A winemaker gave us insight on plant dimensions and on how much rainfall is needed to wash away all of the copper. Thanks to this, we calculated the amount of water to be treated per plant per rainfall and we found 6.4 litres.
+        p To put this number into context, a reasonable estimation for the plantation density in the Lavaux area is around 8000 plants per hectare. Thus, each hectare of land would demand over 6.4 liters x 8000 = 51,200 litres of water to be treated for each major rainfall. This means with a batch bioreactor design, each hectare would necessitate a reservoir of over 51 cubic meters in volume.
 
       .imp-section(data-name="learn")
         h4 Learn
-        p Following the values we obtained through our approximations, we realised that treating all of the water at the same time in a static manner would demand large infrastructure and quantities of yeast, should they work correctly, to be able to treat the water efficiently. To avoid this problem, we decided to begin developing a continuous flow bioreactor.
+        p Following the values we obtained through our approximations, we realised that treating all of the water at the same time in batch would demand a prohibitively large infrastructure and quantities of yeast. To avoid this problem, we decided to begin developing a continuous flow bioreactor.
 
 
   h3 Eternal Cycle Bioreactor
@@ -71,20 +69,20 @@ block description
     .imp-contents
       .imp-section(data-name="design")
         h4 Design
-        p A continuous flow through device would allow us to treat large quantities of water without relying on an overly voluminous recipient for the rainwater. The simplest design would be a straight pipe with a filter in which our yeast would treat the contaminated water. However, this poses issues such as filter clogging and a gradient in copper concentration resulting in yeast closest to the entrance getting saturated in copper more quickly than the cells closest to the filter.
-        p We thus imagined the following concept: trapping the yeast in an eternal circular cycle with water exiting at particular angles so as to not clog the filter.
+        p A continuous flow through device would allow us to treat large quantities of water without relying on an overly large tank to process the rainwater. The simplest design we developed was a straight pipe with a filter in which our yeast absorbs copper from the contaminated water as it passes through. However, this poses issues such as filter clogging and a gradient in copper concentration resulting in yeast closest to the entrance getting saturated in copper more quickly than the cells closest to the filter.
+        p To improve mixing, we designed a reactor where yeast is maintained circulating in a loop with water, while water exits through a tangential filter designed to minimize clogging.
 
       .imp-section(data-name="build")
         h4 Build
-        p We were given access to a 3D Printer for us to prototype our designs. We used polylactic acid (PLA) filament for part printing and polyvinyl chloride (PVC) tubes to bring the design together.
+        p We were given access to a 3-D Printer for prototyping. We used polylactic acid (PLA) filament for part printing and polyvinyl chloride (PVC) tubes to bring the design together.
 
       .imp-section(data-name="test")
         h4 Test
-        p The system was tested by simply connecting a water tap to our device. We increased the water flow until leaking appeared at the interface between the printed parts and the PVC tubes. Unfortunately, the water in one of the tubes was static. This would mean that the yeast would not rejoin the circuit and they would end up clogging up the filter. We tested the system with and without adding a filter.
+        p The system was tested by simply connecting a water tap to our device and observing water flow. Unfortunately, we discovered a low-pressure dead zone in our reactor’s loop of tubing intended to re-circulate yeast, where flow  decreased to very low levels, making the system non-functional. We tested the system both with and without adding a filter.
 
       .imp-section(data-name="learn")
         h4 Learn
-        p If water is static, it means that the water pressure at both ends of the tube is equal. We concluded that modifying the geometry of the inside of the parts would be necessary to create a pocket of lower pressure that should result in the desired flow.
+        p If water is static, this suggests that the water pressure at both ends of the tube is equal. We deduced that in order to offset this  problem, we could modify the internal geometry of our device at a key junction where the loop of tubing rejoins the inflowing water, by taking advantage of Bernoulli’s principle. This would create a low-pressure pocket to improve the re-circulation of water.
 
 
   h3 Eternal Cycle Bioreactor with a Low Pressure Pocket
@@ -101,17 +99,16 @@ block description
 
       .imp-section(data-name="build")
         h4 Build
-        p Flow simulations helped us design a geometry that would create a pocket of low pressure allow the water coming from two different tubes to merge and add up, completing the cycle. . We achieved this thanks to the pinch off of the main input channel. Additionally, a slight angle as to not have a perpendicular connection was favourable. However, the simulations only gave us satisfactory results at high flow and porous filters designed for cell filtration do not allow said flow.
+        p Flow simulations helped us to design a geometry that would create a low-pressure pocket, to allow the water coming from two different tubes to merge, improving flow and yeast re-circulation. We achieved this thanks to the pinch off of the main input channel. Additionally, a slight angle avoiding a perpendicular connection was favourable. However, based on our simulations, we would only achieve a satisfactory level of re-circulation at high inflow velocities, for which porous filters designed for cell filtration are not compatible.
 
       .imp-section(data-name="test")
         h4 Test
-        p The system was tested by again simply connecting a water tap to our device. We increased the water flow until it started to leak. Unfortunately, the printed system did not behave like the simulation did. All of the water entering the circuit would exit after only one revolution, thus not rejoining the circuit as we had hoped even with the pocket of low pressure.
+        p The system was tested by again simply connecting a water tap to our device. We increased the water flow until it started to leak. Unfortunately, the printed system did not behave like the simulation did. All of the water entering the circuit would exit after only one revolution, thus not rejoining the circuit as we had hoped even with the pocket designed to have low pressures.
 
       .imp-section(data-name="learn")
         h4 Learn
-        p The system was not functioning as the simulations predicted. This could be because our testing setup was not ideal (unable to create precise pressure and flow), but it most likely is simply the result of real-world physics being more complicated than simulations done at laminar flow.
-        p We seeked out expertise on this issue and found it with Professor Giovanni Boero at EPFL who was very sceptical of our design and urged us to change to a simpler fluidics design.
-        p Our flow simulations only functioned at high flow, which is not possible with porous filters. We needed to find a way to have higher flow but at the same time to keep the cells inside of the reactor.
+        p The system was not functioning as the simulations predicted. This could be because our testing setup was not ideal (unable to create precise pressure and flow), but it most likely is simply the result of real-world physics being more complicated than portrayed in the simulations.
+        p We sought out expertise on this issue and found it with Professor Giovanni Boero at EPFL who was very sceptical of our design and urged us to change to a simpler fluidics design.
 
 
   h3 Disk Reactor
@@ -128,8 +125,7 @@ block description
 
       .imp-section(data-name="build")
         h4 Build
-        p Flow simulations helped us design a geometry that would create a pocket of low pressure allow the water coming from two different tubes to merge and add up, completing the cycle. We achieved this thanks to the pinch off of the main input channel. Additionally, a slight angle as to not have a perpendicular connection was favourable. However, the simulations only gave us satisfactory results at high flow and porous filters designed for cell filtration do not allow said flow.
-        p We wanted homogeneous distribution of beads inside our disk bioreactor. Our worry was that the beads would either be ejected to the outside of the disk because of centrifugal forces or clump in the center because of the lack thereof. This would depend on the speed of the water entering the disk. We had the idea of studying making the flow just slow enough for the beads to clump at the center and then to add grids tangent to the flow lines to guide the bead away from the center.
+        p We wanted homogeneous distribution of beads inside our disk bioreactor to improve mixing. Our worry was that the beads would either be ejected to the outside of the disk because of centrifugal forces or clump in the center because of the lack thereof. This would depend on the speed of the water entering the disk. We decided to make the flow just slow enough for the beads to travel towards the center, but then to add grids tangent to the flow lines to guide the bead away from the center.
 
       .imp-section(data-name="test")
         h4 Test
@@ -137,17 +133,26 @@ block description
 
       .imp-section(data-name="learn")
         h4 Learn
-        p This design demands high flow through, otherwise the beads clump together in the center. Unfortunately, since yeast uptakes copper very slowly, we could not hope to make this design work for our biological solution. We needed to abandon the continuous flow concept and bring our focus back to statically treating the copper concentrated water. Nevertheless, we believe that our work here could serve as an interesting beginning for future iGEM teams whose biological systems are much faster.
+        p This design demands high flow through, otherwise the beads clump together in the center. Unfortunately, since time is required for the binding reaction to take place, this design could not work for our biological application, since there would be an upper limit on the copper residence time in the binding environment. We decided to abandon the continuous flow concept and bring our focus back to treating the contaminated water with a static approach. Nevertheless, we believe that the progress we made in our various design cycles, especially for our continuous flow systems, may be of use to future iGEM teams.
 
 
 
-  h2 Final design: Semi-static reactor with beads
+  h2 Final design: Static reactor with beads
 
-  p The final design is a simple container capable of making water evacuation automatic. It contains the beads encapsulating the yeast. Copper concentrated water enters the device until a pressure sensor detects that the desired volume of water has been captured. Inside the reactor, yeast filters the water. To achieve a homogenous distribution of yeast, we fix them onto beads. These beads are blocked inside the reactor thanks to a simple grid filter.
+  figure
+    img(src="assets/implementation/25.jpg")
+    figcaption
+      span Figure (X)
+      span Assembled model.
+      span Uses 2 prebuilt models from grabcad.com: Adafruit BMP338 Breakout Board (Diego Paredes) and SMC VX212AZ1D electro valve (KVLaD)
+
+  p The final design we implemented is a simple vessel that automatically receives and discharges water through the use of a basic pressure-control loop. Beads encapsulating the yeast are loaded into the device. Water contaminated with copper enters the device until the pressure sensor detects that the desired volume of water has been captured. Inside the reactor, yeast filters the water. We fix the yeast onto beads primarily in order to reduce filter-clogging, which stems from the clumping of free-yeast. These beads are then maintained inside the reactor thanks to a simple grid filter.
   p After treatment, water is evacuated by opening a solenoid valve. A solenoid is an electromagnetic system in which a copper wire is coiled in a cylindrical shape. By injecting electric current into the wire one creates a magnetic field that in turn applies a force onto certain metallic materials and thus sets them in motion. This is how we can open and close the valve.
+  p In our case, we regulate the height of water in the recipient vessel by opening and closing the valve based on pressure and inferred water volume. When the pressure sensor detects a water pressure higher than a threshold defined by the user, the valve opens to let water out until a lower-threshold is reached.  In order to improve the efficiency of copper treatment, we envision that the vessel size and amount of yeast seeded into the device would be tuned based on the average rate of rainfall in a region. We characterized the functioning of our device, and built a simple graphical user interface (GUI) to make it more user-friendly. Our device performs as expected and is easy to use, and so we anticipate that it will be useful to future iGEM teams.
+  p The controlling unit is a Raspberry Pi 3B+ that is connected to a touch screen, on which all of the controls and data can be visualised through the GUI.
 
   h3 Parts
-  p For this project, we used products from local suppliers as much as possible: our main providers for the implementation were Distrelec and Galaxus. In the following paragraphs, each part bought or printed will be referenced so as to be able to replicate our design.
+  p For this project, we used products from local suppliers as much as possible: Our main providers for the implementation were Distrelec and Galaxus. In the following paragraphs, each part bought or printed will be referenced so as to be able to replicate our design.
 
   .imp-part-item
     .imp-part-image: img(src="assets/implementation/0.jpg")
@@ -254,40 +259,22 @@ block description
 
   p There are four buttons that can be used:
   ul
-    li The top right button represents the valve and is used simply to open it and close it manually
-    li The middle right button represents a pump. It was not used during the final implementation but can be useful for future projects.
-    li The bottom left button shows the pressure reading
-    li The bottom center button is the script we use for the automation of the project
-    li The bottom right button can be customized. For the moment, it writes the data measured by the pressure sensor to a file named data.txt in csv format.
+    li: p The top right button represents the valve and is used simply to open it and close it manually.
+    li: p The middle right button represents a pump. It was not used during the final implementation but can be useful for future projects.
+    li: p The bottom left button shows the pressure reading
+    li: p The bottom center button is the script we use for the automation of the project
+    li: p The bottom right button can be customized. For the moment, it writes the data measured by the pressure sensor to a file named data.txt in CSV format.
 
-  figure
-    img(src="assets/implementation/9.jpg")
-    figcaption
-      span Figure (X)
-      span Pressure measurement mock values.
-      span The X axis is the measurement index (config.py lets you choose the time between measurements).
-
-  p The GUI is not complicated to use. The only part where one must do more than press on a button is for setting up the experiment: one must choose the pressure thresholds for the control of the valve. Remember that Bernoulli's fluids law states that pressure in an incompressible fluid is proportional to the height of the fluid in a static system:
-  img(src="assets/implementation/10.jpg")
-  p However, this same law states that a higher fluid velocity lowers pressure for a same height. In other words, the threshold for opening and for closing the valve must be chosen as to have a sufficient gap. We suppose the change will not be significant for our reactor. We shall test that.
-
-  figure
-    img(src="assets/implementation/11.jpg")
-    figcaption
-      span Figure (X)
-      span GUI setup of the bioreactor thresholds.
-
-  p To use the bioreactor program, one has to choose only three thresholds: the threshold at which the valve will open (threshold high) the threshold at which the valve will close (threshold low) ad the threshold at which the valve will stop emptying the reactor after the maximum incubation time has been waited. The incubation time can be chosen in the config.py file.
 
   h4 Structure of the code
   p The code is structured into a few main modules:
   ul
-    li <strong>Main.py</strong> periodically uses the other modules in an <code>update()</code> function.
-    li <strong>Managers.py</strong> defines a set of functions to be called once an application if started by pressing on one of the buttons. These managers manage the devices and manage the data acquired by these devices.
-    li <strong>Tools.py</strong> defines a few shortcuts to make the code more readable.
-    li <strong>Devices.py</strong> defines the device class and chooses the pins for output.
-    li <strong>Config.py</strong> defines a set of configurations for the code itself. By changing the <code>DEBUG_MODE</code> from <code>False</code> to <code>True</code>, one can use mock values and mock libraries to simulate the behaviour of the code.
-    li The <strong>GUI</strong> directory contains the set of HTML, CSS, and JS scripts needed for the web page to be decoded by a browser (Chrome in our case).
+    li: p <strong>Main.py</strong> periodically uses the other modules in an <code>update()</code> function.
+    li: p <strong>Managers.py</strong> defines a set of functions to be called once an application if started by pressing on one of the buttons. These managers manage the devices and manage the data acquired by these devices.
+    li: p <strong>Tools.py</strong> defines a few shortcuts to make the code more readable.
+    li: p <strong>Devices.py</strong> defines the device class and chooses the pins for output.
+    li: p <strong>Config.py</strong> defines a set of configurations for the code itself. By changing the <code>DEBUG_MODE</code> from <code>False</code> to <code>True</code>, one can use mock values and mock libraries to simulate the behaviour of the code.
+    li: p The <strong>GUI</strong> directory contains the set of HTML, CSS, and JS scripts needed for the web page to be decoded by a browser (Chrome in our case).
 
 
 
@@ -317,14 +304,6 @@ block description
 
   p The pressure sensor is glued using epoxy to the 3D-printed bottom part of the reactor. The bottom part is specially designed to leave an opening for the sensor's sensing pad. The pressure sensor was coated in epoxy before being glued as only the pad is water resistant.
   p The valve has two cables: the red cable, as usual, represents the positive voltage. The direction of wiring is important, as the force generated depends on the direction of the current. The solenoid will probably not break if wired incorrectly, but it will certainly not work. For our own test, we had to 3D-print an adapter because the solenoid's one touch fitting diameter and the plastic tube's diameter were incompatible.
-
-  figure
-    img(src="assets/implementation/14.jpg")
-    figcaption
-      span Figure (X)
-      span Full setup view.
-
-  p For a constant flow to be used, we had to use a water tap. To get the water from the tap to the reactor, we had to make a tubing circuit made up of a 3D-printed adapter for the tap, a metal rod found in the meeting room, some tubing we had bought and a lot of scotch tape.
 
 
   h3 Tests
@@ -430,6 +409,27 @@ block description
   p With agarose, alginate or phytagel beads, we can ensure yeast does not survive and reproduce outside of its controlled gel. However, we cannot fill ceramic beads with tryptophane, nor can we ensure a constant influx of ypd with the water. The basic mechanism keeping the GMO yeast from being released would have to be removed in order for the yeast to survive. Ceramic beads are not made to contain cells, but merely to serve as a attachement surface on which bacteria can feed and breed. Hence, yeast would detach and end up in nature unless it is filtered. But the clogging of filters due to yeast is the main reason we chose beads in the first place.
   p On the other hand, ceramic beads seem to offer a more realistic large-scale implementation, as it is already used in water treatment facilities. Instead of adapting the beads to the yeast, the synthetic yeast strain would have to be further developed. An example of further amelioration would be the addition of a flocculation process at CUP1 saturation so that yeast cells can sink or float in easily collectible clumps<ref doi="10.1128/JB.00344-19" />. For better containment, the yeast could be modified to need a certain wavelength of light to transcribe proteins<ref doi="10.1021/cb9002305" />. If these proteins are necessary to the survival of the cell and the light used is unusual in natural environments, the cells would not survive outside of the water treatment facilities. This would solve the problem of clogged filters and GMO release to the natural environment.
   p Out take on the idea: Ceramic beads for water treatment are not adapted to our current biocontainment problem, but they would be the most adapted one if our solution were to be implemented large-scale in water treatment facilities.
+
+
+  h2 Bead testing
+
+  p The alginate beads we made are supposed to be nano porous. They should let ions in while not letting yeast out, thus containing the cells while they are still able to filter copper out of water. Unfortunately, we ran into problems during testing and did not have enough time towards the end of the iGEM project to restart the experiments. We therefore do not have conclusive results, but we hope that our protocol may help anyone who is interested in performing these tests.
+
+  h3 Planning of an experiment for the copper assay with beads
+  p The measurements to do for testing the beads containing yeast in a static reactor are the following:
+  ul
+    li Copper assay using blank beads shaking
+    li Copper assay using blank beads static
+    li Blank assay using organism filled beads shaking
+    li Blank assay using organism filled beads static
+    li Copper assay using organism filled beads shaking
+    li Copper assay using organism filled beads static
+
+  p The first and second assays should give us information about the copper absorbance of the beads alone. The third and fourth give us information about the leaking of yeast out of the beads. The fifth and sixth are the actual copper assays. The reason we should also be looking at the shaking is to be able to compare the results with the copper assays done without beads.
+  p The next test would be doing the same experiments using organism filled beads after a given incubation period. This final experiment is there for evaluating yeast leakage out of the beads and for testing if yeast growth enhances copper capture.
+
+  p The protocol for doing these copper assays is as follows:
+  p First make 250 ml of beads using the alginate beads protocol. Do the additional and alternative steps for testing which are indicated in the protocol! While the Alginic Acid Sodium Salt is being stirred, prepare a 250ml Copper solution in nearly the same way as is presented in the Copper incubation protocol: the only difference is that the concentration of copper has to be halved: the beads do not dilute the copper solution upon mixing. Take your t-1 sample, and once the beads are done, drop them into the copper solution and take your t0 measurement. Follow the measurement scheme as in the Copper incubation protocol. When taking the samples, be careful not to block the pipette with the beads.
 
 
 
