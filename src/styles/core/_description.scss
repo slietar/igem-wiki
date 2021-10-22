@@ -341,7 +341,8 @@
   }
 
   figure img {
-    max-width: 100%; // 500px;
+    max-width: 100%;
+    // max-width: 600px;
     max-height: 400px;
   }
 
@@ -401,6 +402,16 @@
     img {
       max-width: 300px !important;
     }
+  }
+}
+
+.figure-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  img {
+    max-width: 600px !important;
   }
 }
 
