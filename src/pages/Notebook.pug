@@ -5,7 +5,7 @@ block hero
   .hero-contents: h1 Lab notebook
 
 block description
-  h2 Cloning version 1
+  h2 Cloning the monomer
 
   article.lab-exp
     header
@@ -66,7 +66,6 @@ block description
 
     p <strong>Aim</strong> Gibson assembly will allow to anneal our CUP1 gene to the now linearized vector backbone. The recomposed gene-containing plasmid will be ready to be transformed into bacteria.
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-gibson-assembly">Gibson assembly</a>
-    p <strong>Results</strong> No figure.
     p <strong>Conclusion</strong> We moved on to bacteria transformation and this would confirm that the Gibson Assembly worked well.
 
   article.lab-exp
@@ -101,7 +100,6 @@ block description
 
     p <strong>Aim</strong> pCTcon2-CUP1-V5 amplification
     p <strong>Protocol</strong> Under the flame, with a sterile pipette, scoop up a colony and release the pipette tip into a 5 ml tube. Add 4 ml of sterile LB medium and place it in the shaker at 37°C.
-    p <strong>Results</strong> No figure.
     p <strong>Conclusion</strong> We could move on to the next step: Miniprep.
 
   article.lab-exp
@@ -175,6 +173,8 @@ block description
     p We prepared 3 samples: a negative control (no plasmid), a positive control (our plasmid backbone without the CUP1 insert) and the plasmid containing the CUP1 gene.
     p Our yeast strain, EBY100, is incapable of synthesizing tryptophan on its own and needs it from an external source, thus when plated onto tryptophan-less medium plates, they cannot grow. Our plasmid backbone encodes a Trp+ gene allowing the yeast to grow without tryptophan in its medium, allowing for positive selection of our yeast transformants.
     p We picked clones from each plate and amplified them in liquid SDCAA medium. In total we picked 6 clones from the yeast transformed with the recombinant plasmid : A, B, C, D, E and F.
+
+    p: strong Results
 
     figure
       .figure-grid(style="--size: 300px;")
@@ -398,6 +398,227 @@ block description
 
     p <strong>Aim</strong> This assay measures copper concentration in solution with yeast. This will measure how much copper is being taken up by the yeast.
     p <strong>Protocol</strong> See Copper Assays excel file
+
+
+  h2 Cloning dimers
+
+  article.lab-exp
+    header
+      h3 Plasmid digestion
+      .date 2021-08-25
+
+    p <strong>Aim</strong> Digest the backbone plasmid with restriction enzymes in order to linearize it for cloning by Gibson assembly.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-plasmid-digestion">Plasmid digestion</a>
+    p To check that digestion worked properly, we ran an agarose gel electrophoresis of our plasmid digested with different combinations of our restriction enzymes: BamHI alone, NheI alone, BamHI and NheI and none.
+    p <strong>Results</strong> To verify our digestion worked properly, we ran a 1% agarose gel electrophoresis of our plasmid digested with different combinations of our restriction enzymes: BamHI alone, NheI alone, BamHI and NheI together or no enzymes.
+
+    figure
+      img(src="assets/notebook/monomer/1.jpg")
+      figcaption
+        span Figure (X)
+        span Result of the backbone digestion on a 0.7% agarose gel.
+        span Lane 1: GeneRuler 1 kb DNA Ladder. Lane 2: Plasmid digested with BamHI HF. Lane 3: Plasmid digested with NheI HF. Lane 4: Plasmid digested with both BamHI HF and NheI HF. Lane 5: Undigested plasmid. The bands in lane 2, 3 and 4 have an approximate size of 6000 bp while the band in lane 5 is around the 8,000-10,000 bands of the ladder.
+
+    p The size of our plasmid, pCTcon2-V5<ref doi="10.1038/nprot.2006.94" />, is 6468 bp. We should observe bands of this size when cutting the plasmid with either BamHI or NheI.
+    p Linear DNA encounters less friction while running through the gel than circular DNA. Thus, on our gel, we expect to see the plasmid cut with either BamHI or NheI run faster than the undigested plasmid, as the plasmid would have been linearized.
+    p The size of the insert between BamHI and NheI is 189 bp while the size of the plasmid without the insert is 6279 bp. In lane 4 where our plasmid was cut with both restriction enzymes, we thus expect a band near 6000 bp. Since the size difference is so small with the plasmid that was cut with only one restriction enzyme, we do not expect a difference on the gel. Furthermore, the insert band of 189 bp is too small to be seen on this gel thus we do not expect to see it.
+
+    p <strong>Conclusion</strong> pCTcon2V5 plasmid was successfully linearized by BamHI and NheI digestion.
+
+  article.lab-exp
+    header
+      h3 Gene PCR
+      .date 2021-08-26
+
+    p <strong>Aim</strong> Amplify our CUP1 dimers sequences by Polymerase Chain Reaction (PCR) and add Gibson assembly overlap sequences at both extremities.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-gene-pcr">Gene PCR</a>
+    p These dimer sequences are made of two copies of CUP1 fused by a linker that we designed (see <a href="Design.html">the Design page</a> for information). We ordered the sequences from Twist and went through a PCR to amplify and add the overlap sequences we needed for the Gibson assembly. We have 7 different dimer sequences, each discriminated by a unique linker. The samples were normalized to similar concentrations and the PCR was run with 20 ng of DNA material.
+    p We then ran a 2% agarose gel electrophoresis to check the size of our 7 samples after PCR.
+
+    p: strong Results
+
+    figure
+      img(src="assets/notebook/monomer/0.jpg")
+      figcaption
+        span Figure (X)
+        span Result of the PCR on a 2% agarose gel.
+        span On the left is the low range ladder, the seven following lanes correspond to the seven amplified dimers. All our amplified CUP1 dimers have a size of around 420bp, which slightly varies depending on the linkers. We observe two bright bands per sample. The upper bands, above 400 bp correspond to our expected sizes. The lower bands, on the other hand, do not have the expected size. They correspond to a second site on the dimers to which the primers can bind nonspecifically.
+
+    p As we were only interested in the first bands of 420bp that correspond to the full dimers sequence, we directly cut out the DNA from the gel using a UV transilluminator. This would then be followed by a PCR clean up.
+
+    p <strong>Conclusion</strong> We successfully amplified our CUP1 dimers by PCR and extracted the DNA of interest from the agarose gel.
+
+  article.lab-exp
+    header
+      h3 PCR and digestion clean-up
+      .date 2021-08-26
+
+    p <strong>Aim</strong> Purify DNA fragments and digested backbone samples.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-pcr-cleanup">PCR clean-up</a>
+    p <strong>Results</strong> Samples are ready for the following Gibson Assembly with our digested backbone.
+
+  article.lab-exp
+    header
+      h3 Gibson assembly
+      .date 2021-08-26
+
+    p <strong>Aim</strong> Gibson assembly will allow us to fuse our CUP1-dimers to the now linearized vector backbone. The recomposed gene-containing plasmid will be ready to be transformed into bacteria.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-gibson-assembly">Gibson assembly</a>
+    p <strong>Conclusion</strong> We moved on to bacteria transformation and this would confirm that the Gibson Assembly worked well.
+
+  article.lab-exp
+    header
+      h3 Bacteria transformation and plating
+      .date 2021-08-26
+
+    p <strong>Aim</strong> Bacteria transformation with the newly assembled plasmids and selection on ampicillin plates. These plates allow for positive selection of the transformed bacteria as the plasmid encodes an ampicillin resistance gene.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-bacteria-transformation">Protocol bacteria transformation and plating</a>
+    p Plates were put in the inoculator at 37°C overnight. The next morning, we observed some colonies on our plates.
+    p <strong>Results</strong> We observed colonies on every plate with our dimers transformants and on the positive control provided with the NEB Gibson Kit.  We did not observe any colonies on the  plate with the bacteria transformed with water (negative control).
+    p <strong>Conclusion</strong> We could therefore assert that our Gibson assembly and transformations were successful. Our positive selection with ampicillin allowed us to be sure that the bacteria on the plates had successfully taken up our recombinant plasmids.
+
+  article.lab-exp
+    header
+      h3 Colony picking and culture inoculation
+      .date 2021-08-27
+
+    p <strong>Aim</strong> Pick 3 colonies per plate that have survived Ampicillin treatment and grow them in liquid medium in order to amplify our plasmids DNA.
+    p <strong>Protocol</strong> Under the flame, with a sterile pipette, scoop up a colony and release the pipette tip into a 5ml tube. Add 4ml of sterile LB media and place in the shaker at 30°C.
+    p <strong>Results</strong> We had turbid tubes, indicating that the bacteria had grown.
+    p <strong>Conclusion</strong> We have sufficient bacterial liquid culture for plasmid purification by Miniprep.
+
+  article.lab-exp
+    header
+      h3 Miniprep
+      .date 2021-08-30
+
+    p <strong>Aim</strong> Purify the plasmid DNA from our overnight culture of bacteria transformed with the pCTcon2-CUP1-dimer-V5 plasmids.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-miniprep">Miniprep</a>
+    p Once the Miniprep performed, we measured our DNA concentration as well as purity using Nanodrop.
+
+    p: strong Results
+
+    table.table
+      caption
+        span Table 2
+        span Quantification of digested samples
+
+      thead
+        tr
+          th Sample
+          th Concentration
+          th A260/A280
+      tbody
+        tr
+          td 2A
+          td 143.7 ng/µl
+          td 1.83
+        tr
+          td 2B
+          td 111.7 ng/µl
+          td 1.78
+        tr
+          td 2C
+          td 102.3 ng/µl
+          td 1.69
+        tr
+          td 2D
+          td 127.9 ng/µl
+          td 1.61
+        tr
+          td 2E
+          td 77.8 ng/µl
+          td 1.86
+        tr
+          td 2F
+          td 99.8 ng/µl
+          td 1.79
+        tr
+          td 2G
+          td 89.5 ng/µl
+          td 1.89
+
+    p We had three genomic variants per construct, hence we use the number 2 for dimer (version 2 of our yeast expressing CUP1 copies at their surface), then the letter A to G to identify the linker. We measure their concentration using Nanodrop and send them to be sequenced.
+
+  article.lab-exp
+    header
+      h3 Sequencing
+      .date 2021-08-31
+
+    p <strong>Aim</strong> Compare our now amplified plasmid with the theoretical sequence to observe potential mutations that may have occurred during amplification in bacteria.
+    p <strong>Protocol</strong> Send samples to a DNA sequencing company (Mycrosynth in our case).
+    p <strong>Results</strong> Using SnapGene we selected, for each dimer, a variant that had no mutation in the reading frame.
+    p <strong>Conclusion</strong> We kept only the clones without mutations for the next steps. We could move on to transform our engineered plasmids in the yeast cells.
+
+  article.lab-exp
+    header
+      h3 Yeast transformation
+      .date 2021-09-01
+
+    p <strong>Aim</strong> Transform the yeast with our pCTcon2-dimer-V5 plasmids and plate our transformants on a selective medium.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-yeast-transformation">Yeast transformation</a>
+    p According to the Yeast Growth Curve previously made during the version 1 (CUP1 monomer) experiments, we let yeast grow in YPD for approximately 10 hours in order for them to reach an appropriate OD600 = 8 concentration. We prepared 9 samples: a negative control (no DNA, just water), a positive control (our plasmid backbone without insert) and each 7 plasmids containing a dimer. After transformation, we plated our transformants on plates that do not contain tryptophan (SGCAA agar plates), for positive selection as the plasmid encodes a Trp+ gene, this allows the transformed yeast to survive on such a medium.
+
+    p <strong>Results</strong> The negative control (water) did not show any colonies and the positive control (plasmid backbone) had many colonies. We could also observe colonies on our transformants plates.
+    p <strong>Conclusion</strong> We picked clones from each transformed plate (Table 1). Each time a new clone is picked, it is amplified in liquid media (SDCAA at first but then SGCAA in order to induce the protein expression).
+
+  article.lab-exp
+    header
+      h3 Western blot 2
+      .date 2021-09-14
+
+    p <strong>Aim</strong> Verify the expression of our protein of interest in yeast.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-western-blot">Western blot</a>
+    p The first Western Blot was performed on all our dimers. The V5 tag is part of the membrane display system which itself is under the Gal promoter. Thus expression (and detection) should only occur in the presence of galactose.
+
+    p <strong>Results</strong> The dimers have a molecular weight of 28.6 kDa, whereas the ⍺-tubulin has a molecular weight of 49.8 kDa.
+    p We loaded the following bands onto our Western blot:  samples from yeast subclones A1 to A6 and B1 to B3 in SGCAA. We obtained a band of ~ 30 kDa (8a), this size corresponds to the dimers theoretical size. 8b shows the signal analysis of the bands done on the ImageJ software and figure 8c shows the ratio of V5 signal versus tubulin.
+    p We loaded the following samples onto our Western blot:  sample from yeast subclones B4 to B6 and F1 to F6 in SGCAA. We obtained a band of ~30kDa (9a) corresponding to the dimer’s theoretical size. Figure 9b shows the signal analysis of the bands done on the ImageJ software and figure 9c shows the ratio of V5 signal versus tubulin.
+
+    p We loaded on this gel two yeast subclones for dimers 3, 4 and 5, and as controls, the plasmid backbone and the wild type.
+    p We were able to see a band of approximately 30 kDa in each dimer sample, however other smaller bands were also visible. These are probably due to the second reading frame starting at the downstream second methionine.
+
+    p <strong>Conclusion</strong> Our yeasts cells express two different proteins, one whose size matches the theoretical size of our dimers, and another corresponding to a second reading frame in our backbone. For the following experiments, we kept the subclones who have the best tub/V5 ratio taking into account the initial V5  quantification : A4, B1, C2, D2, E2, F3 and G2.
+
+  article.lab-exp
+    header
+      h3 Immunostaining 2
+      .date 2021-09-25
+
+    p <strong>Aim</strong> Check the extracellular membrane expression of our dimers.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-immunofluorescence">Indirect immunofluorescence labeling</a>
+    p We used a mouse anti-V5 as primary antibody and a goat anti-mouse coupled with the Alexa Fluor Plus 488 as secondary. The results were observed under a confocal microscope.
+
+    p: strong Results
+
+
+    span Nuclei are stained with DAPI in blue and the V5 tag is stained with a green fluorophore. All our yeast clones are expressing their corresponding CUP1 dimer at their surface, although in one sample not all the cells express it. This is due to the fact that the expression yield is not 100%. We can see that some dimers are better than others, for example dimers 6 and 7 have good expression efficiency while dimer 1 have lower expression yield. We also don’t have the same amount of cells in each sample, due to experiment manipulations and not reliable OD measurements. Fortunately we can see that our protein of interest is expressed at the surface of the cell because of the darker green circle representing the cell membrane. This can be better seen on a higher magnification image (figure 10).
+
+    p <strong>Conclusion</strong> All of our transformed yeast expressed the dimer at their surface, although the expression efficiency is not 100%. Dimer B and D seemed to be contaminated and had a lot of noise in the GFP signal. The results of dimer A, C, E, F and G are good.
+
+  article.lab-exp
+    header
+      h3 Yeast growth curves
+
+    p <strong>Aim</strong> Check for the yeast growth differences between the strains. This will allow us to see whether engineering the yeast would modify its ability to grow or survive.
+    p <strong>Protocol</strong>
+    ol
+      li Prepare yeast cultures of known initial concentration for each of the strain to be tested (3 replicates per sample).
+      li Load a 96 wells-plate with your samples (2 or 3 technical replicates for each sample).
+      li Put in an overnight shaking microplate reader at 30°C, measuring the OD600 every hour.
+      li If you don’t have this equipment at your disposal, place your yeast cultures in a 30°C shaker and collect samples directly from it every hour to measure the OD600 in a spectrophotometer or microplate reader.
+
+    p We measured the growth of our 3 transformed yeast clones C, D and E as well as the plasmid backbone in SDCAA and in SGCAA. We also loaded the remaining wells with medium alone, without any yeast in it.
+
+  article.lab-exp
+    header
+      h3 Copper absorption assay
+
+    p <strong>Aim</strong> Measure the yeast ability to remove copper in solution for the different strains.
+    p <strong>Protocol</strong> We grew our various engineered yeast strains in liquid media containing copper and we collected 2 ml aliquots of the culture at different time points after addition of yeasts in the media (T0, 15 min, 60 min, 90 min, 120 min). The yeast cultures were prepared in 500 ml Erlenmeyer flasks, and incubated at 30°C under 200 rpm shaking. Each of the collected samples were then slowly centrifuged (200g for 10 minutes) to separate the yeast cell from the media and copper sulphate solution. Note that the centrifugation step was performed at a low speed to avoid any cell lysis, hence preventing the presence of yeast components, free or bound to copper ions, in the supernatant. This is done mainly for two reasons. First, the absorbance wavelengths of yeast and copper are in the same spectrum range. Thud, any contaminations of yeast in the supernatant could lead to alteration and artefact values in the OD measurements, resulting in data with a higher concentration than reality. Second, if any pieces of yeast bound to copper ions would end up in the supernatant, these ions would also be detected by the spectrophotometer, also leading to values with a higher concentration than the one that would have been actually removed from our yeast. Once the centrifugation step was finished, the pellet, mainly characterized by yeast cells, and the supernatant, mainly characterized by media and copper sulphate, are isolated from each other and collected for different chemical downstream processes.
+    p <b>Copper concentration measurement</b> (see also <a href="Protocols.html#protocol-cupper">Cuprizone Solution Preparation and Copper Concentration Measurement protocol</a>) In this assay, the aforementioned supernatant is mixed with cuprizone and brought to a slightly basic (pH ~ 8) condition. Cuprizone [oxalic acid bis(cyclohexylidene hydrazide)] is a selective and sensitive copper-chelating agent, typically used in spectrophotometric determination of copper(II). Indeed, this chemical compound is highly sensitive to copper and, once it interacts with a copper solution, it forms a complex that absorbs at wavelengths of 580-600 nm. The absorbance at 580-600 nm of the solution is therefore proportional to the amount of copper. However, according to Messori et al., the complex with Cu(II) and cuprizone is unstable because of the fast decomposition of the reagent, also affecting the stability of the absorbance over time<ref doi="10.1039/B701896G" />. Therefore, given the strong instability of the CuCPZ complex, we analyzed its absorbance kinetics to find a stable plateau, hence an optimal time to perform the measurements, avoiding any substantial variance in the measurements. We used a spectrophotometer UV-1600PC (#634-6001) with a filter allowing the measurement of the absorbance at 600 nm for that purpose.
+    p All measurements were performed with three biological replicates and three technical replicates.
+    p <strong>Conclusion</strong> We were not able to make our engineered yeast work better than the wild type one, but we found out that the medium in which the yeast grows is an important factor to take into account when performing this kind of bioremediation experiment.
 
 
   h2 References
