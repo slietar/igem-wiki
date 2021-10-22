@@ -5,3 +5,258 @@ block hero
   .hero-contents: h1 Modelling
 
 block description
+  h2 Modelling of the flow through reactor
+
+  p When designing water flow systems, modelling is key to test different scenarios and geometries through simulation. This is due to the fact that testing physical parts is costly, both in time and money, and because results are difficult to visualise when dealing with water as it is transparent. Thus, flow simulations are immensely helpful as it is possible to see flow lines and pressure inside the system.
+  p We used modelling to a great extent when trying to develop a continuous flow bioreactor. The first idea that came to our minds was a simple straight tube containing yeast with a filter at the exit. Water would flow through the yeast and the copper would gradually be filtered out. We identified the following issues with this design. Firstly, the yeast would surely clog the filter and stop the flow. Secondly, copper being gradually filtered out when the water advances through the system, it is only natural that there would be a gradient in copper concentration. This results in yeast cells closest to the entrance being saturated in copper sooner than those towards the end. In turn, this would force the user to either stir the yeast, replace only part of the cells or replace all of them but waste the cells that were still operational.
+  p We thus wanted to create a system in which we avoid these problems. We imagined a circular system in which yeast cells would be trapped in an eternal cycle. Untreated water enters the system and completes a revolution. Then at the exit, the water is split and part of it may exit while the other carries the yeast back towards the beginning of the system, where it merges with new untreated water. We thus ensure that each water molecule completes one revolution at minimum, while some molecules will go through the system more than once as they accompany the yeast from the exit back to the beginning. We wanted the system to function using the water flow at the entrance without adding any pumps.
+
+  p Schéma PDF
+
+  p We quickly realised that the circled area in the figure… required particular design attention as we were dealing with a flow adding system without being able to force pressure with a pump as one would commonly do. We thus began to design the connecting part thanks to flow simulations.
+
+
+  h2 Simulation configuration
+  p We used the software SOLIDWORKS for our flow modelling. The simulations are based on a cavity without friction at the boundaries. The liquid used was water and the environmental pressure is 1 atmosphere (110325Pa). Flow velocity at the input was constant and uniform over the cross section. Finally, the model uses laminar and turbulent flow.
+
+  details
+    summary How the SOLIDWORKS Model Works
+    p The type of simulation software we used is called CFD (Computational Fluid Dynamics). Some modern programs like SOLIDWORKS allow the user to design parts using CAD (Computer-Aided Design) and then to simulate water flow within those parts using CFD.
+    p As you may imagine, software that can simulate water flow in any arbitrary 3D structure requires a high level of sophistication. To understand the mechanisms behind the SOLIDWORKS software, we will explain how boundaries are defined and treated, we will look into the main fluid dynamics equations applicable in the regime we were interested in, and we will describe the numerical methods that the program uses.
+
+    h3 Meshing
+    p All CFD models aim to numerically represent real world physics. One problem is that the real world is continuous in time and in space, whereas a computer must break space and time up into small pieces to be able to use the physical models we know to be true. The program must thus break space up into little blocks that are called meshes.
+
+    figure
+      img(src="assets/model/1-2.jpg")
+      figcaption
+        span Figure (X)
+        span Cartesian mesh.<ref id="ref0.2" title="GiD Reference Manual" url="https://www.gidhome.com/documents/referencemanual/PREPROCESSING/Mesh%20Menu/Cartesian" year="2020" />
+
+    p SOLIDWORKS uses cartesian meshing which is said to be simple, fast and robust<ref id="ref0" authors="Dassault Systèmes" title="Numerical Basis of CAD-Embedded CFD" url="https://www.solidworks.com/sw/docs/flow_basis_of_cad_embedded_cfd_whitepaper.pdf" year="2014" />. The resulting cells are identical cubes with their sides parallel to the spatial x, y and z axis<ref id="ref0.2" />. The cells are then defined as being totally filled with a fluid, totally filled with a solid, or containing a boundary between solid and fluid.
+
+    p The most difficult and arguably important cells to define are those containing a boundary. Two algorithms used in the SOLIDWORKS software are particularly useful in our case, as the pieces we designed had relatively complex geometries.
+
+    ol
+      li
+        p: b Mesh presentation with resolution of edges within partial cells
+        p This method allows for better feature representation without adding additional cells.
+        figure
+          img(src="assets/model/2-2.jpg")
+          figcaption
+            span Figure (X)
+            span Mesh presentation with resolution of edges within partial cells.<ref id="ref0" />
+      li
+        p: b Cell Refinement to create sub cells
+        p This method is applied where boundaries are more complicated and allows for greater precision.
+        figure
+          img(src="assets/model/3-2.jpg")
+          figcaption
+            span Figure (X)
+            span SOLIDWORKS flow simulation mesh after refinement.<ref id="ref0" />
+
+
+    p This method allows for better feature representation without adding additional cells.
+
+    h3 Cell Refinement to create sub cells
+    p This method is applied where boundaries are more complicated and allows for greater precision.
+
+    // fig: : SOLIDWORKS Flow Simulation mesh after refinement [adapted from ref0]
+
+
+    h3 Physical Models
+    p All CFDs aim at a solution to the Navier-Stokes equations, which are a set of equations developed by Navier, Poisson, St-Venant and Stokes<ref id="refa" journal="Wikipedia" title="Navier–Stokes equations" url="https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations" /> that describe the movement of Newtonian fluids<ref id="refb" journal="Wikipedia" title="Newtonian fluid" url="https://en.wikipedia.org/wiki/Newtonian_fluid" />. A fluid is considered Newtonian if its viscous stresses are linearly dependent to the change of its internal strain in time.
+
+    p Additionally, CFDs also implement turbulence models among other physical models. In most cases, these do not have analytical solutions, thus complex algorithms must numerically approximate the solutions of the equations. Thankfully, physicists have thought of a wide range of sub-categories for these complex equations that make it possible to calculate their approximations.
+
+    h4 Simulation of fluid only cells
+    p The most computationally demanding part of the algorithm is the simulation of fluid cells. The Navier-Stokes equations express conservation of mass, momentum and energy. These three equations form a linear system that can be solved numerically.
+
+    h4 Continuity Equation
+    p Assuming no matter is spontaneously created or destroyed, the principle of conservation of mass in a small area of space is defined as the continuity equation<ref id="refa" />.
+
+    figure
+      img(src="assets/model/4-2.jpg")
+      figcaption
+        span Figure (X)
+        span Continuity equation.<ref id="refa" />
+
+    p If one assumes water to be an incompressible liquid, meaning that its volume is constant and independent of pressure, then its density (rho) will be constant in space and time. Thus the only remaining term is the divergence of the flow speed which must be equal to zero (Shuyu Sun and Tao Zhang (2020)). More intuitively, in the case of a tube full of water, if a certain amount of water enters, then an equal amount of water must exit.
+    p This equation is formulated as follows in the SOLIDWORKS software:
+
+    figure
+      img(src="assets/model/5-2.jpg")
+      figcaption
+        span Figure (X)
+        span Continuity equation used in SOLIDWORKS<ref id="ref0" />
+
+    p Notice, as we will see for all equations formulated in the documentation, that the more complexe operations, like the divergence, are separated into their constitutive elements. This is due to the numerical analysis being based on derivatives.
+
+    h4 Momentum equation
+
+    figure
+      img(src="assets/model/6-2.jpg")
+      figcaption
+        span Figure (X)
+        span Momentum equation.<ref id="refa" />
+
+    p Another important principle is that of the conservation of momentum. The equation to be solved numerically for each small spatial continuum is the following:<ref id="refa" />
+    p With the density ρ, the flow velocity u, the Cauchy stress tensor σ and the body acceleration g.
+
+    p This equation stems from Newton’s 2nd law of motion<ref doi="10.1016/B978-0-12-802240-5.00004-2" />, thus we can compare the two to aid our intuitive understanding. The term on the left hand side of the equal sign can be understood as the fluidics equivalent to mass x acceleration, while the right hand side would be the sum of forces felt by the liquid.
+
+    figure
+      img(src="assets/model/8-2.jpg")
+      figcaption
+        span Figure (X)
+
+    p The Cauchy Stress tensor results from viscosity shear stress (responsible for turbulent flow) and pressure. The momentum equation can thus be rewritten as follows:
+    p In the SOLIDWORKS software, this equation is adapted as follows:
+
+    figure
+      img(src="assets/model/9-2.jpg")
+      figcaption
+        span Figure (X)
+        span Momentum conservation equation used in SOLIDWORKS.<ref id="ref0" />
+
+    h4 Energy Equation
+    p The model used in most CFDs is the principle of conservation of energy. When applied to fluidics, the following is true:
+
+    figure
+      img(src="assets/model/10-2.jpg")
+      figcaption
+        span Figure (X)
+        span Principle of energy conservation for fluid elements.
+
+    p The equation is expressed in SOLIDWORKS as follows:
+
+    figure
+      img(src="assets/model/11-2.jpg")
+      figcaption
+        span Figure (X)
+        span Energy conservation equation used in SOLIDWORKS.
+
+
+    h4 Turbulent Flow
+    p In general, a good measure of whether a fluid flow is laminar, turbulent or semi-turbulent is the Reynolds Number.
+
+    figure
+      img(src="assets/model/12-2.jpg")
+      figcaption
+        span Figure (X)
+
+    p Where ρ is fluid density, u is flow speed, L is the characteristic linear dimension. µ is dynamic viscosity and 𝜈 is kinetic viscosity.
+
+    p A fluid flow is turbulent if the Reynolds number is greater than 3500<ref authors="Nuclear Power Com" title="Reynolds Number for Turbulent Flow" url="https://www.nuclear-power.com/nuclear-engineering/fluid-dynamics/reynolds-number/reynolds-number-for-turbulent-flow/" />. To take into account the different flow types, SOLIDWORKS uses the Favre-Averaged Navier-Stokes equations and the Lam & Bremhorst modified k-ε turbulence model with damping functions.
+    p The Favre-averaging method is a density weight averaging method<ref authors="CFD Online" title="Favre averaged Navier-Stokes equations" url="https://www.cfd-online.com/Wiki/Favre_averaged_Navier-Stokes_equations" />. It allows for more robust study of turbulent flow.
+    p The k-ε turbulence model is a very common model used in CFD to simulate mean flow characteristics for turbulent flow conditions. The model consists of two transport equations. The first transported variable is the kinetic energy k. The second transported variable is the rate of dissipation of that kinetic energy ε(refl). The standard model used in most CFDs is the Launder and Spalding, 1974 standard k-ε model. SOLIDWORKS however, uses the  modified k-ε turbulence model with damping functions<ref doi="doi.org/10.1115/1.3240815" /> which adds in turbulence damping functions.
+
+    h4 Boundary layers
+    p The main issue for cartesian meshing is boundary layers: the cells do not follow the boundaries as they would in other meshing strategies. SOLIDWORKS uses the two scale wall function (2SWF). 2SWF categorises boundaries as “thin” or “thick” depending on how they would influence flow.
+    p When a boundary is complex (coarse, ragged, small curvature...) the program applies the “thin boundary treatment”. This means that precision is valued higher than low calculation times, thus few model simplifications are made.
+    p On the contrary, when a boundary is simple (smooth, large curvature) the thick boundary treatment is applied. Here model simplifications are made to lower calculation time.
+    p In intermediate cases, a combination of the two methods is applied and appropriate model simplifications are made.
+
+    figure
+      img(src="assets/model/13-2.jpg")
+      figcaption
+        span Figure (X)
+        span Boundary layer treatment.<ref id="ref0" />
+
+    h4 Numerical methods
+    p When solving a numerical problem,the program treats the very complex operators used in the equations as more simple mathematical objects. The equations as formulated by SOLIDWORKS are the following:
+
+    figure
+      img(src="assets/model/14-2.jpg")
+      figcaption
+        span Figure (X)
+
+    p Where the first equation is the continuity equation, the second is the momentum conservation equation, and the third is the energy conservation equation. The indices represent a row-column position in the tensors and vectors since linear algebra is used profusely to solve these types of systems numerically.
+    p SOLIDWORKS implements two types of solvers. Only one was used for our simulations as it is dedicated to tasks where flow is incompressible or in flows where the Mach number is lower than 3. Our flows are both incompressible and have a lower Mach number than 1.
+
+    p In this first solver, time-implicit approximations of the continuity and convection/ diffusion equations are used. Time-implicit approximations are a method in numerical analysis where the algorithm searches for the zeros of a function of both the current and the future values of the function, where time-explicit equations would calculate the future values based only on the current values<ref journal="Wikipedia" title="Explicit and implicit methods" url="https://en.wikipedia.org/wiki/Explicit_and_implicit_methods" />.
+    p These time-implicit approximations are used together with operator-specific techniques. The operator-splitting technique is a method in which the physical models are split into sub-models to solve a specific part of the problem. When reassembled, this gives rise to a splitting error. However, without splitting, the more complicated models would take much longer to solve and be very error prone<ref authors="Diab" journal="Diab's blog" title="Operator Splitting Methods" url="http://www.stimulate-ejd.eu/content/operator-splitting-methods" year="2019" />. In the case of SOLIDWORKS for flow simulation, pressure and velocity are decoupled.
+
+    h3 Conclusion for digging into CFD simulation
+    p The Software used in CFD is complex. By describing the aspects that were important for the implementation of our particular use-case, we merely skimmed the surface of what the software can do. However, it is very interesting, as it encompasses complex and innovative physical as well as numerical analysis methods at the peak of current knowledge.
+
+    p The SOLIDWORKS software uses the equations of continuity, of momentum and energy and applies various models (k-ε, Favre averaging,..) to simulate complex fluidic systems.  In addition, thanks to its meshing methods and CAD software, we could design our parts and test them using the same program.
+
+
+  h3 Flow simulations
+  p We designed a large number of systems to try to find one that would function as intended. The following Figures illustrate our thought process, but we chose not to show all of the simulations as getting from one part design to the next was a tedious task during which we ran through a plethora of iterations, tweaking the design little by little.
+
+  h3 Parallel flow adding
+  p Our first idea was to merge the flow in a parallel manner by making the cross section of the main pipe equal to the sum of the cross sections of the inputs.
+  p We began by testing the design at very low flow speeds without success (Simulation 1).
+
+  figure
+    img(src="assets/model/15-2.jpg")
+    figcaption
+      span Figure (X)
+      span Simulation 1: Parallel flow adding at low flow speed.
+
+  p We continued testing the system while increasing the water flow speed. We realised the importance of flow speed as the result was not simply that the existing flow became faster, but that entirely new flow lines appeared and some disappeared. We successfully created a system in which some of the water at the exit rejoins the water at the input (simulation 2). However, flow speeds of up to 8 m/s were far too great as it would demand a strong pump and we did not want to make the system too expensive.
+
+  figure
+    img(src="assets/model/16-2.jpg")
+    figcaption
+      span Figure (X)
+      span Simulation 2: Parallel flow adding at high throughput.
+
+
+  h3 Perpendicular flow adding
+  p We transitioned to a perpendicular flow adding design. Simulation 3 shows that water coming from the main input (untreated in our case) rejoins the exit directly. This was the opposite of what we desired as it would result in the following in our case of fixing copper with yeast:  First, some of the water would not complete a revolution of the system and thus be untreated. Secondly, the yeast would not rejoin the start of the system, thus making it amass at the exit.
+
+  figure
+    img(src="assets/model/17.jpg")
+    figcaption
+      span Figure (X)
+      span Simulation 3: Perpendicular flow adding without a special geometry.
+
+  p By simple observation of Simulation 3, it might seem obvious that the design would not work, so one may wonder why we decided to work on this. Adding the flow at an angle gives us the opportunity to imagine various geometries to produce a pinch off effect. By abruptly pinching the main input channel as in Simulation 4, we create an area in which flow is accelerated. Bernoulli’s principle in fluid dynamics states that a decrease of pressure occurs when a liquid gains in flow speed. By increasing flow speed locally, we hoped to create a pocket of low pressure right where we wanted the water from the main input and some of the water at the exit to to merge. This pocket of lower pressure would accelerate the water particles towards it, thus facilitating flow adding. Simulation 4 shows a first attempt at this pinch off geometry. It was unsuccessful, but the flow lines in the wrong direction did decrease.
+
+  figure
+    img(src="assets/model/18-2.jpg")
+    figcaption
+      span Figure (X)
+      span Simulation 4: Perpendicular flow adding with a pinch off geometry.
+
+  p We then tried to pinch off the input channel more abruptly (simulation 5). Again, it was unsuccessful, but we had made progress by further reducing the flow lines that were in the wrong direction.
+
+  figure
+    img(src="assets/model/19-2.jpg")
+    figcaption
+      span Figure (X)
+      span Simulation 5: Perpendicular flow adding with more abrupt channel pinching.
+
+  p When working on flow systems, we learned that much more needs to be considered than only the geometry of the main part. One very simple but important part of the system is the main tube. In all of the previous simulations, we made said tube’s cross-section smaller than the cross section of the main part. The reason for this followed the same logic as for the pinch off. When a liquid goes from flowing through a large cross section to flowing through a small cross section, it gains in speed as its mass must be preserved. As explained previously, Bernouilli’s principle in fluid dynamics allows us to assume that the higher speed will result in lower pressure. We thought this to be favourable as we thought that it would help the water to merge when entering the main tube. However, when testing this hypothesis, we realised that we were mistaken. The system depicted in simulation 6 varies from the previous iteration only in the width of the main tube. For the first time, we had successfully created a system in which a part of the flow at the exit rejoins the start and merges with the water entering through the input. However, we remained unsatisfied as the flow lines showed that the water would spin in two parts of the system.
+
+  figure
+    img(src="assets/model/20-3.jpg")
+    figcaption
+      span Figure (X)
+      span Simulation 6: Perpendicular flow adding with channel pinching and wider tubing.
+
+
+  p Simulation 7 was our final and more interesting design. We kept the following concepts in mind that we had learned from the previous simulations :
+
+  ol
+    li Flow merging at an angle.
+    li Channel pinching to create a pocket of low pressure.
+    li Wide main tube.
+
+  p We tweaked the design little by little to achieve a more optimal system. Instead of perpendicular flow merging, we found that an inclined design yielded a better result. Additionally, we smoothened out the pinch off geometry, resulting in a pocket of low pressure (simulation 7). We had successfully created a system in which some of the water close to the exit would rejoin the cycle at its beginning without water spinning as observed previously (simulation 6).
+
+  p This is the piece that we physically printed, connected with tubing and tested to determine whether the simulations were representative of the real world.
+
+  figure
+    img(src="assets/model/21-2.jpg")
+    figcaption
+      span Figure (X)
+      span Simulation 7: Pressure inside the final part. Pocket of low pressure at water merging point.
+
+
+  h2 References
+
+  bibliography
