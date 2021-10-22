@@ -148,7 +148,7 @@ block description
     p <strong>Aim</strong> Compare our now amplified plasmid with the theoretical sequence to observe potential mutations that may have occurred during amplification in bacteria.
     p <strong>Protocol</strong> Send samples to a DNA sequencing company (Mycrosynth in our case).
     p We sent 2 clones for each transformant variant: YXCX where X stands for the number of the variant and clone respectively.
-    p <strong>Results</strong> The alignment of the sequencing results are on <a href="assets/notebook/monomer/13.jpg">this document</a>, where the sequences number 1 to 12 correspond to, respectively Y1C1 forward, Y1C1 reverse and so on until Y3C2 reverse.
+    p <strong>Results</strong> The alignment of the sequencing results are on <a href="assets/notebook/monomer/13.pdf">this document</a>, where the sequences number 1 to 12 correspond to, respectively Y1C1 forward, Y1C1 reverse and so on until Y3C2 reverse.
     p Y2C1 has a mutation (G to C) in both forward and reverse strands. We thus choose to ignore this one. It also seems like the forward primer of Y2C2 did not anneal, therefore we do not have a full strand. To avoid errors, we decide to only keep Y1 and Y3 variants.
     p <strong>Conclusion</strong> We decided to proceed with only Y1 and Y3 genomic variants and had two clones for each of them.
 
@@ -301,11 +301,11 @@ block description
         span Negative control: yeast transformed with the plasmid backbone (no insert), without antibody 1.
         span (a) DAPI channel (b) green fluorescence (c) merged channel.
 
-    figure
-      img(src="assets/notebook/monomer/36.jpg")
-      figcaption
-        span Figure (X)
-        span Clone F, higher magnification.
+    //- figure
+    //-   img(src="assets/notebook/monomer/36.jpg")
+    //-   figcaption
+    //-     span Figure (X)
+    //-     span Clone F, higher magnification.
 
     p All 4 clones showed expression of CUP1 on their surface. We assumed the expression is at the surface because : first, the antibody does not enter the cell, second, we can see a darker circle around the cell on figure 8j (higher magnification) representing the membrane and third, we did some controls with membrane permeabilized samples (figure 8g). The membrane permalized samples show little signal that corresponds to the signal in negative controls WT (figure 8f), backbone without antibody 1 (figure 8h) and backbone without antibody 2 (figure 8i), which we can assume is noise or unspecific binding of antibodies.
     p Unfortunately, not all cells were positive in one sample, which means that either our subsets of cells were not monoclonal and that not all the cells had the plasmid or that they all had the plasmid but weren't all expressing it.
@@ -413,7 +413,7 @@ block description
     p <strong>Results</strong> To verify our digestion worked properly, we ran a 1% agarose gel electrophoresis of our plasmid digested with different combinations of our restriction enzymes: BamHI alone, NheI alone, BamHI and NheI together or no enzymes.
 
     figure
-      img(src="assets/notebook/monomer/1.jpg")
+      img(src="assets/notebook/dimers/1.jpg")
       figcaption
         span Figure (X)
         span Result of the backbone digestion on a 0.7% agarose gel.
@@ -438,11 +438,10 @@ block description
     p: strong Results
 
     figure
-      img(src="assets/notebook/monomer/0.jpg")
+      img(src="assets/notebook/dimers/3.jpg")
       figcaption
-        span Figure (X)
-        span Result of the PCR on a 2% agarose gel.
-        span On the left is the low range ladder, the seven following lanes correspond to the seven amplified dimers. All our amplified CUP1 dimers have a size of around 420bp, which slightly varies depending on the linkers. We observe two bright bands per sample. The upper bands, above 400 bp correspond to our expected sizes. The lower bands, on the other hand, do not have the expected size. They correspond to a second site on the dimers to which the primers can bind nonspecifically.
+        span Table 3
+        span Information about the dimers and the resulting transformed yeast subclones.
 
     p As we were only interested in the first bands of 420bp that correspond to the full dimers sequence, we directly cut out the DNA from the gel using a UV transilluminator. This would then be followed by a PCR clean up.
 
@@ -572,10 +571,101 @@ block description
     p The first Western Blot was performed on all our dimers. The V5 tag is part of the membrane display system which itself is under the Gal promoter. Thus expression (and detection) should only occur in the presence of galactose.
 
     p <strong>Results</strong> The dimers have a molecular weight of 28.6 kDa, whereas the ⍺-tubulin has a molecular weight of 49.8 kDa.
-    p We loaded the following bands onto our Western blot:  samples from yeast subclones A1 to A6 and B1 to B3 in SGCAA. We obtained a band of ~ 30 kDa (8a), this size corresponds to the dimers theoretical size. 8b shows the signal analysis of the bands done on the ImageJ software and figure 8c shows the ratio of V5 signal versus tubulin.
-    p We loaded the following samples onto our Western blot:  sample from yeast subclones B4 to B6 and F1 to F6 in SGCAA. We obtained a band of ~30kDa (9a) corresponding to the dimer’s theoretical size. Figure 9b shows the signal analysis of the bands done on the ImageJ software and figure 9c shows the ratio of V5 signal versus tubulin.
+
+    figure
+      img(src="assets/notebook/dimers/4.jpg")
+      figcaption
+        span Figure (X)
+        span Image of Western Blot of gel 1.
+
+    figure
+      img(src="assets/notebook/dimers/5.jpg")
+      figcaption
+        span Figure (X)
+        span Information about the dimers and the resulting transformed yeast subclones.
+
+    figure
+      img(src="assets/notebook/dimers/6.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification.
+
+    figure
+      img(src="assets/notebook/dimers/7.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification: normalized V5.
+
+    p We loaded the following bands onto our Western blot: samples from yeast subclones A1 to A6 and B1 to B3 in SGCAA. We obtained a band of ~ 30 kDa (8a), this size corresponds to the dimers theoretical size. 8b shows the signal analysis of the bands done on the ImageJ software and figure 8c shows the ratio of V5 signal versus tubulin.
+
+    figure
+      img(src="assets/notebook/dimers/8.jpg")
+      figcaption
+        span Figure (X)
+        span Image of Western Blot of gel 2.
+
+    figure
+      img(src="assets/notebook/dimers/9.jpg")
+      figcaption
+        span Figure (X)
+
+    figure
+      img(src="assets/notebook/dimers/10.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification.
+
+    figure
+      img(src="assets/notebook/dimers/11.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification: normalized V5.
+
+    p We loaded the following samples onto our Western blot: sample from yeast subclones B4 to B6 and F1 to F6 in SGCAA. We obtained a band of ~30kDa (9a) corresponding to the dimer’s theoretical size. Figure 9b shows the signal analysis of the bands done on the ImageJ software and figure 9c shows the ratio of V5 signal versus tubulin.
+
+    figure
+      img(src="assets/notebook/dimers/12.jpg")
+      figcaption
+        span Figure (X)
+        span Image of Western Blot of gel 3.
+
+    figure
+      img(src="assets/notebook/dimers/13.jpg")
+      figcaption
+        span Figure (X)
+
+    figure
+      img(src="assets/notebook/dimers/14.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification.
+
+    figure
+      img(src="assets/notebook/dimers/15.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification: normalized V5.
 
     p We loaded on this gel two yeast subclones for dimers 3, 4 and 5, and as controls, the plasmid backbone and the wild type.
+
+    figure
+      img(src="assets/notebook/dimers/16.jpg")
+      figcaption
+        span Figure (X)
+        span Image of Western Blot of gel 4.
+
+    figure
+      img(src="assets/notebook/dimers/18.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification.
+
+    figure
+      img(src="assets/notebook/dimers/19.jpg")
+      figcaption
+        span Figure (X)
+        span Protein quantification: normalized V5.
+
     p We were able to see a band of approximately 30 kDa in each dimer sample, however other smaller bands were also visible. These are probably due to the second reading frame starting at the downstream second methionine.
 
     p <strong>Conclusion</strong> Our yeasts cells express two different proteins, one whose size matches the theoretical size of our dimers, and another corresponding to a second reading frame in our backbone. For the following experiments, we kept the subclones who have the best tub/V5 ratio taking into account the initial V5  quantification : A4, B1, C2, D2, E2, F3 and G2.
@@ -591,8 +681,76 @@ block description
 
     p: strong Results
 
+    figure
+      .figure-grid
+        img(src="assets/notebook/dimers/20.jpg")
+        img(src="assets/notebook/dimers/20-2.jpg")
+        img(src="assets/notebook/dimers/21.jpg")
+        img(src="assets/notebook/dimers/22.jpg")
+        img(src="assets/notebook/dimers/23.jpg")
+        img(src="assets/notebook/dimers/24.jpg")
+        img(src="assets/notebook/dimers/25.jpg")
+      figcaption
+        span Figure (X)
+        span Nuclei are stained with DAPI in blue and the V5 tag is stained with a green fluorophore.
+        span (a) Yeast subclone A4, dimer 1 (b) Yeast subclone B1, dimer 2 (c) Yeast subclone C2, dimer 3 (d) Yeast subclone D2, dimer 4 (e) Yeast subclone E2, dimer 5 (f) Yeast subclone F3, dimer 6 (g) Yeast subclone G2, dimer 7. All our yeast clones are expressing their corresponding CUP1 dimer at their surface, although in one sample not all the cells express it. This is due to the fact that the expression yield is not 100%. We can see that some dimers are better than others, for example dimers 6 and 7 have good expression efficiency while dimer 1 have lower expression yield. We also don’t have the same amount of cells in each sample, due to experiment manipulations and not reliable OD measurements. Fortunately we can see that our protein of interest is expressed at the surface of the cell because of the darker green circle representing the cell membrane. This can be better seen on a higher magnification image.
 
-    span Nuclei are stained with DAPI in blue and the V5 tag is stained with a green fluorophore. All our yeast clones are expressing their corresponding CUP1 dimer at their surface, although in one sample not all the cells express it. This is due to the fact that the expression yield is not 100%. We can see that some dimers are better than others, for example dimers 6 and 7 have good expression efficiency while dimer 1 have lower expression yield. We also don’t have the same amount of cells in each sample, due to experiment manipulations and not reliable OD measurements. Fortunately we can see that our protein of interest is expressed at the surface of the cell because of the darker green circle representing the cell membrane. This can be better seen on a higher magnification image (figure 10).
+    figure
+      .figure-grid
+        img(src="assets/notebook/dimers/26.jpg")
+        img(src="assets/notebook/dimers/27.jpg")
+        img(src="assets/notebook/dimers/28.jpg")
+      figcaption
+        span Figure (X)
+        span Picture of the immunostaining of wild type yeast.
+        span (a) DAPI channel (b) green fluorescence channel (c) merge channel.
+
+    figure
+      .figure-grid
+        img(src="assets/notebook/dimers/29.jpg")
+        img(src="assets/notebook/dimers/30.jpg")
+        img(src="assets/notebook/dimers/31.jpg")
+      figcaption
+        span Figure (X)
+        span Picture of the immunostaining of plasmid backbone uninduced (- galactose) in yeast.
+        span (a) DAPI channel (b) green fluorescence channel (c) merge channel.
+
+    figure
+      .figure-grid
+        img(src="assets/notebook/dimers/32.jpg")
+        img(src="assets/notebook/dimers/33.jpg")
+        img(src="assets/notebook/dimers/34.jpg")
+      figcaption
+        span Figure (X)
+        span Picture of the immunostaining of plasmid backbone induced (+ galactose) in yeast, without the secondary antibody.
+        span (a) DAPI channel (b) green fluorescence channel (c) merge channel.
+
+    figure
+      .figure-grid
+        img(src="assets/notebook/dimers/35.jpg")
+        img(src="assets/notebook/dimers/36.jpg")
+        img(src="assets/notebook/dimers/37.jpg")
+      figcaption
+        span Figure (X)
+        span Picture of the immunostaining of plasmid backbone induced (+ galactose) in yeast, without the primary antibody.
+        span (a) DAPI channel (b) green fluorescence channel (c) merge channel.
+
+    figure
+      .figure-grid
+        img(src="assets/notebook/dimers/38.jpg")
+        img(src="assets/notebook/dimers/39.jpg")
+        img(src="assets/notebook/dimers/40.jpg")
+      figcaption
+        span Figure (X)
+        span Positive control : Picture of the immunostaining of plasmid backbone induced (+ galactose) in yeast.
+        span (a) DAPI channel (b) green fluorescence channel (c) merge channel. Our positive plasmid backbone control is expressing the yeast surface display at its membrane.
+
+    figure
+      img(src="assets/notebook/dimers/41.jpg")
+      figcaption
+        span Figure (X)
+        span Immunostaining of Clone F (CUP1 monomer - pCTcon2-CUP1-V5).
+        span 40x, green channel.
 
     p <strong>Conclusion</strong> All of our transformed yeast expressed the dimer at their surface, although the expression efficiency is not 100%. Dimer B and D seemed to be contaminated and had a lot of noise in the GFP signal. The results of dimer A, C, E, F and G are good.
 
@@ -610,6 +768,20 @@ block description
 
     p We measured the growth of our 3 transformed yeast clones C, D and E as well as the plasmid backbone in SDCAA and in SGCAA. We also loaded the remaining wells with medium alone, without any yeast in it.
 
+    p <strong>Results</strong>
+
+    figure
+      .figure-list
+        img(src="assets/notebook/dimers/43.jpg")
+        img(src="assets/notebook/dimers/44.jpg")
+        img(src="assets/notebook/dimers/45.jpg")
+        img(src="assets/notebook/dimers/46.jpg")
+        img(src="assets/notebook/dimers/47.jpg")
+        img(src="assets/notebook/dimers/48.jpg")
+      figcaption
+        span Figure (X)
+        span Yeast growth curves of different strains in SGCAA with different copper copper concentrations.
+
   article.lab-exp
     header
       h3 Copper absorption assay
@@ -618,6 +790,32 @@ block description
     p <strong>Protocol</strong> We grew our various engineered yeast strains in liquid media containing copper and we collected 2 ml aliquots of the culture at different time points after addition of yeasts in the media (T0, 15 min, 60 min, 90 min, 120 min). The yeast cultures were prepared in 500 ml Erlenmeyer flasks, and incubated at 30°C under 200 rpm shaking. Each of the collected samples were then slowly centrifuged (200g for 10 minutes) to separate the yeast cell from the media and copper sulphate solution. Note that the centrifugation step was performed at a low speed to avoid any cell lysis, hence preventing the presence of yeast components, free or bound to copper ions, in the supernatant. This is done mainly for two reasons. First, the absorbance wavelengths of yeast and copper are in the same spectrum range. Thud, any contaminations of yeast in the supernatant could lead to alteration and artefact values in the OD measurements, resulting in data with a higher concentration than reality. Second, if any pieces of yeast bound to copper ions would end up in the supernatant, these ions would also be detected by the spectrophotometer, also leading to values with a higher concentration than the one that would have been actually removed from our yeast. Once the centrifugation step was finished, the pellet, mainly characterized by yeast cells, and the supernatant, mainly characterized by media and copper sulphate, are isolated from each other and collected for different chemical downstream processes.
     p <b>Copper concentration measurement</b> (see also <a href="Protocols.html#protocol-cupper">Cuprizone Solution Preparation and Copper Concentration Measurement protocol</a>) In this assay, the aforementioned supernatant is mixed with cuprizone and brought to a slightly basic (pH ~ 8) condition. Cuprizone [oxalic acid bis(cyclohexylidene hydrazide)] is a selective and sensitive copper-chelating agent, typically used in spectrophotometric determination of copper(II). Indeed, this chemical compound is highly sensitive to copper and, once it interacts with a copper solution, it forms a complex that absorbs at wavelengths of 580-600 nm. The absorbance at 580-600 nm of the solution is therefore proportional to the amount of copper. However, according to Messori et al., the complex with Cu(II) and cuprizone is unstable because of the fast decomposition of the reagent, also affecting the stability of the absorbance over time<ref doi="10.1039/B701896G" />. Therefore, given the strong instability of the CuCPZ complex, we analyzed its absorbance kinetics to find a stable plateau, hence an optimal time to perform the measurements, avoiding any substantial variance in the measurements. We used a spectrophotometer UV-1600PC (#634-6001) with a filter allowing the measurement of the absorbance at 600 nm for that purpose.
     p All measurements were performed with three biological replicates and three technical replicates.
+    p The concentration of copper in the media was set at 4 mg/l for all copper absorption assay. We tested different conditions to identify the cause of bad copper absorption with our engineered yeasts (see the results below and the <a href="Results.html">Results page</a>).
+
+    p: strong Results
+
+    figure
+      .figure-list
+        img(src="assets/notebook/dimers/49.jpg")
+        img(src="assets/notebook/dimers/50.jpg")
+      figcaption
+        span Figure (X)
+        span CUP1 surface expression in SGCAA-cultured yeast interferes with endogenous bio-accumulation The (YPD) and (SGCAA) in brackets depict the medium in which the yeast grew and are staying in during the experiment.
+
+    figure
+      .figure-list
+        img(src="assets/notebook/dimers/51.jpg")
+      figcaption
+        span Figure (X)
+        span Interference with endogenous bio-accumulation is not related to CUP1 expression nor the surface system itself.
+
+    figure
+      .figure-list
+        img(src="assets/notebook/dimers/52.jpg")
+      figcaption
+        span Figure (X)
+        span Rich medium is needed for bio-accumulation to occur.
+
     p <strong>Conclusion</strong> We were not able to make our engineered yeast work better than the wild type one, but we found out that the medium in which the yeast grows is an important factor to take into account when performing this kind of bioremediation experiment.
 
 
