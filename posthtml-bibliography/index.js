@@ -1,4 +1,14 @@
 const Cite = require('citation-js');
+const fs = require('fs');
+
+
+let cache = {};
+
+try {
+  cache = require('./cache.json');
+} catch (err) {
+
+}
 
 
 module.exports = (opts) => {
@@ -49,29 +59,39 @@ module.exports = (opts) => {
             // };
 
 
+            let cached = cache[ref.doi];
             let info;
 
-            try {
-              info = await Cite.async(ref.doi);
-            } catch (err) {
-              console.error(err);
-              console.error('>', ref);
-              console.error('>', ref.doi);
+            if (cached) {
+              info = new Cite(cached);
+            } else {
+              try {
+                info = await Cite.async(ref.doi);
 
-              return {
-                tag: 'li',
-                attrs: { class: 'ref-item', id: refNodeId(ref.index) },
-                content: [
-                  { tag: 'div',
-                    attrs: { class: 'ref-authors' },
-                    content: ['DOI: ' + ref.doi] },
-                  // { tag: 'div',
-                  //   attrs: { class: 'ref-links' },
-                  //   content: [''].map(([content, href]) =>
-                  //     ({ tag: 'a', attrs: { class: 'ref-link', href, target: '_blank' }, content })
-                  //   ) }
-                ]
-              };
+                if (info) {
+                  cache[ref.doi] = info.data;
+                }
+              } catch (err) {
+                console.error('>', ref);
+                console.error('>', ref.doi);
+                console.error(err.message);
+                console.error('------');
+
+                return {
+                  tag: 'li',
+                  attrs: { class: 'ref-item', id: refNodeId(ref.index) },
+                  content: [
+                    { tag: 'div',
+                      attrs: { class: 'ref-authors' },
+                      content: ['DOI: ' + ref.doi] },
+                    // { tag: 'div',
+                    //   attrs: { class: 'ref-links' },
+                    //   content: [''].map(([content, href]) =>
+                    //     ({ tag: 'a', attrs: { class: 'ref-link', href, target: '_blank' }, content })
+                    //   ) }
+                  ]
+                };
+              }
             }
 
             if (!info) {
@@ -143,6 +163,8 @@ module.exports = (opts) => {
       };
     });
 
+
+    fs.writeFileSync(__dirname + '/cache.json', JSON.stringify(cache));
 
     return tree;
   };
