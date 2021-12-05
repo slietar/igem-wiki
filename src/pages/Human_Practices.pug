@@ -1,18 +1,130 @@
-extends templates/_layout
+extends templates/_description
 
-block contents
-  main.desc-root
-    .hero
-      img.hero-image(src="assets/background/hp.jpg")
-      .hero-contents: h1 Human Practices
+block hero
+  img.hero-image(src="assets/background/hp.jpg" loading="lazy")
+  .hero-contents: h1 Human Practices
 
-    .hp-contents
-      nav.hp-nav
-        a(href="#hp-silver" data-hp-target="silver") Human Practices
-        a(href="#hp-gold" data-hp-target="gold") Integrated Human Practices
+block description
+  h2 Introduction
 
-      .desc-contents(data-hp-contents="silver")
-        include components/_hp-silver
+  p Human Practices and their later integration into our project played a fundamental role in shaping our design into what it is today. From day one, CuRe has strived to be a project in harmony with society, one that is able to help the world around it, with the main priority of taking care of it. To achieve this goal, we continuously referred back to relevant stakeholders in the related fields, making sure each time to consult them on their values and needs. Fortunate to be able to meet with the concerned parties of our issue, we took extra care to consider their particular needs, wishes and values. Moreover, by viewing these interactions as a collaborative effort between the stakeholders and us, rather than a simple consultation, we gave more meaning to our idea, and ensured it could have a better impact. Finally, we made sure to investigate the socio-economic impacts of our projects on local, national and international scales. We also looked into the political context of our project, the ethical concerns it presented, as well as the legal framework in which we were operating.
+  p Thus, inspired by Dorothy Zhang's (member of the Human Practices headquarters) goals for the synthetic biology community, we wanted our project to be reflective, responsible and responsive.
 
-      .desc-contents(data-hp-contents="gold")
-        include components/_hp-gold
+
+  h2 Reflective
+
+  p By being reflective, we took the time to consider various aspects of our project. As mentioned above, we took into account not only the social and economic context of our project, but also the political, legal and ethical frameworks. Moreover, we ensured we were consulting as many stakeholders as possible, from different backgrounds and who may have differing opinions and perspectives. New information acquired along with our exchanges with stakeholders prompted questions such as: Does this change an aspect of our project? Is this revealing of something we had not thought of before? Who should we consult in order to best answer our doubts?
+
+
+  h2 Responsible
+
+  p CuRe was very inspired by the EU Commission's advances on Responsible Research and Innovation, a movement designed to guide policy change to take into account the need for science to work for or with society, rather than simply in parallel. By acknowledging the responsibility we bore for our product, including its potential dysfunction, we were able to view our project in a truly all-encompassing manner, and it brought up topics we had not previously explored. For example, we made sure to inscribe our project in the context of a circular economy, as the copper we would recuperate could be recycled back into fungicide. Another example is the use of renewable materials in our hardware implementation.
+  p Indeed, responsible research and innovation includes scrutinizing the potential impacts and risks of emerging technologies. It means taking a collective approach to responsibility, involving other actors and users who collectively translate ideas into application and value (engineers, policy makers, investors, research funders etc).
+  p This approach is also a part of CuRe's attempts to follow and apply the UN's sustainable development goals. As engineers and scientists, we believe it is our responsibility to care for the world around us. CuRe has chosen the following goals to abide by:
+
+  ul
+    li 6. Clean water and sanitation
+    li 11. Sustainable cities and communities
+    li 12. Responsible consumption and production
+    li 15. Life on land
+
+  p Find out how we applied these goals to the CuRe project on our Integrated Human Practices page.
+
+
+  h2 Responsive
+
+  p A fundamental part of our project was making sure we were, to the best of our abilities, responding to the issue we were trying to solve. Were we taking into account what the stakeholders were telling us, even if it meant going against our original idea?
+  p When understanding the context of the problem we were tackling and the impacts our solution would have, we needed to ensure our findings reflected an accurate representation of how people reacted to, thought about or used our project. Responding to the needs of the stakeholders we met was a challenging task, as more often than not, their input led us in a different direction than the one we had been taking. Nevertheless, we kept in mind that coming up with a non-perfect solution that met most of our stakeholders' needs was far better than having a perfect solution that could not help anyone.
+
+
+  h2 Methodology
+
+  p.
+    Before engaging with any stakeholder or the public in general, as cited above, we developed a methodology based on our goals and needs. We needed a rigorous but adaptable framework that would allow us to understand the impacts of our project, and how we could make it better.<br>
+    To determine such a methodology, we used a variety of sources. The iGEM website offered great resources on how to integrate social sciences into our project. This was especially helpful as every member of the team comes from an engineering background.<br>
+    We also conducted research on our side and discussed frequently amongst ourselves to evaluate our current methodology and ensure it was still responding to our needs. We made sure to adapt our methods to each situation. For example, while meetings on more theoretical matters such as water flow simulation could occur online, we found it essential to visit vineyards and water treatment facilities in person, so as to truly grasp the contexts in which our project would live.
+
+  p To support the premise of our project, we based ourselves off of both qualitative and quantitative research. Even before that, when brainstorming project ideas, members of the team, split into sub teams, would try to come up with local issues to solve. Our research then was also a mix of qualitative and quantitative work. For example, we used the Swiss Federal databases on pollutants in the environment to quantitatively measure the impacts of some heavy metals, but also found articles from local news stations speaking to the constituents who were the most affected by this particular pollutant.
+  p Although quantitative research aided in identifying major issues, it was our qualitative research that helped us understand the “How?” and “Why?” aspects of the problem.
+  p When conducting any of our research, be it for Human Practices or scientific work, we consistently worked with reliable, peer-reviewed sources to ensure our work was of the highest quality.
+  p When researching copper contamination in vineyards, we thus began by looking into the Swiss annual report on wine production. We followed this by peer-reviewed research on the effects of mildiou on vines, and then of copper on vines. Finally, we found local and foreign news articles that discussed the issue as it related to winemakers. These articles were the first step in aiding us to decide whom we needed to speak to to understand this issue in depth.
+
+  p When deciding who to reach out to, we thought of the people that ranked highest in the following categories:
+  ul
+    li Expertise on the issue
+    li Expertise in our relevant scientific fields (synthetic biology, hardware implementation)
+    li Influence on the situation
+    li Most affected by the issue
+
+  p We thus elaborated the following list of stakeholders:
+  ul
+    li: p <strong>Winemakers</strong> are the ones who would benefit the most from a project like CuRe, designed to deal with the copper contamination in their soils. The viability of their soils, as well as their ability to continuously practice organic wine making, are two of CuRe's primary goals. For this reason, winemakers hold a crucial role in the project.
+    li: p <strong>Water treatment facilities</strong> would be the end-users of the product. CuRe is dependent on their willingness to incorporate our bioreactor, or some version of it, into their facility, so that the copper contaminated water can be treated. Their input on our implementation, as well as their knowledge of water treatment is thus of great importance.
+    li: p <strong>Regulators and policy makers</strong> are the ones responsible for dictating the rules of fungicide use, but also for regulating the use and release of genetically modified organisms. They are essential to help us grasp the legal and political frameworks in which we will build our project. Moreover, they usually have an overview of the situation, being themselves on the forefront of change. They talk to stakeholders to ensure the framework being established is the most agreeable for all parties.
+    li: p <strong>The public</strong> and its perception of our project were crucial, as the use of genetically modified organisms outside of the lab in Switzerland is rare, and in some sectors, illegal. Moreover, since laws in Switzerland are voted upon by popular referendum, the public in itself is an important player. Thus, we undertook efforts to understand the layman's opinion on GMOs, but also the use of organisms such as bacteria or yeast in our project.
+    li: p <strong>The private sector</strong> is home to many types of companies that have a stake in our project. There are the producers of organic pesticides, start-ups working on bioremediation alongside us and companies specialized in copper recycling, to name a few. It was essential to understand which businesses our project was supporting, and which our project could potentially be problematic for.
+    li: p <strong>The scientific community</strong> was a crucial partner in developing our project. By speaking to people from various fields of research and expertise, we were able to construct a more safe, realistic and well-rounded project. Moreover, they were able to guide us within iGEM's time restriction, telling us where we were too ambitious, and where we could dig deeper.
+
+  p.
+    We realized the way in which we collected information from the stakeholders was about just as important as the collected information itself. By collecting data the wrong way, we could bias the responses we receive in one direction, leading to an unrepresentative view of the current situation.<br>
+    It was particularly important for us to present questions in a neutral manner, as we are offering a GMO-based solution, a polarizing issue here in Switzerland.
+
+  p As we wrote any question we were going to ask, we made sure to confront ourselves with two of the most prevalent biases:
+  ul
+    li: p <strong>Confirmation bias:</strong> As humans, we naturally assign a higher value to information we believe to be true. For example, many scientists are confident that scientific advancements can solve many of today's global issues, but that may not be the case for someone else who may think policy change is the way to go.
+    li: p <strong>Attentional bias:</strong> We also pay more attention to strategies we are comfortable with and discard other strategies.
+
+  p We used two main ways to collect data from the public and our stakeholders. The first was through interviews, and the second through surveying. As these were two very different ways of collecting data, we made sure to have a proper methodology for each.
+
+  h3 Interviews
+  p.
+    When conducting interviews, we used Harvard's guide <a href="https://sociology.fas.harvard.edu/files/sociology/files/interview_strategies.pdf" target="_blank">“Strategies for Qualitative Interviews”</a>.<br>
+    We began by contacting our stakeholders through email. We used this opportunity to present ourselves, the project, and why we chose to interview them in particular. At the beginning of each interview, we introduced ourselves as well as our role in the team. We presented the project in more detail when appropriate; for example, we refrained from explaining the issue of copper contamination before we had a chance to ask the winemaker to describe the issue and their experience to us. We refrained from stating CuRe would solve the issue of copper contamination and making any other possible false statements .
+
+  p.
+    We decided not to record our interviews as it risked introducing a dynamic we were not comfortable with. In addition, we acknowledged we were dealing with quite sensitive topics, that being introducing genetically modified organisms into agriculture, and thus did not want to add what can seem extra pressure on the interviewees during the process by having them worry about being recorded and/or filmed.<br>
+    During each interview, we took notes that we later transcribed into a more structured form and shared with the rest of the team. When appropriate and authorized, we also took pictures of the surroundings.<br>
+    Before posting anything on our wiki, we ensured to ask for informed consent to publish the texts concerning their interview, their image and their name.<br>
+    We chose the interview format as it allowed us to obtain a well-rounded and complete view of the interviewees opinions. Moreover, it allowed for follow ups, as we kept close contact with all of our interviewees.
+
+  h3 Survey
+  p.
+    As part of a collaboration with the UZurich team, we distributed a survey to get a sense of the public's general opinion on GMOs. This survey circulated in our local area. To help us design our survey, we based ourselves off of JC Gray's article <a href="https://blog.igem.org/blog/2020/9/8/designing-scientifically-valid-surveys" target="_blank">“Designing Scientifically Valid Surveys”</a>.<br>
+    The advantage of the survey is the ease with which we can manage and quantify the recuperated data, as well as the number of responses we can get. Although we are nor obtaining detailed responses like in interviews, we are able, if the survey is done correctly and with enough responses, to obtain a bird's eye view of the general public's opinion.<br>
+    The survey was anonymous, and participants were informed of the use of the collected data in EPFL's iGEM project.
+
+  p.
+    When engaging with stakeholders and the public in general, we made sure to consider the different types of communication at play.<br>
+    Throughout our integrated human practices as well as our education and outreach work, we found it was not only essential to present correct information to the public, but to ensure the public felt that science was being done with the interests of the public at heart, and in a transparent and respectful way. CuRe has done its best to embody these values.
+
+  p With the help of iGEM Human Practices HQ, we identified four main means of public engagement: education, outreach, consultation and empowerment.
+  ul
+    li: p <strong>Education:</strong> By educate, we mean help people to learn and validate their understanding of certain concepts, in particular related to our project and the world of synthetic biology. The goal here is a precise one, although challenging.
+    li: p <strong>Outreach:</strong> As opposed to education, outreach does not try to teach anything to people. In outreach, we are attempting to make people more inclined to learn, more interested in a particular subject, so they may become involved by their own volition. We attempted outreach both on the topic of synthetic biology as well as on the copper contamination in vineyards.
+    li: p <strong>Consultation:</strong> Consultation implies a unidirectional relationship between project manager and stakeholder. Here, we listen to the opinions of stakeholders, and use this knowledge to adapt our project.
+    li: p <strong>Empowerment:</strong> This form of communication relies heavily on the stakeholder's voice for key decisions in the project, as opposed to simply consulting them. Here, collaboration with stakeholders is fundamental and they work side by side with the project to see it through.
+
+  p To learn more about our outreach and education endeavours, please visit <a href="Communication.html">our Outreach and Education page</a>. If you are interested in consultation and empowerment, please refer to our Integrated Human Practices page.
+
+
+  h2 Stakeholder approach
+
+  p As stated before, we approached different kinds of stakeholders throughout our project.
+
+  ul
+    li: p <strong>Winemakers:</strong> We reached out and spoke to three winemakers in our local area, Olivier Rouge, who is a winemaker in Lutry, Vincent Chappuis, who works in Begnins and Julien Pasches, a winemaker from Morges. As described in our Integrated Human Practices page, all three winemakers shared different opinions on the use of copper based fungicide, as well as the political landscape surrounding this issue. The winemakers were also crucial in explaining their practice to us. They were able to provide us with data we needed for both our synbio and implementation projects.
+    li: p <strong>Water treatment facilities:</strong> To ensure our implementation was realistic, and to have an idea of the system it would be immersing itself in, we contacted two water treatment facilities and held interviews with different personnel within them. In Vidy, we met the head of the water treatment facility. He was able to inform us on the functioning of the facility, and gave us an overview of the work they perform there. In Allaman's water treatment facility, we met with Mr. Anicet, a project manager at the Suez group. Suez is a French group working on valorising and recycling waste as part of a circular economy. Mr. Anicet is a chemical engineer who works in innovation at water treatment facilities. Since our project was offering a new way of treating water, that is, through the power of synthetic biology, we found it very helpful to discuss innovation practices with him. Thanks to their input, we were able to better grasp the environment our bioreactor would be working in.
+    li: p <strong>Policy makers or policy adjacent stakeholders:</strong> We had the opportunity to speak with Olivier Viret, who was the head of the research division at Agroscope Changins-Pulley-Wädenswil for a long time. He is now the chief of the special cultures competencies center for the state of Vaud. He was very involved in the legislation of copper based fungicides. Meeting with him allowed us to understand the interests of the state in regulating such fungicides. Moreover, since he himself partakes in wine making, he was able to relate how winemakers felt about these regulations. He is widely known in the field of viticulture and was recommended to us by various winemakers. We also met, in the context of our podcast, with Anne-Gabrielle Wüst Saucy who is head of section at the Federal Office for the Environment. Her expertise on the legal framework helped us to understand in which contexts GMOs could be used in a project such as ours. With her, we discussed issues such as bio-safety and legislation.
+    li: p <strong>Public:</strong> We circulated a survey in our local area to better grasp how laymen felt about GMOs. We used this information to better tailor our messaging about the project to the public, as well as incorporate these messages into the project design. This survey also helped us construct our podcast on GMOs, which was a fundamental aspect of our Outreach and Education work.
+    li: p <strong>Bioremediation companies:</strong> We met with Ludovic Vincent, the CEO of BioMede. BioMede is a startup specialized in copper phytoremediation. Since our approaches to bioremediation were very different (BioMede working on plants and us with yeast), he guided us more on the process of building our project up. Once our project had advanced, we referred back to him and had a follow up meeting where he could give us more feedback. As he is part of the private sector, he was also able to look at our project through an economic lens and a wider perspective.
+    li: p <strong>The scientific community:</strong> Throughout the project, we consulted with members of the scientific community, each expert in their field. They aided us with the technical aspects of the project, but also guided our project to make sure it was realistically achievable. For example, Karla Castro, from the Laboratory of Protein Design and Engineering at EPFL helped us with understanding how we should be designing our linkers between our proteins. On the hardware side, experts in fluid mechanics such as Pr. Giovanni Boero aided with the design of our bioreactor.
+
+  p To properly evaluate the wants and needs of each stakeholder group, we created a value-stakeholder matrix. This matrix, that we made in the middle of our project, helped guide us through our integrated human practices, but also helped us prioritize who we should be speaking to. For each stakeholder, we had a particular goal in mind when consulting them. For example, the goal when speaking directly to winemakers was not to get an overall sense of wine maker's opinions on our project or GMOs in general, as our sample size was too small. This was qualitative research. It did, however, help us look into areas we had not previously. This was particularly exemplified by the complexity of the water recuperation installation in vineyards. During our interviews, wine makers brought us to their fields and showed us why certain implementation models would work and why some were simply impossible to implement.
+
+  figure
+    img(src="assets/hp/2.jpg")
+    figcaption
+      span Figure (X)
+
+  p It was also crucial to us to establish a dialogue with new communities that are not usually in contact with synthetic biology. We felt more rural communities are most often excluded from discussions on technology and innovation, even though they can be on the front lines of its use, as was the case here with an implementation that is directly in vineyards.
+  p We understood that there was a significant difference between 2 way or 1 way public information.  We found it to be more valuable to establish a 2 way communication with relevant parties. To find out how these communications affected our project, please view our Integrated Human Practices page.

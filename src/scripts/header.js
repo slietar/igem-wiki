@@ -60,11 +60,3 @@ window.addEventListener('scroll', () => {
 
   lastScrollY = Math.max(0, scrollY);
 });
-
-
-for (let el of document.querySelectorAll('.header [data-hp-target]')) {
-  el.addEventListener('click', () => {
-    activeIndex = null;
-    update();
-  });
-}

@@ -3,40 +3,6 @@
 @use "../mixins" as *;
 
 
-.desc-root {
-  &:not([data-hp-value="silver"]) [data-hp-contents="silver"],
-  &:not([data-hp-value="gold"]) [data-hp-contents="gold"] {
-    display: none;
-  }
-}
-
-
-.hp {
-  &-nav {
-    display: flex;
-    @include flex-column-gap(2rem);
-    justify-content: center;
-
-    margin-bottom: 2rem;
-
-    a {
-      font-weight: 600;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.desc-root[data-hp-value="silver"] .hp-nav a[data-hp-target="silver"],
-.desc-root[data-hp-value="gold"] .hp-nav a[data-hp-target="gold"] {
-  color: $accent-color;
-  pointer-events: none;
-}
-
-
-
 .hp-popup {
   &-root {
     overflow-y: auto;
