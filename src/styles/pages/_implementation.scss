@@ -54,7 +54,7 @@
   &-part {
     &-item {
       display: flex;
-      column-gap: 2rem;
+      @include flex-column-gap(2rem);
 
       margin: 1rem 0;
 

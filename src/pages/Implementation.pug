@@ -240,7 +240,7 @@ block description
   h3 Software
 
   h4 Installation
-  p The software designed for this project uses Python on a Raspberry Pi 3 model B+. There is <a href="#" target="_blank">a Git repository TODO</a> where you will find a README.md file which explains how to install the necessary libraries to run our code and how to use it. A small summary of what the code does can be found on this page.
+  p The software designed for this project uses Python on a Raspberry Pi 3 model B+. There is <a href="https://github.com/igemsoftware2020/igem_epfl_2020" target="_blank">a Git repository</a> where you will find a README.md file which explains how to install the necessary libraries to run our code and how to use it. A small summary of what the code does can be found on this page.
   p In our project, we used the Raspberry Pi 3 libraries which we found on Raspberry Pi Foundation. We also used the following libraries which can be installed with the python package installer pip:
   ul
     li: a(href="https://www.selenium.dev/documentation/webdriver") Selenium WebDriver
@@ -380,7 +380,7 @@ block description
   p Since our goal is to eventually upscale the process and we are taking a sustainable approach, we need to be able to retrieve the cells, but also the material for the beads. For this we used this protocol<ref doi="10.1080/09593330.2019.1673827" />. It basically is a dissolution of the beads followed by centrifugation of the solution. The beads formed using reclaimed alginate are less rigid and are of lower quality. Alginate can probably only be reused once though, and a more sustainable solution for encapsulation should be investigated for large scale.
 
   h4 Biocontainment
-  p Biocontainment was one of the largest issues in the project. Biocontainment of large quantities of GMO cells for continuous possibly high debit of water over a long period of time is bound to be a bit unrealistic. Nonetheless, our bead implementation proposes a theoretically safe solution: (TODO)
+  p Biocontainment was one of the largest issues in the project. Biocontainment of large quantities of GMO cells for continuous possibly high debit of water over a long period of time is bound to be a bit unrealistic. Nonetheless, our bead implementation proposes a theoretically safe solution.
   p Alginate beads are normally nanoporous (~ 5 nm)<ref doi="10.1016/j.progpolymsci.2011.06.003" />, while yeast cells are several microns large at all temperatures considered for our application (between 15 and 35°C)<ref doi="10.1093/femsyr/foy052" />. However, this does not prevent cells from escaping: cell encapsulation weakens the Ca-Alginate structure (Structural changes of Ca-alginate beads caused by immobilized yeast cell growth - ScienceDirect) while cell growth forms new passageways through the Ca-Alginate matrix. Simple alginate beads are not sufficient to ensure biocontainment. Thus, we imagine a double layered bead: the core would contain cells which have colonized the bead during ……. and the second, harder layer (made with 3.5% to 4% alginic acid sodium salt) would then be added after growth has stopped, to avoid leaks. Cells should not escape if there is a clear hard complete layer on the outside.
 
   h4 Protocol

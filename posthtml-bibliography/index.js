@@ -42,6 +42,13 @@ module.exports = (opts) => {
           let entry = { index: ref.index };
 
           if (ref.doi) {
+            // return {
+            //   tag: 'li',
+            //   attrs: { class: 'ref-item', id: refNodeId(ref.index) },
+            //   content: []
+            // };
+
+
             let info;
 
             try {
@@ -50,6 +57,21 @@ module.exports = (opts) => {
               console.error(err);
               console.error('>', ref);
               console.error('>', ref.doi);
+
+              return {
+                tag: 'li',
+                attrs: { class: 'ref-item', id: refNodeId(ref.index) },
+                content: [
+                  { tag: 'div',
+                    attrs: { class: 'ref-authors' },
+                    content: ['DOI: ' + ref.doi] },
+                  // { tag: 'div',
+                  //   attrs: { class: 'ref-links' },
+                  //   content: [''].map(([content, href]) =>
+                  //     ({ tag: 'a', attrs: { class: 'ref-link', href, target: '_blank' }, content })
+                  //   ) }
+                ]
+              };
             }
 
             if (!info) {
@@ -63,7 +85,7 @@ module.exports = (opts) => {
             let data = info.data[0];
 
             let year = formatted.issued['date-parts'][0][0];
-            let authors = joinAuthors(data.author.map((author) => author.family));
+            let authors = joinAuthors((data.author ?? []).map((author) => author.family));
 
             Object.assign(entry, {
               authors,
@@ -82,6 +104,7 @@ module.exports = (opts) => {
           } else {
             Object.assign(entry, {
               authors: ref.authors,
+              journal: ref.journal && [{ tag: 'i', content: [ref.journal] }],
               links: { 'Full text': ref.url },
               title: ref.title,
               year: ref.year
@@ -92,15 +115,15 @@ module.exports = (opts) => {
             tag: 'li',
             attrs: { class: 'ref-item', id: refNodeId(ref.index) },
             content: [
-              { tag: 'div',
+              ...(entry.authors ? [{ tag: 'div',
                 attrs: { class: 'ref-authors' },
-                content: [entry.authors].concat(entry.year ? [`&nbsp;(${entry.year})`] : []) },
+                content: [entry.authors].concat(entry.year ? [`&nbsp;(${entry.year})`] : []) }] : []),
               { tag: 'div',
                 attrs: { class: 'ref-title' },
                 content: [entry.title] },
-              entry.journal ? { tag: 'div',
+              ...(entry.journal ? [{ tag: 'div',
                 attrs: { class: 'ref-journal' },
-                content: entry.journal } : [],
+                content: entry.journal }] : []),
               { tag: 'div',
                 attrs: { class: 'ref-links' },
                 content: Object.entries(entry.links).map(([content, href]) =>

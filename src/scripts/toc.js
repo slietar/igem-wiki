@@ -4,8 +4,8 @@ let toc = document.querySelector('.sidenav-toc');
 if (contents) {
   let activeIndex = null;
 
-  let update = (newActiveIndex) => {
-    if (activeIndex !== newActiveIndex) {
+  let update = (newActiveIndex, force) => {
+    if (activeIndex !== newActiveIndex || force) {
       let inactiveId = headings[activeIndex]?.element?.id;
       let activeId = headings[newActiveIndex]?.element?.id;
 
@@ -61,12 +61,31 @@ if (contents) {
     }
   });
 
-  let headings = Array.from(contents.querySelectorAll('h2, h3'))
-    .map((element) => {
-      return { element, visible: false, y: element.offsetTop };
-    });
 
-  for (let { element } of headings) {
-    // observer.observe(element);
+  let headings;
+
+  let define = () => {
+    headings = Array.from(contents.querySelectorAll('h2, h3'))
+      .map((element) => {
+        return { element, visible: false, y: element.offsetTop };
+      });
+  };
+
+  let reset = () => {
+    define();
+    update(activeIndex, true);
+  };
+
+  for (let el of document.querySelectorAll('summary')) {
+    el.addEventListener('click', () => {
+      reset();
+    });
   }
+
+  define();
+
+
+  Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+    reset();
+  });
 }

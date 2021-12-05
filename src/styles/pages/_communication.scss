@@ -1,10 +1,11 @@
 @use "../breakpoints" as *;
+@use "../mixins" as *;
 
 
 .comm {
   &-social {
     display: flex;
-    column-gap: 3rem;
+    @include flex-column-gap(3rem);
     justify-content: center;
     flex-wrap: wrap;
 

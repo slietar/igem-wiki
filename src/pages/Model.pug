@@ -257,6 +257,157 @@ block description
       span Simulation 7: Pressure inside the final part. Pocket of low pressure at water merging point.
 
 
+  h2 Biomodelling
+
+  h3 Predicting the structure of our dimers
+  p As described in our Design page, we decided, in order to improve our CUP1 and yeast surface display system, to dimerize our CUP1 protein, introducing linkers between each copy. To aid us in the design of said linkers, we consulted with Karla Castro, from the Laboratory of Protein Design and Engineering at EPFL. Among other things, she advised us to try as many different linkers as we could, given that there was no one rule we could apply to find an optimal linker.
+  p After doing research on the most commonly used linkers, we came up with a first list of 26 dimers we wanted to test. However, creating 26 different primers and performing 26 simultaneous cloning experiments was not a realistic goal. We needed a way to narrow down the number of linkers we wanted to test. To accomplish this, we decided to use a structure prediction software.
+
+  h3 Conditions for choosing a dimer
+  p As previously stated, amino acid sequence influences the relevant protein’s three dimensional structure. In particular, several important amino acid characteristics participate in forming regular and easily recognizable protein structures. Thus, when designing our linker sequences, we paid particular attention to the following properties: polarity or hydrophobicity, size and overall flexibility.
+  p These characteristics confer the following features to the three dimensional protein structure: flexibility, size (so distance between each CUP1 molecule) and folding.
+
+  h4 Flexibility
+  p This attribute was particularly interesting to look at for a variety of reasons. When designing our linkers, we were curious to see the effect of a flexible and non-flexible linker on the complex. On the one hand, additional flexibility could allow for the complex to be able to move more freely on the yeast surface, in a way reaching for more copper ions. However, too much flexibility in the linker could create a loop whereby the two CUP1 proteins could come into contact with each other. This would be detrimental to the proper functioning of the complex. Furthermore, rigidity between the two proteins could allow for some structure, ensuring a physical forced separation of the two.
+
+  h4 Distance
+  p Just as for flexibility, distance has an impact on the proper functioning of the complex. If our linker is too long, we risk damaging the process of transporting our protein complex to the surface with our yeast display system. Indeed, the larger a protein complex is, the more difficult it is to express it on the membrane, especially if this is not an endogenous process, which ours is not. However, if our linker is too short, our CUP1 proteins risk interacting with each other. Should they do so, our entire complex is non-functional.
+
+  h4 Folding
+  p Using the prediction simulation, we were able to see whether, at least theoretically, the entire complex would fold correctly. This is a crucial aspect of our protein structure.
+
+  figure
+    video(src="assets/biomodel/3.mp4" controls muted)
+    figcaption
+      span Figure (X)
+      span Polyproline rigid linker complex three dimensional structure, simulated with AlphaFold.
+      span Linker sequence: APAPAPAPAPAPAP.
+
+  p Rigid linkers exhibit relatively stiff structures by adopting α-helical structures or by containing multiple Pro residues. Indeed, Pro is a unique amino acid with a cyclic side chain that causes a very restricted conformation. (doi:10.1016/j.addr.2012.09.039) Furthermore, the lack of amide hydrogen on Pro typically prevents the formation of hydrogen bonds with other amino acids, and therefore reduces the interaction between the linkers and the protein domains. As a result, the inclusion of Pro residues might increase the stiffness and structural independence of the linkers.  (doi: 10.1042/bj2970249) Here we can easily see the polyproline structure in the middle of the two CUP1 slightly flected.
+
+  figure
+    video(src="assets/biomodel/4.mp4" controls muted)
+    figcaption
+      span Figure (X)
+      span First flexible linker three dimensional structure, simulated with AlphaFold.
+      span Linker sequence: GGGGSGGGGSGGGGS.
+
+  p Flexible linkers are generally composed of small, non-polar (e.g. Gly) or polar (e.g. Ser or Thr) amino acids<ref doi="10.1016/0022-2836(90)90085-Z" />.
+  p This linker is mainly composed of glycines, but includes 3 serines. Glycines are the smallest and most flexible amino acids, due to their lack of side chain. They are thus able to rotate more freely in space, each glycine able to rotate in a different direction than the ones surrounding it. Serines are a bit less flexible and thus confer a bit more structure to the linker, hopefully keeping the two moieties from reaching each other. This linker is 16 residues long, of average length.
+  p In addition, the incorporation of Serine or Threonine can maintain the stability of the linker in aqueous solutions by forming hydrogen bonds with the water molecules, and therefore reduces the unfavourable interaction between the linker and the protein moieties<ref doi="10.1016/j.addr.2012.09.039" />.
+
+
+  figure
+    video(src="assets/biomodel/5.mp4" controls muted)
+    figcaption
+      span Figure (X)
+      span Second flexible linker complex three dimensional structure, simulated with AlphaFold.
+      span Linker sequence: GGGGSGGGGSGGGGSGGGGS
+
+  p This linker is very similar to the one above, but is 20 residues long. We consider this linker to be relatively long. We were curious to compare the lengths of these two linkers to observe how our complex would behave.
+
+  figure
+    video(src="assets/biomodel/6.mp4" controls muted)
+    figcaption
+      span Figure (X)
+      span First semi-flexible linker complex three dimensional structure, simulated with AlphaFold.
+      span Linker sequence: GGGGSEAAAKGGGGS
+
+  p This linker contains a rigid center, composed of one glutamic acid, three alanines and one lysine.
+  p On the edge, we have added glycines and serines to emulate flexibility. We hoped this would create a rigid center with flexible edges. The advantage of the rigid structure is that it would keep the two protein copies apart.
+  p Therefore, for the semi-flexible (or semi-rigid) conformation, we decided to combine the design choices used for flexible and rigid linkers. In particular, the main idea is to separate the two functional domains at an adequate distance to prevent any interaction between the two and maintain their independent functions while allowing extreme flexibility in the area close to the C and N terminus of the fusion proteins. In this way, the complex will be highly rigid in the centre and particularly flexible in the vicinity of the two protein termina allowing further degrees of freedom and proper folding.
+
+
+  figure
+    video(src="assets/biomodel/7.mp4" controls muted)
+    figcaption
+      span Figure (X)
+      span Second semi-flexible linker complex three dimensional structure, simulated with AlphaFold.
+      span Linker sequence: GGGGSEAAAKEAAAKGGGGS.
+
+  p This linker is very similar to the one above, but is 20 residues long. We consider this linker to be relatively long. We were curious to compare the lengths of these two linkers.
+
+  figure
+    video(src="assets/biomodel/8.mp4" controls muted)
+    figcaption
+      span Figure (X)
+      span First linker complex three dimensional structure, simulated with AlphaFold.
+      span Linker sequence: EAAAKEAAAKEAAAK.
+
+  p This linker is a rigid linker, mainly consisting of glutamic acids, lysines and alanines. As we can see by the prediction, these residues form a single alpha helix, spanning from one protein copy to the other. This is indeed a rigid structure - we had predicted as expected.
+  p Generally, many natural linkers exhibited α-helical structures <ref doi="10.1093/protein/15.11.871" />. These latter are characterized by high rigidity and stability, with intra-segment hydrogen bonds and a closely packed backbone. Therefore, the stiff α-helical linkers may act as simple rigid spacers between protein domains. In this case, the most common rigid linker is the alpha helix-forming linkers with the sequence of (EAAAK)n, which shows an approximately 80 % helicity with n = 3<ref doi="10.1007/s00253-015-6985-3" />.
+
+
+  figure
+    video(src="assets/biomodel/9.mp4" controls muted)
+    figcaption
+      span Figure (X)
+      span Second linker complex three dimensional structure, simulated with AlphaFold.
+      span Linker sequence: EAAAKEAAAKEAAAKEAAAK.
+
+  p This linker is very similar to the one above, but is 21 residues long. We consider this linker to be relatively long. We were curious to compare the lengths of these two linkers. As we can see, the proteins come nowhere near in contact with each other.
+
+
+  h3 Methods
+
+  h4 Prediction software: AlphaFold
+  p For the last 50 years, one of the most important open research problems in biochemistry has been predicting a protein’s three-dimensional structure based solely on its acid amino sequence. This three dimensional structure is based on the amino acid sequence’s folding mechanism. Thus if one can predict how the protein’s residues are to interact with each other and fold into regular structural elements (alpha helice, beta sheet), we can predict, based solely on the amino acid sequence, the structure of said protein.
+  p While today it is common to predict the structure of a protein when similar structures are previously known, regularly predicting protein structure with atomic accuracy using computational methods was done for the first time by AlphaFold. They validated their neural network-based model in the 14th Critical Assessment of protein structure Prediction (CASP14), where they demonstrated strong accuracy in their model. This software uses a novel machine learning approach, incorporating both biological and physical knowledge about protein structure and comparing multi-sequence alignments.
+  p AlphaFold is a prediction software capable of determining 3D protein structure from an amino acid sequence<ref doi="10.1038/s41586-021-03819-2" />. It uses an Artificial Intelligence system developed by DeepMind, an artificial intelligence research laboratory.
+  p So far, computational methods to predict three-dimensional protein structures based on the amino-acid sequence have either focused on the physical interactions or the evolutionary history. The physical interaction programme integrates our current understanding of molecular driving forces into either thermodynamic or kinetic simulation of protein physics or statistical approximations. On the other hand, the evolutionary programme, a development in recent years, derives protein structure from bioinformatics analysis of the evolutionary history of proteins, pairwise evolutionary correlations and homology to already solved structures.
+
+  figure
+    img(src="assets/biomodel/1-5.jpg")
+    figcaption
+      span Figure (X)
+      span Model architecture.
+      span Arrows show the information flow among the various components involved in the AlphaFold network. Array shapes are shown in parentheses with s, number of sequences (Nseq in the main text); r, number of residues (Nres in the main text); c, number of channels.<ref doi="10.1038/s41586-021-03819-2" />
+
+  h5 Neural network
+  p AlphaFold uses novel neural network architectures and training procedures based on geometric, physical as well as evolutionary constraints to ensure accurate structure prediction. Their main features include:
+  ul
+    li self-distillation and self-estimation methods allowing learning from unlabelled protein sequences
+    li iteratively refining predictions using intermediate losses
+    li embedding of multiple-sequence alignments (MSA)
+    li masked MSA loss to jointly train with the structure, learning from unlabelled protein sequences using self-distillation and self-estimates of accuracy
+    li a new output representation and associated loss that enable accurate end-to-end structure prediction
+
+  p Using the primary amino acid sequence, and aligned sequences and homologues as inputs, AlphaFold predicts the 3D coordinate with atomic accuracy for a given protein.
+  p The architecture of the network includes mainly two stages that allow the network to extract  a large amount of different and complementary data making the model extremely accurate.
+  p First the core of the network is built on a series of neural network layers that process the input data in an array Nseq × Nres, where Nseq represents the number of sequences and Nres the number of residues. This part of the architecture is called Evoformer and gives us an output that represents a processed Multiple Sequence Alignment (MSA) and a Nres × Nres array that represents the residue pairs.
+  p To perform its function, the Evoformer blocks contain a number of attention-based and non-attention-based components. Typically, in the context of artificial Neural Networks, attention and non attention algorithms are approaches that tend to mimic standard cognitive attention. This model leads to an iterative process that continually refines the structural hypothesis behind the model, in this case based on biochemical, physical and evolutionary information.
+  p The combination of this information is the breakthrough in the Evoformer block. This unit block indeed uses new mechanisms to allow a flow of information within the MSA framework and the pair representation,  thus enabling a direct correlation between the spatial and evolutionary information.
+  p Immediately after the Evoformer, it follows the structure model. This unit block defines the system of coordinates representing a global rigid body frame. It introduces a 3D structure representation in the form of spatial and geometrical components in terms of rotation and translation for each residue of the amino acids sequence.
+  p All these representations are initialized in an original state with all rotations set to the identity and all positions set to the origin, but rapidly refine and develop an accurate protein structure shedding light on atomic details.
+  p The crucial innovations in this section of the network are mainly based on a model able to break the chain structure, hence allowing for continuous local leveraging of any structural components. Furthermore a novel equivariant transformer is introduced for allowing the network to represent the side-chain atom. Finally, a new loss function is defined to guide the model weighting on the different orientation of the residues.
+  p Thanks to this artificial neural network they defined an entire new frame not only to analyze and process structural information, but also to interpret the concept of iterative refinement through update of configuration based on the loss function behavior and the iterative update that work as a feedback system.
+  h5 Evoformer
+  p The crucial component of the artificial neural network developed by DeepMind is called Evoformer. The function performed by this building block is viewing the prediction structure as a graph inference problem in a three dimensional space in which residue’s proximity defines the border of the graph. Each pair encrypts information related to interaction and relation between each of the residues.
+  p The MSA is represented as a table in which the rows correspond to the sequences in which the residues appear while the columns encode information on the single residue of the input sequence.
+  p Considering this structure, it is possible to define a model based on a series of update configurations to apply iteratively in each block, thus updating the system at each time step with new information.
+  p Regarding the MSA iteration process, it performs an update on the pair representation through an element-wise outer product that is summed over the MSA sequence dimension. Namely, it means that we update the relation of residues considering their evolution in different input sequences, enabling the continuous exchange of information from the evolving MSA representation to the pair representation.
+  p This pair representation could evolve towards two possible update configurations. Those latter mainly stem from consistency boundaries. Indeed, regarding the pairwise description of the residues, many constraints must be fulfilled to be described under a 3D structure framework, one of which is the triangle inequality. Under a geometrical point of view this means that it is possible to apply the update iteration on the pair framework in terms of triangle edges between three different nodes (figure 3c). Furthermore, what really make possible the great innovation in the algorithm correspond to the addition of an extra bias applied to axial attention in order to consider the missing edge of the triangle, while the non attention iteration, namely called triangle multiplicative update, based the update of the missing third edge on the two other edges present. This whole iterative process is called triangle multiplicative update, originally developed as replacement for an attention algorithm.
+  p Regarding the MSA framework, the algorithm uses again a variant of axial attention. In particular, the model is based on projecting additional logit from the pair data to bias the attention of the MSA representation. In this manner, it is possible to close the cycle of information exchange between the MSA and single pair representations, thus optimizing the amount of information extracted from a single sequence. This enhancement is given by the efficient combination of the two frameworks, which encode different but complementary information on the sequence. Furthermore, this ensure that Evoformer block is able to extract most of the information encoded in the sequences and in the residues, generating a highly reliable and accurate structure.
+
+
+  figure
+    img(src="assets/biomodel/2-5.jpg")
+    figcaption
+      span Figure (X)
+      span Architectural details.<ref doi="10.1038/s41586-021-03819-2" />
+      span a, Evoformer block. Arrows show the information flow with shape of the arrays is shown in parentheses. b, The pair frame represented as edges in a graph. c, Triangle multiplicative update and triangle self-attention explanation. The circles represent residues. Entries in the pair representation are illustrated as directed edges and in each diagram, the edge being updated is the one corresponding to the pair ij.
+
+  p As previously stated, AlphaFold’s methodology uses a combination of bioinformatics and physical approaches. In particular, they use a physical and geometric bias to build components. These components then learn from the PDB data that aren’t burdened with user interference. The result is a flexible network with a low training loss when training with the limited data from the PDB.
+
+  h4 Display software: VMD
+  p Visual Molecular Dynamics, or VMD for short, is a program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting. VMD allows molecules to be drawn as lines, bonds, CPK, licorice, VDW spheres, ribbons, tubes, surface, secondary structure cartoons, points, C-alpha traces, and surfaces.
+  p For the structures below, we used the ResName coloring method and the NewCartoon drawing method. This representation uses a combination of cartoons and ribbons.
+  p The ResName coloring method colors vis-a-vis residue names, using the Resname category. We chose to differentiate residues on the final structure as our design began as an amino acid sequence. When designing our dimers, we chose the amino acid sequence of our linkers based on the particular properties of the residues. In particular, hydrophobicity, flexibility and size. These characteristics are the main ones responsible for creating regular protein structures such as alpha helices or beta sheets. Based on this, we were able to predict, even before running the simulations, the structure of our linkers. We used the simulations to confirm our suspicions. Thus, we felt it was logical to highlight residues, as they determine the final structure.
+  p In particular, helices in the molecule are drawn as cylinders, beta sheets as solid ribbons, and all other structures (coils and turns) as a tube.
+  p Using these softwares, we were able to successfully predict the structures of all 26 of our protein structures, including the linker structure. From this, we were able to select our 7 favorite dimers, combining flexible, semi-rigid and rigid models.
+  p You can find below the predicted structures of our seven dimers that we later successfully cloned into our yeast. For each, you can see two CUP1 molecules, as well as the linker that joins them. For more information on the dimer design process, please consult the Design page.
+
+
   h2 References
 
   bibliography

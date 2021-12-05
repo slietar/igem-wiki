@@ -21,6 +21,28 @@ module.exports = (opts) => {
       };
     });
 
+
+    let index = 0;
+
+    tree.match({ tag: 'figcaption' }, (node) => {
+      let firstChild = node.content[0];
+
+      if ((firstChild.tag === 'span') && (firstChild.content[0] === 'Figure (X)')) {
+        index++;
+
+        return {
+          ...node,
+          content: [
+            { tag: 'span', content: [`Figure ${index}`] },
+            ...node.content.slice(1)
+          ]
+        };
+      }
+
+      return node;
+    });
+
+
     return tree;
   };
 };

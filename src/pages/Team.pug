@@ -52,10 +52,14 @@ block contents
               memory: 'The night we spent looking at shooting stars on the top of a mountain. A fox almost stole my pistachios.' },
           ],
           [
-            { name: 'Brian McCabe' },
-            { name: 'Marine Van Campenhoudt' },
-            { name: 'Blandine Vergier' },
-            { name: 'Amir Shahein' }
+            { name: 'Brian McCabe',
+              desc: 'Principal investigator and team motivator' },
+            { name: 'Marine Van Campenhoudt',
+              desc: 'Principal teaching assistant, bio teacher for the team' },
+            { name: 'Blandine Vergier',
+              desc: 'Bio teaching assistant' },
+            { name: 'Amir Shahein',
+              desc: 'Hardware teaching assistant' }
           ]
         ].map((group) => group.sort((a, b) => a.name.split(' ')[1].localeCompare(b.name.split(' ')[1])));
 

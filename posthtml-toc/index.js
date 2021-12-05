@@ -1,3 +1,23 @@
+let walk = (children, fn) => {
+  return (children ?? []).map((node) => {
+    if (typeof node === 'string') {
+      return node;
+    }
+
+    let result = fn(node);
+
+    if (result) {
+      return result;
+    }
+
+    return {
+      ...node,
+      content: walk(node.content, fn)
+    };
+  });
+};
+
+
 module.exports = (opts) => {
   let startLevel = 2;
   let maxLevel = 3;
@@ -8,16 +28,17 @@ module.exports = (opts) => {
     tree.match({ attrs: { 'toc-contents': 'toc-contents' } }, (node) => {
       let { attrs, 'toc-contents': _ } = node;
       let content = node.content ?? [];
+      let index = 0;
 
       return {
         ...node,
         attrs,
-        content: content.map((child, index) => {
+        content: walk(content, (child) => {
           if (child.tag.match(/^h[1-6]$/g)) {
             let level = parseInt(child.tag.substring(1));
 
             if (level <= maxLevel) {
-              let id = child.attrs?.id ?? `heading-${index}`;
+              let id = child.attrs?.id ?? `heading-${index++}`;
 
               while (pointer.length + startLevel - 1 > level) {
                 let last = pointer.pop();
@@ -46,8 +67,6 @@ module.exports = (opts) => {
               };
             }
           }
-
-          return child;
         })
       };
     });
