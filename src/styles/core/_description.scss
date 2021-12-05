@@ -343,12 +343,29 @@
 .desc-contents {
   figure {
     margin: 1.4rem 0;
-  }
 
-  figure img {
-    max-width: 100%;
-    // max-width: 600px;
-    max-height: 400px;
+    div {
+      position: relative;
+    }
+
+    div span {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+
+      font-weight: 600;
+    }
+
+    &._dark div span {
+      color: #fff;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+
+      background-color: #eee;
+    }
   }
 
   caption, figcaption {
