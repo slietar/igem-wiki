@@ -217,8 +217,8 @@ block description
         span Analysis of western blot 1.
         span Aga2-V5 has a molecular weight of 21.3 kDa.
 
-    p We loaded the following samples onto our gel: pCTcon2-V5 in SDCAA, pCTcon2-V5 in SGCAA, EBY100 (WT) in YPD, and two pCTcon2-CUP1-V5 clones (A and B) in SGCAA and SDCAA each. We obtained a band of ~ 50 kDa in the WT and plasmids with and without galactose, showing the presence of ⍺-tubulin (49.8 kDa<ref title="Tubulin alpha-1 chain (P09733)" authors="UniProt" url="https://www.uniprot.org/uniprot/P09733" />) in our samples. We also have a band of ~ 20 kDa in plasmid + galactose showing that our Aga2-V5 protein was expressed (figure 7a). Figure 7b is showing the fly control expressing tubulin as well as Relish-V5, a protein harboring the V5 tag. Figure 7c shows the ratio of V5 signal versus tubulin.
-    p However we didn’t obtain any signal, neither for the tubulin nor the protein of interest in the clone A and B lines (figure 6).
+    p We loaded the following samples onto our gel: pCTcon2-V5 in SDCAA, pCTcon2-V5 in SGCAA, EBY100 (WT) in YPD, and two pCTcon2-CUP1-V5 clones (A and B) in SGCAA and SDCAA each. We obtained a band of ~ 50 kDa in the WT and plasmids with and without galactose, showing the presence of α-tubulin (49.8 kDa<ref title="Tubulin alpha-1 chain (P09733)" authors="UniProt" url="https://www.uniprot.org/uniprot/P09733" />) in our samples. We also have a band of ~ 20 kDa in plasmid + galactose showing that our Aga2-V5 protein was expressed (figure 6a). Figure 6b is showing the fly control expressing tubulin as well as Relish-V5, a protein harboring the V5 tag. Figure 6c shows the ratio of V5 signal versus tubulin.
+    p However we didn’t obtain any signal, neither for the tubulin nor the protein of interest in the clone A and B lines.
 
     p <strong>Conclusion</strong> The clones were probably picked prematurely, and thus didn’t show anything on the gel. That’s why a second Western Blot was performed in order to check protein expression in our 4 other clones that were picked later: C, D, E and F.
 
@@ -337,13 +337,13 @@ block description
         span Negative control: yeast transformed with the plasmid backbone (no insert), without antibody 1.
         span (a) DAPI channel (b) green fluorescence (c) merged channel.
 
-    //- figure
-    //-   img(src="assets/notebook/monomer/36.jpg")
-    //-   figcaption
-    //-     span Figure (X)
-    //-     span Clone F, higher magnification.
+    figure
+      img(src="assets/notebook/monomer/31-2.jpg")
+      figcaption
+        span Figure (X)
+        span Clone F, higher magnification.
 
-    p All 4 clones showed expression of CUP1 on their surface. We assumed the expression is at the surface because : first, the antibody does not enter the cell, second, we can see a darker circle around the cell on figure 8j (higher magnification) representing the membrane and third, we did some controls with membrane permeabilized samples (figure 8g). The membrane permalized samples show little signal that corresponds to the signal in negative controls WT (figure 8f), backbone without antibody 1 (figure 8h) and backbone without antibody 2 (figure 8i), which we can assume is noise or unspecific binding of antibodies.
+    p All 4 clones showed expression of CUP1 on their surface. We assumed the expression is at the surface because: first, the antibody does not enter the cell, second, we can see a darker circle around the cell on figure 16 (higher magnification) representing the membrane and third, we did some controls with membrane permeabilized samples (figure 13). The membrane permalized samples show little signal that corresponds to the signal in negative controls WT (figure 12), backbone without antibody 1 (figure 14) and backbone without antibody 2 (figure 15), which we can assume is noise or unspecific binding of antibodies.
     p Unfortunately, not all cells were positive in one sample, which means that either our subsets of cells were not monoclonal and that not all the cells had the plasmid or that they all had the plasmid but weren't all expressing it.
     p <strong>Conclusion</strong> In order to see if the expression level differences were due to polyclonality of the yeast population we streaked the cells on a plate and picked a single colony in order to perform an immunostaining on a monoclonal population of cells. This resulted in no different results than before, we still had an heterogeneous population with cells displaying signal and cells with no signal. We concluded that the induction process was not 100% efficient and this was supported by the results of the paper from Chao et al.<ref doi="10.1038/nprot.2006.94" />
 
@@ -361,7 +361,7 @@ block description
         span Figure (X)
         span Analysis of Western blot 2.
 
-    p We obtained bands of approximatively 25 kDa in positive control as well as in clones C, E and F, showing that our protein of interest was present in these samples. Unfortunately we didn’t have any signal for the ⍺-tubulin so we couldn’t normalize the signal and compare the expression level of the protein. As expected, in the negative control pCTcon2-V5 backbone plasmid uninduced, no band is visible.
+    p We obtained bands of approximatively 25 kDa in positive control as well as in clones C, E and F, showing that our protein of interest was present in these samples. Unfortunately we didn’t have any signal for the α-tubulin so we couldn’t normalize the signal and compare the expression level of the protein. As expected, in the negative control pCTcon2-V5 backbone plasmid uninduced, no band is visible.
     p We also noticed two bands on the gel, and verified the DNA sequence and saw that a second methionine, a start codon, is present downstream of the first one and in frame with the promoter, resulting in a second expressed protein, probably truncated. Unfortunately this shorter protein is the most expressed one, corresponding to the signal intensity.
 
     p <strong>Conclusion</strong> We’ve decided to continue the experiments with our 3 clones C, E and F, since D didn’t show any expression.
@@ -391,57 +391,67 @@ block description
         span Western blot 3.
         span (a) Image of the nitrocellulose membrane with yeast transformed with plasmid backbone pCTcon2-V5 without insert, Clone F, i.e. yeast transformed with pCTcon2-CUP1-V5, both cultured with galactose in their media and wild type yeast (cultured in YPD). (b) Protein quantification plot, the black bars represent the signal for the backbone plasmid and the grey ones are for the Clone F. On the left is represented the signal of V5 tag and on the right, the tubulin signal. (c) is the normalized V5 signal for tubulin (V5 in % of tubulin).
 
-    p We obtained a tubulin signal in both plasmid backbone pCTcon2-V5 and clone F (pCTcon2-CUP1-V5) but not in wild type yeast. This was probably due to the fact that a smaller quantity of cells were loaded on the gel, since the pellet was smaller in the WT sample. We could normalize the V5 signal relatively to tubulin and the result is shown on figure 10c. We can see that clone F expresses the protein a bit more than the backbone, which is consistent with what we observed in immunostaining.
+    p We obtained a tubulin signal in both plasmid backbone pCTcon2-V5 and clone F (pCTcon2-CUP1-V5) but not in wild type yeast. This was probably due to the fact that a smaller quantity of cells were loaded on the gel, since the pellet was smaller in the WT sample. We could normalize the V5 signal relatively to tubulin and the result is shown on figure 18c. We can see that clone F expresses the protein a bit more than the backbone, which is consistent with what we observed in immunostaining.
 
     p <strong>Conclusion</strong> We were able to show that our membrane protein fusion was expressed in our engineered yeast and could quantify its relative expression in our clone F as well as in the positive control, the backbone plasmid transformed yeast.
 
   article.lab-exp
     header
-      h3 Growth curves of different strains
+      h3 Yeast growth curves
 
-    p <strong>Aim</strong> Check for differences in yeast growth between samples.
-    p <strong>Protocol</strong> Overnight shaking in microplate reader, measuring the OD600 every hour. The samples measured are as follows:
-    p <strong>Results</strong> We expect slower growth for yeast that contain the plasmid, and even slower growth for yeast expressing CUP1 or the plasmid without CUP1. We indeed observe this hindered growth. Clone D seems to be growing the best.
+    p <strong>Aim</strong> Check for the yeast growth differences between the strains. This will allow us to see whether engineering the yeast would modify its ability to grow or survive.
+    p <strong>Protocol</strong>
+    ol
+      li Prepare yeast cultures of known initial concentration for each of the strain to be tested (3 replicates per sample).
+      li Load a 96 wells-plate with your samples (2 or 3 technical replicates for each sample).
+      li Put in an overnight shaking microplate reader at 30°C, measuring the OD600 every hour.
+      li If you don’t have this equipment at your disposal, place your yeast cultures in a 30°C shaker and collect samples directly from it every hour to measure the OD600 in a spectrophotometer or microplate reader.
 
-  //- article.lab-exp
-    header
-      h3 Colony forming assays
+    p We measured the growth of our transformed yeast (pCTcon2-CUP1-V5) in SGCAA, and we compared them to the growth curves of plasmid backbone (pCTcon2-V5) in SDCAA and in SGCAA and the wild type yeast (EBY100).
 
-    p <strong>Aim</strong> Measure viability of the yeast cells.
-    p <strong>Protocol</strong> Plate 100&nbsp;µl of each yeast strain on the corresponding plate. Strains were plated at concentrations of 2.5, 0.8, 0.25, 0.08 and 0.025 TODO: unit (3.14 dilution). We record the results of the plates that show distinct colonies (and not a biofilm). Plates were incubated 48&nbsp;hours at 30°C.
     p <strong>Results</strong>
 
-    table
-      thead
-        tr
-          th Strain
-          th Media
-          th CFU
-      tbody
-        tr
-          td WT (EBY100)
-          td YPD
-          td
-        tr
-          td Plasmid
-          td SDCAA
-          td
-        tr
-          td Plasmid
-          td SDGAA
-          td
-        tr
-          td etc.
+    figure
+      .figure-list
+        img(src="assets/notebook/monomer/43.jpg")
+        img(src="assets/notebook/monomer/44.jpg")
+        img(src="assets/notebook/monomer/45.jpg")
+        img(src="assets/notebook/monomer/46.jpg")
+        img(src="assets/notebook/monomer/47.jpg")
+      figcaption
+        span Figure (X)
+        span Yeast growth curves of different strains.
 
   article.lab-exp
     header
-      h3 Copper Adsorption Assay
+      h3 Copper absorption assay
 
-    p <strong>Aim</strong> This assay measures copper concentration in solution with yeast. This will measure how much copper is being taken up by the yeast.
-    p <strong>Protocol</strong> See Copper Assays excel file
+    p <strong>Aim</strong> Measure the yeast ability to remove copper in solution for the different strains.
+    p <strong>Protocol</strong> <a href="Protocols.html#protocol-copper">Cuprizone Solution Preparation and Copper Concentration Measurement protocol</a>
+    p All measurements were performed with three biological replicates and three technical replicates.
+    p The concentration of copper in the media was set at 4 mg/l for all copper absorption assay. We tested different conditions to identify the cause of bad copper absorption with our engineered yeasts (see the results below and the <a href="Results.html">Results page</a>).
+
+    p: strong Results
+
+    figure
+      img(src="assets/notebook/monomer/41.jpg")
+      figcaption
+        span Figure (x)
+        span Measuring copper concentration over time with varying WT (EBY100) yeast concentration in the media.
+        span The yeast density was  determined as a function of OD600 (OD600 of 1 corresponds to approximately 3 x 10<sup>7</sup> cells/ml).
+
+    figure
+      img(src="assets/notebook/monomer/42.jpg")
+      figcaption
+        span Figure (x)
+        span Measuring copper concentration over time in the media with WT (EBY100) yeast or yeast expressing CUP1.
+        span OD600 of the yeast culture was 4.0.
+
+    p <strong>Results</strong> Wild type yeasts absorbed copper well, and we were not able to make our engineered yeast with the CUP1 monomer work better. However, the higher wildtype yeast concentration, the faster the copper could be absorbed.
 
 
-  h2 Cloning dimers
+
+  h2 Cloning the dimers
 
   article.lab-exp
     header
@@ -611,7 +621,7 @@ block description
     p <strong>Protocol</strong> <a href="Protocols.html#protocol-western-blot">Western blot</a>
     p The first Western Blot was performed on all our dimers. The V5 tag is part of the membrane display system which itself is under the Gal promoter. Thus expression (and detection) should only occur in the presence of galactose.
 
-    p <strong>Results</strong> The dimers have a molecular weight of 28.6 kDa, whereas the ⍺-tubulin has a molecular weight of 49.8 kDa.
+    p <strong>Results</strong> The dimers have a molecular weight of 28.6 kDa, whereas the α-tubulin has a molecular weight of 49.8 kDa.
 
     figure
       img(src="assets/notebook/dimers/4.jpg")
@@ -637,7 +647,7 @@ block description
         span Figure (X)
         span Protein quantification: normalized V5.
 
-    p We loaded the following bands onto our Western blot: samples from yeast subclones A1 to A6 and B1 to B3 in SGCAA. We obtained a band of ~ 30 kDa (8a), this size corresponds to the dimers theoretical size. 8b shows the signal analysis of the bands done on the ImageJ software and figure 8c shows the ratio of V5 signal versus tubulin.
+    p We loaded the following bands onto our Western blot: samples from yeast subclones A1 to A6 and B1 to B3 in SGCAA. We obtained a band of ~ 30 kDa (figure 22), this size corresponds to the dimers theoretical size. Figure 23 shows the signal analysis of the bands done on the ImageJ software and figure 24 shows the ratio of V5 signal versus tubulin.
 
     figure
       img(src="assets/notebook/dimers/8.jpg")
@@ -872,8 +882,8 @@ block description
       h3 Copper absorption assay
 
     p <strong>Aim</strong> Measure the yeast ability to remove copper in solution for the different strains.
-    p <strong>Protocol</strong> We grew our various engineered yeast strains in liquid media containing copper and we collected 2 ml aliquots of the culture at different time points after addition of yeasts in the media (T0, 15 min, 60 min, 90 min, 120 min). The yeast cultures were prepared in 500 ml Erlenmeyer flasks, and incubated at 30°C under 200 rpm shaking. Each of the collected samples were then slowly centrifuged (200g for 10 minutes) to separate the yeast cell from the media and copper sulphate solution. Note that the centrifugation step was performed at a low speed to avoid any cell lysis, hence preventing the presence of yeast components, free or bound to copper ions, in the supernatant. This is done mainly for two reasons. First, the absorbance wavelengths of yeast and copper are in the same spectrum range. Thud, any contaminations of yeast in the supernatant could lead to alteration and artefact values in the OD measurements, resulting in data with a higher concentration than reality. Second, if any pieces of yeast bound to copper ions would end up in the supernatant, these ions would also be detected by the spectrophotometer, also leading to values with a higher concentration than the one that would have been actually removed from our yeast. Once the centrifugation step was finished, the pellet, mainly characterized by yeast cells, and the supernatant, mainly characterized by media and copper sulphate, are isolated from each other and collected for different chemical downstream processes.
-    p <b>Copper concentration measurement</b> (see also <a href="Protocols.html#protocol-cupper">Cuprizone Solution Preparation and Copper Concentration Measurement protocol</a>) In this assay, the aforementioned supernatant is mixed with cuprizone and brought to a slightly basic (pH ~ 8) condition. Cuprizone [oxalic acid bis(cyclohexylidene hydrazide)] is a selective and sensitive copper-chelating agent, typically used in spectrophotometric determination of copper(II). Indeed, this chemical compound is highly sensitive to copper and, once it interacts with a copper solution, it forms a complex that absorbs at wavelengths of 580-600 nm. The absorbance at 580-600 nm of the solution is therefore proportional to the amount of copper. However, according to Messori et al., the complex with Cu(II) and cuprizone is unstable because of the fast decomposition of the reagent, also affecting the stability of the absorbance over time<ref doi="10.1039/B701896G" />. Therefore, given the strong instability of the CuCPZ complex, we analyzed its absorbance kinetics to find a stable plateau, hence an optimal time to perform the measurements, avoiding any substantial variance in the measurements. We used a spectrophotometer UV-1600PC (#634-6001) with a filter allowing the measurement of the absorbance at 600 nm for that purpose.
+    p <strong>Protocol</strong> We grew our various engineered yeast strains in liquid media containing copper and we collected 2 ml aliquots of the culture at different time points after addition of yeasts in the media (t<sub>0</sub>, 15 min, 60 min, 90 min, 120 min). The yeast cultures were prepared in 500 ml Erlenmeyer flasks, and incubated at 30°C under 200 rpm shaking. Each of the collected samples were then slowly centrifuged (200g for 10 minutes) to separate the yeast cell from the media and copper sulfate solution. Note that the centrifugation step was performed at a low speed to avoid any cell lysis, hence preventing the presence of yeast components, free or bound to copper ions, in the supernatant. This is done mainly for two reasons. First, the absorbance wavelengths of yeast and copper are in the same spectrum range. Thud, any contaminations of yeast in the supernatant could lead to alteration and artefact values in the OD measurements, resulting in data with a higher concentration than reality. Second, if any pieces of yeast bound to copper ions would end up in the supernatant, these ions would also be detected by the spectrophotometer, also leading to values with a higher concentration than the one that would have been actually removed from our yeast. Once the centrifugation step was finished, the pellet, mainly characterized by yeast cells, and the supernatant, mainly characterized by media and copper sulfate, are isolated from each other and collected for different chemical downstream processes.
+    p <b>Copper concentration measurement</b> (see also <a href="Protocols.html#protocol-copper">Cuprizone Solution Preparation and Copper Concentration Measurement protocol</a>) In this assay, the aforementioned supernatant is mixed with cuprizone and brought to a slightly basic (pH ~ 8) condition. Cuprizone [oxalic acid bis(cyclohexylidene hydrazide)] is a selective and sensitive copper-chelating agent, typically used in spectrophotometric determination of copper(II). Indeed, this chemical compound is highly sensitive to copper and, once it interacts with a copper solution, it forms a complex that absorbs at wavelengths of 580-600 nm. The absorbance at 580-600 nm of the solution is therefore proportional to the amount of copper. However, according to Messori et al., the complex with Cu(II) and cuprizone is unstable because of the fast decomposition of the reagent, also affecting the stability of the absorbance over time<ref doi="10.1039/B701896G" />. Therefore, given the strong instability of the CuCPZ complex, we analyzed its absorbance kinetics to find a stable plateau, hence an optimal time to perform the measurements, avoiding any substantial variance in the measurements. We used a spectrophotometer UV-1600PC (#634-6001) with a filter allowing the measurement of the absorbance at 600 nm for that purpose.
     p All measurements were performed with three biological replicates and three technical replicates.
     p The concentration of copper in the media was set at 4 mg/l for all copper absorption assay. We tested different conditions to identify the cause of bad copper absorption with our engineered yeasts (see the results below and the <a href="Results.html">Results page</a>).
 
