@@ -117,7 +117,7 @@ module.exports = (opts) => {
                   .join(', ')
                 // `, vol.&nbsp;${data.volume}, no.&nbsp;${data.issue}, pp.&nbsp;${data.page}`
               ],
-              links: { 'Crossref': data.URL },
+              links: { 'Crossref': data.URL, 'Google Scholar': 'https://scholar.google.ch/scholar?q=' + encodeURIComponent(ref.doi) },
               title: data.title,
               year
             });

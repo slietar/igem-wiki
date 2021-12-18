@@ -56,7 +56,10 @@ module.exports = (opts) => {
               pointer.push({
                 heading: {
                   id,
-                  text: child.content.filter((subchild) => !subchild.tag || ['sub', 'sup'].includes(subchild.tag))
+                  text: child.content.filter((subchild) =>
+                      !subchild.tag
+                    || ['sub', 'sup'].includes(subchild.tag)
+                    || (subchild.tag === 'span' && subchild.attrs?.class !== 'ref-group'))
                 },
                 children: []
               });

@@ -7,7 +7,7 @@ function transform(node) {
       }
 
       return child
-        .replaceAll(/((?:^|[(| ])\d(?:[,\.\d]*\d)?) (?!and |or |to |by )([a-zA-Zµ]{1,3}[^a-z])/g, '$1&#8239;$2')
+        .replaceAll(/((?:^|[(| ])\d(?:[,\.\d]*\d)?) (?!and |or |to |by |for |way )([a-zA-Zµ]{1,3}[^a-z])/g, '$1&#8239;$2')
         .replaceAll(/((?:^|[(| ])\d(?:[,\.\d]*\d)?) ([a-zA-Z]{4,})/g, '$1&nbsp;$2')
         .replaceAll('OD600', 'OD<sub>600</sub>')
         .replaceAll('CuSO4', 'CuSO<sub>4</sub>')
@@ -25,6 +25,7 @@ function transform(node) {
         .replaceAll('Mg2+', 'Mg<sup>2+</sup>')
         .replaceAll('I2C', 'I<sup>2</sup>C')
         .replaceAll('--', '&#8239;&ndash;&thinsp;')
+        .replaceAll('µ', 'μ');
     }) })
   };
 }

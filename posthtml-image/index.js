@@ -1,8 +1,42 @@
 const fs = require('fs');
+const imageSize = require('image-size');
+const path = require('path');
 
 
 module.exports = (opts) => {
   return async (tree) => {
+    let transform = (node) => {
+      if (typeof node === 'string') {
+        return node;
+      }
+
+      if (node.tag === 'img') {
+        let size = imageSize(path.join(__dirname, '../dist', node.attrs.src));
+
+        return {
+          ...node,
+          attrs: {
+            ...node.attrs,
+            width: size.width.toString(),
+            height: size.height.toString(),
+            loading: 'lazy'
+          }
+        };
+      }
+
+      return {
+        ...node,
+        ...(node.content && {
+          content: [node.content].flat().map((child) => transform(child))
+        })
+      };
+    };
+
+    tree.match({ attrs: { class: 'desc-contents' } }, (node) => {
+      return transform(node);
+    });
+
+
     tree.match({ tag: 'img-embedded' }, (node) => {
       let contents;
 
