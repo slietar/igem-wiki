@@ -5,15 +5,19 @@ block hero
   .hero-contents: h1 Modelling
 
 block description
-  h2 Modelling of the flow through reactor
+  h2 Modelling of the flow-through reactor
 
   p When designing water flow systems, modelling is key to test different scenarios and geometries through simulation. This is due to the fact that testing physical parts is costly, both in time and money, and because results are difficult to visualise when dealing with water as it is transparent. Thus, flow simulations are immensely helpful as it is possible to see flow lines and pressure inside the system.
   p We used modelling to a great extent when trying to develop a continuous flow bioreactor. The first idea that came to our minds was a simple straight tube containing yeast with a filter at the exit. Water would flow through the yeast and the copper would gradually be filtered out. We identified the following issues with this design. Firstly, the yeast would surely clog the filter and stop the flow. Secondly, copper being gradually filtered out when the water advances through the system, it is only natural that there would be a gradient in copper concentration. This results in yeast cells closest to the entrance being saturated in copper sooner than those towards the end. In turn, this would force the user to either stir the yeast, replace only part of the cells or replace all of them but waste the cells that were still operational.
   p We thus wanted to create a system in which we avoid these problems. We imagined a circular system in which yeast cells would be trapped in an eternal cycle. Untreated water enters the system and completes a revolution. Then at the exit, the water is split and part of it may exit while the other carries the yeast back towards the beginning of the system, where it merges with new untreated water. We thus ensure that each water molecule completes one revolution at minimum, while some molecules will go through the system more than once as they accompany the yeast from the exit back to the beginning. We wanted the system to function using the water flow at the entrance without adding any pumps.
 
-  p Schéma PDF
+  figure
+    img(src="assets/model/22.jpg")
+    figcaption
+      span Figure (X)
+      span Diagram of a flow-through reactor.
 
-  p We quickly realised that the circled area in the figure… required particular design attention as we were dealing with a flow adding system without being able to force pressure with a pump as one would commonly do. We thus began to design the connecting part thanks to flow simulations.
+  p We quickly realized that the circled area in figure 1 required particular design attention as we were dealing with a flow adding system without being able to force pressure with a pump as one would commonly do. We thus began to design the connecting part thanks to flow simulations.
 
 
   h2 Simulation configuration
@@ -88,7 +92,7 @@ block description
       img(src="assets/model/5-2.jpg")
       figcaption
         span Figure (X)
-        span Continuity equation used in SOLIDWORKS<ref id="ref0" />
+        span Continuity equation used in SOLIDWORKS.<ref id="ref0" />
 
     p Notice, as we will see for all equations formulated in the documentation, that the more complexe operations, like the divergence, are separated into their constitutive elements. This is due to the numerical analysis being based on derivatives.
 
@@ -184,7 +188,7 @@ block description
 
 
   h3 Flow simulations
-  p We designed a large number of systems to try to find one that would function as intended. The following Figures illustrate our thought process, but we chose not to show all of the simulations as getting from one part design to the next was a tedious task during which we ran through a plethora of iterations, tweaking the design little by little.
+  p We designed a large number of systems to try to find one that would function as intended. The following figures illustrate our thought process, but we chose not to show all of the simulations as getting from one part design to the next was a tedious task during which we ran through a plethora of iterations, tweaking the design little by little.
 
   h3 Parallel flow adding
   p Our first idea was to merge the flow in a parallel manner by making the cross section of the main pipe equal to the sum of the cross sections of the inputs.
@@ -277,7 +281,7 @@ block description
   p Using the prediction simulation, we were able to see whether, at least theoretically, the entire complex would fold correctly. This is a crucial aspect of our protein structure.
 
   figure
-    video(src="assets/biomodel/3.mp4" controls muted)
+    video(src="assets/biomodel/3.mp4" autoplay muted loop)
     figcaption
       span Figure (X)
       span Polyproline rigid linker complex three dimensional structure, simulated with AlphaFold.
@@ -286,7 +290,7 @@ block description
   p Rigid linkers exhibit relatively stiff structures by adopting α-helical structures or by containing multiple Pro residues. Indeed, Pro is a unique amino acid with a cyclic side chain that causes a very restricted conformation. (doi:10.1016/j.addr.2012.09.039) Furthermore, the lack of amide hydrogen on Pro typically prevents the formation of hydrogen bonds with other amino acids, and therefore reduces the interaction between the linkers and the protein domains. As a result, the inclusion of Pro residues might increase the stiffness and structural independence of the linkers.  (doi: 10.1042/bj2970249) Here we can easily see the polyproline structure in the middle of the two CUP1 slightly flected.
 
   figure
-    video(src="assets/biomodel/4.mp4" controls muted)
+    video(src="assets/biomodel/4.mp4" autoplay muted loop)
     figcaption
       span Figure (X)
       span First flexible linker three dimensional structure, simulated with AlphaFold.
@@ -298,7 +302,7 @@ block description
 
 
   figure
-    video(src="assets/biomodel/5.mp4" controls muted)
+    video(src="assets/biomodel/5.mp4" autoplay muted loop)
     figcaption
       span Figure (X)
       span Second flexible linker complex three dimensional structure, simulated with AlphaFold.
@@ -307,7 +311,7 @@ block description
   p This linker is very similar to the one above, but is 20 residues long. We consider this linker to be relatively long. We were curious to compare the lengths of these two linkers to observe how our complex would behave.
 
   figure
-    video(src="assets/biomodel/6.mp4" controls muted)
+    video(src="assets/biomodel/6.mp4" autoplay muted loop)
     figcaption
       span Figure (X)
       span First semi-flexible linker complex three dimensional structure, simulated with AlphaFold.
@@ -319,7 +323,7 @@ block description
 
 
   figure
-    video(src="assets/biomodel/7.mp4" controls muted)
+    video(src="assets/biomodel/7.mp4" autoplay muted loop)
     figcaption
       span Figure (X)
       span Second semi-flexible linker complex three dimensional structure, simulated with AlphaFold.
@@ -328,18 +332,18 @@ block description
   p This linker is very similar to the one above, but is 20 residues long. We consider this linker to be relatively long. We were curious to compare the lengths of these two linkers.
 
   figure
-    video(src="assets/biomodel/8.mp4" controls muted)
+    video(src="assets/biomodel/8.mp4" autoplay muted loop)
     figcaption
       span Figure (X)
       span First linker complex three dimensional structure, simulated with AlphaFold.
       span Linker sequence: EAAAKEAAAKEAAAK.
 
   p This linker is a rigid linker, mainly consisting of glutamic acids, lysines and alanines. As we can see by the prediction, these residues form a single alpha helix, spanning from one protein copy to the other. This is indeed a rigid structure - we had predicted as expected.
-  p Generally, many natural linkers exhibited α-helical structures <ref doi="10.1093/protein/15.11.871" />. These latter are characterized by high rigidity and stability, with intra-segment hydrogen bonds and a closely packed backbone. Therefore, the stiff α-helical linkers may act as simple rigid spacers between protein domains. In this case, the most common rigid linker is the alpha helix-forming linkers with the sequence of (EAAAK)n, which shows an approximately 80 % helicity with n = 3<ref doi="10.1007/s00253-015-6985-3" />.
+  p Generally, many natural linkers exhibited α-helical structures <ref doi="10.1093/protein/15.11.871" />. These latter are characterized by high rigidity and stability, with intra-segment hydrogen bonds and a closely packed backbone. Therefore, the stiff α-helical linkers may act as simple rigid spacers between protein domains. In this case, the most common rigid linker is the alpha helix-forming linkers with the sequence of (EAAAK)n, which shows an approximately 80% helicity with n = 3<ref doi="10.1007/s00253-015-6985-3" />.
 
 
   figure
-    video(src="assets/biomodel/9.mp4" controls muted)
+    video(src="assets/biomodel/9.mp4" autoplay muted loop)
     figcaption
       span Figure (X)
       span Second linker complex three dimensional structure, simulated with AlphaFold.
@@ -386,7 +390,7 @@ block description
   p The MSA is represented as a table in which the rows correspond to the sequences in which the residues appear while the columns encode information on the single residue of the input sequence.
   p Considering this structure, it is possible to define a model based on a series of update configurations to apply iteratively in each block, thus updating the system at each time step with new information.
   p Regarding the MSA iteration process, it performs an update on the pair representation through an element-wise outer product that is summed over the MSA sequence dimension. Namely, it means that we update the relation of residues considering their evolution in different input sequences, enabling the continuous exchange of information from the evolving MSA representation to the pair representation.
-  p This pair representation could evolve towards two possible update configurations. Those latter mainly stem from consistency boundaries. Indeed, regarding the pairwise description of the residues, many constraints must be fulfilled to be described under a 3D structure framework, one of which is the triangle inequality. Under a geometrical point of view this means that it is possible to apply the update iteration on the pair framework in terms of triangle edges between three different nodes (figure 3c). Furthermore, what really make possible the great innovation in the algorithm correspond to the addition of an extra bias applied to axial attention in order to consider the missing edge of the triangle, while the non attention iteration, namely called triangle multiplicative update, based the update of the missing third edge on the two other edges present. This whole iterative process is called triangle multiplicative update, originally developed as replacement for an attention algorithm.
+  p This pair representation could evolve towards two possible update configurations. Those latter mainly stem from consistency boundaries. Indeed, regarding the pairwise description of the residues, many constraints must be fulfilled to be described under a 3D structure framework, one of which is the triangle inequality. Under a geometrical point of view this means that it is possible to apply the update iteration on the pair framework in terms of triangle edges between three different nodes (figure 30c). Furthermore, what really make possible the great innovation in the algorithm correspond to the addition of an extra bias applied to axial attention in order to consider the missing edge of the triangle, while the non attention iteration, namely called triangle multiplicative update, based the update of the missing third edge on the two other edges present. This whole iterative process is called triangle multiplicative update, originally developed as replacement for an attention algorithm.
   p Regarding the MSA framework, the algorithm uses again a variant of axial attention. In particular, the model is based on projecting additional logit from the pair data to bias the attention of the MSA representation. In this manner, it is possible to close the cycle of information exchange between the MSA and single pair representations, thus optimizing the amount of information extracted from a single sequence. This enhancement is given by the efficient combination of the two frameworks, which encode different but complementary information on the sequence. Furthermore, this ensure that Evoformer block is able to extract most of the information encoded in the sequences and in the residues, generating a highly reliable and accurate structure.
 
 

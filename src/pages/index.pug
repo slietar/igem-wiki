@@ -1,5 +1,10 @@
 extends templates/_layout
 
+block head
+  link(href="Description.html" rel="prefetch")
+  link(href="Design.html" rel="prefetch")
+  link(href="Medals_and_Awards.html" rel="prefetch")
+
 block header
   header.header.header--white
     include templates/_header
@@ -20,7 +25,7 @@ block contents
         h2 Mildew and copper fungicides
 
         p Mildew is a fungal disease that attacks plants including grape vines and greatly reduces the yield from affected crops.
-        p In order to treat plants affected Mildew, copper-based fungicides have been in use for over a hundred years thanks to their effective action and compatibility with organic farming practices Although copper has little effect on the taste and safety of produce from treated plants, it can accumulate to toxic levels in the surrounding soil, inhibiting new cultivation and reducing biodiversity.
+        p In order to treat plants attacked by mildew, copper-based fungicides have been in use for over a hundred years thanks to their effective action and compatibility with organic farming practices. Although copper has little effect on the taste and safety of produce from treated plants, it can accumulate to toxic levels in the surrounding soil, inhibiting new cultivation and reducing biodiversity.
 
         a(href="Description.html#problem") More on the problem
 
@@ -137,7 +142,7 @@ block contents
         a(href="Communication.html") More on Education &amp; Communication
 
 
-    .sponsors-root
+    .sponsors-root(id="sponsors")
       h2 Sponsors
 
       .sponsors-list

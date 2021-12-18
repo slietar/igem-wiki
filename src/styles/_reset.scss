@@ -1,5 +1,5 @@
 body:not(.mediawiki), #mw-content-text {
-  &, *:not(circle, ellipse, image, path, rect, text), *::before, *::after {
+  &, *:not(circle, ellipse, image, path, rect, text, img), *::before, *::after {
     all: revert;
     box-sizing: inherit;
   }
@@ -139,6 +139,7 @@ body:not(.mediawiki), #mw-content-text {
 
   img {
     max-width: 100%;
+    height: auto;
     font-size: 0;
   }
 
@@ -174,7 +175,7 @@ body:not(.mediawiki), #mw-content-text {
 
 // iGEM-specific rules
 
-#top_title {
+#top_title, #top_menu_14 {
   display: none;
 }
 

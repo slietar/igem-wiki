@@ -5,6 +5,7 @@ import './header';
 import './toc';
 
 import './pages/communication';
+import './pages/home';
 import './pages/hp';
 import './pages/implementation';
 

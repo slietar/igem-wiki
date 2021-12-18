@@ -15,7 +15,7 @@ block description
   p The reactor we developed and built was the product of a number of design cycles, which ultimately led to a simple but effective solution. This was an iterative process, where not only the design changed, but also the problem we set out to solve.
 
 
-  h3 Wood Chip Implementation
+  h3 Wood chip implementation
 
   .imp-group(data-default="design")
     .imp-header
@@ -37,7 +37,7 @@ block description
         p We learned that an important design consideration would be ensuring our genetically modified yeast are isolated from the  environment. Additionally, by creating a system that would block off weeds, we could make our product more commercially viable in the long term as the necessary amount of labour would decrease.
 
 
-  h3 Carpet Implementation
+  h3 Carpet implementation
 
   .imp-group(data-default="design")
     .imp-header
@@ -59,7 +59,7 @@ block description
         p Following the values we obtained through our approximations, we realised that treating all of the water at the same time in batch would demand a prohibitively large infrastructure and quantities of yeast. To avoid this problem, we decided to begin developing a continuous flow bioreactor.
 
 
-  h3 Eternal Cycle Bioreactor
+  h3 Eternal cycle bioreactor
 
   .imp-group(data-default="design")
     .imp-header
@@ -85,7 +85,7 @@ block description
         p If water is static, this suggests that the water pressure at both ends of the tube is equal. We deduced that in order to offset this  problem, we could modify the internal geometry of our device at a key junction where the loop of tubing rejoins the inflowing water, by taking advantage of Bernoulli’s principle. This would create a low-pressure pocket to improve the re-circulation of water.
 
 
-  h3 Eternal Cycle Bioreactor with a Low Pressure Pocket
+  h3 Eternal cycle Bioreactor with a low pressure pocket
 
   .imp-group(data-default="design")
     .imp-header
@@ -111,7 +111,7 @@ block description
         p We sought out expertise on this issue and found it with Professor Giovanni Boero at EPFL who was very sceptical of our design and urged us to change to a simpler fluidics design.
 
 
-  h3 Disk Reactor
+  h3 Disk reactor
 
   .imp-group(data-default="design")
     .imp-header
@@ -137,7 +137,7 @@ block description
 
 
 
-  h2 Final design: Static reactor with beads
+  h2 Final design: static reactor with beads
 
   figure
     img(src="assets/implementation/25.jpg")
@@ -198,7 +198,7 @@ block description
   .imp-part-item
     .imp-part-contents
       h4 Flyback diode
-      p Schottky Diode, 1 A, 40 V, DO-41, Taiwan Semiconductors, product no. 1N5819.
+      p Schottky diode, 1 A, 40 V, DO-41, Taiwan Semiconductors, product no. 1N5819.
       p The flyback diode in parallel to the solenoid can withstand the necessary 12 V and fast enough to react to the current spikes.
       p The diode and transistor were chosen to at least withstand 36 V and 1.5 A of current.
     .imp-part-image: img(src="assets/implementation/3.jpg")
@@ -291,9 +291,9 @@ block description
 
   p For the electronics, we used a Hirschman board which made prototyping much simpler. This type of board has lines of connected pins, 4 by 4 which replace soldering.
   ul
-    li The transistor's <strong>source</strong> (bottom transistor pin) is wired to the ground set by the negative electrode of the battery.
-    li The transistor's <strong>drain</strong> (center transistor pin) is wired to the solenoid and the diode, which in turn are wired to the positive electrode of the 12 V battery.
-    li The transistors <strong>gate</strong> (top right) is wired to the Raspberry Pi.
+    li: p The transistor's <strong>source</strong> (bottom transistor pin) is wired to the ground set by the negative electrode of the battery.
+    li: p The transistor's <strong>drain</strong> (center transistor pin) is wired to the solenoid and the diode, which in turn are wired to the positive electrode of the 12 V battery.
+    li: p The transistors <strong>gate</strong> (top right) is wired to the Raspberry Pi.
   p This is the real life electronics representation of the previously explained schematics. The Raspberry Pi has an additional four cables going off towards the pressure sensor to the left.
 
   figure
@@ -381,7 +381,7 @@ block description
 
   h4 Biocontainment
   p Biocontainment was one of the largest issues in the project. Biocontainment of large quantities of GMO cells for continuous possibly high debit of water over a long period of time is bound to be a bit unrealistic. Nonetheless, our bead implementation proposes a theoretically safe solution.
-  p Alginate beads are normally nanoporous (~ 5 nm)<ref doi="10.1016/j.progpolymsci.2011.06.003" />, while yeast cells are several microns large at all temperatures considered for our application (between 15 and 35°C)<ref doi="10.1093/femsyr/foy052" />. However, this does not prevent cells from escaping: cell encapsulation weakens the Ca-Alginate structure (Structural changes of Ca-alginate beads caused by immobilized yeast cell growth - ScienceDirect) while cell growth forms new passageways through the Ca-Alginate matrix. Simple alginate beads are not sufficient to ensure biocontainment. Thus, we imagine a double layered bead: the core would contain cells which have colonized the bead during ……. and the second, harder layer (made with 3.5% to 4% alginic acid sodium salt) would then be added after growth has stopped, to avoid leaks. Cells should not escape if there is a clear hard complete layer on the outside.
+  p Alginate beads are normally nanoporous (~ 5 nm)<ref doi="10.1016/j.progpolymsci.2011.06.003" />, while yeast cells are several microns large at all temperatures considered for our application (between 15 and 35°C)<ref doi="10.1093/femsyr/foy052" />. However, this does not prevent cells from escaping: cell encapsulation weakens the Ca-Alginate structure (Structural changes of Ca-alginate beads caused by immobilized yeast cell growth - ScienceDirect) while cell growth forms new passageways through the Ca-Alginate matrix. Simple alginate beads are not sufficient to ensure biocontainment. Thus, we imagined a double layered bead: the core would contain cells which have colonized the bead, and the second, harder layer (made with 3.5% to 4% alginic acid sodium salt) would then be added after growth has stopped, to avoid leaks. Cells should not escape if there is a clear hard complete layer on the outside.
 
   h4 Protocol
   p See <a href="Protocols.html#protocol-beads">the Protocols page</a>.
@@ -418,18 +418,18 @@ block description
   h3 Planning of an experiment for the copper assay with beads
   p The measurements to do for testing the beads containing yeast in a static reactor are the following:
   ul
-    li Copper assay using blank beads shaking
-    li Copper assay using blank beads static
-    li Blank assay using organism filled beads shaking
-    li Blank assay using organism filled beads static
-    li Copper assay using organism filled beads shaking
-    li Copper assay using organism filled beads static
+    li copper assay using blank beads shaking
+    li copper assay using blank beads static
+    li blank assay using organism filled beads shaking
+    li blank assay using organism filled beads static
+    li copper assay using organism filled beads shaking
+    li copper assay using organism filled beads static
 
   p The first and second assays should give us information about the copper absorbance of the beads alone. The third and fourth give us information about the leaking of yeast out of the beads. The fifth and sixth are the actual copper assays. The reason we should also be looking at the shaking is to be able to compare the results with the copper assays done without beads.
   p The next test would be doing the same experiments using organism filled beads after a given incubation period. This final experiment is there for evaluating yeast leakage out of the beads and for testing if yeast growth enhances copper capture.
 
   p The protocol for doing these copper assays is as follows:
-  p First make 250 ml of beads using the alginate beads protocol. Do the additional and alternative steps for testing which are indicated in the protocol! While the Alginic Acid Sodium Salt is being stirred, prepare a 250ml Copper solution in nearly the same way as is presented in the Copper incubation protocol: the only difference is that the concentration of copper has to be halved: the beads do not dilute the copper solution upon mixing. Take your t-1 sample, and once the beads are done, drop them into the copper solution and take your t0 measurement. Follow the measurement scheme as in the Copper incubation protocol. When taking the samples, be careful not to block the pipette with the beads.
+  p First make 250 ml of beads using the alginate beads protocol. Do the additional and alternative steps for testing which are indicated in the protocol! While the alginic acid sodium salt is being stirred, prepare a 250 ml copper solution in nearly the same way as is presented in the Copper incubation protocol: the only difference is that the concentration of copper has to be halved: the beads do not dilute the copper solution upon mixing. Take your t-1 sample, and once the beads are done, drop them into the copper solution and take your t0 measurement. Follow the measurement scheme as in the Copper incubation protocol. When taking the samples, be careful not to block the pipette with the beads.
 
 
 

@@ -1,5 +1,7 @@
 @use "sass:math";
 
+@use "../breakpoints" as *;
+
 
 $n: 5;
 $line-height: 1.2; // <- to be replaced with lh unit once supported by browsers
@@ -17,9 +19,13 @@ $height: 1em * $line-height;
 
   width: 230px;
   height: $height;
-  transform: translateY(0.32em);
+  transform: translateY(0.26em);
 
   overflow-y: hidden;
+
+  @include media-breakpoint-down(md) {
+    width: 130px;
+  }
 }
 
 .words-list {

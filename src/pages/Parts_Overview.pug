@@ -5,27 +5,25 @@ block hero
   .hero-contents: h1 Parts Overview
 
 block description
-  //- p On this page is an overview of all the parts that we have created for this project.
-
-
   h2(id="plasmid") Plasmid
   p We have used the plasmid backbone pCTcon2-V5<ref doi="10.1038/nprot.2006.94" /> to clone our DNA sequences. It was kindly given to us by the Laboratory of Protein Design and Immunoengineering of Professor Bruno Correia. This plasmid contains:
 
   ul
     li
-      | Two selection markers
+      p Two selection markers:
       ul
-        li an ampicillin (Amp+) resistance gene for genetic selection of transformed <i>E. coli</i>. Selection is achieved in a medium supplemented with ampicillin antibiotic
-        li a TRP gene as an auxotrophic marker for genetic selection of transformed trp- yeasts, unable to synthesize tryptophan. Selection is achieved in a medium lacking tryptophan
+        li: p An ampicillin (Amp+) resistance gene for genetic selection of transformed <i>E. coli</i>. Selection is achieved in a medium supplemented with ampicillin antibiotic.
+        li: p A TRP gene as an auxotrophic marker for genetic selection of transformed trp- yeasts, unable to synthesize tryptophan. Selection is achieved in a medium lacking tryptophan.
     li
-      | An inducible expression system composed of:
-      li a Gal1 promoter allowing the transcription of our gene of interest only in the presence of galactose
-      li
-        | the yeast surface display:
-        ul
-          li the Aga2 coding sequence: The A-agglutinin-binding subunit Aga2 attaches to the yeast cell wall through disulfide bonds to Aga1p, a yeast endogenous protein.
-          li a multiple cloning site: where we inserted our gene sequence by digesting the plasmid with the restriction enzymes NheI and BamHI.
-          li the V5 tag: to check its expression either by immunoblot or immunocytochemistry
+      p An inducible expression system composed of:
+      ul
+        li: p A Gal1 promoter allowing the transcription of our gene of interest only in the presence of galactose.
+        li
+          p The yeast surface display:
+          ul
+            li: p The Aga2 coding sequence; the A-agglutinin-binding subunit Aga2 attaches to the yeast cell wall through disulfide bonds to Aga1p, a yeast endogenous protein.
+            li: p A multiple cloning site, where we inserted our gene sequence by digesting the plasmid with the restriction enzymes NheI and BamHI.
+            li: p The V5 tag to check expression either by immunoblot or immunocytochemistry.
 
   figure
     div(id="plot-plasmid")
@@ -52,3 +50,8 @@ block description
     li: p Part <a href="http://parts.igem.org/Part:BBa_K4035008" target="_blank">K4035008</a> has a semi-rigid linker made of the flexible GGGGS amino acid sequence followed by two times the EAAAK followed by a second GGGGS sequence.
 
   p The parts numbers <a href="http://parts.igem.org/Part:BBa_K4035009" target="_blank">BBa_K4035009</a> to <a href="http://parts.igem.org/Part:BBa_K4035015" target="_blank">BBa_K4035015</a> depict the extracellular expression system of these dimers, namely, the Gal1 promoter, the Aga2 protein and the dimer sequence followed by the V5 tag.
+
+
+  h2 References
+
+  bibliography
