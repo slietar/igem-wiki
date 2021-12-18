@@ -2,9 +2,28 @@ extends templates/_description
 
 block hero
   img.hero-image(src="assets/background/description.jpg")
-  .hero-contents: h1 Medals Criteria
+  .hero-contents: h1 Medals and Awards
 
 block description
+  h2 Results
+
+  .results-list
+    .results-item
+      svg: use(href="assets/icons.svg#goldmedal")
+      span Awarded
+      span Gold medal
+
+    .results-item
+      svg: use(href="assets/icons.svg#bestwiki")
+      span Awarded
+      span Best wiki
+
+    .results-item
+      svg: use(href="assets/icons.svg#bestenv")
+      span Nominated
+      span Best environment project
+
+
   h2.medal-title
     img(src="assets/medals/bronze.png")
     span Bronze medal
@@ -20,7 +39,7 @@ block description
         td: p We attended the 2021 local watch party in Paris.
       tr
         td Competition deliverables
-        td: p We made our presentation video and showed our poster at the local Jamboree.
+        td: p We produced a presentation video.
       tr
         td: a(href="Attributions.html") Attributions
         td: p We would like to thank all the people that helped us with our project for their time and effort. They can all be found listed on the Attributions page, as well as how they helped us.
