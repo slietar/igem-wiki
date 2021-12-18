@@ -21,34 +21,17 @@ if (contents) {
     }
   };
 
-  /* let observer = new IntersectionObserver((entries) => {
-    for (let entry of entries) {
-      let index = headings.findIndex((heading) => heading.element === entry.target);
-      headings[index].visible = entry.isIntersecting;
-    }
 
-
-    let newActiveIndex = null;
-
-    // for (let heading of headings) {
-    for (let index = 0; index < headings.length; index++) {
-      if (headings[index].visible) {
-        newActiveIndex = index;
-
-        break;
-      }
-    }
-
-    update(newActiveIndex);
-  }, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 1
-  }); */
+  let headings;
+  let igemMode = !!document.querySelector('#mw-content-text');
 
   document.addEventListener('scroll', () => {
+    if (!headings) {
+      return;
+    }
+
     let target = document.querySelector(':target');
-    let y = document.body.scrollTop;
+    let y = igemMode ? (document.documentElement.scrollTop - 16) : document.body.scrollTop;
 
     for (let index = 0; index < headings.length; index++) {
       let element = headings[index].element;
@@ -62,8 +45,6 @@ if (contents) {
   });
 
 
-  let headings;
-
   let define = () => {
     headings = Array.from(contents.querySelectorAll('h2, h3'))
       .map((element) => {
@@ -76,16 +57,13 @@ if (contents) {
     update(activeIndex, true);
   };
 
-  for (let el of document.querySelectorAll('summary')) {
-    el.addEventListener('click', () => {
+  for (let el of document.querySelectorAll('details')) {
+    el.addEventListener('toggle', () => {
       reset();
     });
   }
 
-  define();
-
-
-  Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-    reset();
+  window.addEventListener('load', () => {
+    define();
   });
 }
