@@ -1,5 +1,7 @@
 # Wiki
 
+The wiki is deployed on [the official iGEM website](https://2021.igem.org/Team:EPFL) and [GitLab pages](https://epfl-igem.gitlab.io/wiki/).
+
 
 ## Build
 
